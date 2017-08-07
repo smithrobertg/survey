@@ -6,7 +6,7 @@
 
 <h2>Orientation Questions</h2>
 <p>First we are going to ask you questions about major events in your life. These events will help orient you to other events in your life. If you are unsure of the timing of these events, just select “I don’t know”</p>
-<div class="from">
+<div class="form">
  	What year were you born? __________
  	At what age did you start living on your own (or with a friend/partner), no longer supported by a parent or guardian? ______ 
  	I don’t know
