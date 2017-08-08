@@ -179,7 +179,7 @@
         <textarea class="form-control" name="describeBecomingLegalAdult"></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Save Demographics and Continue Survey</button>
-    <h2><a href="timeline-description">Next &rarr;</a></h2>
+    <h2><a href="/timeline-description">Next &rarr;</a></h2>
 </form>
 </body>
 </html>
