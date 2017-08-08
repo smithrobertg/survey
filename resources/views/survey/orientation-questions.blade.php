@@ -7,8 +7,12 @@
 <h2>Orientation Questions</h2>
 <p>First we are going to ask you questions about major events in your life. These events will help orient you to other events in your life. If you are unsure of the timing of these events, just select “I don’t know”</p>
 <div class="form">
- 	What year were you born? __________
- 	At what age did you start living on your own (or with a friend/partner), no longer supported by a parent or guardian? ______ 
+	<form method="post" action="/orientation-questions">
+
+		{{ csrf_field() }}
+
+		What year were you born? __________
+ 	At what age did you start living on your own (or with a friend/partner), no longer supported by a parent or guardian? ______
  	I don’t know
  	What is the highest grade you’ve completed? 
  	Drop down menu: 1st-12th, some college, college degree, graduate degree
@@ -23,6 +27,8 @@ For example:
  	Childhood (between 0-10 years old) Event___________; Age OR Year
  	Adolescence (between 11-17 years old) Event___________; Age OR Year
  	Adulthood (18 and over) Event___________; Age OR Year
+		<button type="submit" class="btn btn-primary">Save and Continue &rarr;</button>
+	</form>
 </div>
 
 @endsection

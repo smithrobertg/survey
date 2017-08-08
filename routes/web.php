@@ -72,7 +72,7 @@ Route::get('timeline-description', function () {
 	return view('survey.timeline-description');
 });
 
-Route::get('orientation-questions', "SurveyController@getOrientationQuestions");
+Route::get('orientation-questions', 'SurveyController@getOrientationQuestions');
 
 Route::get('survey/{survey}/orientation-questions', "SurveyController@getOrientationQuestions");
 
