@@ -1,4 +1,4 @@
-@extends('layouts.survey')
+﻿@extends('layouts.survey')
 
 @section('title', 'Orientation Questions')
 
@@ -11,6 +11,19 @@
 
 		{{ csrf_field() }}
 
+	  <div class="form-group">
+		<label for="yearBorn">What year were you born?</label>
+		<input type="text" class="form-control" id="yearBorn" placeholder="Year born">
+	  </div>
+	  <div class="form-group">
+		<label for="ageStartedLivingOnOwn">At what age did you start living on your own (or with a friend/partner), no longer supported by a parent or guardian?</label>
+		<input type="text" class="form-control" id="ageStartedLivingOnOwn" placeholder="Age">
+	  </div>
+	  <div class="form-group">
+		<label for="highestGradeCompleted">What year were you born?</label>
+		<input type="text" class="form-control" id="highestGradeCompleted" placeholder="Highest grade">
+	  </div>
+	</form>
 		What year were you born? __________
  	At what age did you start living on your own (or with a friend/partner), no longer supported by a parent or guardian? ______
  	I don’t know
