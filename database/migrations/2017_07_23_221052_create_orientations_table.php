@@ -21,8 +21,8 @@ class CreateOrientationsTable extends Migration
             $table->string('how_old_when_completed_school');
             $table->string('childhood_event_description');
             $table->string('childhood_event_age_or_year');
-            $table->string('adolenscence_event_description');
-            $table->string('adolenscence_event_age_or_year');
+            $table->string('adolescence_event_description');
+            $table->string('adolescence_event_age_or_year');
             $table->string('adulthood_event_description');
             $table->string('adulthood_event_age_or_year');
             $table->timestamps();
