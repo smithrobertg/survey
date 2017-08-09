@@ -1,4 +1,4 @@
-﻿@extends('layouts.survey')
+@extends('layouts.survey')
 
 @section('title', 'Orientation Questions')
 
@@ -19,10 +19,21 @@
 		<label for="age_started_living_on_own">At what age did you start living on your own (or with a friend/partner), no longer supported by a parent or guardian?</label>
 		<input type="text" class="form-control" id="age_started_living_on_own" placeholder="Age">
 	  </div>
-	  <div class="form-group">
-		<label for="highest_grade_completed">What is the highest grade you’ve completed?</label>
-		<input type="text" class="form-control" id="highest_grade_completed" placeholder="Highest grade">
-	  </div>
+<!--
+        <div class="form-group">
+		    <label for="highest_grade_completed">What is the highest grade you’ve completed?</label>
+		    <input type="text" class="form-control" id="highest_grade_completed" placeholder="Highest grade">
+	    </div>
+-->
+      <div class="form-group">
+            <label for="highest_grade_completed">Example select</label>
+            <select class="form-control" id="highest_grade_completed">
+                <option>1st-12th</option>
+                <option>some college</option>
+                <option>college degree</option>
+                <option>graduate degree</option>
+            </select>
+        </div>
 		<div class="form-group">
 			<label for="how_old_when_completed_school">How old were you at this time? (or, if easier, what year was this?</label>
 			<input type="text" class="form-control" id="how_old_when_completed_school" placeholder="Age or Year">
@@ -66,7 +77,6 @@
 			<label for="adulthood_event_age_or_year">Adulthood Event: Age OR Year</label>
 			<input type="text" class="form-control" id="adulthood_event_age_or_year" placeholder="Age or Year">
 		</div>
-
 
 		<button type="submit" class="btn btn-primary">Save and Continue  &rarr;</button>
 	</form>
