@@ -56,7 +56,7 @@
 		</div>
 		<div class="form-group">
 			<label for="childhood_event_description'">Childhood (between 0-10 years old) Event</label>
-			<input type="text" class="form-control" name="childhood_event_description'" placeholder="Childhood Event">
+			<input type="text" class="form-control" name="childhood_event_description" placeholder="Childhood Event">
 		</div>
 		<div class="form-group">
 			<label for="childhood_event_age_or_year">Childhood Event: Age OR Year</label>
