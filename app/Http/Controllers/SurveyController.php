@@ -14,7 +14,7 @@ class SurveyController extends Controller
         $survey_id = 1;
     	$survey = Survey::find($survey_id);
 
-    	return view ('survey.orientation-questions');
+    	return view('survey.orientation-questions');
     }
 
     public function postOrientationQuestions(Request $request)
@@ -35,5 +35,19 @@ class SurveyController extends Controller
         $orientation->save();
 
         return view('survey.timeline.orientation');
+    }
+
+    public function getFamilyBackground()
+    {
+        return view('survey.family-background');
+    }
+
+    public function postFamilyBackground(Request $request)
+    {
+        //$familyBackground = new FamilyBackground;
+
+        //$familyBackground->parent_got_married = $request->input('parent_got_married');
+
+        return view('survey.timeline.family-background');
     }
 }

@@ -24,14 +24,38 @@
         </div>
     </div>
 
+    // check list option group
+    <h3>Did a parent or other adult in the household often:</h3>
+    <div class="form-group">
+        <div class="form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name ="parent_or_adult_often[]" value="Swear at/insult/putdown/humiliate">
+                Swear at you, insult you, put you down, or humiliate you?
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="parent_or_adult_often[]" value="Affraid physically hurt">
+                Act in a way that made you afraid that you might be physically hurt?
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="parent_or_adult_often[]" value="Push/slap/grab/throw something">
+                Push, grab, slap, or throw something at you?
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="parent_or_adult_often[]" value="Swear/insult/putdown/humiliate">
+                Ever hit you so hard that you had marks or were injured?
+            </label>
+        </div>
+    </div>
 
+    <button type="submit" class="btn btn-primary">Save and Continue &rarr;</button>
 </form>
 
-Did a parent or other adult in the household often:
- 	Swear at you, insult you, put you down, or humiliate you?
- 	Act in a way that made you afraid that you might be physically hurt?
- 	Push, grab, slap, or throw something at you?
- 	Ever hit you so hard that you had marks or were injured?
 Did an adult or person at least 5 years older than you ever:
  	Touch or fondle you or have you touch their body in a sexual way?
  	Try to or actually have oral, anal, or vaginal sex with you?

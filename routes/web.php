@@ -75,15 +75,14 @@ Route::get('timeline-description', function () {
 Route::get('orientation-questions', 'SurveyController@getOrientationQuestions');
 Route::post('orientation-questions', 'SurveyController@postOrientationQuestions');
 
-Route::get('survey/{survey}/orientation-questions', "SurveyController@getOrientationQuestions");
+Route::get('survey/{survey}/orientation-questions', 'SurveyController@getOrientationQuestions');
 
 Route::get('timeline/orientation', function () {
 	return view('survey.timeline.orientation');
 });
 
-Route::get('family-background', function () {
-	return view('survey.family-background');
-});
+Route::get('family-background', 'SurveyController@getFamilyBackground');
+Route::post('family-background', 'SurveyController@postFamilyBackground');
 
 Route::get('family-background-timeline', function () {
 	return view('survey.family-background-timeline');
