@@ -13,21 +13,22 @@
 
 	  <div class="form-group">
 		<label for="year_born">What year were you born?</label>
-		<input type="text" class="form-control" id="year_born" placeholder="Year born">
+		<input type="text" class="form-control" name="year_born" placeholder="Year born">
 	  </div>
 	  <div class="form-group">
 		<label for="age_started_living_on_own">At what age did you start living on your own (or with a friend/partner), no longer supported by a parent or guardian?</label>
-		<input type="text" class="form-control" id="age_started_living_on_own" placeholder="Age">
+		<input type="text" class="form-control" name="age_started_living_on_own" placeholder="Age">
 	  </div>
 <!--
         <div class="form-group">
 		    <label for="highest_grade_completed">What is the highest grade you’ve completed?</label>
-		    <input type="text" class="form-control" id="highest_grade_completed" placeholder="Highest grade">
+		    <input type="text" class="form-control" name="highest_grade_completed" placeholder="Highest grade">
 	    </div>
 -->
       <div class="form-group">
-            <label for="highest_grade_completed">Example select</label>
-            <select class="form-control" id="highest_grade_completed">
+            <label for="highest_grade_completed">What is the highest grade you’ve completed?</label>
+            <select class="form-control" name="highest_grade_completed">
+				<option>Choose one...</option>
                 <option>1st-12th</option>
                 <option>some college</option>
                 <option>college degree</option>
@@ -36,7 +37,7 @@
         </div>
 		<div class="form-group">
 			<label for="how_old_when_completed_school">How old were you at this time? (or, if easier, what year was this?</label>
-			<input type="text" class="form-control" id="how_old_when_completed_school" placeholder="Age or Year">
+			<input type="text" class="form-control" name="how_old_when_completed_school" placeholder="Age or Year">
 		</div>
 		<div>
 			<p>Next, think of specific events that happened in the following 3 stages of your life (childhood, adolescence, and adulthood) where you know how old you were at the time (for example, you moved to a different area, started a relationship, had a child, . Fill in those events (just a word or two) here with your age or year.
@@ -55,27 +56,27 @@
 		</div>
 		<div class="form-group">
 			<label for="childhood_event_description'">Childhood (between 0-10 years old) Event</label>
-			<input type="text" class="form-control" id="childhood_event_description'" placeholder="Childhood Event">
+			<input type="text" class="form-control" name="childhood_event_description'" placeholder="Childhood Event">
 		</div>
 		<div class="form-group">
 			<label for="childhood_event_age_or_year">Childhood Event: Age OR Year</label>
-			<input type="text" class="form-control" id="childhood_event_age_or_year" placeholder="Age or Year">
+			<input type="text" class="form-control" name="childhood_event_age_or_year" placeholder="Age or Year">
 		</div>
 		<div class="form-group">
 			<label for="adolescence_event_description">Adolescence (between 11-17 years old) Event</label>
-			<input type="text" class="form-control" id="adolescence_event_description" placeholder="Adolescense Event">
+			<input type="text" class="form-control" name="adolescence_event_description" placeholder="Adolescense Event">
 		</div>
 		<div class="form-group">
 			<label for="adolescence_event_age_or_year">Adolescense Event: Age OR Year</label>
-			<input type="text" class="form-control" id="adolescence_event_age_or_year" placeholder="Age or Year">
+			<input type="text" class="form-control" name="adolescence_event_age_or_year" placeholder="Age or Year">
 		</div>
 		<div class="form-group">
 			<label for="adulthood_event_description">Adulthood (18 and over) Event</label>
-			<input type="text" class="form-control" id="adulthood_event_description" placeholder="Adulthood Event">
+			<input type="text" class="form-control" name="adulthood_event_description" placeholder="Adulthood Event">
 		</div>
 		<div class="form-group">
 			<label for="adulthood_event_age_or_year">Adulthood Event: Age OR Year</label>
-			<input type="text" class="form-control" id="adulthood_event_age_or_year" placeholder="Age or Year">
+			<input type="text" class="form-control" name="adulthood_event_age_or_year" placeholder="Age or Year">
 		</div>
 
 		<button type="submit" class="btn btn-primary">Save and Continue  &rarr;</button>

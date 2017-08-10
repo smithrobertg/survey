@@ -21,19 +21,19 @@ class SurveyController extends Controller
     {
         $orientation = new Orientation;
 
-        $orientation->year_born = request('year_born');
-        $orientation->age_started_living_on_own = request('age_started_living_on_own');
-        $orientation->highest_grade_completed = request('highest_grade_completed');
-        $orientation->how_old_when_completed_school = request('how_old_when_completed_school');
-        $orientation->childhood_event_description = request('childhood_event_description');
-        $orientation->childhood_event_age_or_year = request('childhood_event_age_or_year');
-        $orientation->adolescense_event_description = request('adolescence_event_description');
-        $orientation->adolescense_event_age_or_year = request('adolescence_event_age_or_year');
-        $orientation->adulthood_event_description = request('adulthood_event_description');
-        $orientation->adulthood_event_age_or_year = request('adulthood_event_age_or_year');
+        $orientation->year_born = $request->input('year_born');
+        $orientation->age_started_living_on_own = $request->input('age_started_living_on_own');
+        $orientation->highest_grade_completed = $request->input('highest_grade_completed');
+        $orientation->how_old_when_completed_school = $request->input('how_old_when_completed_school');
+        $orientation->childhood_event_description = $request->input('childhood_event_description');
+        $orientation->childhood_event_age_or_year = $request->input('childhood_event_age_or_year');
+        //$orientation->adolescense_event_description = $request->input('adolescence_event_description');
+        //$orientation->adolescense_event_age_or_year = $request->input('adolescence_event_age_or_year');
+        $orientation->adulthood_event_description = $request->input('adulthood_event_description');
+        $orientation->adulthood_event_age_or_year = $request->input('adulthood_event_age_or_year');
 
         $orientation->save();
 
-        return redirect('survey.timeline.orientation');
+        return view('survey.timeline.orientation');
     }
 }
