@@ -96,9 +96,8 @@ Route::get('family-background-followup', function () {
 	return view('survey.family-background-followup');
 });
 
-Route::get('education', function () {
-	return view('survey.education');
-});
+Route::get('education', 'SurveyController@getEducation');
+Route::post('education', 'SurveyController@postEducation');
 
 Route::get('education-timeline', function () {
 	return view('survey.education-timeline');

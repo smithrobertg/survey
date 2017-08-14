@@ -1,9 +1,8 @@
-﻿<!doctype html>
-<html>
-<head>
-    <title>Survey - Welcome</title>
-</head>
-<body>
+@extends('layouts.survey')
+
+@section('title', 'Survey - Welcome')
+
+@section('content')
 <div class="row">
     <div class="col-md-12">
         <img class="pull-right" height="100" src="images/umb-logo-001.jpg" />
@@ -20,7 +19,5 @@
     <div class="text-center">
         <h3 class="text-right"><em>Julianne Siegfriedt</em></h3>
     </div>
-
 </div> 
-</body>
-</html>
+@endsection

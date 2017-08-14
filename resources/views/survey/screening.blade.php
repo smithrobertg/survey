@@ -1,10 +1,8 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title>Survey - Screening</title>
-</head>
-<body>
+@extends('layouts.survey')
 
+@section('title', 'Screening')
+
+@section('content')
 <h1 class="text-center">Screening Questions</h1>
 
 <form class="form-horizontal">
@@ -35,6 +33,4 @@
     </div>
 
 </form>
-
-</body>
-</html>
+@endsection

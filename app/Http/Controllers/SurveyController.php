@@ -56,4 +56,18 @@ class SurveyController extends Controller
 
         return view('survey.timeline.family-background');
     }
+
+    public function getEducation()
+    {
+        return view('survey.education');
+    }
+
+    public function postEducation(Request $request)
+    {
+        // $education = new Education;
+
+        // $education->events = implode(", ", $request->input('education_events');
+
+        return view('survey.education-timeline');
+    }
 }

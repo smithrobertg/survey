@@ -1,15 +1,17 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title>Survey - Consent</title>
-    <style>
-        #formTitle {
-            border: 1px solid;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
+@extends('layouts.survey')
+
+@section('title', 'Consent')
+
+@section('head')
+<style>
+    #formTitle {
+        border: 1px solid;
+        text-align: center;
+    }
+</style>
+@endsection
+
+@section('content')
 <div class="row">
     <div class="col-sm-offset-2 col-sm-8">
         <h2 id="formTitle">
@@ -31,7 +33,7 @@
                 The head researcher for this study is PhD Candidate, Julianne Siegfriedt, MA in the Department of Sociology at UMass Boston. Please read this letter and feel free to ask questions. You may contact Julianne directly with any questions at 617-750-7425 or email at <a href="mailto:Julianne.Siegfriedt@umb.edu">Julianne.Siegfriedt@umb.edu</a>. You may also contact the faculty advisor, Stephanie Hartwell, PhD at <a href="mailto:Stephanie.Hartwell@umb.edu">Stephanie.Hartwell@umb.edu</a> or at 617-287-6529.
             </p>
             <h3><strong>Description of the Project</strong></h3>
-                <p>The purpose of this research is to answer three questions about survivors:</p>
+            <p>The purpose of this research is to answer three questions about survivors:</p>
             <ol class="col-sm-offset-1">
                 <li>What obstacles with family, school, work, social, and criminal justice system exist?</li>
                 <li>How did interactions with these institutions change after turning 18?</li>
@@ -75,11 +77,9 @@
             </p>
             <div class="text-center">
                 <a href="/thankyou-for-participating" class="btn btn-lg btn-success">Continue</a>
-                <input type="submit" value ="Continue" class="btn btn-danger btn-lg" />
+                <input type="submit" value="Continue" class="btn btn-danger btn-lg" />
             </div>
         </form>
     </div>
 </div>
-
-</body>
-</html>
+@endsection
