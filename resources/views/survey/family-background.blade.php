@@ -8,7 +8,10 @@
 
 <h3>While you were growing up, during your first <strong>18 years of life</strong>…<em>(check all that apply)</em></h3>
 
-<form>
+<form method="post" action="/family-background">
+
+    {{ csrf_field() }}
+
     <div class="form-group row">
         <label>Did a parent, guardian, or caregiver get married?</label>
 
@@ -83,8 +86,6 @@
                 Your family didn’t look out for each other, feel close to each other, or support each other?
             </label>
         </div>
-    </div>
-    <div class="form-group">
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="often_feel_that[]" value="Not enough to eat/dirty clothes/no one to protect you">
@@ -128,8 +129,6 @@
                 <strong>Sometimes or often</strong> kicked, bitten, hit with a fist, or hit with something harder?
             </label>
         </div>
-    </div>
-    <div class="form-group">
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="mother_or_stepmother[]" value="Repeatedly hit/threatened with gun or knife">
@@ -153,25 +152,213 @@
         </div>
     </div>
 
+    <div class="form-group row">
+        <label>A household member was depressed or mentally ill or did a household member attempt suicide?</label>
+
+        <div class="form-check form-check-inline has-success">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="household_member_depressed_mentally_ill_suicide" id="radioYes" value="Yes"> Yes
+            </label>
+        </div>
+        <div class="form-check form-check-inline has-danger">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="household_member_depressed_mentally_ill_suicide" id="radioNo" value="No"> No
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label>A household member went to prison?</label>
+
+        <div class="form-check form-check-inline has-success">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="household_member_prison" id="radioYes" value="Yes"> Yes
+            </label>
+        </div>
+        <div class="form-check form-check-inline has-danger">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="household_member_prison" id="radioNo" value="No"> No
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label>Someone else came to live with you (bf or gf of parent, aunt, uncle, etc.)?</label>
+
+        <div class="form-check form-check-inline has-success">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="someone_else_came_to_live_with" id="radioYes" value="Yes"> Yes
+            </label>
+        </div>
+        <div class="form-check form-check-inline has-danger">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="someone_else_came_to_live_with" id="radioNo" value="No"> No
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label>You moved around a lot?</label>
+
+        <div class="form-check form-check-inline has-success">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="moved_around_alot" id="radioYes" value="Yes"> Yes
+            </label>
+        </div>
+        <div class="form-check form-check-inline has-danger">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="moved_around_alot" id="radioNo" value="No"> No
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label>You experienced homelessness?</label>
+
+        <div class="form-check form-check-inline has-success">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="homeless" id="radioYes" value="Yes"> Yes
+            </label>
+        </div>
+        <div class="form-check form-check-inline has-danger">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="homeless" id="radioNo" value="No"> No
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label>You ran away?</label>
+
+        <div class="form-check form-check-inline has-success">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="ran_away" id="radioYes" value="Yes"> Yes
+            </label>
+        </div>
+        <div class="form-check form-check-inline has-danger">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="ran_away" id="radioNo" value="No"> No
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label>Your family received public assistance (food stamps, disability, unemployment, etc.)?</label>
+
+        <div class="form-check form-check-inline has-success">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="public_assistance" id="radioYes" value="Yes"> Yes
+            </label>
+        </div>
+        <div class="form-check form-check-inline has-danger">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="public_assistance" id="radioNo" value="No"> No
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label>Your family could not afford heat or water (or other basic utilities)?</label>
+
+        <div class="form-check form-check-inline has-success">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="could_not_afford_heat_or_water" id="radioYes" value="Yes"> Yes
+            </label>
+        </div>
+        <div class="form-check form-check-inline has-danger">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="could_not_afford_heat_or_water" id="radioNo" value="No"> No
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label>Your family experienced poverty?</label>
+
+        <div class="form-check form-check-inline has-success">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="poverty" id="radioYes" value="Yes"> Yes
+            </label>
+        </div>
+        <div class="form-check form-check-inline has-danger">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="poverty" id="radioNo" value="No"> No
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label>You used drugs or alcohol?</label>
+
+        <div class="form-check form-check-inline has-success">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="used_drugs_alcohol" id="radioYes" value="Yes"> Yes
+            </label>
+        </div>
+        <div class="form-check form-check-inline has-danger">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="used_drugs_alcohol" id="radioNo" value="No"> No
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label>You were addicted to drugs or alcohol?</label>
+
+        <div class="form-check form-check-inline has-success">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="addicted_drugs_alcohol" id="radioYes" value="Yes"> Yes
+            </label>
+        </div>
+        <div class="form-check form-check-inline has-danger">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="addicted_drugs_alcohol" id="radioNo" value="No"> No
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label>You felt like your life was threatened?</label>
+
+        <div class="form-check form-check-inline has-success">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="felt_life_threatened" id="radioYes" value="Yes"> Yes
+            </label>
+        </div>
+        <div class="form-check form-check-inline has-danger">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="felt_life_threatened" id="radioNo" value="No"> No
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label>You lived in foster care?</label>
+
+        <div class="form-check form-check-inline has-success">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="foster_care" id="radioYes" value="Yes"> Yes
+            </label>
+        </div>
+        <div class="form-check form-check-inline has-danger">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="foster_care" id="radioNo" value="No"> No
+            </label>
+        </div>
+
+        <label for="age_foster_care_ended" class="form-label">Age foster card ended</label>
+        <input type="text" class="form-control" name="age_foster_care_ended" placeholder="Age">
+    </div>
+
+    <div class="form-group">
+        <label for="other_family_events" class="form-label">Other exciting or difficult family events that stood out to you? List here:</label>
+        <textarea class="form-control" name="other_family_events"></textarea>
+    </div>
+
     <button type="submit" class="btn btn-primary">Save and Continue &rarr;</button>
 </form>
 
- 	A household member was depressed or mentally ill or did a household member attempt suicide
- 	A household member went to prison
- 	Someone else came to live with you (bf or gf of parent, aunt, uncle, etc.)
- 	You moved around a lot
- 	You experienced homelessness
- 	You ran away
- 	Your family received public assistance (food stamps, disability, unemployment, etc.)
- 	Your family could not afford heat or water (or other basic utilities)
- 	Your family experienced poverty
- 	You used drugs or alcohol
- 	You were addicted to drugs or alcohol
- 	You felt like your life was threatened
- 	Lived in foster care*
- 	Other exciting or difficult family events that stood out to you? List here: _________
 ——If bolded questions are checked, will be asked to place in timeline——
-*note for foster care, also ask age foster care ended
 
 @endsection
 

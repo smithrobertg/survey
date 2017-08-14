@@ -15,7 +15,7 @@ class CreateDemographicsTable extends Migration
     {
         Schema::create('demographics', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('survey_id')->default(0);;
+            $table->integer('survey_id')->unsigned()->default(0);;
             $table->integer('participant_id')->default(0);
             $table->string('gender')->nullable();
             $table->string('gender_self_describe')->nullable();

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Orientation;
 use App\Survey;
+use App\FamilyBackground;
 use Illuminate\Http\Request;
 
 class SurveyController extends Controller
@@ -44,9 +46,13 @@ class SurveyController extends Controller
 
     public function postFamilyBackground(Request $request)
     {
-        //$familyBackground = new FamilyBackground;
+        dd($request);
 
-        //$familyBackground->parent_got_married = $request->input('parent_got_married');
+        $familyBackground = new \App\FamilyBackground;
+
+        $familyBackground->parent_got_married = $request->input('parent_got_married');
+
+        $familyBackground->save();
 
         return view('survey.timeline.family-background');
     }
