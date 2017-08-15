@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Orientation;
 use App\Survey;
 use App\FamilyBackground;
+use App\Education;
 use Illuminate\Http\Request;
 
 class SurveyController extends Controller
@@ -48,7 +49,7 @@ class SurveyController extends Controller
     {
         dd($request);
 
-        $familyBackground = new \App\FamilyBackground;
+        $familyBackground = new FamilyBackground;
 
         $familyBackground->parent_got_married = $request->input('parent_got_married');
 
@@ -64,9 +65,11 @@ class SurveyController extends Controller
 
     public function postEducation(Request $request)
     {
-        // $education = new Education;
+        $education = new Education;
 
-        // $education->events = implode(", ", $request->input('education_events');
+        $education->events = implode(", ", $request->input('education_events'));
+
+        $education->save();
 
         return view('survey.education-timeline');
     }
