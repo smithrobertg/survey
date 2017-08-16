@@ -84,17 +84,15 @@ Route::get('timeline/orientation', function () {
 Route::get('family-background', 'SurveyController@getFamilyBackground');
 Route::post('family-background', 'SurveyController@postFamilyBackground');
 
-Route::get('family-background-timeline', function () {
-	return view('survey.family-background-timeline');
-});
+Route::get('family-background-timeline', 'SurveyController@getFamilyBackground');
+Route::post('family-background-timeline', 'SurveyController@postFamilyBackground');
 
 Route::get('timeline/family-background', function () {
 	return view('survey.timeline.family-background');
 });
 
-Route::get('family-background-followup', function () {
-	return view('survey.family-background-followup');
-});
+Route::get('family-background-followup', 'SurveyController@getFamilyBackgroundFollowup');
+Route::post('family-background-followup', 'SurveyController@postFamilyBackgroundFollowup');
 
 Route::get('education', 'SurveyController@getEducation');
 Route::post('education', 'SurveyController@postEducation');

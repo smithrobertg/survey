@@ -55,7 +55,34 @@ class SurveyController extends Controller
 
         $familyBackground->save();
 
+        //return view('survey.timeline.family-background');
+        return view('survey.family-background-timeline');
+    }
+
+    public function getFamilyBackgoundTimeline()
+    {
+        return view('survey.family-background-timeline');
+    }
+
+    public function postFamilyBackgroundTimeline(Request $request)
+    {
         return view('survey.timeline.family-background');
+    }
+
+    public function getFamilyBackgroundFollowup()
+    {
+        return imap_fetch_overview('survey.family-background-followup');
+    }
+
+    public function postFamilyBackgroundFollowup(Request $request)
+    {
+        $familyBackgoundFollowup = new FamilyBackgroundFollowup;
+
+        $familyBackgoundFollowup->turned_to_for_support = implode(", ", $request->input('turned_to_for_support'));
+
+        $familyBackgoundFollowup->save();
+
+        return view('survey.education');
     }
 
     public function getEducation()

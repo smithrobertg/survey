@@ -28,13 +28,13 @@
     <div class="form-group">
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" value="">
+                <input class="form-check-input" type="checkbox" name="selections[]" value="">
                 Option one is this and that&mdash;be sure to include why it's great
             </label>
         </div>
         <div class="form-check disabled">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" value="" disabled>
+                <input class="form-check-input" type="checkbox" name="selections[]" value="" disabled>
                 Option two is disabled
             </label>
         </div>
