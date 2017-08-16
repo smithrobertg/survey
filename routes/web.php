@@ -81,6 +81,8 @@ Route::get('timeline/orientation', function () {
 	return view('survey.timeline.orientation');
 });
 
+// Family Background routes with timeline and followup questions
+
 Route::get('family-background', 'SurveyController@getFamilyBackground');
 Route::post('family-background', 'SurveyController@postFamilyBackground');
 
@@ -94,32 +96,34 @@ Route::get('timeline/family-background', function () {
 Route::get('family-background-followup', 'SurveyController@getFamilyBackgroundFollowup');
 Route::post('family-background-followup', 'SurveyController@postFamilyBackgroundFollowup');
 
+// Education routes with timeline
+
 Route::get('education', 'SurveyController@getEducation');
 Route::post('education', 'SurveyController@postEducation');
 
-Route::get('education-timeline', function () {
-	return view('survey.education-timeline');
-});
+Route::get('education-timeline', 'SurveyController@getEducationTimeline');
+Route::post('education-timeline', 'SurveyController@postEducationTimeline');
 
 Route::get('timeline/education', function () {
 	return view('survey.timeline.education');
 });
 
-Route::get('work-housing', function () {
-	return view('survey.work-housing');
-});
+// Work/Housing routes with timeline and followup questions
 
-Route::get('work-housing-timeline', function () {
-	return view('survey.work-housing-timeline');
-});
+Route::get('work-housing', 'SurveyController@getWorkHousing');
+Route::post('work-housing', 'SurveyController@postWorkHousing');
+
+Route::get('work-housing-timeline', 'SurveyController@getWorkHousingTimeline');
+Route::post('work-housing-timeline', 'SurveyController@postWorkHousingTimeline');
 
 Route::get('timeline/work-housing', function () {
 	return view('survey.timeline.work-housing');
 });
 
-Route::get('work-housing-followup', function () {
-	return view('survey.work-housing-followup');
-});
+Route::get('work-housing-followup', 'SurveyController@getWorkHousingFollowup');
+Route::post('work-housing-followup', 'SurveyController@postWorkHousingFollowup');
+
+// Social Relationship routes with timeline and followup questions
 
 Route::get('social-relationships', function () {
 	return view('survey.social-relationships');
@@ -137,6 +141,8 @@ Route::get('social-relationships-followup', function () {
 	return view('survey.social-relationships-followup');
 });
 
+// Criminal Justice routes with timeline and followup questions
+
 Route::get('criminal-justice', function () {
 	return view('survey.criminal-justice');
 });
@@ -153,6 +159,8 @@ Route::get('criminal-justice-followup', function () {
 	return view('survey.criminal-justice-followup');
 });
 
+// Exploitation routes with timeline and followup questions
+
 Route::get('exploitation', function () {
 	return view('survey.exploitation');
 });
@@ -168,6 +176,8 @@ Route::get('timeline/exploitation', function () {
 Route::get('exploitation-followup', function () {
 	return view('survey.exploitation-followup');
 });
+
+// Services routes with timeline and followup questions
 
 Route::get('services', function () {
 	return view('survey.services');

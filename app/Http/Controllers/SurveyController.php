@@ -71,7 +71,7 @@ class SurveyController extends Controller
 
     public function getFamilyBackgroundFollowup()
     {
-        return imap_fetch_overview('survey.family-background-followup');
+        return view('survey.family-background-followup');
     }
 
     public function postFamilyBackgroundFollowup(Request $request)
@@ -100,4 +100,51 @@ class SurveyController extends Controller
 
         return view('survey.education-timeline');
     }
+
+    public function getEducationTimeline()
+    {
+        return view('survey.education-timeline');
+    }
+
+    public function postEducationTimeline(Request $request)
+    {
+        return view('survey.timeline.eduction');
+    }
+
+    // Work/Housing controllers with timeline and followup questions
+
+    public function getWorkHousing()
+    {
+        return view('survey.work-housing');
+    }
+
+    public function postWorkHousing(Request $request)
+    {
+        // save work/housing form $request data
+
+        return view('survey.work-housing-timeline');
+    }
+
+    public function getWorkHousingTimeline()
+    {
+        return view('survey.work-housing-timeline');
+    }
+
+    public function postWorkHousingTimeline(Request $request)
+    {
+        return view('survey.timeline.work-housing');
+    }
+
+    public function getWorkHousingFollowup(Request $request)
+    {
+        return view('survey.work-housing-followup');
+    }
+
+    public function postWorkHousingFollowup(Request $request)
+    {
+        // save work/housing followup form $request data
+
+        return view('survey.social-relationships');
+    }
+
 }
