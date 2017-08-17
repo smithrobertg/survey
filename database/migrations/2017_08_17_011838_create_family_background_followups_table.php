@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEducationTable extends Migration
+class CreateFamilyBackgroundFollowupsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateEducationTable extends Migration
      */
     public function up()
     {
-        Schema::create('education', function (Blueprint $table) {
+        Schema::create('family_background_followups', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('survey_id')->unsigned()->default(0);
-            $table->text('events')->nullable();
-            $table->text('other_events')->nullable();
+            $table->text('turned_to_for_support')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateEducationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('education');
+        Schema::dropIfExists('family_background_followups');
     }
 }

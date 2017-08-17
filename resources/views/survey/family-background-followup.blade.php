@@ -278,8 +278,10 @@
             <label for="roleLeavingFosterCareHad">What role, if any, did turning 18 or leaving foster care have for your life at the time? (open-ended)</label>
             <textarea class="form-control" name="role_leaving_foster_care_had" id="roleLeavingFosterCareHad" rows="3"></textarea>
         </div>
-
     </div> <!-- Foster care questions-->
+
+    <button class="btn btn-primary">Save and Continue &rarr;</button>
+
 </form>
 
 @endsection

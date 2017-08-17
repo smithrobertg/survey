@@ -27,7 +27,6 @@
         </div>
     </div>
 
-    // check list option group
     <h3>Did a parent or other adult in the household <strong>often</strong>:</h3>
     <div class="form-group">
         <div class="form-check">
@@ -172,12 +171,12 @@
 
         <div class="form-check form-check-inline has-success">
             <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="household_member_prison" id="radioYes" value="Yes"> Yes
+                <input class="form-check-input" type="radio" name="household_member_went_to_prison" id="radioYes" value="Yes"> Yes
             </label>
         </div>
         <div class="form-check form-check-inline has-danger">
             <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="household_member_prison" id="radioNo" value="No"> No
+                <input class="form-check-input" type="radio" name="household_member_went_to_prison" id="radioNo" value="No"> No
             </label>
         </div>
     </div>
@@ -345,8 +344,9 @@
                 <input class="form-check-input" type="radio" name="foster_care" id="radioNo" value="No"> No
             </label>
         </div>
-
-        <label for="age_foster_care_ended" class="form-label">Age foster card ended</label>
+    </div>
+    <div class="form-group row">
+        <label for="age_foster_care_ended" class="col-form-label">Age foster card ended</label>
         <input type="text" class="form-control" name="age_foster_care_ended" placeholder="Age">
     </div>
 
