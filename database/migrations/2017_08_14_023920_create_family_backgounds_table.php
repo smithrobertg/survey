@@ -25,21 +25,19 @@ class CreateFamilyBackgoundsTable extends Migration
             $table->string('lived_with_alchoholic_or_drug_user');
             $table->string('household_member_depressed_mentally_ill_suicide');
             $table->string('household_member_went_to_prison');
-            $table->string('field');
-            $table->string('field');
-            $table->string('field');
-            $table->string('field');
-            $table->string('field');
-            $table->string('field');
-            $table->string('field');
-            $table->string('field');
-            $table->string('field');
-            $table->string('field');
-            $table->string('field');
-            $table->string('field');
-            $table->string('field');
-            $table->string('field');
-            $table->string('field');
+            $table->string('someone_else_came_to_live_with');
+            $table->string('moved_around_alot');
+            $table->string('homeless');
+            $table->string('ran_away');
+            $table->string('public_assistance');
+            $table->string('could_not_afford_heat_or_water');
+            $table->string('poverty');
+            $table->string('used_drugs_alcohol');
+            $table->string('addicted_drugs_alcohol');
+            $table->string('felt_life_threatened');
+            $table->string('foster_care');
+            $table->string('age_foster_care_ended');
+            $table->string('other_family_events');
         });
     }
 
