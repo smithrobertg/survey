@@ -53,6 +53,27 @@ class SurveyController extends Controller
         $familyBackground = new FamilyBackground;
 
         $familyBackground->parent_got_married = $request->input('parent_got_married');
+        $familyBackground->parent_or_adult_often = $request->input('parent_or_adult_often');
+        $familyBackground->adult_or_person_5_years_older_ever = $request->input('adult_or_person_5_years_older_ever');
+        $familyBackground->often_feel_that = $request->input('often_feel_that');
+        $familyBackground->parent_separated_divorced = $request->input('parent_separated_divorced');
+        $familyBackground->mother_or_stepmother = $request->input('mother_or_stepmother');
+        $familyBackground->lived_with_alchoholic_or_drug_user = $request->input('lived_with_alchoholic_or_drug_user');
+        $familyBackground->household_member_depressed_mentally_ill_suicide = $request->input('household_member_depressed_mentally_ill_suicide');
+        $familyBackground->household_member_went_to_prison = $request->input('household_member_went_to_prison');
+        $familyBackground->someone_else_came_to_live_with = $request->input('someone_else_came_to_live_with');
+        $familyBackground->moved_around_alot = $request->input('moved_around_alot');
+        $familyBackground->homeless = $request->input('homeless');
+        $familyBackground->ran_away = $request->input('ran_away');
+        $familyBackground->public_assistance = $request->input('public_assistance');
+        $familyBackground->could_not_afford_heat_or_water = $request->input('could_not_afford_heat_or_water');
+        $familyBackground->poverty = $request->input('poverty');
+        $familyBackground->used_drugs_alcohol = $request->input('used_drugs_alcohol');
+        $familyBackground->addicted_drugs_alcohol = $request->input('addicted_drugs_alcohol');
+        $familyBackground->felt_life_threatened = $request->input('felt_life_threatened');
+        $familyBackground->foster_care = $request->input('foster_care');
+        $familyBackground->age_foster_care_ended = $request->input('age_foster_care_ended');
+        $familyBackground->other_family_events = $request->input('other_family_events');
 
         $familyBackground->save();
 

@@ -38,6 +38,7 @@ class CreateFamilyBackgoundsTable extends Migration
             $table->string('foster_care');
             $table->string('age_foster_care_ended');
             $table->string('other_family_events');
+            $table->timestamps();
         });
     }
 
