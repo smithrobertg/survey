@@ -71,81 +71,85 @@
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Got GED" />
-                Get a GED
+                <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Trouble finding housing" />
+                Had trouble finding housing
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Apply to college" />
-                Apply to college
+                <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Made above minimum wage" />
+                Made above minimum wage
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Accepted to college but did not attend" />
-                Get into a college, but did not attend
+                <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Received public assistance" />
+                Received public assistance (food stamps, disability, welfare, etc.)
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Felt always in trouble with teachers" />
-                Felt like you were always getting into trouble with teachers/administrators
+                <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Experienced poverty as adult" />
+                Experienced poverty as an adult
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Felt treated unfairly" />
-                Felt like you were treated unfairly in school
+                <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Bought a house" />
+                Bought a house
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Feel school was a struggle/always falling behind" />
-                Feel like school was a struggle, always falling behind
+                <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Evicted" />
+                Ever been evicted
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Skip school regularly" />
-                Skip school regularly at any period of time
+                <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Lived with significant other for financial reasons" />
+                Lived with a significant other for financial reasons
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Left school for a period of time" />
-                Ever leave school for a period of time
+                <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Lived with family member for financial reasons" />
+                Lived with a family member for financial reasons
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Abused by teacher/someone else" />
-                Experienced abuse by a teacher (or someone else at school)
+                <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Financially supported by significant other" />
+                Been financially supported by a significant other
+            </label>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label>Was this person ever a trafficker?</label>
+
+        <div class="form-check form-check-inline has-success">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="supported_by_trafficker" id="radioYes" value="Yes" />Yes
+            </label>
+        </div>
+        <div class="form-check form-check-inline has-danger">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="supported_by_trafficker" id="radioNo" value="No" />No
             </label>
         </div>
     </div>
 
     <div class="form-group">
-        <label class="form-label" for="other_education_events">
-            Other difficult or exciting education events not mentioned above?
+        <label class="form-label" for="other_work_events">
+            Other difficult or exciting work events not mentioned above?
         </label>
-        <textarea class="form-control" id="other_education_events" name="other_education_events" rows="3"></textarea>
+        <textarea class="form-control" name="other_work_events" id="other_work_events" rows="3"></textarea>
     </div>
 
     <button class="btn btn-primary">Continue &rarr;</button>
-</form>
- 	
- 	Made above minimum wage
- 	Received public assistance (food stamps, disability, welfare, etc.)
- 	Experienced poverty as an adult
- 	Bought a house
- 	Ever been evicted
- 	Lived with a significant other for financial reasons 
- 	Lived with a family member for financial reasons
- 	Been financially supported by a significant other
- 	Was this person ever a trafficker? (yes/no)
- 	Other difficult or exciting work events not mentioned above? _________
 
+</form>
+ 	 
 ——If bolded questions are checked, will be asked to place in timeline——
 *for working PT/FT put in timeline ranges of time employed 40+ hours/week
 

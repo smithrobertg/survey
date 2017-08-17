@@ -15,6 +15,6 @@
  	You were addicted to drugs or alcohol (before turning 18)
  	Lived in foster care (age entered and age exited)
 
-    <a href="/timeline/family-background">Continue &rarr;</a>
+    <a href="/timeline/family-background" class="btn btn-primary">Continue &rarr;</a>
 </body>
 </html>

@@ -15,4 +15,5 @@
  	Lost custody of a child
  	Regained custody of a child
 
+    <a href="/timeline/social-relationships" class="btn btn-primary">Save and Continue to Timeline &rarr;</a>
 @endsection

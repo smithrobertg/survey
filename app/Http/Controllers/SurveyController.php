@@ -8,6 +8,8 @@ use App\Survey;
 use App\FamilyBackground;
 use App\FamilyBackgroundFollowup;
 use App\Education;
+use App\WorkHousing;
+use App\WorkHousingFollowup;
 use Illuminate\Http\Request;
 
 class SurveyController extends Controller
@@ -142,6 +144,13 @@ class SurveyController extends Controller
     public function postWorkHousing(Request $request)
     {
         // save work/housing form $request data
+        $workHousing = new WorkHousing;
+
+        $workHousing->work_housing_events = implode(", ", $request->input('work_housing_events'));
+        $workHousing->supported_by_trafficker = $request->input('supported_by_trafficker');
+        $workHousing->other_work_events = $request->input('other_work_events');
+
+        $workHousing->save();
 
         return view('survey.work-housing-timeline');
     }
@@ -164,8 +173,44 @@ class SurveyController extends Controller
     public function postWorkHousingFollowup(Request $request)
     {
         // save work/housing followup form $request data
+        $workHousingFollowup = new WorkHousingFollowup;
+
+        $workHousingFollowup->work_applied_for_outside_sex_trade = $request->input('work_applied_for_outside_sex_trade');
+        $workHousingFollowup->when_applied_for_first_job = $request->input('when_applied_for_first_job');
+        $workHousingFollowup->when_applied_for_first_job_as_adult = $request->input('when_applied_for_first_job_as_adult');
+
+        $workHousingFollowup->save();
 
         return view('survey.social-relationships');
     }
+
+    public function getSocialRelationships()
+    {
+        return view('survey.social-relationships');
+    }
+
+    public function postSocialRelationships()
+    {
+        $socialRelationships = new SocialRelationships;
+
+        $socialRelationships->social_relationship_events = implode(", ", $request->input('social_relationship_events'));
+        $socialRelationships->tried_to_reconnect_experience = $request->input('tried_to_reconnect_experience');
+        $socialRelationships->other_social_relationship_events = $request->input('other_social_relationship_events');
+
+        $socialRelationships->save();
+
+        return view('survey.social-relationships-timeline');
+    }
+
+    public function getSocialRelationshipsTimeline()
+    {
+        return view('survey.social-relationships-timeline');
+    }
+
+    public function postSocialRelationshipsTimeline(Request $request)
+    {
+        return view('survey.timeline.social-relationships');
+    }
+
 
 }

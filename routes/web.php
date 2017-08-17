@@ -125,20 +125,14 @@ Route::post('work-housing-followup', 'SurveyController@postWorkHousingFollowup')
 
 // Social Relationship routes with timeline and followup questions
 
-Route::get('social-relationships', function () {
-	return view('survey.social-relationships');
-});
+Route::get('social-relationships', 'SurveyController@getSocialRelationships');
+Route::post('social-relationships', 'SurveyController@postSocialRelationships');
 
-Route::get('social-relationships-timeline', function () {
-	return view('survey.social-relationships-timeline');
-});
+Route::get('social-relationships-timeline', 'SurveyController@getSocialRelationshipsTimeline');
+Route::get('social-relationships-timeline', 'SurveyController@postSocialRelationshipsTimeline');
 
 Route::get('timeline/social-relationships', function () {
 	return view('survey.timeline.social-relationships');
-});
-
-Route::get('social-relationships-followup', function () {
-	return view('survey.social-relationships-followup');
 });
 
 // Criminal Justice routes with timeline and followup questions
