@@ -111,12 +111,12 @@
             <label>Did you experience any <strong>positive</strong> placements?</label>
             <div class="form-check form-check-inline has-success">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="foster_positive_placements" id="fosterPositivePlacementsYes" value="Yes"> Yes
+                    <input class="form-check-input" type="radio" name="positive_foster_placements" id="fosterPositivePlacementsYes" value="Yes"> Yes
                 </label>
             </div>
             <div class="form-check form-check-inline has-danger">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="foster_positive_placements" id="fosterPositivePlacementsNo" value="No"> No
+                    <input class="form-check-input" type="radio" name="positive_foster_placements" id="fosterPositivePlacementsNo" value="No"> No
                 </label>
             </div>
         </div>
@@ -125,25 +125,25 @@
             <legend class="col-form-legend">If yes, how many placements were positive?</legend>
             <div class="form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="positive_foster_placements" id="positivePlacements1-2" value="1-2">
+                    <input class="form-check-input" type="radio" name="how_many_positive_foster_placements" id="positivePlacements1-2" value="1-2">
                     1-2
                 </label>
             </div>
             <div class="form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="positive_foster_placements" id="positivePlacements3-4" value="3-4">
+                    <input class="form-check-input" type="radio" name="how_many_positive_foster_placements" id="positivePlacements3-4" value="3-4">
                     3-4
                 </label>
             </div>
             <div class="form-check ">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="positive_foster_placements" id="positivePlacements4-5" value="5-6">
+                    <input class="form-check-input" type="radio" name="how_many_positive_foster_placements" id="positivePlacements4-5" value="5-6">
                     5-6
                 </label>
             </div>
             <div class="form-check ">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="positive_foster_placements" id="positivePlacements7+" value="7+">
+                    <input class="form-check-input" type="radio" name="how_many_positive_foster_placements" id="positivePlacements7+" value="7+">
                     7 or more
                 </label>
             </div>
@@ -151,19 +151,19 @@
 
         <div class="form-group">
             <label for="positiveFosterPlacementDescription">What made the experiences positive? (open-ended)</label>
-            <textarea class="form-control" name="positive_foster_placements_description" id="positiveFosterPlacementDescription" rows="3"></textarea>
+            <textarea class="form-control" name="how_many_positive_foster_placements_description" id="positiveFosterPlacementDescription" rows="3"></textarea>
         </div>
 
         <div class="form-group row">
             <label>Did you experience any <strong>negative</strong> placements?</label>
             <div class="form-check form-check-inline has-success">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="foster_positive_placements" id="fosterNegativePlacementsYes" value="Yes"> Yes
+                    <input class="form-check-input" type="radio" name="foster_negative_placements" id="fosterNegativePlacementsYes" value="Yes"> Yes
                 </label>
             </div>
             <div class="form-check form-check-inline has-danger">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="foster_positive_placements" id="fosterNegativePlacementsNo" value="No"> No
+                    <input class="form-check-input" type="radio" name="foster_negative_placements" id="fosterNegativePlacementsNo" value="No"> No
                 </label>
             </div>
         </div>
@@ -198,7 +198,7 @@
 
         <div class="form-group">
             <label for="negativeFosterPlacementDescription">What made the experiences negative? (open-ended)</label>
-            <textarea class="form-control" negative_foster_placements_description id="negativeFosterPlacementDescription" rows="3"></textarea>
+            <textarea class="form-control" name="negative_foster_placements_description"  id="negativeFosterPlacementDescription" rows="3"></textarea>
         </div>
 
         <fieldset class="form-group">

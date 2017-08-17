@@ -77,7 +77,6 @@ class SurveyController extends Controller
 
         $familyBackground->save();
 
-        //return view('survey.timeline.family-background');
         return view('survey.family-background-timeline');
     }
 
