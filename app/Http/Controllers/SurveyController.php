@@ -53,11 +53,11 @@ class SurveyController extends Controller
         $familyBackground = new FamilyBackground;
 
         $familyBackground->parent_got_married = $request->input('parent_got_married');
-        $familyBackground->parent_or_adult_often = $request->input('parent_or_adult_often');
-        $familyBackground->adult_or_person_5_years_older_ever = $request->input('adult_or_person_5_years_older_ever');
-        $familyBackground->often_feel_that = $request->input('often_feel_that');
+        $familyBackground->parent_or_adult_often = implode(", ", $request->input('parent_or_adult_often'));
+        $familyBackground->adult_or_person_5_years_older_ever = implode(", ", $request->input('adult_or_person_5_years_older_ever'));
+        $familyBackground->often_feel_that = implode(", ", $request->input('often_feel_that'));
         $familyBackground->parent_separated_divorced = $request->input('parent_separated_divorced');
-        $familyBackground->mother_or_stepmother = $request->input('mother_or_stepmother');
+        $familyBackground->mother_or_stepmother = implode(", ", $request->input('mother_or_stepmother'));
         $familyBackground->lived_with_alchoholic_or_drug_user = $request->input('lived_with_alchoholic_or_drug_user');
         $familyBackground->household_member_depressed_mentally_ill_suicide = $request->input('household_member_depressed_mentally_ill_suicide');
         $familyBackground->household_member_went_to_prison = $request->input('household_member_went_to_prison');
