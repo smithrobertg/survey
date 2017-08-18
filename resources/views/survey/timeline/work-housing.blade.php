@@ -6,4 +6,5 @@
 
 <p>Show Timeline with Orientation answers, Family events, Education events, Work/Housing events</p>
 
+    <a href="/work-housing-followup" class="btn btn-primary">Continue to Work/Housing followup questions &rarr;</a>
 @endsection

@@ -6,6 +6,7 @@
 <h2>CHECKLIST OF SOCIAL RELATIONSHIP EVENTS</h2>
 
 <form method="post" action="/social-relationships">
+    {{ csrf_field() }}
     <fieldset class="form-group">
         <legend><em>Have you…(check all that apply)</em></legend>
         <div class="form-check">

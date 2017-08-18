@@ -5,7 +5,8 @@
 @section('content')
 <h2>ADDITIONAL WORK/HOUSING QUESTIONS</h2>
 
-<form method="post" action="/work=housing-followup">
+<form method="post" action="/work-housing-followup">
+    {{ csrf_field() }}
     <fieldset class="form-group">
         <legend>If applied for Part Time/Full Time work outside of the sex trade:</legend>
         <div class="form-check">
@@ -34,7 +35,7 @@
     </div>
 
     <div class="form-group">
-        <label for="when_applied_for_first_job_as_adult">If before 18, when did you apply for your first PT or FT job as an adult?</label>
+        <label for="when_applied_for_first_job_as_adult">If before 18, when did you apply for your first Part Time or Full Time job as an adult?</label>
         <input class="form-control" type="text" name="when_applied_for_first_job_as_adult" id="when_applied_for_first_job_as_adult" />
     </div>
 

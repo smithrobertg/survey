@@ -6,5 +6,5 @@
 
 <p>SHOW SOCIAL RELATIONSHIP EVENTS POPULATED IN TIMELINE</p>
 
-<a href="/survey/criminal-justice" class="btn btn-primary btn-lg">Continue to Criminal Jusice System &rarr;</a>
+<a href="/criminal-justice" class="btn btn-primary btn-lg">Continue to Criminal Jusice System &rarr;</a>
 @endsection

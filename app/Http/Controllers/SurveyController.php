@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Orientation;
 use App\Survey;
@@ -10,7 +11,7 @@ use App\FamilyBackgroundFollowup;
 use App\Education;
 use App\WorkHousing;
 use App\WorkHousingFollowup;
-use Illuminate\Http\Request;
+use App\SocialRelationships;
 
 class SurveyController extends Controller
 {
@@ -102,6 +103,20 @@ class SurveyController extends Controller
         $familyBackgoundFollowup = new FamilyBackgroundFollowup;
 
         $familyBackgoundFollowup->turned_to_for_support = implode(", ", $request->input('turned_to_for_support'));
+        $familyBackgoundFollowup->turned_to_for_support_other = $request->input('turned_to_for_support_other');
+        $familyBackgoundFollowup->foster_care_places_lived = $request->input('foster_care_places_lived');
+        $familyBackgoundFollowup->positive_foster_placements = $request->input('positive_foster_placements');
+        $familyBackgoundFollowup->how_many_positive_foster_placements = $request->input('how_many_positive_foster_placements');
+        $familyBackgoundFollowup->positive_foster_placements_description = $request->input('positive_foster_placements_description');
+        $familyBackgoundFollowup->negative_foster_placements = $request->input('negative_foster_placements');
+        $familyBackgoundFollowup->how_many_negative_foster_placements = $request->input('how_many_negative_foster_placements');
+        $familyBackgoundFollowup->negative_foster_placements_description = $request->input('negative_foster_placements_description');
+        $familyBackgoundFollowup->reason_left_foster_care = $request->input('reason_left_foster_care');
+        $familyBackgoundFollowup->reason_left_foster_care_other = $request->input('reason_left_foster_care_other');
+        $familyBackgoundFollowup->option_to_sign_back_in_when_18 = $request->input('option_to_sign_back_in_when_18');
+        $familyBackgoundFollowup->signed_back_in_when_18 = $request->input('signed_back_in_when_18');
+        $familyBackgoundFollowup->sign_back_in_decision_factors = $request->input('sign_back_in_decision_factors');
+        $familyBackgoundFollowup->role_leaving_foster_care_had = $request->input('role_leaving_foster_care_had');
 
         $familyBackgoundFollowup->save();
 
@@ -189,7 +204,7 @@ class SurveyController extends Controller
         return view('survey.social-relationships');
     }
 
-    public function postSocialRelationships()
+    public function postSocialRelationships(Request $request)
     {
         $socialRelationships = new SocialRelationships;
 
