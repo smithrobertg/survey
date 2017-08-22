@@ -12,6 +12,12 @@ use App\Education;
 use App\WorkHousing;
 use App\WorkHousingFollowup;
 use App\SocialRelationships;
+use App\CriminalJustice;
+use App\CriminalJusticeFollowup;
+use App\Exploitation;
+use App\ExploitationFollowup;
+use App\Services;
+use App\ServicesFollowup;
 
 class SurveyController extends Controller
 {
@@ -19,9 +25,9 @@ class SurveyController extends Controller
     public function getOrientationQuestions()
     {
         $survey_id = 1;
-    	$survey = Survey::find($survey_id);
+        $survey = Survey::find($survey_id);
 
-    	return view('survey.orientation-questions');
+        return view('survey.orientation-questions');
     }
 
     public function postOrientationQuestions(Request $request)
@@ -227,5 +233,158 @@ class SurveyController extends Controller
         return view('survey.timeline.social-relationships');
     }
 
+    // Criminal Justice questions controller
 
+    public function getCriminalJustice()
+    {
+        return view('survey.criminal-justice');
+    }
+
+    public function postCriminalJustice(Request $request)
+    {
+        $criminalJustice = new CriminalJustice;
+
+        $criminalJustice->criminal_justice_events = implode(", ", $request->input('criminal_justice_events'));
+        $criminalJustice->other_criminal_justice_events = $request->input('other_criminal_justice_events');
+
+        $criminalJustice->save();
+
+        return view('survey.criminal-justice-timeline');
+    }
+
+    public function getCriminalJusticeTimeline()
+    {
+        return view('survey.criminal-justice-timeline');
+    }
+
+    public function postCriminalJusticeTimeline(Request $request)
+    {
+        return view ('survey.timeline.criminal-justice');
+    }
+
+    public function getCriminalJusticeFollowup()
+    {
+        return view ('survey.criminal-justice-followup');
+    }
+
+    public function postCriminalJusticeFollowup(Request $request)
+    {
+        $criminalJusticeFollowup = new CriminalJusticeFollowup;
+
+        $criminalJusticeFollowup->issues_because_of_criminal_record = $request->input('issues_because_of_criminal_record');
+        $criminalJusticeFollowup->arrested_charges = $request->input('arrested_charges');
+        $criminalJusticeFollowup->convicted_charges = $request->input('convicted_charges');
+
+        $criminalJusticeFollowup->save();
+
+        return view ('survey.exploitation');
+    }
+
+    // Exploitation questions controller
+
+    public function getExploitation()
+    {
+        return view('survey.exploitation');
+    }
+
+    public function postExploitation(Request $request)
+    {
+        $exploitation = new Exploitation;
+
+        $exploitation->exploitation_events = implode(", ", $request->input('exploitation_events'));
+        $exploitation->sold_sex_before_18 = $request->input('sold_sex_before_18');
+        $exploitation->sold_sex_after_18 = $request->input('sold_sex_after_18');
+        $exploitation->age_first_sold_sex = $request->input('age_first_sold_sex');
+        $exploitation->age_last_sold_sex = $request->input('age_last_sold_sex');
+        $exploitation->times_tried_to_leave_sex_trade = $request->input('times_tried_to_leave_sex_trade');
+        $exploitation->returned_to_selling_sex = $request->input('returned_to_selling_sex');
+
+        $exploitation->save();
+
+        return view('survey.exploitation-timeline');
+    }
+
+    public function getExploitationTimeline()
+    {
+        return view('survey.exploitation-timeline');
+    }
+
+    public function postExploitationTimeline(Request $request)
+    {
+        return view ('survey.timeline.exploitation');
+    }
+
+    public function getExploitationFollowup()
+    {
+        return view ('survey.exploitation-followup');
+    }
+
+    public function postExploitationFollowup(Request $request)
+    {
+        $exploitationFollowup = new ExploitationFollowup;
+
+        $exploitationFollowup->first_instance_selling_sex = $request->input('first_instance_selling_sex');
+        $exploitationFollowup->why_returned_selling_sex = $request->input('why_returned_selling_sex');
+        $exploitationFollowup->how_take_care_of_self = $request->input('how_take_care_of_self');
+        $exploitationFollowup->how_react_to_stressful_situation = $request->input('how_react_to_stressful_situation');
+        $exploitationFollowup->other_exploitation_events = $request->input('other_exploitation_events');
+
+        $exploitationFollowup->save();
+
+        return view ('survey.services');
+    }
+
+    // Services questions controller
+
+    public function getServices()
+    {
+        return view('survey.services');
+    }
+
+    public function postServices(Request $request)
+    {
+        $services = new Services;
+
+//        $exploitation->exploitation_events = implode(", ", $request->input('exploitation_events'));
+//        $exploitation->sold_sex_before_18 = $request->input('sold_sex_before_18');
+//        $exploitation->sold_sex_after_18 = $request->input('sold_sex_after_18');
+//        $exploitation->age_first_sold_sex = $request->input('age_first_sold_sex');
+//        $exploitation->age_last_sold_sex = $request->input('age_last_sold_sex');
+//        $exploitation->times_tried_to_leave_sex_trade = $request->input('times_tried_to_leave_sex_trade');
+//        $exploitation->returned_to_selling_sex = $request->input('returned_to_selling_sex');
+
+//        $services->save();
+
+        return view('survey.services-timeline');
+    }
+
+    public function getServicesTimeline()
+    {
+        return view('survey.services-timeline');
+    }
+
+    public function postServicesTimeline(Request $request)
+    {
+        return view('survey.timeline.services');
+    }
+
+    public function getServicesFollowup()
+    {
+        return view ('survey.services-followup');
+    }
+
+    public function postServicesFollowup(Request $request)
+    {
+        $servicesFollowup = new ServicesFollowup;
+
+//        $exploitationFollowup->first_instance_selling_sex = $request->input('first_instance_selling_sex');
+//        $exploitationFollowup->why_returned_selling_sex = $request->input('why_returned_selling_sex');
+//        $exploitationFollowup->how_take_care_of_self = $request->input('how_take_care_of_self');
+//        $exploitationFollowup->how_react_to_stressful_situation = $request->input('how_react_to_stressful_situation');
+//        $exploitationFollowup->other_exploitation_events = $request->input('other_exploitation_events');
+
+//        $servicesFollowup->save();
+
+        return view ('survey.final-questions');
+    }
 }

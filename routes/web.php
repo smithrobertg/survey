@@ -137,57 +137,51 @@ Route::get('timeline/social-relationships', function () {
 
 // Criminal Justice routes with timeline and followup questions
 
-Route::get('criminal-justice', function () {
-	return view('survey.criminal-justice');
-});
+Route::get('criminal-justice', 'SurveyController@getCriminalJustice');
+Route::post('criminal-justice', 'SurveyController@postCriminalJustice');
 
-Route::get('criminal-justice-timeline', function () {
-	return view('survey.criminal-justice-timeline');
-});
+Route::get('criminal-justice-timeline', 'SurveyController@getCriminalJusticeTimeline');
+Route::post('criminal-justice-timeline', 'SurveyController@postCriminalJusticeTimeline');
 
 Route::get('timeline/criminal-justice', function () {
 	return view('survey.timeline.criminal-justice');
 });
 
-Route::get('criminal-justice-followup', function () {
-	return view('survey.criminal-justice-followup');
-});
+Route::get('criminal-justice-followup', 'SurveyController@getCriminalJusticeFollowup');
+Route::post('criminal-justice-followup', 'SurveyController@postCriminalJusticeFollowup');
+
 
 // Exploitation routes with timeline and followup questions
 
-Route::get('exploitation', function () {
-	return view('survey.exploitation');
-});
+Route::get('exploitation', 'SurveyController@getExploitation');
+Route::post('exploitation', 'SurveyController@postExploitation');
 
-Route::get('exploitation-timeline', function () {
-	return view('survey.exploitation-timeline');
-});
+Route::get('exploitation-timeline', 'SurveyController@getExploitationTimeline');
+Route::post('exploitation-timeline', 'SurveyController@postExploitationTimeline');
 
 Route::get('timeline/exploitation', function () {
-	return view('survey.timeline.exploitation');
+    return view('survey.timeline.exploitation');
 });
 
-Route::get('exploitation-followup', function () {
-	return view('survey.exploitation-followup');
-});
+Route::get('exploitation-followup', 'SurveyController@getExploitationFollowup');
+Route::post('exploitation-followup', 'SurveyController@postExploitationFollowup');
 
 // Services routes with timeline and followup questions
 
-Route::get('services', function () {
-	return view('survey.services');
-});
+Route::get('services', 'SurveyController@getServices');
+Route::post('services', 'SurveyController@postServices');
 
-Route::get('services-timeline', function () {
-	return view('survey.services-timeline');
-});
+Route::get('services-timeline', 'SurveyController@getServicesTimeline');
+Route::post('services-timeline', 'SurveyController@postServicesTimeline');
 
 Route::get('timeline/services', function () {
-	return view('survey.timeline.services');
+    return view('survey.timeline.services');
 });
 
-Route::get('services-followup', function () {
-	return view('survey.services-followup');
-});
+Route::get('services-followup', 'SurveyController@getServicesFollowup');
+Route::post('services-followup', 'SurveyController@postServicesFollowup');
+
+// Final questions and thank you message
 
 Route::get('final-questions', function () {
 	return view('survey.final-questions');

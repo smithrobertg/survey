@@ -5,6 +5,10 @@
 @section('content')
 
 <h2>TIMELINE OF SERVICES</h2>
-<p>For any of these questions, checked, present option for AGE, YEAR, RANGE and (hopefully) automatically populate in timeline.</p>
 
+    <form method="post" action="services-timeline.blade.php">
+        <p>For any of these questions, checked, present option for AGE, YEAR, RANGE and (hopefully) automatically populate in timeline.</p>
+
+        <button type="submit" class="btn btn-primary">Continue to Timeline &rarr;</button>
+    </form>
 @endsection

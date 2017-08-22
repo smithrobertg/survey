@@ -6,4 +6,5 @@
 
 <p>SHOW CRIMINAL JUSTICE EVENTS POPULATED IN TIMELINE</p>
 
+    <a href="/criminal-justice-followup" class="btn btn-primary btn-lg">Continue to Criminal Justice Followup Questions &rarr;</a>
 @endsection
