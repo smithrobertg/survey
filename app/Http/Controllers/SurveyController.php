@@ -375,13 +375,12 @@ class SurveyController extends Controller
     {
         $servicesFollowup = new ServicesFollowup;
 
-//        $exploitationFollowup->first_instance_selling_sex = $request->input('first_instance_selling_sex');
-//        $exploitationFollowup->why_returned_selling_sex = $request->input('why_returned_selling_sex');
-//        $exploitationFollowup->how_take_care_of_self = $request->input('how_take_care_of_self');
-//        $exploitationFollowup->how_react_to_stressful_situation = $request->input('how_react_to_stressful_situation');
-//        $exploitationFollowup->other_exploitation_events = $request->input('other_exploitation_events');
+        $servicesFollowup->services_followup_events = implode(", ", $request->input('field'));
+        $servicesFollowup->agency_help_exit_sex_trade = $request->input('agency_help_exit_sex_trade');
+        $servicesFollowup->agency_help_exit_sex_trade_other = $request->input('agency_help_exit_sex_trade_other');
+        $servicesFollowup->explain_services_experiences = $request->input('explain_services_experiences');
 
-//        $servicesFollowup->save();
+        $servicesFollowup->save();
 
         return view ('survey.final-questions');
     }
