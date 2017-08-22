@@ -345,15 +345,13 @@ class SurveyController extends Controller
     {
         $services = new Services;
 
-//        $exploitation->exploitation_events = implode(", ", $request->input('exploitation_events'));
-//        $exploitation->sold_sex_before_18 = $request->input('sold_sex_before_18');
-//        $exploitation->sold_sex_after_18 = $request->input('sold_sex_after_18');
-//        $exploitation->age_first_sold_sex = $request->input('age_first_sold_sex');
-//        $exploitation->age_last_sold_sex = $request->input('age_last_sold_sex');
-//        $exploitation->times_tried_to_leave_sex_trade = $request->input('times_tried_to_leave_sex_trade');
-//        $exploitation->returned_to_selling_sex = $request->input('returned_to_selling_sex');
+        $services->social_service_agency_reached_out = $request->input('social_service_agency_reached_out');
+        $services->social_service_received = $request->input('social_service_received');
+        $services->services_sought = implode(", ", $request->input('services_sought'));
+        $services->services_received = implode(", ", $request->input('services_received'));
+        $services->other_services = $request->input('other_services');
 
-//        $services->save();
+        $services->save();
 
         return view('survey.services-timeline');
     }

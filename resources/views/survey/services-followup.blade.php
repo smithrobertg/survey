@@ -110,9 +110,9 @@
 
         <p>If "Agency to exit sex trade" checked:</p>
         <div class="form-group">
-            <label for="agency_help_to_exit_sex_trade">What did they help you with?</label>
+            <label for="agency_help_exit_sex_trade">What did they help you with?</label>
             <div class="row">
-                <select class="form-control col-sm-3" name="agency_help_to_exit_sex_trade">
+                <select class="form-control col-sm-3" name="agency_help_exit_sex_trade">
                     <option>---Select One---</option>
                     <option>Housing/Shelter</option>
                     <option>Legal</option>

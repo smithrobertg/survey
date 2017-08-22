@@ -34,12 +34,12 @@
             <label>Did you receive those services?</label>
             <div class="form-check has-success">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="received_service" id="radioYes" value="Yes"> Yes
+                    <input class="form-check-input" type="radio" name="social_service_received" id="radioYes" value="Yes"> Yes
                 </label>
             </div>
             <div class="form-check has-danger">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="received_service" id="radioNo" value="No"> No
+                    <input class="form-check-input" type="radio" name="social_service_received" id="radioNo" value="No" /> No
                 </label>
             </div>
         </div>
