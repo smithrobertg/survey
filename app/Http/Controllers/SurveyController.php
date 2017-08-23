@@ -395,4 +395,22 @@ class SurveyController extends Controller
 
         return view ('survey.final-questions');
     }
+
+    public function getFinalQuestions()
+    {
+        return view('survey.final-questions');
+    }
+
+    public function postFinalQuestions(Request $request)
+    {
+        $finalQuestions = new FinalQuestions;
+
+        $finalQuestions->explain_becoming_legal_adult = $request->input('explain_becoming_legal_adult');
+        $finalQuestions->want_society_to_know = $request->input('want_society_to_know');
+        $finalQuestions->want_research_staff_to_know_about_answers = $request->input('want_research_staff_to_know_about_answers');
+
+        $finalQuestions->save();
+
+        return view('survey.thankyou-giftcard');
+    }
 }
