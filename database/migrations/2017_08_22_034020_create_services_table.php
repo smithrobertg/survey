@@ -20,29 +20,29 @@ class CreateServicesTable extends Migration
             $table->string('social_service_received')->nullable();
             $table->text('services_sought')->nullable();
             $table->text('services_received')->nullable();
-            $table->string('other_services')->nullable();
-            //$table->string('field')->nullable();
-            //$table->string('field')->nullable();
-            //$table->string('field')->nullable();
-            //$table->string('field')->nullable();
-            //$table->string('field')->nullable();
-            //$table->string('field')->nullable();
-            //$table->string('field')->nullable();
-            //$table->string('field')->nullable();
-            //$table->string('field')->nullable();
-            //$table->string('field')->nullable();
-            //$table->string('field')->nullable();
+            $table->string('received_services_substance_abuse')->nullable();
+            $table->string('received_services_mental_health')->nullable();
+            $table->string('received_services_health_care_clinic')->nullable();
+            $table->string('received_services_emergency_room')->nullable();
+            $table->string('received_services_domestic_violence')->nullable();
+            $table->string('received_services_sexual_assault')->nullable();
+            $table->string('received_services_legal')->nullable();
+            $table->string('received_services_employment')->nullable();
+            $table->string('received_services_family')->nullable();
+            $table->string('received_services_religious')->nullable();
+            $table->string('received_services_housing')->nullable();
+            $table->text('other_services')->nullable();
             $table->timestamps();
         });
 
         Schema::create('services_followups', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('survey_id')->unsigned()->default(0);
-            $table->string('services_followup_events')->nullable();
+            $table->text('services_followup_events')->nullable();
             $table->string('agency_help_exit_sex_trade')->nullable();
             $table->string('agency_help_exit_sex_trade_other')->nullable();
-            $table->string('explain_services_experiences')->nullable();
-            $table->increments();
+            $table->text('explain_services_experiences')->nullable();
+            $table->timestamps();
         });
     }
 

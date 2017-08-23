@@ -34,12 +34,14 @@
             <label>Did you receive those services?</label>
             <div class="form-check has-success">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="social_service_received" id="radioYes" value="Yes"> Yes
+                    <input class="form-check-input" type="radio" name="social_service_received" id="radioYes"
+                           value="Yes"> Yes
                 </label>
             </div>
             <div class="form-check has-danger">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="social_service_received" id="radioNo" value="No" /> No
+                    <input class="form-check-input" type="radio" name="social_service_received" id="radioNo"
+                           value="No"/> No
                 </label>
             </div>
         </div>
@@ -50,7 +52,8 @@
             <div class="form-group row">
                 <div class="form-check form-check-inline col-sm-4">
                     <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" name="services_sought[]" value="Arrested"/>
+                        <input class="form-check-input" type="checkbox" name="services_sought[]"
+                               value="Substance use"/>
                         Substance use
                     </label>
                 </div>
@@ -58,13 +61,15 @@
                     <label>Did you receive those services?</label>
                     <div class="form-check form-check-inline has-success">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioYes"
+                            <input class="form-check-input" type="radio" name="received_services_substance_abuse"
+                                   id="radioYes"
                                    value="Yes"> Yes
                         </label>
                     </div>
                     <div class="form-check form-check-inline has-danger">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioNo"
+                            <input class="form-check-input" type="radio" name="received_services_substance_abuse"
+                                   id="radioNo"
                                    value="No"> No
                         </label>
                     </div>
@@ -74,7 +79,7 @@
                 <div class="form-check form-check-inline col-sm-4">
                     <label class="form-check-label">
                         <input class="form-check-input" type="checkbox" name="services_sought[]"
-                               value="Detained but not charged"/>
+                               value="Mental health"/>
                         Mental health
                     </label>
                 </div>
@@ -82,13 +87,15 @@
                     <label>Did you receive those services?</label>
                     <div class="form-check form-check-inline has-success">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioYes"
+                            <input class="form-check-input" type="radio" name="received_services_mental_health"
+                                   id="radioYes"
                                    value="Yes"> Yes
                         </label>
                     </div>
                     <div class="form-check form-check-inline has-danger">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioNo"
+                            <input class="form-check-input" type="radio" name="received_services_mental_health"
+                                   id="radioNo"
                                    value="No"> No
                         </label>
                     </div>
@@ -98,7 +105,7 @@
                 <div class="form-check form-check-inline col-sm-4">
                     <label class="form-check-label">
                         <input class="form-check-input" type="checkbox" name="services_sought[]"
-                               value="Convicted/found guilty"/>
+                               value="Health care clinic"/>
                         Health care clinic
                     </label>
                 </div>
@@ -106,13 +113,15 @@
                     <label>Did you receive those services?</label>
                     <div class="form-check form-check-inline has-success">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioYes"
+                            <input class="form-check-input" type="radio" name="received_services_health_care_clinic"
+                                   id="radioYes"
                                    value="Yes"> Yes
                         </label>
                     </div>
                     <div class="form-check form-check-inline has-danger">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioNo"
+                            <input class="form-check-input" type="radio" name="received_services_health_care_clinic"
+                                   id="radioNo"
                                    value="No"> No
                         </label>
                     </div>
@@ -121,7 +130,8 @@
             <div class="form-group row">
                 <div class="form-check form-check-inline col-sm-4">
                     <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" name="services_sought[]" value="Incarcerated"/>
+                        <input class="form-check-input" type="checkbox" name="services_sought[]"
+                               value="Emergency room"/>
                         Emergency room
                     </label>
                 </div>
@@ -129,13 +139,15 @@
                     <label>Did you receive those services?</label>
                     <div class="form-check form-check-inline has-success">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioYes"
+                            <input class="form-check-input" type="radio" name="received_services_emergency_room"
+                                   id="radioYes"
                                    value="Yes"> Yes
                         </label>
                     </div>
                     <div class="form-check form-check-inline has-danger">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioNo"
+                            <input class="form-check-input" type="radio" name="received_services_emergency_room"
+                                   id="radioNo"
                                    value="No"> No
                         </label>
                     </div>
@@ -145,7 +157,7 @@
                 <div class="form-check form-check-inline col-sm-4">
                     <label class="form-check-label">
                         <input class="form-check-input" type="checkbox" name="services_sought[]"
-                               value="Negative interaction w/police"/>
+                               value="Domestic violence"/>
                         Domestic violence services
                     </label>
                 </div>
@@ -153,13 +165,15 @@
                     <label>Did you receive those services?</label>
                     <div class="form-check form-check-inline has-success">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioYes"
+                            <input class="form-check-input" type="radio" name="received_services_domestic_violence"
+                                   id="radioYes"
                                    value="Yes"> Yes
                         </label>
                     </div>
                     <div class="form-check form-check-inline has-danger">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioNo"
+                            <input class="form-check-input" type="radio" name="received_services_domestic_violence"
+                                   id="radioNo"
                                    value="No"> No
                         </label>
                     </div>
@@ -169,7 +183,7 @@
                 <div class="form-check form-check-inline col-sm-4">
                     <label class="form-check-label">
                         <input class="form-check-input" type="checkbox" name="services_sought[]"
-                               value="Positive interaction w/police"/>
+                               value="Sexual assault"/>
                         Sexual assault services
                     </label>
                 </div>
@@ -177,13 +191,15 @@
                     <label>Did you receive those services?</label>
                     <div class="form-check form-check-inline has-success">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioYes"
+                            <input class="form-check-input" type="radio" name="received_services_sexual_assault"
+                                   id="radioYes"
                                    value="Yes"> Yes
                         </label>
                     </div>
                     <div class="form-check form-check-inline has-danger">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioNo"
+                            <input class="form-check-input" type="radio" name="received_services_sexual_assault"
+                                   id="radioNo"
                                    value="No"> No
                         </label>
                     </div>
@@ -193,7 +209,7 @@
                 <div class="form-check form-check-inline col-sm-4">
                     <label class="form-check-label">
                         <input class="form-check-input" type="checkbox" name="services_sought[]"
-                               value="Solicited sexually by police officer"/>
+                               value="Legal"/>
                         Legal services
                     </label>
                 </div>
@@ -201,13 +217,13 @@
                     <label>Did you receive those services?</label>
                     <div class="form-check form-check-inline has-success">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioYes"
+                            <input class="form-check-input" type="radio" name="received_services_legal" id="radioYes"
                                    value="Yes"> Yes
                         </label>
                     </div>
                     <div class="form-check form-check-inline has-danger">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioNo"
+                            <input class="form-check-input" type="radio" name="received_services_legal" id="radioNo"
                                    value="No"> No
                         </label>
                     </div>
@@ -217,7 +233,7 @@
                 <div class="form-check form-check-inline col-sm-4">
                     <label class="form-check-label">
                         <input class="form-check-input" type="checkbox" name="services_sought[]"
-                               value="Criminal record"/>
+                               value="Employment"/>
                         Employment services
                     </label>
                 </div>
@@ -225,13 +241,15 @@
                     <label>Did you receive those services?</label>
                     <div class="form-check form-check-inline has-success">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioYes"
+                            <input class="form-check-input" type="radio" name="received_services_employment"
+                                   id="radioYes"
                                    value="Yes"> Yes
                         </label>
                     </div>
                     <div class="form-check form-check-inline has-danger">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioNo"
+                            <input class="form-check-input" type="radio" name="received_services_employment"
+                                   id="radioNo"
                                    value="No"> No
                         </label>
                     </div>
@@ -241,7 +259,7 @@
                 <div class="form-check form-check-inline col-sm-4">
                     <label class="form-check-label">
                         <input class="form-check-input" type="checkbox" name="services_sought[]"
-                               value="Criminal record"/>
+                               value="Family"/>
                         Family services (child care, custody, etc.)
                     </label>
                 </div>
@@ -249,13 +267,13 @@
                     <label>Did you receive those services?</label>
                     <div class="form-check form-check-inline has-success">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioYes"
+                            <input class="form-check-input" type="radio" name="received_services_family" id="radioYes"
                                    value="Yes"> Yes
                         </label>
                     </div>
                     <div class="form-check form-check-inline has-danger">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioNo"
+                            <input class="form-check-input" type="radio" name="received_services_family" id="radioNo"
                                    value="No"> No
                         </label>
                     </div>
@@ -265,7 +283,7 @@
                 <div class="form-check form-check-inline col-sm-4">
                     <label class="form-check-label">
                         <input class="form-check-input" type="checkbox" name="services_sought[]"
-                               value="Criminal record"/>
+                               value="Religious"/>
                         Religious-based services
                     </label>
                 </div>
@@ -273,13 +291,14 @@
                     <label>Did you receive those services?</label>
                     <div class="form-check form-check-inline has-success">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioYes"
+                            <input class="form-check-input" type="radio" name="received_services_religious"
+                                   id="radioYes"
                                    value="Yes"> Yes
                         </label>
                     </div>
                     <div class="form-check form-check-inline has-danger">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioNo"
+                            <input class="form-check-input" type="radio" name="received_services_religious" id="radioNo"
                                    value="No"> No
                         </label>
                     </div>
@@ -289,7 +308,7 @@
                 <div class="form-check form-check-inline col-sm-4">
                     <label class="form-check-label">
                         <input class="form-check-input" type="checkbox" name="services_sought[]"
-                               value="Criminal record"/>
+                               value="Housing"/>
                         Housing services
                     </label>
                 </div>
@@ -297,13 +316,13 @@
                     <label>Did you receive those services?</label>
                     <div class="form-check form-check-inline has-success">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioYes"
+                            <input class="form-check-input" type="radio" name="received_services_housing" id="radioYes"
                                    value="Yes"> Yes
                         </label>
                     </div>
                     <div class="form-check form-check-inline has-danger">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="services_received[]" id="radioNo"
+                            <input class="form-check-input" type="radio" name="received_services_housing" id="radioNo"
                                    value="No"> No
                         </label>
                     </div>

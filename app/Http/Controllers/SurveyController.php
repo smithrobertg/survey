@@ -348,7 +348,18 @@ class SurveyController extends Controller
         $services->social_service_agency_reached_out = $request->input('social_service_agency_reached_out');
         $services->social_service_received = $request->input('social_service_received');
         $services->services_sought = implode(", ", $request->input('services_sought'));
-        $services->services_received = implode(", ", $request->input('services_received'));
+        //$services->services_received = implode(", ", $request->input('services_received'));
+        $services->received_services_substance_abuse = $request->input('received_services_substance_abuse');
+        $services->received_services_mental_health = $request->input('received_services_mental_health');
+        $services->received_services_health_care_clinic = $request->input('received_services_health_care_clinic');
+        $services->received_services_emergency_room = $request->input('received_services_emergency_room');
+        $services->received_services_domestic_violence = $request->input('received_services_domestic_violence');
+        $services->received_services_sexual_assault = $request->input('received_services_sexual_assault');
+        $services->received_services_legal = $request->input('received_services_legal');
+        $services->received_services_employment = $request->input('received_services_employment');
+        $services->received_services_family = $request->input('received_services_family');
+        $services->received_services_religious = $request->input('received_services_religious');
+        $services->received_services_housing = $request->input('received_services_housing');
         $services->other_services = $request->input('other_services');
 
         $services->save();
@@ -375,7 +386,7 @@ class SurveyController extends Controller
     {
         $servicesFollowup = new ServicesFollowup;
 
-        $servicesFollowup->services_followup_events = implode(", ", $request->input('field'));
+        $servicesFollowup->services_followup_events = implode(", ", $request->input('services_followup_events'));
         $servicesFollowup->agency_help_exit_sex_trade = $request->input('agency_help_exit_sex_trade');
         $servicesFollowup->agency_help_exit_sex_trade_other = $request->input('agency_help_exit_sex_trade_other');
         $servicesFollowup->explain_services_experiences = $request->input('explain_services_experiences');
