@@ -11,98 +11,99 @@
                 areas)…<em>(check all that apply)</em></legend>
             <div class="form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" name="services_followup_events[]" value="Arrested"/>
+                    <input class="form-check-input" type="checkbox" name="services_followup_events[]"
+                           value="Health care"/>
                     Health care
                 </label>
             </div>
             <div class="form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" name="services_followup_events[]"
-                           value="Detained but not charged"/>
+                           value="Employment"/>
                     Employment
                 </label>
             </div>
             <div class="form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" name="services_followup_events[]"
-                           value="Convicted/found guilty"/>
+                           value="Housing"/>
                     Housing
                 </label>
             </div>
             <div class="form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" name="services_followup_events[]"
-                           value="Incarcerated"/>
+                           value="School"/>
                     School
                 </label>
             </div>
             <div class="form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" name="services_followup_events[]"
-                           value="Reported crime to police"/>
+                           value="Police"/>
                     Police
                 </label>
             </div>
             <div class="form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" name="services_followup_events[]"
-                           value="Negative interaction w/police"/>
+                           value="Legal aid"/>
                     Legal aid
                 </label>
             </div>
             <div class="form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" name="services_followup_events[]"
-                           value="Positive interaction w/police"/>
+                           value="Courts"/>
                     Courts
                 </label>
             </div>
             <div class="form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" name="services_followup_events[]"
-                           value="Solicited sexually by police officer"/>
+                           value="Family"/>
                     Family
                 </label>
             </div>
             <div class="form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" name="services_followup_events[]"
-                           value="Criminal record"/>
+                           value="Religious"/>
                     Religious
                 </label>
             </div>
             <div class="form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" name="services_followup_events[]"
-                           value="Criminal record"/>
+                           value="Domestic violence"/>
                     Domestic Violence
                 </label>
             </div>
             <div class="form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" name="services_followup_events[]"
-                           value="Criminal record"/>
+                           value="Substance use"/>
                     Substance Use
                 </label>
             </div>
             <div class="form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" name="services_followup_events[]"
-                           value="Criminal record"/>
+                           value="Mental health"/>
                     Mental Health
                 </label>
             </div>
             <div class="form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" name="services_followup_events[]"
-                           value="Criminal record"/>
+                           value="Sexual assault"/>
                     Sexual Assault
                 </label>
             </div>
             <div class="form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" name="services_followup_events[]"
-                           value="Criminal record"/>
+                           value="Agency to help exit sex trade"/>
                     Agency to help exit sex trade
                 </label>
             </div>
@@ -120,7 +121,7 @@
                     <option>Other</option>
                 </select>
                 <label class="col-sm-1 text-right" for="agency_help_exit_sex_trade_other">Other</label>
-                <input type="text" class="form-control col-sm-8" name="agency_help_exit_sex_trade_other">
+                <input class="form-control col-sm-8" name="agency_help_exit_sex_trade_other">
             </div>
         </div>
         <div class="form-group row">
@@ -141,9 +142,9 @@
 
         <div class="form-group">
             <label class="form-label" for="explain_services_experiences">
-                If you would like to explain any of these experiences, please include explanation here:
-                <textarea class="form-control" name="explain_services_experiences" id="explain_services_experiences"
-                          rows="3"></textarea>
+                If you would like to explain any of these experiences, please include explanation here:</label>
+            <textarea class="form-control" name="explain_services_experiences" id="explain_services_experiences"
+                      rows="3"></textarea>
         </div>
 
         <button class="btn btn-primary">Save and Continue &rarr;</button>
