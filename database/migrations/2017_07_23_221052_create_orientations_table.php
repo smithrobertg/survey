@@ -15,7 +15,7 @@ class CreateOrientationsTable extends Migration
     {
         Schema::create('orientations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('survey_id')->unsigned();
+            $table->integer('survey_id')->unsigned()->default(0);
             $table->string('year_born')->nullable();
             $table->string('age_started_living_on_own')->nullable();
             $table->string('highest_grade_completed')->nullable();
