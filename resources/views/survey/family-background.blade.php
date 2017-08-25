@@ -12,21 +12,6 @@
 
     {{ csrf_field() }}
 
-    <div class="form-group row">
-        <label>Did a parent, guardian, or caregiver get married?</label>
-
-        <div class="form-check form-check-inline has-success">
-            <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="parent_got_married" id="radioYes" value="Yes"> Yes
-            </label>
-        </div>
-        <div class="form-check form-check-inline has-danger">
-            <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="parent_got_married" id="radioNo" value="No"> No
-            </label>
-        </div>
-    </div>
-
     <h3>Did a parent or other adult in the household <strong>often</strong>:</h3>
     <div class="form-group">
         <div class="form-check">
@@ -55,7 +40,7 @@
         </div>
     </div>
 
-    <h3>Did an adult or person at least 5 years older that you ever <strong>ever</strong>:</h3>
+    <h3>Did an adult or person at least 5 years older that you <strong>ever</strong>:</h3>
     <div class="form-group">
         <div class="form-check">
             <label class="form-check-label">
@@ -99,21 +84,6 @@
         </div>
     </div>
 
-    <div class="form-group row">
-        <label>Your parents were <strong>ever</strong> separated or divorced?</label>
-
-        <div class="form-check form-check-inline has-success">
-            <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="parent_separated_divorced" id="radioYes" value="Yes"> Yes
-            </label>
-        </div>
-        <div class="form-check form-check-inline has-danger">
-            <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="parent_separated_divorced" id="radioNo" value="No"> No
-            </label>
-        </div>
-    </div>
-
     <h3>Was your mother or stepmother:</h3>
     <div class="form-group">
         <div class="form-check">
@@ -136,7 +106,44 @@
         </div>
     </div>
 
+<hr />
+
     <div class="form-group row">
+        <label>Did a parent, guardian, or caregiver get married?</label>
+
+        <div class="form-check form-check-inline has-success">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="parent_got_married" id="radioYes" value="Yes"> Yes
+            </label>
+        </div>
+        <div class="form-check form-check-inline has-danger">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="parent_got_married" id="radioNo" value="No"> No
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="parent_got_married" id="radioDontKnow" value="I don't know"> I don't know
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label>Your parents were <strong>ever</strong> separated or divorced?</label>
+
+        <div class="form-check form-check-inline has-success">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="parent_separated_divorced" id="radioYes" value="Yes"> Yes
+            </label>
+        </div>
+        <div class="form-check form-check-inline has-danger">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="parent_separated_divorced" id="radioNo" value="No"> No
+            </label>
+        </div>
+    </div>
+
+<div class="form-group row">
         <label>Did you live with anyone who was a problem drinker or alcoholic or who used street drugs?</label>
 
         <div class="form-check form-check-inline has-success">
