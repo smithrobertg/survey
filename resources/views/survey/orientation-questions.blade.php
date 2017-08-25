@@ -29,7 +29,18 @@
             <label for="highest_grade_completed">What is the highest grade you’ve completed?</label>
             <select class="form-control" name="highest_grade_completed">
 				<option>Choose one...</option>
-                <option>1st-12th</option>
+                <option>1st</option>
+								<option>2nd</option>
+								<option>3rd</option>
+								<option>4th</option>
+								<option>5th</option>
+								<option>6th</option>
+								<option>7th</option>
+								<option>8th</option>
+								<option>9th</option>
+								<option>10th</option>
+								<option>11th</option>
+								<option>12th</option>
                 <option>some college</option>
                 <option>college degree</option>
                 <option>graduate degree</option>
