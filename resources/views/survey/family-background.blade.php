@@ -111,17 +111,17 @@
     <div class="form-group row">
         <label>Did a parent, guardian, or caregiver get married?</label>
 
-        <div class="form-check form-check-inline has-success">
+        <div class="form-check form-check-inline text-success">
             <label class="form-check-label">
                 <input class="form-check-input" type="radio" name="parent_got_married" id="radioYes" value="Yes"> Yes
             </label>
         </div>
-        <div class="form-check form-check-inline has-danger">
+        <div class="form-check form-check-inline text-danger">
             <label class="form-check-label">
                 <input class="form-check-input" type="radio" name="parent_got_married" id="radioNo" value="No"> No
             </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check form-check-inline text-info">
             <label class="form-check-label">
                 <input class="form-check-input" type="radio" name="parent_got_married" id="radioDontKnow" value="I don't know"> I don't know
             </label>
@@ -131,14 +131,19 @@
     <div class="form-group row">
         <label>Your parents were <strong>ever</strong> separated or divorced?</label>
 
-        <div class="form-check form-check-inline has-success">
+        <div class="form-check form-check-inline text-success">
             <label class="form-check-label">
                 <input class="form-check-input" type="radio" name="parent_separated_divorced" id="radioYes" value="Yes"> Yes
             </label>
         </div>
-        <div class="form-check form-check-inline has-danger">
+        <div class="form-check form-check-inline text-danger">
             <label class="form-check-label">
                 <input class="form-check-input" type="radio" name="parent_separated_divorced" id="radioNo" value="No"> No
+            </label>
+        </div>
+        <div class="form-check form-check-inline text-info">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="parent_separated_divorced" id="radioDontKnow" value="I don't know"> I don't know
             </label>
         </div>
     </div>
