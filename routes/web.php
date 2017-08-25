@@ -183,8 +183,8 @@ Route::post('services-followup', 'SurveyController@postServicesFollowup');
 
 // Final questions and thank you message
 
-Route::get('final-question', 'SurveyController@getFinalQuestions');
-Route::post('final-question', 'SurveyController@postFinalQuestions');
+Route::get('final-questions', 'SurveyController@getFinalQuestions');
+Route::post('final-questions', 'SurveyController@postFinalQuestions');
 
 Route::get('thankyou-giftcard', function () {
 	return view('survey.thankyou-giftcard');
@@ -197,4 +197,3 @@ Route::get('followup-interview', function () {
 Route::get('referral', function () {
 	return view('survey.referral');
 });
-

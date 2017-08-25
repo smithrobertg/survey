@@ -18,6 +18,7 @@ use App\Exploitation;
 use App\ExploitationFollowup;
 use App\Services;
 use App\ServicesFollowup;
+use App\FinalQuestions;
 
 class SurveyController extends Controller
 {
