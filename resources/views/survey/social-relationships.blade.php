@@ -93,8 +93,8 @@
                 Tried to reconnect with anyone as an adult when that was a strained relationship in the past
             </label>
         </div>
-        <fieldset class="form-group">
-            <legend>If checked, would you categorize that attempt as a positive/negative experience?</legend>
+        <fieldset class="form-group ml-5">
+            <label>Would you categorize that attempt as a positive/negative experience?</label>
             <div class="form-check">
                 <label class="form-check-label">
                     <input type="radio" class="form-check-input" name="tried_to_reconnect_experience" id="triedReconnect-Positive" value="Positive" />

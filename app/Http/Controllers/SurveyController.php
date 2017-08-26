@@ -62,22 +62,22 @@ class SurveyController extends Controller
 
         $familyBackground = new FamilyBackground;
 
-		//if (isset($request->input('field'))) {
-		//			$familyBackground->field = implode(", ", $request->input('field'));
-		//}
-		if (isset($request->input('parent_or_adult_often'))) {
-					$familyBackground->parent_or_adult_often = implode(", ", $request->input('parent_or_adult_often'));
+    		//if (isset($request->input('field'))) {
+    		//			$familyBackground->field = implode(", ", $request->input('field'));
+    		//}
+    		if (!empty($request->input('parent_or_adult_often'))) {
+    					$familyBackground->parent_or_adult_often = implode(", ", $request->input('parent_or_adult_often'));
 
-		}
-		if (isset($request->input('adult_or_person_5_years_older_ever'))) {
-					$familyBackground->adult_or_person_5_years_older_ever = implode(", ", $request->input('adult_or_person_5_years_older_ever'));
-		}
-				if (isset($request->input('often_feel_that'))) {
-					$familyBackground->often_feel_that = implode(", ", $request->input('often_feel_that'));
-		}
-		if (isset($request->input('mother_or_stepmother'))) {
-					$familyBackground->mother_or_stepmother = implode(", ", $request->input('mother_or_stepmother'));
-		}
+    		}
+    		if (!empty($request->input('adult_or_person_5_years_older_ever'))) {
+    					$familyBackground->adult_or_person_5_years_older_ever = implode(", ", $request->input('adult_or_person_5_years_older_ever'));
+    		}
+    		if (!empty($request->input('often_feel_that'))) {
+    					$familyBackground->often_feel_that = implode(", ", $request->input('often_feel_that'));
+    		}
+    		if (!empty($request->input('mother_or_stepmother'))) {
+    					$familyBackground->mother_or_stepmother = implode(", ", $request->input('mother_or_stepmother'));
+    		}
         $familyBackground->parent_got_married = $request->input('parent_got_married');
         $familyBackground->parent_separated_divorced = $request->input('parent_separated_divorced');
         $familyBackground->lived_with_alchoholic_or_drug_user = $request->input('lived_with_alchoholic_or_drug_user');
@@ -121,7 +121,7 @@ class SurveyController extends Controller
     {
         $familyBackgoundFollowup = new FamilyBackgroundFollowup;
 
-        $familyBackgoundFollowup->turned_to_for_support = implode(", ", $request->input('turned_to_for_support'));
+        if(!empty($request->input('turned_to_for_support'))) $familyBackgoundFollowup->turned_to_for_support = implode(", ", $request->input('turned_to_for_support'));
         $familyBackgoundFollowup->turned_to_for_support_other = $request->input('turned_to_for_support_other');
         $familyBackgoundFollowup->foster_care_places_lived = $request->input('foster_care_places_lived');
         $familyBackgoundFollowup->positive_foster_placements = $request->input('positive_foster_placements');
@@ -151,7 +151,7 @@ class SurveyController extends Controller
     {
         $education = new Education;
 
-        $education->events = implode(", ", $request->input('education_events'));
+        if (!empty($request->input('education_events'))) $education->events = implode(", ", $request->input('education_events'));
         $education->other_events = $request->input('other_education_events');
         $education->save();
 
@@ -180,7 +180,7 @@ class SurveyController extends Controller
         // save work/housing form $request data
         $workHousing = new WorkHousing;
 
-        $workHousing->work_housing_events = implode(", ", $request->input('work_housing_events'));
+        if (!empty($request->input('work_housing_events'))) $workHousing->work_housing_events = implode(", ", $request->input('work_housing_events'));
         $workHousing->supported_by_trafficker = $request->input('supported_by_trafficker');
         $workHousing->other_work_events = $request->input('other_work_events');
 
@@ -210,8 +210,8 @@ class SurveyController extends Controller
         $workHousingFollowup = new WorkHousingFollowup;
 
         $workHousingFollowup->work_applied_for_outside_sex_trade = $request->input('work_applied_for_outside_sex_trade');
-        $workHousingFollowup->when_applied_for_first_job = $request->input('when_applied_for_first_job');
-        $workHousingFollowup->when_applied_for_first_job_as_adult = $request->input('when_applied_for_first_job_as_adult');
+        $workHousingFollowup->age_applied_for_first_job = $request->input('age_applied_for_first_job');
+        $workHousingFollowup->age_applied_for_first_job_as_adult = $request->input('age_applied_for_first_job_as_adult');
 
         $workHousingFollowup->save();
 
@@ -227,7 +227,7 @@ class SurveyController extends Controller
     {
         $socialRelationships = new SocialRelationships;
 
-        $socialRelationships->social_relationship_events = implode(", ", $request->input('social_relationship_events'));
+        if (!empty($request->input('social_relationship_events'))) $socialRelationships->social_relationship_events = implode(", ", $request->input('social_relationship_events'));
         $socialRelationships->tried_to_reconnect_experience = $request->input('tried_to_reconnect_experience');
         $socialRelationships->other_social_relationship_events = $request->input('other_social_relationship_events');
 
@@ -257,7 +257,7 @@ class SurveyController extends Controller
     {
         $criminalJustice = new CriminalJustice;
 
-        $criminalJustice->criminal_justice_events = implode(", ", $request->input('criminal_justice_events'));
+        if (!empty($request->input('criminal_justice_events'))) $criminalJustice->criminal_justice_events = implode(", ", $request->input('criminal_justice_events'));
         $criminalJustice->other_criminal_justice_events = $request->input('other_criminal_justice_events');
 
         $criminalJustice->save();
@@ -304,7 +304,7 @@ class SurveyController extends Controller
     {
         $exploitation = new Exploitation;
 
-        $exploitation->exploitation_events = implode(", ", $request->input('exploitation_events'));
+        if (!empty($request->input('exploitation_events'))) $exploitation->exploitation_events = implode(", ", $request->input('exploitation_events'));
         $exploitation->sold_sex_before_18 = $request->input('sold_sex_before_18');
         $exploitation->sold_sex_after_18 = $request->input('sold_sex_after_18');
         $exploitation->age_first_sold_sex = $request->input('age_first_sold_sex');
@@ -360,7 +360,7 @@ class SurveyController extends Controller
 
         $services->social_service_agency_reached_out = $request->input('social_service_agency_reached_out');
         $services->social_service_received = $request->input('social_service_received');
-        $services->services_sought = implode(", ", $request->input('services_sought'));
+        if (!empty($request->input('services_sought'))) $services->services_sought = implode(", ", $request->input('services_sought'));
         //$services->services_received = implode(", ", $request->input('services_received'));
         $services->received_services_substance_abuse = $request->input('received_services_substance_abuse');
         $services->received_services_mental_health = $request->input('received_services_mental_health');
@@ -399,7 +399,7 @@ class SurveyController extends Controller
     {
         $servicesFollowup = new ServicesFollowup;
 
-        $servicesFollowup->services_followup_events = implode(", ", $request->input('services_followup_events'));
+        if (!empty($request->input('services_followup_events'))) $servicesFollowup->services_followup_events = implode(", ", $request->input('services_followup_events'));
         $servicesFollowup->agency_help_exit_sex_trade = $request->input('agency_help_exit_sex_trade');
         $servicesFollowup->agency_help_exit_sex_trade_other = $request->input('agency_help_exit_sex_trade_other');
         $servicesFollowup->explain_services_experiences = $request->input('explain_services_experiences');

@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Timeline - Family Background</title>
-</head>
-<body>
+@extends('layouts.survey')
+
+@section('title', 'Timeline - Family Background')
+
+@section('content')
 <p>For any of these questions, checked, present option for AGE, YEAR, RANGE and (hopefully) automatically populate in timeline.</p>
  	A parent abused you (physically, sexually, or emotionally)
  	A parent was arrested
@@ -13,8 +12,7 @@
  	Your family could not afford heat or water (or other basic utilities)
  	Your family experienced poverty
  	You were addicted to drugs or alcohol (before turning 18)
- 	Lived in foster care (age entered and age exited)
+ 	Lived in foster care (age entered and age exited)</p>
 
     <a href="/timeline/family-background" class="btn btn-primary">Continue &rarr;</a>
-</body>
-</html>
+@endsection

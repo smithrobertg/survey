@@ -10,6 +10,7 @@
     {{ csrf_field() }}
 
     <h2>Who, if anyone, did you turn to for support growing up?</h2>
+    <h3 class="font-italic">(Check all that apply)</h3>
     <div class="form-group">
         <div class="form-check">
             <label class="form-check-label">

@@ -74,18 +74,6 @@
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="education_events[]" value="Apply to college">
-                Apply to college
-            </label>
-        </div>
-        <div class="form-check">
-            <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="education_events[]" value="Accepted to college but did not attend">
-                Get into a college, but did not attend
-            </label>
-        </div>
-        <div class="form-check">
-            <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="education_events[]" value="Felt always in trouble with teachers">
                 Felt like you were always getting into trouble with teachers/administrators
             </label>
@@ -98,7 +86,7 @@
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="education_events[]" value="Feel school was a struggle/always falling behind">
+                <input class="form-check-input" type="checkbox" name="education_events[]" value="Felt school was a struggle/always falling behind">
                 Feel like school was a struggle, always falling behind
             </label>
         </div>
@@ -120,7 +108,25 @@
                 Experienced abuse by a teacher (or someone else at school)
             </label>
         </div>
-    </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="education_events[]" value="Applied to college">
+                Apply to college
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="education_events[]" value="Went to college">
+                Go to college
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="education_events[]" value="Accepted to college but did not attend">
+                Get into a college, but did not attend
+            </label>
+        </div>
+  </div>
 
     <div class="form-group">
         <label class="form-label" for="other_education_events">

@@ -7,6 +7,6 @@
 
 <h1>Education Timeline</h1>
 
-<a href="/work-housing">Continue &rarr;</a>
+<a href="/work-housing" class="btn btn-primary">Continue &rarr;</a>
 
 @endsection

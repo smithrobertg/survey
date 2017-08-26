@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Timeline - Family Background</title>
-</head>
-<body>
+@extends('layouts.survey')
+
+@section('title', 'Family Background Followup')
+
+@section('content')
+<h1>Family Background Timeline</h1>
 <p>Display Timeline with Orienation answers, Family Events.</p>
- 
-    <h2><a href="/family-background-followup">Continue (Family Background Followup) &rarr;</a></h2>
-</body>
-</html>
+
+    <h2><a href="/family-background-followup" class="btn btn-primary btn-lg">Continue to Family Background Followup Questions &rarr;</a></h2>
+@endsection

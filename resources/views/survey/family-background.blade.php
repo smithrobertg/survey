@@ -34,7 +34,7 @@
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="parent_or_adult_often[]" value="Swear/insult/putdown/humiliate">
+                <input class="form-check-input" type="checkbox" name="parent_or_adult_often[]" value="Hit so hard marks or injured">
                 <strong>Ever</strong> hit you so hard that you had marks or were injured?
             </label>
         </div>
@@ -161,6 +161,11 @@
                 <input class="form-check-input" type="radio" name="lived_with_alchoholic_or_drug_user" id="radioNo" value="No"> No
             </label>
         </div>
+        <div class="form-check form-check-inline text-info">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="lived_with_alchoholic_or_drug_user" id="radioDontKnow" value="I don't know"> I don't know
+            </label>
+        </div>
     </div>
 
     <div class="form-group row">
@@ -174,6 +179,11 @@
         <div class="form-check form-check-inline has-danger">
             <label class="form-check-label">
                 <input class="form-check-input" type="radio" name="household_member_depressed_mentally_ill_suicide" id="radioNo" value="No"> No
+            </label>
+        </div>
+        <div class="form-check form-check-inline text-info">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="household_member_depressed_mentally_ill_suicide" id="radioDontKnow" value="I don't know"> I don't know
             </label>
         </div>
     </div>
@@ -191,6 +201,11 @@
                 <input class="form-check-input" type="radio" name="household_member_went_to_prison" id="radioNo" value="No"> No
             </label>
         </div>
+        <div class="form-check form-check-inline text-info">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="household_member_went_to_prison" id="radioDontKnow" value="I don't know"> I don't know
+            </label>
+        </div>
     </div>
 
     <div class="form-group row">
@@ -204,6 +219,11 @@
         <div class="form-check form-check-inline has-danger">
             <label class="form-check-label">
                 <input class="form-check-input" type="radio" name="someone_else_came_to_live_with" id="radioNo" value="No"> No
+            </label>
+        </div>
+        <div class="form-check form-check-inline text-info">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="someone_else_came_to_live_with" id="radioDontKnow" value="I don't know"> I don't know
             </label>
         </div>
     </div>
@@ -221,6 +241,11 @@
                 <input class="form-check-input" type="radio" name="moved_around_alot" id="radioNo" value="No"> No
             </label>
         </div>
+        <div class="form-check form-check-inline text-info">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="moved_around_alot" id="radioDontKnow" value="I don't know"> I don't know
+            </label>
+        </div>
     </div>
 
     <div class="form-group row">
@@ -234,6 +259,11 @@
         <div class="form-check form-check-inline has-danger">
             <label class="form-check-label">
                 <input class="form-check-input" type="radio" name="homeless" id="radioNo" value="No"> No
+            </label>
+        </div>
+        <div class="form-check form-check-inline text-info">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="homeless" id="radioDontKnow" value="I don't know"> I don't know
             </label>
         </div>
     </div>
@@ -251,6 +281,11 @@
                 <input class="form-check-input" type="radio" name="ran_away" id="radioNo" value="No"> No
             </label>
         </div>
+        <div class="form-check form-check-inline text-info">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="ran_away" id="radioDontKnow" value="I don't know"> I don't know
+            </label>
+        </div>
     </div>
 
     <div class="form-group row">
@@ -264,6 +299,11 @@
         <div class="form-check form-check-inline has-danger">
             <label class="form-check-label">
                 <input class="form-check-input" type="radio" name="public_assistance" id="radioNo" value="No"> No
+            </label>
+        </div>
+        <div class="form-check form-check-inline text-info">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="public_assistance" id="radioDontKnow" value="I don't know"> I don't know
             </label>
         </div>
     </div>
@@ -281,6 +321,11 @@
                 <input class="form-check-input" type="radio" name="could_not_afford_heat_or_water" id="radioNo" value="No"> No
             </label>
         </div>
+        <div class="form-check form-check-inline text-info">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="could_not_afford_heat_or_water" id="radioDontKnow" value="I don't know"> I don't know
+            </label>
+        </div>
     </div>
 
     <div class="form-group row">
@@ -294,6 +339,11 @@
         <div class="form-check form-check-inline has-danger">
             <label class="form-check-label">
                 <input class="form-check-input" type="radio" name="poverty" id="radioNo" value="No"> No
+            </label>
+        </div>
+        <div class="form-check form-check-inline text-info">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="poverty" id="radioDontKnow" value="I don't know"> I don't know
             </label>
         </div>
     </div>
@@ -311,6 +361,11 @@
                 <input class="form-check-input" type="radio" name="used_drugs_alcohol" id="radioNo" value="No"> No
             </label>
         </div>
+        <div class="form-check form-check-inline text-info">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="used_drugs_alcohol" id="radioDontKnow" value="I don't know"> I don't know
+            </label>
+        </div>
     </div>
 
     <div class="form-group row">
@@ -324,6 +379,11 @@
         <div class="form-check form-check-inline has-danger">
             <label class="form-check-label">
                 <input class="form-check-input" type="radio" name="addicted_drugs_alcohol" id="radioNo" value="No"> No
+            </label>
+        </div>
+        <div class="form-check form-check-inline text-info">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="addicted_drugs_alcohol" id="radioDontKnow" value="I don't know"> I don't know
             </label>
         </div>
     </div>
@@ -341,6 +401,11 @@
                 <input class="form-check-input" type="radio" name="felt_life_threatened" id="radioNo" value="No"> No
             </label>
         </div>
+        <div class="form-check form-check-inline text-info">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="felt_life_threatened" id="radioDontKnow" value="I don't know"> I don't know
+            </label>
+        </div>
     </div>
 
     <div class="form-group row">
@@ -356,9 +421,14 @@
                 <input class="form-check-input" type="radio" name="foster_care" id="radioNo" value="No"> No
             </label>
         </div>
+        <div class="form-check form-check-inline text-info">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="foster_care" id="radioDontKnow" value="I don't know"> I don't know
+            </label>
+        </div>
     </div>
     <div class="form-group row">
-        <label for="age_foster_care_ended" class="col-form-label">Age foster card ended</label>
+        <label for="age_foster_care_ended" class="col-form-label">Age foster care ended</label>
         <input type="text" class="form-control" name="age_foster_care_ended" placeholder="Age">
     </div>
 
@@ -370,45 +440,4 @@
     <button type="submit" class="btn btn-primary">Save and Continue &rarr;</button>
 </form>
 
-——If bolded questions are checked, will be asked to place in timeline——
-
 @endsection
-
-<!--
-    Did a parent, guardian, or caregiver get married
-Did a parent or other adult in the household often:
-    Swear at you, insult you, put you down, or humiliate you?
-    Act in a way that made you afraid that you might be physically hurt?
-    Push, grab, slap, or throw something at you?
-    Ever hit you so hard that you had marks or were injured?
-Did an adult or person at least 5 years older than you ever:
-    Touch or fondle you or have you touch their body in a sexual way?
-    Try to or actually have oral, anal, or vaginal sex with you?
-Did you often feel that:
-    No one in your family loved you or thought you were important or special?
-    Your family didn’t look out for each other, feel close to each other, or support each other?
-    You didn’t have enough to eat, had to wear dirty clothes, and had no one to protect you?
-    Your parents were too drunk or high to take care of you or take you to the doctor if you needed it?
-    Your parents were ever separated or divorced?
-Was your mother or stepmother:
-    Often pushed, grabbed, slapped, or had something thrown at her?
-    Sometimes or often kicked, bitten, hit with a fist, or hit with something harder?
-    Ever repeatedly hit over at least a few minutes or threatened with a gun or knife?
-    Did you live with anyone who was a problem drinker or alcoholic or who used street drugs?
-    A household member was depressed or mentally ill or did a household member attempt suicide
-    A household member went to prison
-    Someone else came to live with you (bf or gf of parent, aunt, uncle, etc.)
-    You moved around a lot
-    You experienced homelessness
-    You ran away
-    Your family received public assistance (food stamps, disability, unemployment, etc.)
-    Your family could not afford heat or water (or other basic utilities)
-    Your family experienced poverty
-    You used drugs or alcohol
-    You were addicted to drugs or alcohol
-    You felt like your life was threatened
-    Lived in foster care*
-    Other exciting or difficult family events that stood out to you? List here: _________
-——If bolded questions are checked, will be asked to place in timeline——
-*note for foster care, also ask age foster care ended
--->

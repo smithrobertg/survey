@@ -30,7 +30,7 @@
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Been employed PT/FT" />
-                Been employed part-time or full-time*
+                Been employed part-time or full-time
             </label>
         </div>
         <div class="form-check">
@@ -124,20 +124,27 @@
             </label>
         </div>
     </div>
-    <div class="form-group row">
-        <label>Was this person ever a trafficker?</label>
+    <fieldset class="" disabled>
+      <div class="form-group row">
+          <label>Was this person ever a trafficker?</label>
 
-        <div class="form-check form-check-inline has-success">
-            <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="supported_by_trafficker" id="radioYes" value="Yes" />Yes
-            </label>
-        </div>
-        <div class="form-check form-check-inline has-danger">
-            <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="supported_by_trafficker" id="radioNo" value="No" />No
-            </label>
-        </div>
-    </div>
+          <div class="form-check form-check-inline text-success">
+              <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="supported_by_trafficker" id="radioYes" value="Yes" />Yes
+              </label>
+          </div>
+          <div class="form-check form-check-inline text-danger">
+              <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="supported_by_trafficker" id="radioNo" value="No" />No
+              </label>
+          </div>
+          <div class="form-check form-check-inline text-info">
+              <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="supported_by_trafficker" id="radioDontKnow" value="I don't know" />I don't know
+              </label>
+          </div>
+      </div>
+    </fieldset>
 
     <div class="form-group">
         <label class="form-label" for="other_work_events">
@@ -149,8 +156,5 @@
     <button class="btn btn-primary">Continue &rarr;</button>
 
 </form>
- 	 
-——If bolded questions are checked, will be asked to place in timeline——
-*for working PT/FT put in timeline ranges of time employed 40+ hours/week
 
 @endsection
