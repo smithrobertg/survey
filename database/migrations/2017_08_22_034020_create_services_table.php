@@ -31,6 +31,9 @@ class CreateServicesTable extends Migration
             $table->string('received_services_family')->nullable();
             $table->string('received_services_religious')->nullable();
             $table->string('received_services_housing')->nullable();
+            $table->string('agency_help_exit_sex_trade')->nullable();
+            $table->string('agency_help_exit_sex_trade_other')->nullable();
+            $table->string('agency_helpful_exiting_sex_trade')->nullable();
             $table->text('other_services')->nullable();
             $table->timestamps();
         });
@@ -39,8 +42,6 @@ class CreateServicesTable extends Migration
             $table->increments('id');
             $table->integer('survey_id')->unsigned()->default(0);
             $table->text('services_followup_events')->nullable();
-            $table->string('agency_help_exit_sex_trade')->nullable();
-            $table->string('agency_help_exit_sex_trade_other')->nullable();
             $table->text('explain_services_experiences')->nullable();
             $table->timestamps();
         });

@@ -20,8 +20,8 @@
             <textarea class="form-control" name="want_research_staff_to_know_about_answers" id="want_research_staff_to_know_about_answers" rows="5"></textarea>
         </div>
    </fieldset>
-   
-   <button type="submit" class="btn btn-primary">Save and Continue &rarr;</button>
+
+   <button type="submit" class="btn btn-primary">Save and Continue &rarr; <em>End of Survey</em></button>
 
 </form>
 @endsection

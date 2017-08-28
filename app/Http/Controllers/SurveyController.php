@@ -310,7 +310,8 @@ class SurveyController extends Controller
         $exploitation->age_first_sold_sex = $request->input('age_first_sold_sex');
         $exploitation->age_last_sold_sex = $request->input('age_last_sold_sex');
         $exploitation->times_tried_to_leave_sex_trade = $request->input('times_tried_to_leave_sex_trade');
-        $exploitation->returned_to_selling_sex = $request->input('returned_to_selling_sex');
+        $exploitation->returned_to_sex_trade = $request->input('returned_to_sex_trade');
+        $exploitation->other_exploitation_events = $request->input('other_exploitation_events');
 
         $exploitation->save();
 
@@ -337,10 +338,9 @@ class SurveyController extends Controller
         $exploitationFollowup = new ExploitationFollowup;
 
         $exploitationFollowup->first_instance_selling_sex = $request->input('first_instance_selling_sex');
-        $exploitationFollowup->why_returned_selling_sex = $request->input('why_returned_selling_sex');
+        $exploitationFollowup->why_returned_to_sex_trade = $request->input('why_returned_to_sex_trade');
         $exploitationFollowup->how_take_care_of_self = $request->input('how_take_care_of_self');
         $exploitationFollowup->how_react_to_stressful_situation = $request->input('how_react_to_stressful_situation');
-        $exploitationFollowup->other_exploitation_events = $request->input('other_exploitation_events');
 
         $exploitationFollowup->save();
 
@@ -373,6 +373,9 @@ class SurveyController extends Controller
         $services->received_services_family = $request->input('received_services_family');
         $services->received_services_religious = $request->input('received_services_religious');
         $services->received_services_housing = $request->input('received_services_housing');
+        $services->agency_help_exit_sex_trade = $request->input('agency_help_exit_sex_trade');
+        $services->agency_help_exit_sex_trade_other = $request->input('agency_help_exit_sex_trade_other');
+        $services->agency_helpful_exiting_sex_trade = $request->input('agency_helpful_exiting_sex_trade');
         $services->other_services = $request->input('other_services');
 
         $services->save();
@@ -400,8 +403,6 @@ class SurveyController extends Controller
         $servicesFollowup = new ServicesFollowup;
 
         if (!empty($request->input('services_followup_events'))) $servicesFollowup->services_followup_events = implode(", ", $request->input('services_followup_events'));
-        $servicesFollowup->agency_help_exit_sex_trade = $request->input('agency_help_exit_sex_trade');
-        $servicesFollowup->agency_help_exit_sex_trade_other = $request->input('agency_help_exit_sex_trade_other');
         $servicesFollowup->explain_services_experiences = $request->input('explain_services_experiences');
 
         $servicesFollowup->save();
