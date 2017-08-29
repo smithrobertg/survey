@@ -22,6 +22,51 @@ use App\FinalQuestions;
 
 class SurveyController extends Controller
 {
+    public function getConsent()
+    {
+        return view('survey.consent');
+    }
+
+    public function postConsent (Request $request)
+    {
+        $consent = $request->input('consent');
+
+        if (strtolower($consent) == "yes")
+        {
+            return redirect()->route('survey.thankyou-for-participating');
+        }
+
+        return redirect()->route('survey.referral');
+    }
+
+    public function getThankYouForParticipating()
+    {
+        $survey = new Survey;
+        $survey->save();
+
+        $survey_id = $survey->survey_id;
+        $participant_id = 'XYZ0123456789';
+
+        //return view('survey.thankyou-for-participating', compact('survey_id', 'participant_id'));
+
+        return view('survey.thankyou-for-participating', [  'survey_id' => $survey_id,
+                                                            'participant_id' => $participant_id ]);
+    }
+
+    // Post not needed because view redirects straight to Demographics view
+    /*
+    public function postThankYouForParticipating (Request $request)
+    {
+        return redirect()->route('survey.demographics');
+    }
+    */
+
+    public function getDemographics()
+    {
+        $survey = new Survey;
+
+        return view('survey.demographics', [ 'survey' => $survey ]);
+    }
     //
     public function getOrientationQuestions()
     {

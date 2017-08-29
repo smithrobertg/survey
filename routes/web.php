@@ -43,14 +43,19 @@ Route::get('screening', function () {
 	return view('survey.screening');
 });
 
-Route::get('consent', function () {
-	return view('survey.consent');
-});
+Route::get('consent', 'SurveyController@getConsent');
+Route::post('consent', 'SurveyController@postConsent');
 
-Route::post('consent', function () {
-	return view('survey.thankyou-for-participating');
-});
+Route::get('thankyou-for-participating', 'SurveyController@getThankYouForParticipating')->name('survey.thankyou-for-participating');
 
+//Route::get('demographics/{survey}/create', 'DemographicsController@create');
+Route::get('demographics', 'SurveyController@getDemographics')->name('survey.demographics');
+Route::post('demographics', 'DemographicsController@store');
+
+Route::prefix('survey')->group( function () {
+
+});
+/*
 Route::get('thankyou-for-participating', function () {
 	//return view('survey/thankyou-for-participating', [
 	//	'participant_id' => 'XYZ0123456789'
@@ -61,12 +66,10 @@ Route::get('thankyou-for-participating', function () {
 
 	return view('survey.thankyou-for-participating', compact('survey_id', 'participant_id'));
 });
+*/
 
 Route::get('survey/{survey}/demographics', 'DemographicsController@create');
 
-//Route::get('demographics/{survey}/create', 'DemographicsController@create');
-
-Route::post('demographics', 'DemographicsController@store');
 
 Route::get('timeline-description', function () {
 	return view('survey.timeline-description');
@@ -196,4 +199,4 @@ Route::get('followup-interview', function () {
 
 Route::get('referral', function () {
 	return view('survey.referral');
-});
+})->name('survey.referral');

@@ -12,19 +12,21 @@
 @endsection
 
 @section('content')
+<div class="jumbotron bg-light my-0 py-1">
+  <h2 id="formTitle">
+      UMASS BOSTON INSTITUTIONAL REVIEW BOARD
+  </h2>
+  <h3 class="text-center">
+      University of Massachusetts Boston<br />
+      Department of Sociology<br />
+      100 Morrissey Boulevard<br />
+      Boston, MA.  02125-3393<br />
+  </h3>
+</div>
 <div class="row">
-    <div class="col-sm-offset-2 col-sm-8">
-        <h2 id="formTitle">
-            UMASS BOSTON INSTITUTIONAL REVIEW BOARD
-        </h2>
-        <h3>
-            University of Massachusetts Boston<br />
-            Department of Sociology<br />
-            100 Morrissey Boulevard<br />
-            Boston, MA.  02125-3393<br />
-        </h3>
-
-        <form class="form-horizontal" method="post" asp-action="Consent" role="form">
+    <div class="col-10 mx-auto">
+        <form method="post" action="/consent">
+            {{ csrf_field() }}
             <h3 class="text-center"><strong>Consent Form for the Study of Life Events: Survey</strong></h3>
             <p>
                 Thank you for your interest in this survey and study. We are asking you to take part in a research project to offer your experience and expertise to study major life events and explore the transition to adulthood for individuals who identify as survivors of commercial sexual exploitation or sex trafficking, exchanged sex for money, drugs, food, shelter, or other needs, have been controlled by another person to sell sex as a payment for drugs or other need, had sex for money because a boyfriend, girlfriend, spouse, or family member asked or forced them, or has identified as a sex worker/made money selling sex. This study involves a survey about different life events. At the end of this survey, you may be asked to participate in an additional follow-up interview but are not at all required to do so.
@@ -69,15 +71,14 @@
                     Would you like to participate in the research? You saying yes will be considered as consent.
                 </h2>
                 <h2 class="text-center">
-                    <label class="radio-inline text-success"><input type="radio" name="Consent" id="consentYes" value="yes" /> Yes</label>
-                    <label class="radio-inline text-danger"><input type="radio" name="Consent" id="consentNo" value="no" /> No</label>
+                    <label class="radio-inline text-success"><input type="radio" name="consent" id="consentYes" value="Yes" /> Yes</label>
+                    <label class="radio-inline text-danger"><input type="radio" name="consent" id="consentNo" value="No" /> No</label>
                 </h2>
             </div>            <p>
                 Please keep a copy of this form for your records if you need to contact me. It is also okay to not keep this form for confidentiality. Thank you for your time.
             </p>
             <div class="text-center">
-                <a href="/thankyou-for-participating" class="btn btn-lg btn-success">Continue</a>
-                <input type="submit" value="Continue" class="btn btn-danger btn-lg" />
+                <button type="submit" class="btn btn-primary btn-lg col-6 mb-3">Continue &rarr;</button>
             </div>
         </form>
     </div>
