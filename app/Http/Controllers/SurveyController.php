@@ -147,9 +147,10 @@ class SurveyController extends Controller
         return view('survey.family-background-timeline');
     }
 
-    public function getFamilyBackgoundTimeline()
+    public function getFamilyBackgroundTimeline()
     {
-		$familyBackgoundTimelineEvents = [ "A parent abused you (physically, sexually, or emotionally)",
+		$familyBackgoundTimelineEvents = array(
+                      "A parent abused you (physically, sexually, or emotionally)",
 											"A parent was arrested",
 											"You experienced homelessness",
 											"You experienced abuse (physical, sexual, or emotional) by a non-parent",
@@ -157,14 +158,14 @@ class SurveyController extends Controller
 											"Your family could not afford heat or water (or other basic utilities)",
 											"Your family experienced poverty",
 											"You were addicted to drugs or alcohol (before turning 18)",
-											"Lived in foster care (age entered and age exited)" ]
+											"Lived in foster care (age entered and age exited)");
 
-        return view('survey.family-background-timeline' [ 'timelineEvents' => $familyBackgoundTimelineEvents ]);
+        return view('survey.family-background-timeline', [ 'timelineEvents' => $familyBackgoundTimelineEvents ]);
     }
 
     public function postFamilyBackgroundTimeline(Request $request)
     {
-        return view('survey.timeline.family-background');
+        return redirect()->route('timeline.family-background');
     }
 
     public function getFamilyBackgroundFollowup()
