@@ -89,8 +89,8 @@ Route::get('timeline/orientation', function () {
 Route::get('family-background', 'SurveyController@getFamilyBackground');
 Route::post('family-background', 'SurveyController@postFamilyBackground');
 
-Route::get('family-background-timeline', 'SurveyController@getFamilyBackgroundTimeline')->name('survey.family-background-timeline');
-Route::post('family-background-timeline', 'SurveyController@postFamilyBackgroundTimeline')->name('survey.family-background-timeline');
+Route::get('family-background-timeline', 'TimelineController@getFamilyBackgroundTimeline')->name('survey.family-background-timeline');
+Route::post('family-background-timeline', 'TimelineController@postFamilyBackgroundTimeline')->name('survey.family-background-timeline');
 
 Route::get('timeline/family-background', function () {
 	return view('survey.timeline.family-background');

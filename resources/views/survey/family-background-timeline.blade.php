@@ -296,7 +296,7 @@
                                 <input class="form-check-input" type="radio" name="timeframe_foster_care" id="timeframeAge" value="Age"> Age
                             </label>
                         </span>
-                        <input type="text" class="form-control" name="age__foster_care" />
+                        <input type="text" class="form-control" name="age_foster_care" />
                     </div>
                     <div class="input-group col-3">
                         <span class="input-group-addon">
@@ -332,6 +332,4 @@
 			<li>{{ $event }}</li>
 		@endforeach
 	</ul>
-
-    <a href="/timeline/family-background" class="btn btn-primary my-4">Continue &rarr;</a>
 @endsection
