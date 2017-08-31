@@ -10,7 +10,7 @@ class TimelineController extends Controller
     //
     public function getFamilyBackgroundTimeline()
     {
-    $familyBackgoundTimelineEvents = array(
+		$familyBackgoundTimelineEvents = array(
                       "A parent abused you (physically, sexually, or emotionally)",
                       "A parent was arrested",
                       "You experienced homelessness",
@@ -134,8 +134,125 @@ class TimelineController extends Controller
         $timelineEvent->range_to = $request->input('range_to_foster_care');
         $timelineEvent->save();
 
-        return redirect()->route('timeline.family-background');
+        return redirect()->route('timeline.family-background-followup');
+    }
+	
+    public function getEducationTimeline()
+    {
+        return view('survey.education-timeline');
     }
 
-    
+    public function postEducationTimeline(Request $request)
+    {
+	/*
+		• Have to repeat a grade
+		• Graduate from high school
+		• Get a GED
+		• Skip school regularly at any period of time
+		• Ever leave school for a period of time
+		• Experienced abuse by a teacher (or someone else at school)
+	*/
+
+	    // Have to repeat a grade
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 998;
+        $timelineEvent->event_category = "Education";
+        $timelineEvent->event_description = "Repeat a grade";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_abused_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+
+	    // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 998;
+        $timelineEvent->event_category = "Education";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_abused_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+		
+	    // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 998;
+        $timelineEvent->event_category = "Education";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_abused_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+
+	    // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 998;
+        $timelineEvent->event_category = "Education";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_abused_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+
+	    // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 998;
+        $timelineEvent->event_category = "Education";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_abused_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+
+	    // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 998;
+        $timelineEvent->event_category = "Education";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_abused_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+
+	    // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 998;
+        $timelineEvent->event_category = "Education";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_abused_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+
+
+        return redirect()->route('timeline.eduction');
+    }
+ /*
+	    // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 998;
+        $timelineEvent->event_category = "Education";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_abused_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+*/
+
+
 }

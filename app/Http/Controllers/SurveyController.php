@@ -107,22 +107,22 @@ class SurveyController extends Controller
 
         $familyBackground = new FamilyBackground;
 
-    		//if (isset($request->input('field'))) {
-    		//			$familyBackground->field = implode(", ", $request->input('field'));
-    		//}
-    		if (!empty($request->input('parent_or_adult_often'))) {
-    					$familyBackground->parent_or_adult_often = implode(", ", $request->input('parent_or_adult_often'));
+    	//if (isset($request->input('field'))) {
+    	//			$familyBackground->field = implode(", ", $request->input('field'));
+    	//}
+    	if (!empty($request->input('parent_or_adult_often'))) {
+    				$familyBackground->parent_or_adult_often = implode(", ", $request->input('parent_or_adult_often'));
 
-    		}
-    		if (!empty($request->input('adult_or_person_5_years_older_ever'))) {
-    					$familyBackground->adult_or_person_5_years_older_ever = implode(", ", $request->input('adult_or_person_5_years_older_ever'));
-    		}
-    		if (!empty($request->input('often_feel_that'))) {
-    					$familyBackground->often_feel_that = implode(", ", $request->input('often_feel_that'));
-    		}
-    		if (!empty($request->input('mother_or_stepmother'))) {
-    					$familyBackground->mother_or_stepmother = implode(", ", $request->input('mother_or_stepmother'));
-    		}
+    	}
+    	if (!empty($request->input('adult_or_person_5_years_older_ever'))) {
+    				$familyBackground->adult_or_person_5_years_older_ever = implode(", ", $request->input('adult_or_person_5_years_older_ever'));
+    	}
+    	if (!empty($request->input('often_feel_that'))) {
+    				$familyBackground->often_feel_that = implode(", ", $request->input('often_feel_that'));
+    	}
+    	if (!empty($request->input('mother_or_stepmother'))) {
+    				$familyBackground->mother_or_stepmother = implode(", ", $request->input('mother_or_stepmother'));
+    	}
         $familyBackground->parent_got_married = $request->input('parent_got_married');
         $familyBackground->parent_separated_divorced = $request->input('parent_separated_divorced');
         $familyBackground->lived_with_alchoholic_or_drug_user = $request->input('lived_with_alchoholic_or_drug_user');
@@ -144,7 +144,7 @@ class SurveyController extends Controller
 
         $familyBackground->save();
 
-        return view('survey.family-background-timeline');
+        return redirect()->route('survey.family-background-timeline');
     }
 
 
@@ -175,7 +175,7 @@ class SurveyController extends Controller
 
         $familyBackgoundFollowup->save();
 
-        return view('survey.education');
+        return redirect()->route('survey.education');
     }
 
     public function getEducation()
@@ -191,17 +191,7 @@ class SurveyController extends Controller
         $education->other_events = $request->input('other_education_events');
         $education->save();
 
-        return view('survey.education-timeline');
-    }
-
-    public function getEducationTimeline()
-    {
-        return view('survey.education-timeline');
-    }
-
-    public function postEducationTimeline(Request $request)
-    {
-        return view('survey.timeline.eduction');
+        return reroute('survey.education-timeline');
     }
 
     // Work/Housing controllers with timeline and followup questions

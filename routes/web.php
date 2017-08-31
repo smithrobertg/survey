@@ -86,8 +86,8 @@ Route::get('timeline/orientation', function () {
 
 // Family Background routes with timeline and followup questions
 
-Route::get('family-background', 'SurveyController@getFamilyBackground');
-Route::post('family-background', 'SurveyController@postFamilyBackground');
+Route::get('family-background', 'SurveyController@getFamilyBackground')->name('survey.family-background');
+Route::post('family-background', 'SurveyController@postFamilyBackground')->name('survey.family-background');
 
 Route::get('family-background-timeline', 'TimelineController@getFamilyBackgroundTimeline')->name('survey.family-background-timeline');
 Route::post('family-background-timeline', 'TimelineController@postFamilyBackgroundTimeline')->name('survey.family-background-timeline');
@@ -96,20 +96,20 @@ Route::get('timeline/family-background', function () {
 	return view('survey.timeline.family-background');
 })->name('timeline.family-background');
 
-Route::get('family-background-followup', 'SurveyController@getFamilyBackgroundFollowup');
-Route::post('family-background-followup', 'SurveyController@postFamilyBackgroundFollowup');
+Route::get('family-background-followup', 'SurveyController@getFamilyBackgroundFollowup')->name('survey.family-backgroud-followup');
+Route::post('family-background-followup', 'SurveyController@postFamilyBackgroundFollowup')->name('survey.family-background-followup');
 
 // Education routes with timeline
 
-Route::get('education', 'SurveyController@getEducation');
-Route::post('education', 'SurveyController@postEducation');
+Route::get('education', 'SurveyController@getEducation')->name('survey.education');
+Route::post('education', 'SurveyController@postEducation')->name('survey.education');
 
-Route::get('education-timeline', 'SurveyController@getEducationTimeline');
-Route::post('education-timeline', 'SurveyController@postEducationTimeline');
+Route::get('education-timeline', 'TimelineController@getEducationTimeline')->name('survey.education-timeline');
+Route::post('education-timeline', 'TimelineController@postEducationTimeline')->name('survey.education-timeline');
 
 Route::get('timeline/education', function () {
 	return view('survey.timeline.education');
-});
+})->name('timeline.education');
 
 // Work/Housing routes with timeline and followup questions
 
