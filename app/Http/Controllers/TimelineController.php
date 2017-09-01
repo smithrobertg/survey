@@ -393,16 +393,88 @@ class TimelineController extends Controller
 
     public function postSocialRelationshipsTimeline(Request $request)
     {
-		// Event
+		// Age first started dating
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 996;
         $timelineEvent->event_category = "Social Relationships";
-        $timelineEvent->event_description = "Event";
-        $timelineEvent->timeframe = $request->input('timeframe_');
-        $timelineEvent->age = $request->input('age_');
-        $timelineEvent->year = $request->input('year_');
-        $timelineEvent->range_from = $request->input('range_from_');
-        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->event_description = "Age started dating";
+        $timelineEvent->timeframe = $request->input('timeframe_started_dating');
+        $timelineEvent->age = $request->input('age_started_dating');
+        $timelineEvent->year = $request->input('year_started_dating');
+        $timelineEvent->range_from = $request->input('range_from_started_dating');
+        $timelineEvent->range_to = $request->input('range_to_started_dating');
+        $timelineEvent->save();
+
+		// Been married
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 996;
+        $timelineEvent->event_category = "Social Relationships";
+        $timelineEvent->event_description = "Married";
+        $timelineEvent->timeframe = $request->input('timeframe_married');
+        $timelineEvent->age = $request->input('age_married');
+        $timelineEvent->year = $request->input('year_married');
+        $timelineEvent->range_from = $request->input('range_from_married');
+        $timelineEvent->range_to = $request->input('range_to_married');
+        $timelineEvent->save();
+
+		// Had a child
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 996;
+        $timelineEvent->event_category = "Social Relationships";
+        $timelineEvent->event_description = "Had a child";
+        $timelineEvent->timeframe = $request->input('timeframe_had_child');
+        $timelineEvent->age = $request->input('age_had_child');
+        $timelineEvent->year = $request->input('year_had_child');
+        $timelineEvent->range_from = $request->input('range_from_had_child');
+        $timelineEvent->range_to = $request->input('range_to_had_child');
+        $timelineEvent->save();
+
+		// Experienced violence by a partner
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 996;
+        $timelineEvent->event_category = "Social Relationships";
+        $timelineEvent->event_description = "Violence by partner";
+        $timelineEvent->timeframe = $request->input('timeframe_violence_by_partner');
+        $timelineEvent->age = $request->input('age_violence_by_partner');
+        $timelineEvent->year = $request->input('year_violence_by_partner');
+        $timelineEvent->range_from = $request->input('range_from_violence_by_partner');
+        $timelineEvent->range_to = $request->input('range_to_violence_by_partner');
+        $timelineEvent->save();
+
+		// Experienced emotional abuse by a partner
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 996;
+        $timelineEvent->event_category = "Social Relationships";
+        $timelineEvent->event_description = "Emotional abuse by partner";
+        $timelineEvent->timeframe = $request->input('timeframe_emotional_abuse_by_partner');
+        $timelineEvent->age = $request->input('age_emotional_abuse_by_partner');
+        $timelineEvent->year = $request->input('year_emotional_abuse_by_partner');
+        $timelineEvent->range_from = $request->input('range_from_emotional_abuse_by_partner');
+        $timelineEvent->range_to = $request->input('range_to_emotional_abuse_by_partner');
+        $timelineEvent->save();
+
+		// Lost custody of a child
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 996;
+        $timelineEvent->event_category = "Social Relationships";
+        $timelineEvent->event_description = "Lost custody of child";
+        $timelineEvent->timeframe = $request->input('timeframe_lost_custody_of_child');
+        $timelineEvent->age = $request->input('age_lost_custody_of_child');
+        $timelineEvent->year = $request->input('year_lost_custody_of_child');
+        $timelineEvent->range_from = $request->input('range_from_lost_custody_of_child');
+        $timelineEvent->range_to = $request->input('range_to_lost_custody_of_child');
+        $timelineEvent->save();
+
+		// Regained custody of a child
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 996;
+        $timelineEvent->event_category = "Social Relationships";
+        $timelineEvent->event_description = "Regained custody of child";
+        $timelineEvent->timeframe = $request->input('timeframe_regained_custody_of_child');
+        $timelineEvent->age = $request->input('age_regained_custody_of_child');
+        $timelineEvent->year = $request->input('year_regained_custody_of_child');
+        $timelineEvent->range_from = $request->input('range_from_regained_custody_of_child');
+        $timelineEvent->range_to = $request->input('range_to_regained_custody_of_child');
         $timelineEvent->save();
 
         return redirect()->route('timeline.social-relationships');
