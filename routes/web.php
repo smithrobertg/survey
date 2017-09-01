@@ -132,7 +132,7 @@ Route::get('social-relationships', 'SurveyController@getSocialRelationships');
 Route::post('social-relationships', 'SurveyController@postSocialRelationships');
 
 Route::get('social-relationships-timeline', 'SurveyController@getSocialRelationshipsTimeline');
-Route::get('social-relationships-timeline', 'SurveyController@postSocialRelationshipsTimeline');
+Route::post('social-relationships-timeline', 'SurveyController@postSocialRelationshipsTimeline');
 
 Route::get('timeline/social-relationships', function () {
 	return view('survey.timeline.social-relationships');
