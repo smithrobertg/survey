@@ -212,17 +212,7 @@ class SurveyController extends Controller
 
         $workHousing->save();
 
-        return view('survey.work-housing-timeline');
-    }
-
-    public function getWorkHousingTimeline()
-    {
-        return view('survey.work-housing-timeline');
-    }
-
-    public function postWorkHousingTimeline(Request $request)
-    {
-        return view('survey.timeline.work-housing');
+        return redirect()->route('survey.work-housing-timeline');
     }
 
     public function getWorkHousingFollowup(Request $request)
@@ -260,16 +250,6 @@ class SurveyController extends Controller
         $socialRelationships->save();
 
         return view('survey.social-relationships-timeline');
-    }
-
-    public function getSocialRelationshipsTimeline()
-    {
-        return view('survey.social-relationships-timeline');
-    }
-
-    public function postSocialRelationshipsTimeline(Request $request)
-    {
-        return view('survey.timeline.social-relationships');
     }
 
     // Criminal Justice questions controller

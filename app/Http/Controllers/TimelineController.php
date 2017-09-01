@@ -144,110 +144,278 @@ class TimelineController extends Controller
 
     public function postEducationTimeline(Request $request)
     {
-	/*
-		• Have to repeat a grade
-		• Graduate from high school
-		• Get a GED
-		• Skip school regularly at any period of time
-		• Ever leave school for a period of time
-		• Experienced abuse by a teacher (or someone else at school)
-	*/
+		/*	EDUCATION
+			---------
+			• Have to repeat a grade
+			• Graduate from high school
+			• Get a GED
+			• Skip school regularly at any period of time
+			• Ever leave school for a period of time
+			• Experienced abuse by a teacher (or someone else at school)
+		*/
 
 	    // Have to repeat a grade
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 998;
         $timelineEvent->event_category = "Education";
-        $timelineEvent->event_description = "Repeat a grade";
-        $timelineEvent->timeframe = $request->input('timeframe_');
-        $timelineEvent->age = $request->input('age_abused_');
-        $timelineEvent->year = $request->input('year_');
-        $timelineEvent->range_from = $request->input('range_from_');
-        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->event_description = "Repeated grade";
+        $timelineEvent->timeframe = $request->input('timeframe_repeated_grade');
+        $timelineEvent->age = $request->input('age_repeated_grade');
+        $timelineEvent->year = $request->input('year_repeated_grade');
+        $timelineEvent->range_from = $request->input('range_from_repeated_grade');
+        $timelineEvent->range_to = $request->input('range_to_repeated_grade');
         $timelineEvent->save();
 
-	    // Event
+	    // Graduate from high school
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 998;
         $timelineEvent->event_category = "Education";
-        $timelineEvent->event_description = "Event";
-        $timelineEvent->timeframe = $request->input('timeframe_');
-        $timelineEvent->age = $request->input('age_abused_');
-        $timelineEvent->year = $request->input('year_');
-        $timelineEvent->range_from = $request->input('range_from_');
-        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->event_description = "Graduated high school";
+        $timelineEvent->timeframe = $request->input('timeframe_graduated_high_school');
+        $timelineEvent->age = $request->input('age_abused_graduated_high_school');
+        $timelineEvent->year = $request->input('year_graduated_high_school');
+        $timelineEvent->range_from = $request->input('range_from_graduated_high_school');
+        $timelineEvent->range_to = $request->input('range_to_graduated_high_school');
         $timelineEvent->save();
 		
-	    // Event
+	    // Get a GED
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 998;
         $timelineEvent->event_category = "Education";
-        $timelineEvent->event_description = "Event";
-        $timelineEvent->timeframe = $request->input('timeframe_');
-        $timelineEvent->age = $request->input('age_abused_');
-        $timelineEvent->year = $request->input('year_');
-        $timelineEvent->range_from = $request->input('range_from_');
-        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->event_description = "Got GED";
+        $timelineEvent->timeframe = $request->input('timeframe_got_ged');
+        $timelineEvent->age = $request->input('age_got_ged');
+        $timelineEvent->year = $request->input('year_got_ged');
+        $timelineEvent->range_from = $request->input('range_from_got_ged');
+        $timelineEvent->range_to = $request->input('range_to_got_ged');
         $timelineEvent->save();
 
-	    // Event
+	    // Skip school regularly at any period of time
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 998;
         $timelineEvent->event_category = "Education";
-        $timelineEvent->event_description = "Event";
-        $timelineEvent->timeframe = $request->input('timeframe_');
-        $timelineEvent->age = $request->input('age_abused_');
-        $timelineEvent->year = $request->input('year_');
-        $timelineEvent->range_from = $request->input('range_from_');
-        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->event_description = "Skip school regularly";
+        $timelineEvent->timeframe = $request->input('timeframe_skip_school_regularly');
+        $timelineEvent->age = $request->input('age_skip_school_regularly');
+        $timelineEvent->year = $request->input('year_skip_school_regularly');
+        $timelineEvent->range_from = $request->input('range_from_skip_school_regularly');
+        $timelineEvent->range_to = $request->input('range_to_skip_school_regularly');
         $timelineEvent->save();
 
-	    // Event
+	    // Ever leave school for a period of time
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 998;
         $timelineEvent->event_category = "Education";
-        $timelineEvent->event_description = "Event";
-        $timelineEvent->timeframe = $request->input('timeframe_');
-        $timelineEvent->age = $request->input('age_abused_');
-        $timelineEvent->year = $request->input('year_');
-        $timelineEvent->range_from = $request->input('range_from_');
-        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->event_description = "Leave school for period of time";
+        $timelineEvent->timeframe = $request->input('timeframe_leave_school');
+        $timelineEvent->age = $request->input('age_leave_school');
+        $timelineEvent->year = $request->input('year_leave_school');
+        $timelineEvent->range_from = $request->input('range_from_leave_school');
+        $timelineEvent->range_to = $request->input('range_to_leave_school');
         $timelineEvent->save();
 
-	    // Event
+	    // Experienced abuse by a teacher (or someone else at school)
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 998;
         $timelineEvent->event_category = "Education";
-        $timelineEvent->event_description = "Event";
-        $timelineEvent->timeframe = $request->input('timeframe_');
-        $timelineEvent->age = $request->input('age_abused_');
-        $timelineEvent->year = $request->input('year_');
-        $timelineEvent->range_from = $request->input('range_from_');
-        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->event_description = "Abused by teacher/at school";
+        $timelineEvent->timeframe = $request->input('timeframe_abused_at_school');
+        $timelineEvent->age = $request->input('age_abused_abused_at_school');
+        $timelineEvent->year = $request->input('year_abused_at_school');
+        $timelineEvent->range_from = $request->input('range_from_abused_at_school');
+        $timelineEvent->range_to = $request->input('range_to_abused_at_school');
         $timelineEvent->save();
-
-	    // Event
-        $timelineEvent = new TimelineEvent;
-        $timelineEvent->survey_id = 998;
-        $timelineEvent->event_category = "Education";
-        $timelineEvent->event_description = "Event";
-        $timelineEvent->timeframe = $request->input('timeframe_');
-        $timelineEvent->age = $request->input('age_abused_');
-        $timelineEvent->year = $request->input('year_');
-        $timelineEvent->range_from = $request->input('range_from_');
-        $timelineEvent->range_to = $request->input('range_to_');
-        $timelineEvent->save();
-
 
         return redirect()->route('timeline.eduction');
     }
+
+	public function getWorkHousingTimeline()
+	{
+		return view('survey.work-housing-timeline');
+	}
+
+	public function postWorkHousingTimeline(Request $request)
+	{
+		/*	WORK/HOUSING EVENTS
+			-------------------
+			• Had trouble finding a job
+			• Been employed 40+ hours/week*
+			• Been fired from a job
+			• Quit a job
+			• Received public assistance (food stamps, disability, welfare, etc.)
+			• Experienced poverty as an adult
+			• Bought a house
+			• Ever been evicted
+			• Lived with a significant other for financial reasons
+			• Lived with a family member for financial reasons
+			• Financially supported by a trafficker
+		*/
+
+		// Had trouble finding a job
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 997;
+        $timelineEvent->event_category = "Work Housing";
+        $timelineEvent->event_description = "Trouble finding job";
+        $timelineEvent->timeframe = $request->input('timeframe_trouble_finding_job');
+        $timelineEvent->age = $request->input('age_trouble_finding_job');
+        $timelineEvent->year = $request->input('year_trouble_finding_job');
+        $timelineEvent->range_from = $request->input('range_from_trouble_finding_job');
+        $timelineEvent->range_to = $request->input('range_to_trouble_finding_job');
+        $timelineEvent->save();
+
+		// Been employed 40+ hours/week*
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 997;
+        $timelineEvent->event_category = "Work Housing";
+        $timelineEvent->event_description = "Employed 40+ hours/week";
+        $timelineEvent->timeframe = $request->input('timeframe_employed40hours_week');
+        $timelineEvent->age = $request->input('age_employed40hours_week');
+        $timelineEvent->year = $request->input('year_employed40hours_week');
+        $timelineEvent->range_from = $request->input('range_from_employed40hours_week');
+        $timelineEvent->range_to = $request->input('range_to_employed40hours_week');
+        $timelineEvent->save();
+
+		// Been fired from a job
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 997;
+        $timelineEvent->event_category = "Work Housing";
+        $timelineEvent->event_description = "Fired from a job";
+        $timelineEvent->timeframe = $request->input('timeframe_fired_from_job');
+        $timelineEvent->age = $request->input('age_fired_from_job');
+        $timelineEvent->year = $request->input('year_fired_from_job');
+        $timelineEvent->range_from = $request->input('range_from_fired_from_job');
+        $timelineEvent->range_to = $request->input('range_to_fired_from_job');
+        $timelineEvent->save();
+
+		// Quit a job
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 997;
+        $timelineEvent->event_category = "Work Housing";
+        $timelineEvent->event_description = "Quit a job";
+        $timelineEvent->timeframe = $request->input('timeframe_quit_job');
+        $timelineEvent->age = $request->input('age_quit_job');
+        $timelineEvent->year = $request->input('year_quit_job');
+        $timelineEvent->range_from = $request->input('range_from_quit_job');
+        $timelineEvent->range_to = $request->input('range_to_quit_job');
+        $timelineEvent->save();
+
+		// Received public assistance (food stamps, disability, welfare, etc.)
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 997;
+        $timelineEvent->event_category = "Work Housing";
+        $timelineEvent->event_description = "Received public assistance";
+        $timelineEvent->timeframe = $request->input('timeframe_received_public_assistance');
+        $timelineEvent->age = $request->input('age_received_public_assistance');
+        $timelineEvent->year = $request->input('year_received_public_assistance');
+        $timelineEvent->range_from = $request->input('range_from_received_public_assistance');
+        $timelineEvent->range_to = $request->input('range_to_received_public_assistance');
+        $timelineEvent->save();
+
+		// Experienced poverty as an adult
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 997;
+        $timelineEvent->event_category = "Work Housing";
+        $timelineEvent->event_description = "Poverty as adult";
+        $timelineEvent->timeframe = $request->input('timeframe_poverty_as_adult');
+        $timelineEvent->age = $request->input('age_poverty_as_adult');
+        $timelineEvent->year = $request->input('year_poverty_as_adult');
+        $timelineEvent->range_from = $request->input('range_from_poverty_as_adult');
+        $timelineEvent->range_to = $request->input('range_to_poverty_as_adult');
+        $timelineEvent->save();
+
+		// Bought a house
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 997;
+        $timelineEvent->event_category = "Work Housing";
+        $timelineEvent->event_description = "Bought house";
+        $timelineEvent->timeframe = $request->input('timeframe_bought_house');
+        $timelineEvent->age = $request->input('age_bought_house');
+        $timelineEvent->year = $request->input('year_bought_house');
+        $timelineEvent->range_from = $request->input('range_from_bought_house');
+        $timelineEvent->range_to = $request->input('range_to_bought_house');
+        $timelineEvent->save();
+
+		// Ever been evicted
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 997;
+        $timelineEvent->event_category = "Work Housing";
+        $timelineEvent->event_description = "Evicted";
+        $timelineEvent->timeframe = $request->input('timeframe_evicted');
+        $timelineEvent->age = $request->input('age_evicted');
+        $timelineEvent->year = $request->input('year_evicted');
+        $timelineEvent->range_from = $request->input('range_from_evicted');
+        $timelineEvent->range_to = $request->input('range_to_evicted');
+        $timelineEvent->save();
+
+		// Lived with a significant other for financial reasons
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 997;
+        $timelineEvent->event_category = "Work Housing";
+        $timelineEvent->event_description = "Lived with significant other for financial reasons";
+        $timelineEvent->timeframe = $request->input('timeframe_lived_with_significant_other_financial_reasons');
+        $timelineEvent->age = $request->input('age_abused_lived_with_significant_other_financial_reasons');
+        $timelineEvent->year = $request->input('year_lived_with_significant_other_financial_reasons');
+        $timelineEvent->range_from = $request->input('range_from_lived_with_significant_other_financial_reasons');
+        $timelineEvent->range_to = $request->input('range_to_lived_with_significant_other_financial_reasons');
+        $timelineEvent->save();
+
+		// Lived with a family member for financial reasons
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 997;
+        $timelineEvent->event_category = "Work Housing";
+        $timelineEvent->event_description = "Lived with family member for financial reasons";
+        $timelineEvent->timeframe = $request->input('timeframe_lived_with_family_financial_reasons');
+        $timelineEvent->age = $request->input('age_abused_lived_with_family_financial_reasons');
+        $timelineEvent->year = $request->input('year_lived_with_family_financial_reasons');
+        $timelineEvent->range_from = $request->input('range_from_lived_with_family_financial_reasons');
+        $timelineEvent->range_to = $request->input('range_to_lived_with_family_financial_reasons');
+        $timelineEvent->save();
+
+		// Financially supported by a trafficker
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 997;
+        $timelineEvent->event_category = "Work Housing";
+        $timelineEvent->event_description = "Financially supported by trafficker";
+        $timelineEvent->timeframe = $request->input('timeframe_supported_by_trafficker');
+        $timelineEvent->age = $request->input('age_abused_supported_by_trafficker');
+        $timelineEvent->year = $request->input('year_supported_by_trafficker');
+        $timelineEvent->range_from = $request->input('range_from_supported_by_trafficker');
+        $timelineEvent->range_to = $request->input('range_to_supported_by_trafficker');
+        $timelineEvent->save();
+
+		return redirect()->route('timeline.work-housing');
+	}
+	
+    public function getSocialRelationshipsTimeline()
+    {
+        return view('survey.social-relationships-timeline');
+    }
+
+    public function postSocialRelationshipsTimeline(Request $request)
+    {
+		// Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 996;
+        $timelineEvent->event_category = "Social Relationships";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+
+        return redirect()->route('timeline.social-relationships');
+    }
+
  /*
 	    // Event
         $timelineEvent = new TimelineEvent;
-        $timelineEvent->survey_id = 998;
-        $timelineEvent->event_category = "Education";
+        $timelineEvent->survey_id = 999;
+        $timelineEvent->event_category = "EventCategory";
         $timelineEvent->event_description = "Event";
         $timelineEvent->timeframe = $request->input('timeframe_');
-        $timelineEvent->age = $request->input('age_abused_');
+        $timelineEvent->age = $request->input('age_');
         $timelineEvent->year = $request->input('year_');
         $timelineEvent->range_from = $request->input('range_from_');
         $timelineEvent->range_to = $request->input('range_to_');
