@@ -329,7 +329,7 @@
 								<div class="input-group col-3">
 										<span class="input-group-addon">
 												<label class="form-check-label">
-														<input class="form-check-input" type="radio" name="timeframe_"lived_with_family_financial_reasons id="timeframeAge" value="Age"> Age
+														<input class="form-check-input" type="radio" name="timeframe_lived_with_family_financial_reasons" id="timeframeAge" value="Age"> Age
 												</label>
 										</span>
 										<input type="text" class="form-control" name="age_lived_with_family_financial_reasons" />
@@ -364,29 +364,29 @@
 								<div class="input-group col-3">
 										<span class="input-group-addon">
 												<label class="form-check-label">
-														<input class="form-check-input" type="radio" name="timeframe_financially_supported_by_trafficker" id="timeframeAge" value="Age"> Age
+														<input class="form-check-input" type="radio" name="timeframe_supported_by_trafficker" id="timeframeAge" value="Age"> Age
 												</label>
 										</span>
-										<input type="text" class="form-control" name="age_financially_supported_by_trafficker" />
+										<input type="text" class="form-control" name="age_supported_by_trafficker" />
 								</div>
 								<div class="input-group col-3">
 										<span class="input-group-addon">
 												<label class="form-check-label">
-														<input class="form-check-input" type="radio" name="timeframe_financially_supported_by_trafficker" id="timeframeYear" value="Year"> Year
+														<input class="form-check-input" type="radio" name="timeframe_supported_by_trafficker" id="timeframeYear" value="Year"> Year
 												</label>
 										</span>
-										<input type="text" class="form-control" name="year_financially_supported_by_trafficker" />
+										<input type="text" class="form-control" name="year_supported_by_trafficker" />
 								</div>
 								<div class="input-group col-6">
 										<span class="input-group-addon">
 												<label class="form-check-label">
-														<input class="form-check-input" type="radio" name="timeframe_financially_supported_by_trafficker" id="timeframeRange" value="Range"> Range
+														<input class="form-check-input" type="radio" name="timeframe_supported_by_trafficker" id="timeframeRange" value="Range"> Range
 												</label>
 										</span>
 										<span class="input-group-addon">from:</span>
-										<input type="text" class="form-control" name="range_from_financially_supported_by_trafficker" />
+										<input type="text" class="form-control" name="range_from_supported_by_trafficker" />
 										<span class="input-group-addon">to:</span>
-										<input type="text" class="form-control" name="range_to_financially_supported_by_trafficker" />
+										<input type="text" class="form-control" name="range_to_supported_by_trafficker" />
 								</div>
 						</div>
 					</fieldset>

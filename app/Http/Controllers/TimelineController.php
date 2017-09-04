@@ -134,9 +134,9 @@ class TimelineController extends Controller
         $timelineEvent->range_to = $request->input('range_to_foster_care');
         $timelineEvent->save();
 
-        return redirect()->route('timeline.family-background-followup');
+        return redirect()->route('timeline.family-background');
     }
-	
+
     public function getEducationTimeline()
     {
         return view('survey.education-timeline');
@@ -146,12 +146,12 @@ class TimelineController extends Controller
     {
 		/*	EDUCATION
 			---------
-			• Have to repeat a grade
-			• Graduate from high school
-			• Get a GED
-			• Skip school regularly at any period of time
-			• Ever leave school for a period of time
-			• Experienced abuse by a teacher (or someone else at school)
+			ï¿½ Have to repeat a grade
+			ï¿½ Graduate from high school
+			ï¿½ Get a GED
+			ï¿½ Skip school regularly at any period of time
+			ï¿½ Ever leave school for a period of time
+			ï¿½ Experienced abuse by a teacher (or someone else at school)
 		*/
 
 	    // Have to repeat a grade
@@ -172,12 +172,12 @@ class TimelineController extends Controller
         $timelineEvent->event_category = "Education";
         $timelineEvent->event_description = "Graduated high school";
         $timelineEvent->timeframe = $request->input('timeframe_graduated_high_school');
-        $timelineEvent->age = $request->input('age_abused_graduated_high_school');
+        $timelineEvent->age = $request->input('age_graduated_high_school');
         $timelineEvent->year = $request->input('year_graduated_high_school');
         $timelineEvent->range_from = $request->input('range_from_graduated_high_school');
         $timelineEvent->range_to = $request->input('range_to_graduated_high_school');
         $timelineEvent->save();
-		
+
 	    // Get a GED
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 998;
@@ -220,13 +220,13 @@ class TimelineController extends Controller
         $timelineEvent->event_category = "Education";
         $timelineEvent->event_description = "Abused by teacher/at school";
         $timelineEvent->timeframe = $request->input('timeframe_abused_at_school');
-        $timelineEvent->age = $request->input('age_abused_abused_at_school');
+        $timelineEvent->age = $request->input('age_abused_at_school');
         $timelineEvent->year = $request->input('year_abused_at_school');
         $timelineEvent->range_from = $request->input('range_from_abused_at_school');
         $timelineEvent->range_to = $request->input('range_to_abused_at_school');
         $timelineEvent->save();
 
-        return redirect()->route('timeline.eduction');
+        return redirect()->route('timeline.education');
     }
 
 	public function getWorkHousingTimeline()
@@ -238,17 +238,17 @@ class TimelineController extends Controller
 	{
 		/*	WORK/HOUSING EVENTS
 			-------------------
-			• Had trouble finding a job
-			• Been employed 40+ hours/week*
-			• Been fired from a job
-			• Quit a job
-			• Received public assistance (food stamps, disability, welfare, etc.)
-			• Experienced poverty as an adult
-			• Bought a house
-			• Ever been evicted
-			• Lived with a significant other for financial reasons
-			• Lived with a family member for financial reasons
-			• Financially supported by a trafficker
+			ï¿½ Had trouble finding a job
+			ï¿½ Been employed 40+ hours/week*
+			ï¿½ Been fired from a job
+			ï¿½ Quit a job
+			ï¿½ Received public assistance (food stamps, disability, welfare, etc.)
+			ï¿½ Experienced poverty as an adult
+			ï¿½ Bought a house
+			ï¿½ Ever been evicted
+			ï¿½ Lived with a significant other for financial reasons
+			ï¿½ Lived with a family member for financial reasons
+			ï¿½ Financially supported by a trafficker
 		*/
 
 		// Had trouble finding a job
@@ -353,7 +353,7 @@ class TimelineController extends Controller
         $timelineEvent->event_category = "Work Housing";
         $timelineEvent->event_description = "Lived with significant other for financial reasons";
         $timelineEvent->timeframe = $request->input('timeframe_lived_with_significant_other_financial_reasons');
-        $timelineEvent->age = $request->input('age_abused_lived_with_significant_other_financial_reasons');
+        $timelineEvent->age = $request->input('age_lived_with_significant_other_financial_reasons');
         $timelineEvent->year = $request->input('year_lived_with_significant_other_financial_reasons');
         $timelineEvent->range_from = $request->input('range_from_lived_with_significant_other_financial_reasons');
         $timelineEvent->range_to = $request->input('range_to_lived_with_significant_other_financial_reasons');
@@ -365,7 +365,7 @@ class TimelineController extends Controller
         $timelineEvent->event_category = "Work Housing";
         $timelineEvent->event_description = "Lived with family member for financial reasons";
         $timelineEvent->timeframe = $request->input('timeframe_lived_with_family_financial_reasons');
-        $timelineEvent->age = $request->input('age_abused_lived_with_family_financial_reasons');
+        $timelineEvent->age = $request->input('age_lived_with_family_financial_reasons');
         $timelineEvent->year = $request->input('year_lived_with_family_financial_reasons');
         $timelineEvent->range_from = $request->input('range_from_lived_with_family_financial_reasons');
         $timelineEvent->range_to = $request->input('range_to_lived_with_family_financial_reasons');
@@ -377,7 +377,7 @@ class TimelineController extends Controller
         $timelineEvent->event_category = "Work Housing";
         $timelineEvent->event_description = "Financially supported by trafficker";
         $timelineEvent->timeframe = $request->input('timeframe_supported_by_trafficker');
-        $timelineEvent->age = $request->input('age_abused_supported_by_trafficker');
+        $timelineEvent->age = $request->input('age_supported_by_trafficker');
         $timelineEvent->year = $request->input('year_supported_by_trafficker');
         $timelineEvent->range_from = $request->input('range_from_supported_by_trafficker');
         $timelineEvent->range_to = $request->input('range_to_supported_by_trafficker');
@@ -385,7 +385,7 @@ class TimelineController extends Controller
 
 		return redirect()->route('timeline.work-housing');
 	}
-	
+
     public function getSocialRelationshipsTimeline()
     {
         return view('survey.social-relationships-timeline');
@@ -480,8 +480,385 @@ class TimelineController extends Controller
         return redirect()->route('timeline.social-relationships');
     }
 
+    public function getCriminalJusticeTimeline()
+    {
+        return view('survey.criminal-justice-timeline');
+    }
+
+    public function postCriminalJusticeTimeline(Request $request)
+    {
+        // Ever been arrested
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 995;
+        $timelineEvent->event_category = "Criminal Justice";
+        $timelineEvent->event_description = "Arrested";
+        $timelineEvent->timeframe = $request->input('timeframe_arrested');
+        $timelineEvent->age = $request->input('age_arrested');
+        $timelineEvent->year = $request->input('year_arrested');
+        $timelineEvent->range_from = $request->input('range_from_arrested');
+        $timelineEvent->range_to = $request->input('range_to_arrested');
+        $timelineEvent->save();
+
+        // Ever been incarcerated (been to prison or jail)
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 995;
+        $timelineEvent->event_category = "Criminal Justice";
+        $timelineEvent->event_description = "Incarcerated";
+        $timelineEvent->timeframe = $request->input('timeframe_incarcerated');
+        $timelineEvent->age = $request->input('age_incarcerated');
+        $timelineEvent->year = $request->input('year_incarcerated');
+        $timelineEvent->range_from = $request->input('range_from_incarcerated');
+        $timelineEvent->range_to = $request->input('range_to_incarcerated');
+        $timelineEvent->save();
+
+        // Ever been solicited/asked to do anything sexual by a police officer
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 995;
+        $timelineEvent->event_category = "Criminal Justice";
+        $timelineEvent->event_description = "Socilited sexually by police officer";
+        $timelineEvent->timeframe = $request->input('timeframe_socilited_sexually_by_police_officer');
+        $timelineEvent->age = $request->input('age_socilited_sexually_by_police_officer');
+        $timelineEvent->year = $request->input('year_socilited_sexually_by_police_officer');
+        $timelineEvent->range_from = $request->input('range_from_socilited_sexually_by_police_officer');
+        $timelineEvent->range_to = $request->input('range_to_socilited_sexually_by_police_officer');
+        $timelineEvent->save();
+
+        return redirect()->route('timeline.criminal-justice');
+    }
+
+    public function getExploitationTimeline()
+    {
+        return view('survey.exploitation-timeline');
+    }
+
+    public function postExploitationTimeline(Request $request)
+    {
+        // Time period(s) of selling or exchanging sex
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 994;
+        $timelineEvent->event_category = "Exploitation";
+        $timelineEvent->event_description = "Selling/exchanging sex";
+        $timelineEvent->timeframe = $request->input('timeframe_selling_sex');
+        $timelineEvent->age = $request->input('age_selling_sex');
+        $timelineEvent->year = $request->input('year_selling_sex');
+        $timelineEvent->range_from = $request->input('range_from_selling_sex');
+        $timelineEvent->range_to = $request->input('range_to_selling_sex');
+        $timelineEvent->save();
+
+        // Asked by a family member to exchange sexual favors for money, drugs, or other compensation
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 994;
+        $timelineEvent->event_category = "Exploitation";
+        $timelineEvent->event_description = "Asked by family member to exchange sex";
+        $timelineEvent->timeframe = $request->input('timeframe_asked_by_family_to_exchange_sex');
+        $timelineEvent->age = $request->input('age_asked_by_family_to_exchange_sex');
+        $timelineEvent->year = $request->input('year_asked_by_family_to_exchange_sex');
+        $timelineEvent->range_from = $request->input('range_from_asked_by_family_to_exchange_sex');
+        $timelineEvent->range_to = $request->input('range_to_asked_by_family_to_exchange_sex');
+        $timelineEvent->save();
+
+        // Had a romantic relationship with someone who sold you for sex?
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 994;
+        $timelineEvent->event_category = "Exploitation";
+        $timelineEvent->event_description = "Romantic relationhip with someone who sold you for sex";
+        $timelineEvent->timeframe = $request->input('timeframe_romantic_relationship_with_someone_sold_you_for_sex');
+        $timelineEvent->age = $request->input('age_romantic_relationship_with_someone_sold_you_for_sex');
+        $timelineEvent->year = $request->input('year_romantic_relationship_with_someone_sold_you_for_sex');
+        $timelineEvent->range_from = $request->input('range_from_romantic_relationship_with_someone_sold_you_for_sex');
+        $timelineEvent->range_to = $request->input('range_to_romantic_relationship_with_someone_sold_you_for_sex');
+        $timelineEvent->save();
+
+        // Experienced violence by a pimp
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 994;
+        $timelineEvent->event_category = "Exploitation";
+        $timelineEvent->event_description = "Violence by pimp";
+        $timelineEvent->timeframe = $request->input('timeframe_violence_by_pimp');
+        $timelineEvent->age = $request->input('age_violence_by_pimp');
+        $timelineEvent->year = $request->input('year_violence_by_pimp');
+        $timelineEvent->range_from = $request->input('range_from_violence_by_pimp');
+        $timelineEvent->range_to = $request->input('range_to_violence_by_pimp');
+        $timelineEvent->save();
+
+        // Experienced violence by a client
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 994;
+        $timelineEvent->event_category = "Exploitation";
+        $timelineEvent->event_description = "Violence by client";
+        $timelineEvent->timeframe = $request->input('timeframe_violence_by_client');
+        $timelineEvent->age = $request->input('age_violence_by_client');
+        $timelineEvent->year = $request->input('year_violence_by_client');
+        $timelineEvent->range_from = $request->input('range_from_violence_by_client');
+        $timelineEvent->range_to = $request->input('range_to_violence_by_client');
+        $timelineEvent->save();
+
+        // Ever been stalked
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 994;
+        $timelineEvent->event_category = "Exploitation";
+        $timelineEvent->event_description = "Stalked";
+        $timelineEvent->timeframe = $request->input('timeframe_stalked');
+        $timelineEvent->age = $request->input('age_stalked');
+        $timelineEvent->year = $request->input('year_stalked');
+        $timelineEvent->range_from = $request->input('range_from_stalked');
+        $timelineEvent->range_to = $request->input('range_to_stalked');
+        $timelineEvent->save();
+
+        // Ever feel like your life was threatened
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 994;
+        $timelineEvent->event_category = "Exploitation";
+        $timelineEvent->event_description = "Felt life threatened";
+        $timelineEvent->timeframe = $request->input('timeframe_felt_life_threatened');
+        $timelineEvent->age = $request->input('age_felt_life_threatened');
+        $timelineEvent->year = $request->input('year_felt_life_threatened');
+        $timelineEvent->range_from = $request->input('range_from_felt_life_threatened');
+        $timelineEvent->range_to = $request->input('range_to_felt_life_threatened');
+        $timelineEvent->save();
+
+        // Ever tried to leave the sex trade
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 994;
+        $timelineEvent->event_category = "Exploitation";
+        $timelineEvent->event_description = "Tried to leave sex trade";
+        $timelineEvent->timeframe = $request->input('timeframe_tried_to_leave_sex_trade');
+        $timelineEvent->age = $request->input('age_tried_to_leave_sex_trade');
+        $timelineEvent->year = $request->input('year_tried_to_leave_sex_trade');
+        $timelineEvent->range_from = $request->input('range_from_tried_to_leave_sex_trade');
+        $timelineEvent->range_to = $request->input('range_to_tried_to_leave_sex_trade');
+        $timelineEvent->save();
+
+        // Did you return to/were brought back into selling/exchanging sex?
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 994;
+        $timelineEvent->event_category = "Exploitation";
+        $timelineEvent->event_description = "Returned to sex trade";
+        $timelineEvent->timeframe = $request->input('timeframe_returned_to_sex_trade');
+        $timelineEvent->age = $request->input('age_returned_to_sex_trade');
+        $timelineEvent->year = $request->input('year_returned_to_sex_trade');
+        $timelineEvent->range_from = $request->input('range_from_returned_to_sex_trade');
+        $timelineEvent->range_to = $request->input('range_to_returned_to_sex_trade');
+        $timelineEvent->save();
+
+        // Used substances (drugs, alcohol) to cope
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 994;
+        $timelineEvent->event_category = "Exploitation";
+        $timelineEvent->event_description = "Used substances to cope";
+        $timelineEvent->timeframe = $request->input('timeframe_used_substances_to_cope');
+        $timelineEvent->age = $request->input('age_used_substances_to_cope');
+        $timelineEvent->year = $request->input('year_used_substances_to_cope');
+        $timelineEvent->range_from = $request->input('range_from_used_substances_to_cope');
+        $timelineEvent->range_to = $request->input('range_to_used_substances_to_cope');
+        $timelineEvent->save();
+
+        // Ever been hospitalized for drug or alcohol use
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 994;
+        $timelineEvent->event_category = "Exploitation";
+        $timelineEvent->event_description = "Hospitalized for drug/alcohol use";
+        $timelineEvent->timeframe = $request->input('timeframe_hospitalized_for_drug_alcohol_use');
+        $timelineEvent->age = $request->input('age_hospitalized_for_drug_alcohol_use');
+        $timelineEvent->year = $request->input('year_hospitalized_for_drug_alcohol_use');
+        $timelineEvent->range_from = $request->input('range_from_hospitalized_for_drug_alcohol_use');
+        $timelineEvent->range_to = $request->input('range_to_hospitalized_for_drug_alcohol_use');
+        $timelineEvent->save();
+
+        // Struggled with depression, anxiety, post-traumatic stress disorder or other mental health issues
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 994;
+        $timelineEvent->event_category = "Exploitation";
+        $timelineEvent->event_description = "Struggled with depression/anxiety/ptsd/mental health issues";
+        $timelineEvent->timeframe = $request->input('timeframe_struggled_with_mental_health_issues');
+        $timelineEvent->age = $request->input('age_struggled_with_mental_health_issues');
+        $timelineEvent->year = $request->input('year_struggled_with_mental_health_issues');
+        $timelineEvent->range_from = $request->input('range_from_struggled_with_mental_health_issues');
+        $timelineEvent->range_to = $request->input('range_to_struggled_with_mental_health_issues');
+        $timelineEvent->save();
+
+        return redirect()->route('timeline.exploitation');
+    }
+
+    public function getServicesTimeline()
+    {
+        return view('survey.services-timeline');
+    }
+
+    public function postServicesTimeline(Request $request)
+    {
+        // Have you ever had a social service agency reach out to you to help?
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 993;
+        $timelineEvent->event_category = "Services";
+        $timelineEvent->event_description = "Social service agency reached out to help";
+        $timelineEvent->timeframe = $request->input('timeframe_social_service_agency_reached_out');
+        $timelineEvent->age = $request->input('age_social_service_agency_reached_out');
+        $timelineEvent->year = $request->input('year_social_service_agency_reached_out');
+        $timelineEvent->range_from = $request->input('range_from_social_service_agency_reached_out');
+        $timelineEvent->range_to = $request->input('range_to_social_service_agency_reached_out');
+        $timelineEvent->save();
+
+        // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 993;
+        $timelineEvent->event_category = "Services";
+        $timelineEvent->event_description = "Substance abuse services received";
+        $timelineEvent->timeframe = $request->input('timeframe_substance_abuse_services_received');
+        $timelineEvent->age = $request->input('age_substance_abuse_services_received');
+        $timelineEvent->year = $request->input('year_substance_abuse_services_received');
+        $timelineEvent->range_from = $request->input('range_from_substance_abuse_services_received');
+        $timelineEvent->range_to = $request->input('range_to_substance_abuse_services_received');
+        $timelineEvent->save();
+
+        // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 993;
+        $timelineEvent->event_category = "Services";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+
+        // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 993;
+        $timelineEvent->event_category = "Services";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+
+        // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 993;
+        $timelineEvent->event_category = "Services";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+
+        // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 993;
+        $timelineEvent->event_category = "Services";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+
+        // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 993;
+        $timelineEvent->event_category = "Services";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+
+        // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 993;
+        $timelineEvent->event_category = "Services";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+
+        // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 993;
+        $timelineEvent->event_category = "Services";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+
+        // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 993;
+        $timelineEvent->event_category = "Services";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+
+        // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 993;
+        $timelineEvent->event_category = "Services";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+
+        // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 993;
+        $timelineEvent->event_category = "Services";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+
+        // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 993;
+        $timelineEvent->event_category = "Services";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+
+        // Event
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 993;
+        $timelineEvent->event_category = "Services";
+        $timelineEvent->event_description = "Event";
+        $timelineEvent->timeframe = $request->input('timeframe_');
+        $timelineEvent->age = $request->input('age_');
+        $timelineEvent->year = $request->input('year_');
+        $timelineEvent->range_from = $request->input('range_from_');
+        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->save();
+
+        return redirect()->route('timeline.services');
+    }
  /*
-	    // Event
+	      // Event
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 999;
         $timelineEvent->event_category = "EventCategory";

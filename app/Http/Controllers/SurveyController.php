@@ -191,7 +191,7 @@ class SurveyController extends Controller
         $education->other_events = $request->input('other_education_events');
         $education->save();
 
-        return reroute('survey.education-timeline');
+        return redirect()->route('survey.education-timeline');
     }
 
     // Work/Housing controllers with timeline and followup questions
@@ -268,7 +268,7 @@ class SurveyController extends Controller
 
         $criminalJustice->save();
 
-        return view('survey.criminal-justice-timeline');
+        return redirect()->route('survey.criminal-justice-timeline');
     }
 
     public function getCriminalJusticeTimeline()
@@ -296,7 +296,7 @@ class SurveyController extends Controller
 
         $criminalJusticeFollowup->save();
 
-        return view ('survey.exploitation');
+        return redirect()->route('survey.exploitation');
     }
 
     // Exploitation questions controller
@@ -321,17 +321,7 @@ class SurveyController extends Controller
 
         $exploitation->save();
 
-        return view('survey.exploitation-timeline');
-    }
-
-    public function getExploitationTimeline()
-    {
-        return view('survey.exploitation-timeline');
-    }
-
-    public function postExploitationTimeline(Request $request)
-    {
-        return view ('survey.timeline.exploitation');
+        return redirect()->route('survey.exploitation-timeline');
     }
 
     public function getExploitationFollowup()
@@ -350,7 +340,7 @@ class SurveyController extends Controller
 
         $exploitationFollowup->save();
 
-        return view ('survey.services');
+        return redirect()->route('survey.services');
     }
 
     // Services questions controller
@@ -386,17 +376,7 @@ class SurveyController extends Controller
 
         $services->save();
 
-        return view('survey.services-timeline');
-    }
-
-    public function getServicesTimeline()
-    {
-        return view('survey.services-timeline');
-    }
-
-    public function postServicesTimeline(Request $request)
-    {
-        return view('survey.timeline.services');
+        return redirect()->route('survey.services-timeline');
     }
 
     public function getServicesFollowup()
@@ -413,7 +393,7 @@ class SurveyController extends Controller
 
         $servicesFollowup->save();
 
-        return view ('survey.final-questions');
+        return redirect()->route('survey.final-questions');
     }
 
     public function getFinalQuestions()
