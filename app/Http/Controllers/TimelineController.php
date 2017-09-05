@@ -699,7 +699,7 @@ class TimelineController extends Controller
         $timelineEvent->range_to = $request->input('range_to_social_service_agency_reached_out');
         $timelineEvent->save();
 
-        // Event
+        // Received substance abuse services
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 993;
         $timelineEvent->event_category = "Services";
@@ -711,28 +711,28 @@ class TimelineController extends Controller
         $timelineEvent->range_to = $request->input('range_to_substance_abuse_services_received');
         $timelineEvent->save();
 
-        // Event
+        // Received mental health services
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 993;
         $timelineEvent->event_category = "Services";
-        $timelineEvent->event_description = "Event";
-        $timelineEvent->timeframe = $request->input('timeframe_');
-        $timelineEvent->age = $request->input('age_');
-        $timelineEvent->year = $request->input('year_');
-        $timelineEvent->range_from = $request->input('range_from_');
-        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->event_description = "Mental health services received";
+        $timelineEvent->timeframe = $request->input('timeframe_mental_health_services_received');
+        $timelineEvent->age = $request->input('age_mental_health_services_received');
+        $timelineEvent->year = $request->input('year_mental_health_services_received');
+        $timelineEvent->range_from = $request->input('range_from_mental_health_services_received');
+        $timelineEvent->range_to = $request->input('range_to_mental_health_services_received');
         $timelineEvent->save();
 
-        // Event
+        // Received health care clinic services
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 993;
         $timelineEvent->event_category = "Services";
-        $timelineEvent->event_description = "Event";
-        $timelineEvent->timeframe = $request->input('timeframe_');
-        $timelineEvent->age = $request->input('age_');
-        $timelineEvent->year = $request->input('year_');
-        $timelineEvent->range_from = $request->input('range_from_');
-        $timelineEvent->range_to = $request->input('range_to_');
+        $timelineEvent->event_description = "Health care clinic services received";
+        $timelineEvent->timeframe = $request->input('timeframe_health_care_clinic_services_received');
+        $timelineEvent->age = $request->input('age_health_care_clinic_services_received');
+        $timelineEvent->year = $request->input('year_health_care_clinic_services_received');
+        $timelineEvent->range_from = $request->input('range_from_health_care_clinic_services_received');
+        $timelineEvent->range_to = $request->input('range_to_health_care_clinic_services_received');
         $timelineEvent->save();
 
         // Event

@@ -81,34 +81,34 @@
   <hr />
 
   <fieldset>
-    <legend>Event</legend>
+    <legend>Received <strong>mental health</strong> services</legend>
     <div class="form-row">
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeAge" value="Age"> Age
+                    <input class="form-check-input" type="radio" name="timeframe_mental_health_services_received" id="timeframeAge" value="Age"> Age
                 </label>
             </span>
-            <input type="text" class="form-control" name="age_" />
+            <input type="text" class="form-control" name="age_mental_health_services_received" />
         </div>
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeYear" value="Year"> Year
+                    <input class="form-check-input" type="radio" name="timeframe_mental_health_services_received" id="timeframeYear" value="Year"> Year
                 </label>
             </span>
-            <input type="text" class="form-control" name="year_" />
+            <input type="text" class="form-control" name="year_mental_health_services_received" />
         </div>
         <div class="input-group col-6">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeRange" value="Range"> Range
+                    <input class="form-check-input" type="radio" name="timeframe_mental_health_services_received" id="timeframeRange" value="Range"> Range
                 </label>
             </span>
             <span class="input-group-addon">from:</span>
-            <input type="text" class="form-control" name="range_from_" />
+            <input type="text" class="form-control" name="range_from_mental_health_services_received" />
             <span class="input-group-addon">to:</span>
-            <input type="text" class="form-control" name="range_to_" />
+            <input type="text" class="form-control" name="range_to_mental_health_services_received" />
         </div>
     </div>
   </fieldset>
@@ -116,34 +116,34 @@
   <hr />
 
   <fieldset>
-    <legend>Event</legend>
+    <legend>Received <strong>health care clinic</strong> services</legend>
     <div class="form-row">
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeAge" value="Age"> Age
+                    <input class="form-check-input" type="radio" name="timeframe_health_care_clinic_services_received" id="timeframeAge" value="Age"> Age
                 </label>
             </span>
-            <input type="text" class="form-control" name="age_" />
+            <input type="text" class="form-control" name="age_health_care_clinic_services_received" />
         </div>
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeYear" value="Year"> Year
+                    <input class="form-check-input" type="radio" name="timeframe_health_care_clinic_services_received" id="timeframeYear" value="Year"> Year
                 </label>
             </span>
-            <input type="text" class="form-control" name="year_" />
+            <input type="text" class="form-control" name="year_health_care_clinic_services_received" />
         </div>
         <div class="input-group col-6">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeRange" value="Range"> Range
+                    <input class="form-check-input" type="radio" name="timeframe_health_care_clinic_services_received" id="timeframeRange" value="Range"> Range
                 </label>
             </span>
             <span class="input-group-addon">from:</span>
-            <input type="text" class="form-control" name="range_from_" />
+            <input type="text" class="form-control" name="range_from_health_care_clinic_services_received" />
             <span class="input-group-addon">to:</span>
-            <input type="text" class="form-control" name="range_to_" />
+            <input type="text" class="form-control" name="range_to_health_care_clinic_services_received" />
         </div>
     </div>
   </fieldset>
