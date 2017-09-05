@@ -151,34 +151,34 @@
   <hr />
 
   <fieldset>
-    <legend>Event</legend>
+    <legend>Received <strong>Emergency Room</strong> services</legend>
     <div class="form-row">
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeAge" value="Age"> Age
+                    <input class="form-check-input" type="radio" name="timeframe_emergency_room_services_received" id="timeframeAge" value="Age"> Age
                 </label>
             </span>
-            <input type="text" class="form-control" name="age_" />
+            <input type="text" class="form-control" name="age_emergency_room_services_received" />
         </div>
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeYear" value="Year"> Year
+                    <input class="form-check-input" type="radio" name="timeframe_emergency_room_services_received" id="timeframeYear" value="Year"> Year
                 </label>
             </span>
-            <input type="text" class="form-control" name="year_" />
+            <input type="text" class="form-control" name="year_emergency_room_services_received" />
         </div>
         <div class="input-group col-6">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeRange" value="Range"> Range
+                    <input class="form-check-input" type="radio" name="timeframe_emergency_room_services_received" id="timeframeRange" value="Range"> Range
                 </label>
             </span>
             <span class="input-group-addon">from:</span>
-            <input type="text" class="form-control" name="range_from_" />
+            <input type="text" class="form-control" name="range_from_emergency_room_services_received" />
             <span class="input-group-addon">to:</span>
-            <input type="text" class="form-control" name="range_to_" />
+            <input type="text" class="form-control" name="range_to_emergency_room_services_received" />
         </div>
     </div>
   </fieldset>
@@ -186,34 +186,34 @@
   <hr />
 
   <fieldset>
-    <legend>Event</legend>
+    <legend>Received services from an agency to exit the commercial sex trade</legend>
     <div class="form-row">
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeAge" value="Age"> Age
+                    <input class="form-check-input" type="radio" name="timeframe_agency_to_exit_commercial_sex_trade" id="timeframeAge" value="Age"> Age
                 </label>
             </span>
-            <input type="text" class="form-control" name="age_" />
+            <input type="text" class="form-control" name="age_agency_to_exit_commercial_sex_trade" />
         </div>
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeYear" value="Year"> Year
+                    <input class="form-check-input" type="radio" name="timeframe_agency_to_exit_commercial_sex_trade" id="timeframeYear" value="Year"> Year
                 </label>
             </span>
-            <input type="text" class="form-control" name="year_" />
+            <input type="text" class="form-control" name="year_agency_to_exit_commercial_sex_trade" />
         </div>
         <div class="input-group col-6">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeRange" value="Range"> Range
+                    <input class="form-check-input" type="radio" name="timeframe_agency_to_exit_commercial_sex_trade" id="timeframeRange" value="Range"> Range
                 </label>
             </span>
             <span class="input-group-addon">from:</span>
-            <input type="text" class="form-control" name="range_from_" />
+            <input type="text" class="form-control" name="range_from_agency_to_exit_commercial_sex_trade" />
             <span class="input-group-addon">to:</span>
-            <input type="text" class="form-control" name="range_to_" />
+            <input type="text" class="form-control" name="range_to_agency_to_exit_commercial_sex_trade" />
         </div>
     </div>
   </fieldset>
@@ -221,34 +221,34 @@
   <hr />
 
   <fieldset>
-    <legend>Event</legend>
+    <legend>Received <strong>domestic violence</strong> services</legend>
     <div class="form-row">
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeAge" value="Age"> Age
+                    <input class="form-check-input" type="radio" name="timeframe_domestic_violence_services_received" id="timeframeAge" value="Age"> Age
                 </label>
             </span>
-            <input type="text" class="form-control" name="age_" />
+            <input type="text" class="form-control" name="age_domestic_violence_services_received" />
         </div>
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeYear" value="Year"> Year
+                    <input class="form-check-input" type="radio" name="timeframe_domestic_violence_services_received" id="timeframeYear" value="Year"> Year
                 </label>
             </span>
-            <input type="text" class="form-control" name="year_" />
+            <input type="text" class="form-control" name="year_domestic_violence_services_received" />
         </div>
         <div class="input-group col-6">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeRange" value="Range"> Range
+                    <input class="form-check-input" type="radio" name="timeframe_domestic_violence_services_received" id="timeframeRange" value="Range"> Range
                 </label>
             </span>
             <span class="input-group-addon">from:</span>
-            <input type="text" class="form-control" name="range_from_" />
+            <input type="text" class="form-control" name="range_from_domestic_violence_services_received" />
             <span class="input-group-addon">to:</span>
-            <input type="text" class="form-control" name="range_to_" />
+            <input type="text" class="form-control" name="range_to_domestic_violence_services_received" />
         </div>
     </div>
   </fieldset>
@@ -256,34 +256,34 @@
   <hr />
 
   <fieldset>
-    <legend>Event</legend>
+    <legend>Received <strong>sexual assault</strong> services</legend>
     <div class="form-row">
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeAge" value="Age"> Age
+                    <input class="form-check-input" type="radio" name="timeframe_sexual_assault_services_received" id="timeframeAge" value="Age"> Age
                 </label>
             </span>
-            <input type="text" class="form-control" name="age_" />
+            <input type="text" class="form-control" name="age_sexual_assault_services_received" />
         </div>
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeYear" value="Year"> Year
+                    <input class="form-check-input" type="radio" name="timeframe_sexual_assault_services_received" id="timeframeYear" value="Year"> Year
                 </label>
             </span>
-            <input type="text" class="form-control" name="year_" />
+            <input type="text" class="form-control" name="year_sexual_assault_services_received" />
         </div>
         <div class="input-group col-6">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeRange" value="Range"> Range
+                    <input class="form-check-input" type="radio" name="timeframe_sexual_assault_services_received" id="timeframeRange" value="Range"> Range
                 </label>
             </span>
             <span class="input-group-addon">from:</span>
-            <input type="text" class="form-control" name="range_from_" />
+            <input type="text" class="form-control" name="range_from_sexual_assault_services_received" />
             <span class="input-group-addon">to:</span>
-            <input type="text" class="form-control" name="range_to_" />
+            <input type="text" class="form-control" name="range_to_sexual_assault_services_received" />
         </div>
     </div>
   </fieldset>
@@ -291,34 +291,34 @@
   <hr />
 
   <fieldset>
-    <legend>Event</legend>
+    <legend>Received <strong>legal</strong> services </legend>
     <div class="form-row">
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeAge" value="Age"> Age
+                    <input class="form-check-input" type="radio" name="timeframe_legal_services_received" id="timeframeAge" value="Age"> Age
                 </label>
             </span>
-            <input type="text" class="form-control" name="age_" />
+            <input type="text" class="form-control" name="age_legal_services_received" />
         </div>
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeYear" value="Year"> Year
+                    <input class="form-check-input" type="radio" name="timeframe_legal_services_received" id="timeframeYear" value="Year"> Year
                 </label>
             </span>
-            <input type="text" class="form-control" name="year_" />
+            <input type="text" class="form-control" name="year_legal_services_received" />
         </div>
         <div class="input-group col-6">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeRange" value="Range"> Range
+                    <input class="form-check-input" type="radio" name="timeframe_legal_services_received" id="timeframeRange" value="Range"> Range
                 </label>
             </span>
             <span class="input-group-addon">from:</span>
-            <input type="text" class="form-control" name="range_from_" />
+            <input type="text" class="form-control" name="range_from_legal_services_received" />
             <span class="input-group-addon">to:</span>
-            <input type="text" class="form-control" name="range_to_" />
+            <input type="text" class="form-control" name="range_to_legal_services_received" />
         </div>
     </div>
   </fieldset>
@@ -326,34 +326,34 @@
   <hr />
 
   <fieldset>
-    <legend>Event</legend>
+    <legend>Received <strong>employment</strong> services</legend>
     <div class="form-row">
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeAge" value="Age"> Age
+                    <input class="form-check-input" type="radio" name="timeframe_employment_services_received" id="timeframeAge" value="Age"> Age
                 </label>
             </span>
-            <input type="text" class="form-control" name="age_" />
+            <input type="text" class="form-control" name="age_employment_services_received" />
         </div>
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeYear" value="Year"> Year
+                    <input class="form-check-input" type="radio" name="timeframe_employment_services_received" id="timeframeYear" value="Year"> Year
                 </label>
             </span>
-            <input type="text" class="form-control" name="year_" />
+            <input type="text" class="form-control" name="year_employment_services_received" />
         </div>
         <div class="input-group col-6">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeRange" value="Range"> Range
+                    <input class="form-check-input" type="radio" name="timeframe_employment_services_received" id="timeframeRange" value="Range"> Range
                 </label>
             </span>
             <span class="input-group-addon">from:</span>
-            <input type="text" class="form-control" name="range_from_" />
+            <input type="text" class="form-control" name="range_from_employment_services_received" />
             <span class="input-group-addon">to:</span>
-            <input type="text" class="form-control" name="range_to_" />
+            <input type="text" class="form-control" name="range_to_employment_services_received" />
         </div>
     </div>
   </fieldset>
@@ -361,34 +361,34 @@
   <hr />
 
   <fieldset>
-    <legend>Event</legend>
+    <legend>Family services (child care, custody, etc.)</legend>
     <div class="form-row">
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeAge" value="Age"> Age
+                    <input class="form-check-input" type="radio" name="timeframe_family_services_received" id="timeframeAge" value="Age"> Age
                 </label>
             </span>
-            <input type="text" class="form-control" name="age_" />
+            <input type="text" class="form-control" name="age_family_services_received" />
         </div>
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeYear" value="Year"> Year
+                    <input class="form-check-input" type="radio" name="timeframe_family_services_received" id="timeframeYear" value="Year"> Year
                 </label>
             </span>
-            <input type="text" class="form-control" name="year_" />
+            <input type="text" class="form-control" name="year_family_services_received" />
         </div>
         <div class="input-group col-6">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeRange" value="Range"> Range
+                    <input class="form-check-input" type="radio" name="timeframe_family_services_received" id="timeframeRange" value="Range"> Range
                 </label>
             </span>
             <span class="input-group-addon">from:</span>
-            <input type="text" class="form-control" name="range_from_" />
+            <input type="text" class="form-control" name="range_from_family_services_received" />
             <span class="input-group-addon">to:</span>
-            <input type="text" class="form-control" name="range_to_" />
+            <input type="text" class="form-control" name="range_to_family_services_received" />
         </div>
     </div>
   </fieldset>
@@ -396,34 +396,34 @@
   <hr />
 
   <fieldset>
-    <legend>Event</legend>
+    <legend>Received <strong>religious-based</strong> services</legend>
     <div class="form-row">
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeAge" value="Age"> Age
+                    <input class="form-check-input" type="radio" name="timeframe_religious_based_services_received" id="timeframeAge" value="Age"> Age
                 </label>
             </span>
-            <input type="text" class="form-control" name="age_" />
+            <input type="text" class="form-control" name="age_religious_based_services_received" />
         </div>
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeYear" value="Year"> Year
+                    <input class="form-check-input" type="radio" name="timeframe_religious_based_services_received" id="timeframeYear" value="Year"> Year
                 </label>
             </span>
-            <input type="text" class="form-control" name="year_" />
+            <input type="text" class="form-control" name="year_religious_based_services_received" />
         </div>
         <div class="input-group col-6">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeRange" value="Range"> Range
+                    <input class="form-check-input" type="radio" name="timeframe_religious_based_services_received" id="timeframeRange" value="Range"> Range
                 </label>
             </span>
             <span class="input-group-addon">from:</span>
-            <input type="text" class="form-control" name="range_from_" />
+            <input type="text" class="form-control" name="range_from_religious_based_services_received" />
             <span class="input-group-addon">to:</span>
-            <input type="text" class="form-control" name="range_to_" />
+            <input type="text" class="form-control" name="range_to_religious_based_services_received" />
         </div>
     </div>
   </fieldset>
@@ -431,34 +431,34 @@
   <hr />
 
   <fieldset>
-    <legend>Event</legend>
+    <legend>Housing services</legend>
     <div class="form-row">
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeAge" value="Age"> Age
+                    <input class="form-check-input" type="radio" name="timeframe_housing_services_received" id="timeframeAge" value="Age"> Age
                 </label>
             </span>
-            <input type="text" class="form-control" name="age_" />
+            <input type="text" class="form-control" name="age_housing_services_received" />
         </div>
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeYear" value="Year"> Year
+                    <input class="form-check-input" type="radio" name="timeframe_housing_services_received" id="timeframeYear" value="Year"> Year
                 </label>
             </span>
-            <input type="text" class="form-control" name="year_" />
+            <input type="text" class="form-control" name="year_housing_services_received" />
         </div>
         <div class="input-group col-6">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeRange" value="Range"> Range
+                    <input class="form-check-input" type="radio" name="timeframe_housing_services_received" id="timeframeRange" value="Range"> Range
                 </label>
             </span>
             <span class="input-group-addon">from:</span>
-            <input type="text" class="form-control" name="range_from_" />
+            <input type="text" class="form-control" name="range_from_housing_services_received" />
             <span class="input-group-addon">to:</span>
-            <input type="text" class="form-control" name="range_to_" />
+            <input type="text" class="form-control" name="range_to_housing_services_received" />
         </div>
     </div>
   </fieldset>
@@ -466,12 +466,12 @@
   <hr />
 
   <fieldset>
-    <legend>Event</legend>
+    <legend>Other services not mentioned above?</legend>
     <div class="form-row">
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeAge" value="Age"> Age
+                    <input class="form-check-input" type="radio" name="timeframe_other_services_received" id="timeframeAge" value="Age"> Age
                 </label>
             </span>
             <input type="text" class="form-control" name="age_" />
@@ -479,28 +479,28 @@
         <div class="input-group col-3">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeYear" value="Year"> Year
+                    <input class="form-check-input" type="radio" name="timeframe_other_services_received" id="timeframeYear" value="Year"> Year
                 </label>
             </span>
-            <input type="text" class="form-control" name="year_" />
+            <input type="text" class="form-control" name="year_other_services_received" />
         </div>
         <div class="input-group col-6">
             <span class="input-group-addon">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="timeframe_" id="timeframeRange" value="Range"> Range
+                    <input class="form-check-input" type="radio" name="timeframe_other_services_received" id="timeframeRange" value="Range"> Range
                 </label>
             </span>
             <span class="input-group-addon">from:</span>
-            <input type="text" class="form-control" name="range_from_" />
+            <input type="text" class="form-control" name="range_from_other_services_received" />
             <span class="input-group-addon">to:</span>
-            <input type="text" class="form-control" name="range_to_" />
+            <input type="text" class="form-control" name="range_to_other_services_received" />
         </div>
     </div>
   </fieldset>
 
   <hr />
 
-  <div class="row">
+	<div class="row">
 		<button class="btn btn-primary mx-auto" type="submit">Save and Continue to Timeline &rarr;</button>
 	</div>
 </form>
