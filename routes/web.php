@@ -50,7 +50,8 @@ Route::get('thankyou-for-participating', 'SurveyController@getThankYouForPartici
 
 //Route::get('demographics/{survey}/create', 'DemographicsController@create');
 Route::get('demographics', 'SurveyController@getDemographics')->name('survey.demographics');
-Route::post('demographics', 'DemographicsController@store')->name('survey.demographics');
+Route::post('demographics', 'SurveyController@postDemographics')->name('survey.demographics');
+//Route::post('demographics', 'DemographicsController@store')->name('survey.demographics');
 
 Route::prefix('survey')->group( function () {
 
@@ -72,7 +73,7 @@ Route::get('survey/{survey}/demographics', 'DemographicsController@create');
 
 Route::get('timeline-description', function () {
 	return view('survey.timeline-description');
-});
+})->name('survey.timeline-description');
 
 Route::get('orientation-questions', 'SurveyController@getOrientationQuestions')->name('survey.orientation-questions');
 Route::post('orientation-questions', 'SurveyController@postOrientationQuestions')->name('survey.orientation-questions');

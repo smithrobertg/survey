@@ -15,7 +15,7 @@ class CreateDemographicsTable extends Migration
     {
         Schema::create('demographics', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('survey_id')->unsigned()->default(0);;
+            $table->integer('survey_id')->unsigned()->default(0);
             $table->integer('participant_id')->default(0);
             $table->string('gender')->nullable();
             $table->string('gender_self_describe')->nullable();
@@ -35,7 +35,7 @@ class CreateDemographicsTable extends Migration
             $table->string('indentify_as_sex_for_money_forced_or_asked')->nullable();
             $table->string('indentify_as_sex_worker')->nullable();
             */
-            $table->string('describe_becoming_legal_adult')->nullable();
+            $table->text('describe_becoming_legal_adult')->nullable();
             $table->timestamps();
         });
     }

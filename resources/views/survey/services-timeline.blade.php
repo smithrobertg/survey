@@ -186,7 +186,7 @@
   <hr />
 
   <fieldset>
-    <legend>Received services from an agency to exit the commercial sex trade</legend>
+    <legend>Received services from <strong>an agency to exit the commercial sex trade</strong></legend>
     <div class="form-row">
         <div class="input-group col-3">
             <span class="input-group-addon">
@@ -361,7 +361,7 @@
   <hr />
 
   <fieldset>
-    <legend>Family services (child care, custody, etc.)</legend>
+    <legend>Received <strong>family services</strong> (child care, custody, etc.)</legend>
     <div class="form-row">
         <div class="input-group col-3">
             <span class="input-group-addon">
@@ -431,7 +431,7 @@
   <hr />
 
   <fieldset>
-    <legend>Housing services</legend>
+    <legend>Received <strong>housing</strong> services</legend>
     <div class="form-row">
         <div class="input-group col-3">
             <span class="input-group-addon">
@@ -466,7 +466,7 @@
   <hr />
 
   <fieldset>
-    <legend>Other services not mentioned above?</legend>
+    <legend>Received <strong>other services</strong> not mentioned above</legend>
     <div class="form-row">
         <div class="input-group col-3">
             <span class="input-group-addon">
@@ -474,7 +474,7 @@
                     <input class="form-check-input" type="radio" name="timeframe_other_services_received" id="timeframeAge" value="Age"> Age
                 </label>
             </span>
-            <input type="text" class="form-control" name="age_" />
+            <input type="text" class="form-control" name="age_other_services_received" />
         </div>
         <div class="input-group col-3">
             <span class="input-group-addon">

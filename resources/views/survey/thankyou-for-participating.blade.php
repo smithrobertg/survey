@@ -13,7 +13,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row text-center">
-		<a href="{{ route('survey.demographics') }}" class="btn btn-lg btn-success">Continue</a>
+	<div class="row justify-content-center">
+		<a href="{{ route('survey.demographics') }}" class="btn btn-lg btn-success col-4">Continue</a>
 	</div>
 @endsection

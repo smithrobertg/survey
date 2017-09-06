@@ -7,7 +7,7 @@
 <h2>Orientation Questions</h2>
 <p>First we are going to ask you questions about major events in your life. These events will help orient you to other events in your life. If you are unsure of the timing of these events, just select “I don’t know”</p>
 <div class="form">
-	<form method="post" action="/orientation-questions">
+	<form method="post" action="{{ route('survey.orientation-questions') }}">
 
 		{{ csrf_field() }}
 
@@ -70,7 +70,7 @@
 			<input type="text" class="form-control" name="childhood_event_description" placeholder="Childhood Event">
 		</div>
 		<div class="form-group">
-			<label for="childhood_event_age_or_year">Childhood Event: Age OR Year</label>
+			<label for="childhood_event_age_or_year">Childhood Event: Age <em>or</em> Year</label>
 			<input type="text" class="form-control" name="childhood_event_age_or_year" placeholder="Age or Year">
 		</div>
 		<div class="form-group">
@@ -78,7 +78,7 @@
 			<input type="text" class="form-control" name="adolescence_event_description" placeholder="Adolescense Event">
 		</div>
 		<div class="form-group">
-			<label for="adolescence_event_age_or_year">Adolescense Event: Age OR Year</label>
+			<label for="adolescence_event_age_or_year">Adolescence Event: Age <em>or</em> Year</label>
 			<input type="text" class="form-control" name="adolescence_event_age_or_year" placeholder="Age or Year">
 		</div>
 		<div class="form-group">
@@ -86,11 +86,13 @@
 			<input type="text" class="form-control" name="adulthood_event_description" placeholder="Adulthood Event">
 		</div>
 		<div class="form-group">
-			<label for="adulthood_event_age_or_year">Adulthood Event: Age OR Year</label>
+			<label for="adulthood_event_age_or_year">Adulthood Event: Age <em>or</em> Year</label>
 			<input type="text" class="form-control" name="adulthood_event_age_or_year" placeholder="Age or Year">
 		</div>
 
-		<button type="submit" class="btn btn-primary">Save and Continue  &rarr;</button>
+		<div class="row justify-content-center">
+			<button type="submit" class="btn btn-primary col-4">Save and Continue  &rarr;</button>
+		</div>
 	</form>
 </div>
 

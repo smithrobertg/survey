@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Demographics;
 use App\Orientation;
 use App\Survey;
 use App\FamilyBackground;
@@ -67,6 +68,32 @@ class SurveyController extends Controller
 
         return view('survey.demographics', [ 'survey' => $survey ]);
     }
+
+    public function postDemographics(Request $request)
+    {
+        //
+        //$survey = Survey::first();
+
+        $demographics = new Demographics;
+
+        $demographics->gender = request('gender');
+        $demographics->gender_self_describe = request('gender-self-describe');
+        $demographics->state_residence = request('current-state-of-residence');
+        $demographics->race_ethnicity = request('race-ethnicity');
+        $demographics->race_other = request('race-other');
+        $demographics->born_in_us = request('bornInUnitedStates');
+        $demographics->born_where = request('bornWhere');
+        $demographics->how_long_lived_in_us = request('howLongInUS');
+        $demographics->brought_to_us_by_trafficker = request('broughtToUsByTrafficker');
+        $demographics->indentify_as = implode(", ", request('identifyAs'));
+        $demographics->describe_becoming_legal_adult = request('describeBecomingLegalAdult');
+        $demographics->save();
+
+        //$survey->demographics()->save($demographics);
+
+        return redirect()->route('survey.timeline-description');
+    }
+
     //
     public function getOrientationQuestions()
     {
@@ -86,8 +113,8 @@ class SurveyController extends Controller
         $orientation->how_old_when_completed_school = $request->input('how_old_when_completed_school');
         $orientation->childhood_event_description = $request->input('childhood_event_description');
         $orientation->childhood_event_age_or_year = $request->input('childhood_event_age_or_year');
-        //$orientation->adolescense_event_description = $request->input('adolescence_event_description');
-        //$orientation->adolescense_event_age_or_year = $request->input('adolescence_event_age_or_year');
+        $orientation->adolescence_event_description = $request->input('adolescence_event_description');
+        $orientation->adolescence_event_age_or_year = $request->input('adolescence_event_age_or_year');
         $orientation->adulthood_event_description = $request->input('adulthood_event_description');
         $orientation->adulthood_event_age_or_year = $request->input('adulthood_event_age_or_year');
 

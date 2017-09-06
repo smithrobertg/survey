@@ -1,20 +1,11 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title>Survey - Demographics</title>
-</head>
-<body>
+﻿@extends('layouts.survey')
 
-<style>
-    textarea {
-        width: 100%
-    }
-</style>
+@section('title', 'Demographics')
 
+@section('content')
 <h2>Demographic Information</h2>
 
-<form method="post" action="/demographics">
-    
+<form method="post" action="{{ route('survey.demographics') }}">
     {{ csrf_field() }}
     <h2>{{ $survey->id }}, {{ $survey->participant_id }}</h2>
     <div class="form-group">
@@ -178,8 +169,9 @@
         <label for="describeBecomingLegalAdult" class="control-label">Can you explain what it was like turning 18 and becoming a legal adult? (open-ended answer)</label>
         <textarea class="form-control" name="describeBecomingLegalAdult"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Save Demographics and Continue Survey</button>
-    <h2><a href="/timeline-description">Next &rarr;</a></h2>
+
+    <div class="row justify-content-center">
+      <button type="submit" class="btn btn-primary">Save and Continue &rarr;</button>
+    </div>
 </form>
-</body>
-</html>
+@endsection
