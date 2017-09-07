@@ -56,6 +56,12 @@ Route::post('demographics', 'SurveyController@postDemographics')->name('survey.d
 Route::prefix('survey')->group( function () {
 
 });
+
+Route::prefix('test')->group( function () {
+
+  Route::get('partial', function() { return view('test.partial'); });
+
+});
 /*
 Route::get('thankyou-for-participating', function () {
 	//return view('survey/thankyou-for-participating', [
