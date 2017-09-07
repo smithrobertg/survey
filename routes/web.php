@@ -59,7 +59,7 @@ Route::prefix('survey')->group( function () {
 
 Route::prefix('test')->group( function () {
 
-  Route::get('partial', function() { return view('test.partial'); });
+  Route::get('partial', 'TestController@getPartialTest');
 
 });
 /*
