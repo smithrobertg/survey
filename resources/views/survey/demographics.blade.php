@@ -23,14 +23,14 @@
                 </select>
             </div>
             <div class="col-sm-6">
-                <label for="gender-self-describe" class="control-label">Gender (if self-described):</label>
-                <input type="text" name="gender-self-describe" class="form-control">
+                <label for="gender_self_describe" class="control-label">Gender (if self-described):</label>
+                <input type="text" name="gender_self_describe" class="form-control">
             </div>
         </div>
     </div>
     <div class="form-group">
-        <label for="current-state-of-residence" class="control-label">2. Current state of residence:</label>
-        <select name="current-state-of-residence" class="form-control dropdown">
+        <label for="current_state_of_residence" class="control-label">2. Current state of residence:</label>
+        <select name="current_state_of_residence" class="form-control dropdown">
             <option value="not-selected">--Select One--</option>
             <option value="MA">Massachusetts</option>
             <option value="AL">Alabama</option>
@@ -89,8 +89,8 @@
     <div class="form-group">
         <div class="row">
             <div class="col-sm-6">
-                <label for="race-ethnicity" class="control-label">3. What is your racial or ethnic identification?</label>
-                <select name="race-ethnicity" class="form-control drowdown">
+                <label for="race_ethnicity" class="control-label">3. What is your racial or ethnic identification?</label>
+                <select name="race_ethnicity" class="form-control drowdown">
                     <option value="not-selected">--Select One--</option>
                     <option>American Indian or other Native American</option>
                     <option>Asian, Asian-American, or Pacific Islander</option>
@@ -105,8 +105,8 @@
                 </select>
             </div>
             <div class="col-sm-6">
-                <label for="race-other" class="control-label">Other: (racial/ethnic identification)</label>
-                <input type="text" name="race-other" class="form-control">
+                <label for="race_other" class="control-label">Other: (racial/ethnic identification)</label>
+                <input type="text" name="race_other" class="form-control">
             </div>
         </div>
     </div>
@@ -145,29 +145,28 @@
                 </label>
             </div>
             <div class="checkbox">
-                <label><input type="checkbox" name="identifyAs[]" value="ExchangedSex">Exchanged sex for money, drugs, food, shelter, or other needs.</label>
+                <label><input type="checkbox" name="identifyAs[]" value="Exchanged sex">Exchanged sex for money, drugs, food, shelter, or other needs.</label>
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="identifyAs[]" value="SomeonePaidAnotherForSexInExchange">Someone has paid another person to have sex with you in exchange for
+                    <input type="checkbox" name="identifyAs[]" value="Someone paid another for sex in exchange">Someone has paid another person to have sex with you in exchange for
                     food, shelter, or other needs.
                 </label>
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="identifyAs[]" value="SexForMoneyBecauseBfGfSpouseFamilyAskedOrForced">Had sex for money because a boyfriend, girlfriend, spouse, or family
-
+                    <input type="checkbox" name="identifyAs[]" value="Had sex for money because bf/gf/spouse/family asked or forced">Had sex for money because a boyfriend, girlfriend, spouse, or family
                     member asked or forced you.
                 </label>
             </div>
             <div class="checkbox">
-                <label><input type="checkbox" name="identifyAs[]" value="SexWorkerOrMoneySellingSex">Being a sex worker or have you ever made money selling sex.</label>
+                <label><input type="checkbox" name="identifyAs[]" value="Sex worker or made money selling sex">Being a sex worker or have you ever made money selling sex.</label>
             </div>
         </div>
     </div>
     <div class="form-group">
-        <label for="describeBecomingLegalAdult" class="control-label">Can you explain what it was like turning 18 and becoming a legal adult? (open-ended answer)</label>
-        <textarea class="form-control" name="describeBecomingLegalAdult"></textarea>
+        <label for="describe_becoming_legal_adult" class="control-label">Can you explain what it was like turning 18 and becoming a legal adult? (open-ended answer)</label>
+        <textarea class="form-control" name="describe_becoming_legal_adult"></textarea>
     </div>
 
     <div class="row justify-content-center">

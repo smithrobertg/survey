@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Illuminate\Session\Store;
+//use App\Http\Controllers\Controller;
 use App\Demographics;
 use App\Orientation;
 use App\Survey;
@@ -76,17 +77,17 @@ class SurveyController extends Controller
 
         $demographics = new Demographics;
 
-        $demographics->gender = request('gender');
-        $demographics->gender_self_describe = request('gender-self-describe');
-        $demographics->state_residence = request('current-state-of-residence');
-        $demographics->race_ethnicity = request('race-ethnicity');
-        $demographics->race_other = request('race-other');
-        $demographics->born_in_us = request('bornInUnitedStates');
-        $demographics->born_where = request('bornWhere');
-        $demographics->how_long_lived_in_us = request('howLongInUS');
-        $demographics->brought_to_us_by_trafficker = request('broughtToUsByTrafficker');
-        $demographics->indentify_as = implode(", ", request('identifyAs'));
-        $demographics->describe_becoming_legal_adult = request('describeBecomingLegalAdult');
+        $demographics->gender = $request->input('gender');
+        $demographics->gender_self_describe = $request->input('gender_self_describe');
+        $demographics->state_residence = $request->input('current_state_of_residence');
+        $demographics->race_ethnicity = $request->input('race_ethnicity');
+        $demographics->race_other = $request->input('race_other');
+        $demographics->born_in_us = $request->input('bornInUnitedStates');
+        $demographics->born_where = $request->input('bornWhere');
+        $demographics->how_long_lived_in_us = $request->input('howLongInUS');
+        $demographics->brought_to_us_by_trafficker = $request->input('broughtToUsByTrafficker');
+        if(!empty($request->input('identifyAs'))) { $demographics->identify_as = implode(", ", $request->input('identifyAs')); }
+        $demographics->describe_becoming_legal_adult = $request->input('describe_becoming_legal_adult');
         $demographics->save();
 
         //$survey->demographics()->save($demographics);

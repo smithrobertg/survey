@@ -762,7 +762,7 @@ class TimelineController extends Controller
         // Domestic violence services
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 993;
-        $timelineEvent->event_category = "Domestic violence services received";
+        $timelineEvent->event_category = "Services";
         $timelineEvent->event_description = "Domestic violence services received";
         $timelineEvent->timeframe = $request->input('timeframe_domestic_violence_services_received');
         $timelineEvent->age = $request->input('age_domestic_violence_services_received');

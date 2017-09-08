@@ -26,15 +26,7 @@ class CreateDemographicsTable extends Migration
             $table->string('born_where')->nullable();
             $table->string('how_long_lived_in_us')->nullable();
             $table->string('brought_to_us_by_trafficker')->nullable();
-            $table->string('indentify_as')->nullable();
-            /*
-            $table->string('indentify_as_survivor')->nullable();
-            $table->string('indentify_as_controlled')->nullable();
-            $table->string('indentify_as_exchanged_sex')->nullable();
-            $table->string('indentify_as_someone_paid_another_sex_exchange')->nullable();
-            $table->string('indentify_as_sex_for_money_forced_or_asked')->nullable();
-            $table->string('indentify_as_sex_worker')->nullable();
-            */
+            $table->text('identify_as')->nullable();
             $table->text('describe_becoming_legal_adult')->nullable();
             $table->timestamps();
         });

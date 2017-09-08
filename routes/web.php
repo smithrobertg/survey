@@ -192,8 +192,8 @@ Route::post('services-followup', 'SurveyController@postServicesFollowup')->name(
 
 // Final questions and thank you message
 
-Route::get('final-questions', 'SurveyController@getFinalQuestions')->name('survey.event');
-Route::post('final-questions', 'SurveyController@postFinalQuestions')->name('survey.event');
+Route::get('final-questions', 'SurveyController@getFinalQuestions')->name('survey.final-questions');
+Route::post('final-questions', 'SurveyController@postFinalQuestions')->name('survey.final-questions');
 
 Route::get('thankyou-giftcard', function () {
 	return view('survey.thankyou-giftcard');
