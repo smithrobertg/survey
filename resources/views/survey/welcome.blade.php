@@ -19,5 +19,9 @@
     <div class="text-center">
         <h3 class="text-right"><em>Julianne Siegfriedt</em></h3>
     </div>
-</div> 
+</div>
+@endsection
+
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '0'])
 @endsection

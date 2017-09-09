@@ -9,17 +9,17 @@
     <div class="row">
         <h3 class="col-sm-12">
             Are you 18 years old or older?&nbsp;&nbsp;&nbsp;
-            <label class="radio-inline text-success"><input type="radio" name="AgeScreening" id="_18Yes" value="yes" /> Yes</label>
-            <label class="radio-inline text-danger"><input type="radio" name="AgeScreening" id="_18No" value="no" /> No</label>
+            <label class="radio-inline text-success"><input type="radio" name="AgeScreening" id="age_18Yes" value="Yes" /> Yes</label>
+            <label class="radio-inline text-danger"><input type="radio" name="AgeScreening" id="age_18No" value="No" /> No</label>
         </h3>
     </div>
     <div class="row">
         <h3 class="col-sm-12">
             Do you identify with any of the following (as an adult, teen, or child)?&nbsp;&nbsp;&nbsp;
-            <label class="radio-inline text-success"><input type="radio" name="IdentifyAs" id="IdentifyYes" value="yes" /> Yes</label>
-            <label class="radio-inline text-danger"><input type="radio" name="IdentifyAs" id="IdentifyNo" value="no" /> No</label>
+            <label class="radio-inline text-success"><input type="radio" name="IdentifyAs" id="IdentifyYes" value="Yes" /> Yes</label>
+            <label class="radio-inline text-danger"><input type="radio" name="IdentifyAs" id="IdentifyNo" value="No" /> No</label>
         </h3>
-        <ul>
+        <ul class="lead ml-3">
             <li>Survivor of commercial sexual expoitation or sex trafficking</li>
             <li>Ever been controlled by another person to sell sex as a payment for drugs or other need</li>
             <li>Exchanged sex for money, drugs, food, shelter, or other needs</li>
@@ -33,4 +33,8 @@
     </div>
 
 </form>
+@endsection
+
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '2'])
 @endsection

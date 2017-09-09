@@ -24,6 +24,16 @@ use App\FinalQuestions;
 
 class SurveyController extends Controller
 {
+    public function getScreening()
+    {
+        return view('survey.screening');
+    }
+
+    public function postScreening (Request $request)
+    {
+        redirect()->route('survey.consent');
+    }
+
     public function getConsent()
     {
         return view('survey.consent');

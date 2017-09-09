@@ -39,9 +39,8 @@ Route::get('welcome', function () {
 	return view('survey.welcome');
 })->name('survey.welcome');
 
-Route::get('screening', function () {
-	return view('survey.screening');
-})->name('survey.screening');
+Route::get('screening', [ 'uses' => 'SurveyController@getScreening', 'as' => 'survey.screening' ]);
+Route::post('screening', [ 'uses' => 'SurveyController@postScreening', 'as' => 'survey.screening' ]);
 
 Route::get('consent', 'SurveyController@getConsent')->name('survey.consent');
 Route::post('consent', 'SurveyController@postConsent')->name('survey.consent');

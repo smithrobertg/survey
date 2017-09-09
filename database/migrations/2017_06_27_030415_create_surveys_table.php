@@ -15,7 +15,10 @@ class CreateSurveysTable extends Migration
     {
         Schema::create('surveys', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('participant_id')->nullable();
+            //$table->string('participant_id')->nullable();
+            $table->string('screening_18_or_older');
+            $table->string('screening_identify_as_survivor_sex_traffic_or_trade');
+            $table->string('consent');
             $table->timestamp('start_date')->useCurrent();
             $table->timestamp('finish_date')->nullable();
             $table->timestamps();
