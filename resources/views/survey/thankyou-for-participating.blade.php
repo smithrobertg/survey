@@ -17,3 +17,7 @@
 		<a href="{{ route('survey.demographics') }}" class="btn btn-lg btn-success col-4">Continue</a>
 	</div>
 @endsection
+
+@section('progress')
+		@include('partials.progress-bar', ['progress' => '6'])
+@endsection
