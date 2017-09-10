@@ -111,7 +111,7 @@
         </div>
     </div>
     <div form-group>
-        <label class="control-label">4. Where you born in the Unites States?</label>
+        <label class="control-label">4. Were you born in the Unites States?</label>
         <div class="form-control">
             <label class="radio=inline col-sm-offset-1"><input type="radio" name="bornInUnitedStates" value="yes" />Yes</label>
             <label class="radio=inline col-sm-offset-1"><input type="radio" name="bornInUnitedStates" value="no" />No</label>
@@ -127,7 +127,7 @@
             <option>1-3 years</option>
             <option>4+ years</option>
         </select>
-        <label class="control-label">Where you brought to the U.S. by a trafficker?</label>
+        <label class="control-label">Were you brought to the U.S. by a trafficker?</label>
         <div class="form-control">
             <label class="radio=inline col-sm-offset-1"><input type="radio" name="broughtToUsByTrafficker" value="yes" />Yes</label>
             <label class="radio=inline col-sm-offset-1"><input type="radio" name="broughtToUsByTrafficker" value="no" />No</label>
@@ -166,7 +166,7 @@
     </div>
     <div class="form-group">
         <label for="describe_becoming_legal_adult" class="control-label">Can you explain what it was like turning 18 and becoming a legal adult? (open-ended answer)</label>
-        <textarea class="form-control" name="describe_becoming_legal_adult"></textarea>
+        <textarea class="form-control" name="describe_becoming_legal_adult" rows="3"></textarea>
     </div>
 
     <div class="row justify-content-center">

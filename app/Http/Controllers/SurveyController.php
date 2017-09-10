@@ -31,7 +31,13 @@ class SurveyController extends Controller
 
     public function postScreening (Request $request)
     {
-        redirect()->route('survey.consent');
+        if (strtolower($request->input('age_18_or_older')) == "no"
+            || strtolower($request->input('identify_as_survivor_or_sex_worker')) == "no")
+        {
+            return view('survey.not-eligible');
+        }
+
+        return redirect()->route('survey.consent');
     }
 
     public function getConsent()

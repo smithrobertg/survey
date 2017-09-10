@@ -5,19 +5,20 @@
 @section('content')
 <h1 class="text-center">Screening Questions</h1>
 
-<form class="form-horizontal">
+<form method="post" action="{{ route('survey.screening') }}" class="form-horizontal">
+    {{ csrf_field() }}
     <div class="row">
         <h3 class="col-sm-12">
             Are you 18 years old or older?&nbsp;&nbsp;&nbsp;
-            <label class="radio-inline text-success"><input type="radio" name="AgeScreening" id="age_18Yes" value="Yes" /> Yes</label>
-            <label class="radio-inline text-danger"><input type="radio" name="AgeScreening" id="age_18No" value="No" /> No</label>
+            <label class="radio-inline text-success"><input type="radio" name="age_18_or_older" id="age_18_yes" value="Yes" /> Yes</label>
+            <label class="radio-inline text-danger"><input type="radio" name="age_18_or_older" id="age_18_no" value="No" /> No</label>
         </h3>
     </div>
     <div class="row">
         <h3 class="col-sm-12">
             Do you identify with any of the following (as an adult, teen, or child)?&nbsp;&nbsp;&nbsp;
-            <label class="radio-inline text-success"><input type="radio" name="IdentifyAs" id="IdentifyYes" value="Yes" /> Yes</label>
-            <label class="radio-inline text-danger"><input type="radio" name="IdentifyAs" id="IdentifyNo" value="No" /> No</label>
+            <label class="radio-inline text-success"><input type="radio" name="identify_as_survivor_or_sex_worker" id="identify_yes" value="Yes" /> Yes</label>
+            <label class="radio-inline text-danger"><input type="radio" name="identify_as_survivor_or_sex_worker" id="identify_no" value="No" /> No</label>
         </h3>
         <ul class="lead ml-3">
             <li>Survivor of commercial sexual expoitation or sex trafficking</li>
@@ -29,7 +30,7 @@
         </ul>
     </div>
     <div class="text-center">
-        <a href="/consent" class="btn btn-success btn-lg">Continue</a>
+        <button type="submit" class="btn btn-success btn-lg">Continue</button>
     </div>
 
 </form>
