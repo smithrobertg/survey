@@ -194,13 +194,12 @@ Route::post('services-followup', 'SurveyController@postServicesFollowup')->name(
 Route::get('final-questions', 'SurveyController@getFinalQuestions')->name('survey.final-questions');
 Route::post('final-questions', 'SurveyController@postFinalQuestions')->name('survey.final-questions');
 
-Route::get('thankyou-giftcard', function () {
-	return view('survey.thankyou-giftcard');
-})->name('survey.thankyou-giftcard');
+Route::get('thankyou-giftcard', 'SurveyController@getThankYouGiftCard')->name('survey.thankyou-giftcard');
+Route::post('thankyou-giftcard', 'SurveyController@postThankYouGiftCard')->name('survey.thankyou-giftcard');
 
 Route::get('followup-interview', function () {
 	return view('survey.followup-interview');
-})->name('survey.follwup-interview');
+})->name('survey.followup-interview');
 
 Route::get('referral', function () {
 	return view('survey.referral');

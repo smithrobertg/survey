@@ -25,3 +25,7 @@
 
 </form>
 @endsection
+
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '66'])
+@endsection

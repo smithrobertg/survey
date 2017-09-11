@@ -26,14 +26,18 @@ Your participation in this survey is estimated to take around 30 minutes. If you
 
 Your participation in this study is voluntary and you are free to withdraw from the study at any time or you may choose not to answer any specific questions.
 
-Your participation in this survey will help provide a necessary perspective in informing policy, best practices for service providers, and future research. As a thank you for your time in providing your expertise and experience, all participants will be provided with a $20 gift card. 
+Your participation in this survey will help provide a necessary perspective in informing policy, best practices for service providers, and future research. As a thank you for your time in providing your expertise and experience, all participants will be provided with a $20 gift card.
 
-Participation is confidential. 
+Participation is confidential.
 However, you will be asked to provide an email address which will only be used to email you the gift card information and follow up with an interview (only if that is something you have indicated wanting more information about).
 
-This study has been approved by the 
+This study has been approved by the
 UMass Boston Institutional Review Board
 
 For more information please email us at (study email address) or email the Principal Investigator of this study: Julianne Siegfriedt (<a href="Julianne.Siegfriedt@umb.edu">Julianne.Siegfriedt@umb.edu</a>), a PhD Candidate in the Sociology Department at UMass Boston.
 
+@endsection
+
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '80'])
 @endsection

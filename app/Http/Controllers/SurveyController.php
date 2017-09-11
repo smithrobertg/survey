@@ -454,6 +454,18 @@ class SurveyController extends Controller
 
         $finalQuestions->save();
 
+        return redirect()->route('survey.thankyou-giftcard');
+    }
+
+    public function getThankYouGiftCard()
+    {
         return view('survey.thankyou-giftcard');
+    }
+
+    public function postThankYouGiftCard(Request $request)
+    {
+        // Check for followup interview
+        return redirect()->route('survey.followup-interview');
+        return redirect()->route('survey.referral');
     }
 }

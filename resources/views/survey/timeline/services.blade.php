@@ -8,3 +8,7 @@
 
     <a href="/services-followup" class="btn btn-primary">Continue to Final Questions &rarr;</a>
 @endsection
+
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '62'])
+@endsection

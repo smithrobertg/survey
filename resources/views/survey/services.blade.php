@@ -9,39 +9,7 @@
     <form method="post" action="{{ route('survey.services')}}">
 
         {{ csrf_field() }}
-<!--
-        <div class="form-group">
-            <label>Have you ever had a social service agency reach out to you to help?</label>
-            <div class="form-check text-success">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="social_service_agency_reached_out" id="radioYes"
-                           value="Yes"> Yes
-                </label>
-            </div>
-            <div class="form-check text-danger">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="social_service_agency_reached_out" id="radioNo"
-                           value="No"> No
-                </label>
-            </div>
-        </div>
 
-        <div class="form-group">
-            <label>Did you receive those services?</label>
-            <div class="form-check text-success">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="social_service_received" id="radioYes"
-                           value="Yes"> Yes
-                </label>
-            </div>
-            <div class="form-check text-danger">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="social_service_received" id="radioNo"
-                           value="No"/> No
-                </label>
-            </div>
-        </div>
--->
       <div class="container ml-2">
         <div class="form-row h5">
             <label class="mr-3">Have you ever had a social service agency reach out to you to help?</label>
@@ -427,5 +395,8 @@
         <button type="submit" class="btn btn-primary mx-auto">Save & Continue &rarr;</button>
       </div>
     </form>
+@endsection
 
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '58'])
 @endsection
