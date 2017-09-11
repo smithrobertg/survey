@@ -17,7 +17,7 @@ class CreateSurveysTable extends Migration
             $table->increments('id');
             //$table->string('participant_id')->nullable();
             $table->string('screening_18_or_older');
-            $table->string('screening_identify_as_survivor_sex_traffic_or_trade');
+            $table->string('screening_identify_as_candidate');
             $table->string('consent');
             $table->timestamp('start_date')->useCurrent();
             $table->timestamp('finish_date')->nullable();

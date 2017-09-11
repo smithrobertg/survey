@@ -10,3 +10,7 @@
 <a href="/work-housing" class="btn btn-primary">Continue &rarr;</a>
 
 @endsection
+
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '26'])
+@endsection

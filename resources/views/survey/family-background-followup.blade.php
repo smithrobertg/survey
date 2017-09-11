@@ -284,5 +284,8 @@
     <button class="btn btn-primary">Save and Continue &rarr;</button>
 
 </form>
+@endsection
 
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '20'])
 @endsection

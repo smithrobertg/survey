@@ -20,9 +20,10 @@ class CreateFamilyBackgoundsTable extends Migration
             $table->text('adult_or_person_5_years_older_ever')->nullable();
             $table->text('often_feel_that')->nullable();
             $table->text('mother_or_stepmother')->nullable();
+            $table->text('father_or_stepfather')->nullable();
             $table->string('parent_got_married')->nullable();
             $table->string('parent_separated_divorced')->nullable();
-			$table->string('lived_with_alchoholic_or_drug_user')->nullable();
+	          $table->string('lived_with_alchoholic_or_drug_user')->nullable();
             $table->string('household_member_depressed_mentally_ill_suicide')->nullable();
             $table->string('household_member_went_to_prison')->nullable();
             $table->string('someone_else_came_to_live_with')->nullable();
@@ -37,7 +38,7 @@ class CreateFamilyBackgoundsTable extends Migration
             $table->string('felt_life_threatened')->nullable();
             $table->string('foster_care')->nullable();
             $table->string('age_foster_care_ended')->nullable();
-            $table->string('other_family_events')->nullable();
+            $table->text('other_family_events')->nullable();
             $table->timestamps();
         });
     }

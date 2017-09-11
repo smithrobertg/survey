@@ -10,3 +10,7 @@
 		<a href="{{ route('survey.family-background') }}" class="btn btn-success btn-lg col-4">Continue Survey (Family Background) &rarr;</a>
 	</div>
 @endsection
+
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '12'])
+@endsection

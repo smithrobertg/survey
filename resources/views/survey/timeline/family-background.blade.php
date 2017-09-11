@@ -8,3 +8,7 @@
 
     <h2><a href="{{ route('survey.family-background-followup') }}" class="btn btn-primary btn-lg">Continue to Family Background Followup Questions &rarr;</a></h2>
 @endsection
+
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '18'])
+@endsection

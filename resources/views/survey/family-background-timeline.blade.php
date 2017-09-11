@@ -3,7 +3,7 @@
 @section('title', 'Timeline - Family Background')
 
 @section('content')
-<h3 class="bg-primary text-white p-3">For each of these questions, please enter AGE, YEAR, or RANGE the event(s) occured.  These events will be populated in timeline.</h3>
+<h3 class="bg-primary text-white p-3">For each of these questions, please enter AGE, YEAR, or RANGE the event(s) occurred.  These events will be populated in timeline.</h3>
   <hr />
 	    <form method="post" action="{{ route('survey.family-background-timeline') }}">
         {{ csrf_field() }}
@@ -332,4 +332,8 @@
 			<li>{{ $event }}</li>
 		@endforeach
 	</ul>
+@endsection
+
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '16'])
 @endsection

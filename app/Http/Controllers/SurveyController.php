@@ -167,7 +167,9 @@ class SurveyController extends Controller
     	if (!empty($request->input('mother_or_stepmother'))) {
     				$familyBackground->mother_or_stepmother = implode(", ", $request->input('mother_or_stepmother'));
     	}
-        $familyBackground->parent_got_married = $request->input('parent_got_married');
+      if (!empty($request->input('father_or_stepfather'))) {
+    				$familyBackground->father_or_stepfather = implode(", ", $request->input('father_or_stepfather'));
+    	}
         $familyBackground->parent_separated_divorced = $request->input('parent_separated_divorced');
         $familyBackground->lived_with_alchoholic_or_drug_user = $request->input('lived_with_alchoholic_or_drug_user');
         $familyBackground->household_member_depressed_mentally_ill_suicide = $request->input('household_member_depressed_mentally_ill_suicide');

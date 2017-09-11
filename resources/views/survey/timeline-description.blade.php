@@ -36,3 +36,7 @@ ___ Adulthood (18+)
 		<a href="{{ route('survey.orientation-questions') }}" class="btn btn-success btn-lg">Continue to Orientation Questions &rarr;</a>
 	</div>
 @endsection
+
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '9'])
+@endsection

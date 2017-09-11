@@ -137,5 +137,8 @@
 
     <button class="btn btn-primary">Continue &rarr;</button>
 </form>
+@endsection
 
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '22'])
 @endsection

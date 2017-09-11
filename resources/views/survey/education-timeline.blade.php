@@ -225,3 +225,7 @@
 
 </form>
 @endsection
+
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '24'])
+@endsection
