@@ -121,6 +121,11 @@
 	<div class="row">
 		<button class="btn btn-primary mx-auto" type="submit">Save and Continue to Timeline &rarr;</button>
 	</div>
+
 </form>
 
+@endsection
+
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '44'])
 @endsection

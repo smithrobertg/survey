@@ -8,3 +8,7 @@
 
     <a href="/criminal-justice-followup" class="btn btn-primary btn-lg">Continue to Criminal Justice Followup Questions &rarr;</a>
 @endsection
+
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '46'])
+@endsection

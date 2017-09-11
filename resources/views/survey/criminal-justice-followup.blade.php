@@ -10,7 +10,7 @@
 	{{ csrf_field() }}
 	<div class="form-group">
 		<label for="issues_because_of_criminal_record">
-			If YES for criminal record, ask: Have you experienced issues in other areas because of having a criminal record (housing, getting a job, etc.)?
+			If YES for criminal record, have you experienced issues in other areas because of having a criminal record (housing, getting a job, etc.)? Please explain.
 		</label>
 		<textarea class="form-control" name="issues_because_of_criminal_record" id="issues_because_of_criminal_record" rows="3"></textarea>
 	</div>
@@ -30,6 +30,8 @@
 	<button class="btn btn-primary btn-lg" type="submit">Save and Continue to Exploitation &rarr;</button>
 
 </form>
+@endsection
 
-
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '48'])
 @endsection
