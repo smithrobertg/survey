@@ -50,6 +50,18 @@ class TimelineController extends Controller
         $timelineEvent->range_to = $request->input('range_to_parent_arrested');
         $timelineEvent->save();
 
+        // A parent was in prison
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 999;
+        $timelineEvent->event_category = "Family Background";
+        $timelineEvent->event_description = "Parent in prison";
+        $timelineEvent->timeframe = $request->input('timeframe_parent_in_prison');
+        $timelineEvent->age = $request->input('age_parent_in_prison');
+        $timelineEvent->year = $request->input('year_parent_in_prison');
+        $timelineEvent->range_from = $request->input('range_from_parent_in_prison');
+        $timelineEvent->range_to = $request->input('range_to_parent_in_prison');
+        $timelineEvent->save();
+
         // You experienced homelessness
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 999;
@@ -122,16 +134,28 @@ class TimelineController extends Controller
         $timelineEvent->range_to = $request->input('range_to_addicted_drugs_alcohol');
         $timelineEvent->save();
 
-        // Lived in foster care (age entered and age exited)
+        // Exited foster care
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 999;
         $timelineEvent->event_category = "Family Background";
-        $timelineEvent->event_description = "Foster care";
-        $timelineEvent->timeframe = $request->input('timeframe_foster_care');
-        $timelineEvent->age = $request->input('age_foster_care');
-        $timelineEvent->year = $request->input('year_foster_care');
-        $timelineEvent->range_from = $request->input('range_from_foster_care');
-        $timelineEvent->range_to = $request->input('range_to_foster_care');
+        $timelineEvent->event_description = "Entered foster care";
+        $timelineEvent->timeframe = $request->input('timeframe_entered_foster_care');
+        $timelineEvent->age = $request->input('age_entered_foster_care');
+        $timelineEvent->year = $request->input('year_entered_foster_care');
+        $timelineEvent->range_from = $request->input('range_from_entered_foster_care');
+        $timelineEvent->range_to = $request->input('range_to_entered_foster_care');
+        $timelineEvent->save();
+
+        // Exited in foster care
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 999;
+        $timelineEvent->event_category = "Family Background";
+        $timelineEvent->event_description = "Exited foster care";
+        $timelineEvent->timeframe = $request->input('timeframe_exited_foster_care');
+        $timelineEvent->age = $request->input('age_exited_foster_care');
+        $timelineEvent->year = $request->input('year_exited_foster_care');
+        $timelineEvent->range_from = $request->input('range_from_exited_foster_care');
+        $timelineEvent->range_to = $request->input('range_to_exited_foster_care');
         $timelineEvent->save();
 
         return redirect()->route('timeline.family-background');

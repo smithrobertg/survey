@@ -185,7 +185,6 @@ class SurveyController extends Controller
         $familyBackground->addicted_drugs_alcohol = $request->input('addicted_drugs_alcohol');
         $familyBackground->felt_life_threatened = $request->input('felt_life_threatened');
         $familyBackground->foster_care = $request->input('foster_care');
-        $familyBackground->age_foster_care_ended = $request->input('age_foster_care_ended');
         $familyBackground->other_family_events = $request->input('other_family_events');
 
         $familyBackground->save();

@@ -10,11 +10,11 @@
     {{ csrf_field() }}
 
     <div class="alert alert-primary">
-      <h3>While you were growing up, during your first <strong>18 years of life</strong>:<em> (check all that apply)</em></h3>
+      <div class="h4">While you were growing up, during your first <strong>18 years of life</strong>:<em> (check all that apply)</em></div>
     </div>
 
     <div class="container ml-3">
-      <h3>Did a parent or other adult in the household <strong>often</strong>:</h3>
+      <h4>Did a parent or other adult in the household <strong>often</strong>:</h4>
       <div class="form-group">
           <div class="form-check">
               <label class="form-check-label">
@@ -42,7 +42,7 @@
           </div>
       </div>
 
-    <h3>Did an adult or person at least 5 years older than you <strong>ever</strong>:</h3>
+    <h4>Did an adult or person at least 5 years older than you <strong>ever</strong>:</h3>
     <div class="form-group">
         <div class="form-check">
             <label class="form-check-label">
@@ -58,7 +58,7 @@
         </div>
     </div>
 
-    <h3>Did you <strong>often</strong> feel that:</h3>
+    <h4>Did you <strong>often</strong> feel that:</h3>
     <div class="form-group">
         <div class="form-check">
             <label class="form-check-label">
@@ -86,7 +86,7 @@
         </div>
     </div>
 
-    <h3>Was your mother or stepmother:</h3>
+    <h4>Was your mother or stepmother:</h3>
     <div class="form-group">
         <div class="form-check">
             <label class="form-check-label">
@@ -108,7 +108,7 @@
         </div>
     </div>
 
-    <h3>Was your father or stepfather:</h3>
+    <h4>Was your father or stepfather:</h3>
     <div class="form-group">
         <div class="form-check">
             <label class="form-check-label">
@@ -134,7 +134,7 @@
 <hr />
 
     <div class="alert alert-primary">
-      <h3>While you were growing up, during your first <strong>18 years of life</strong>:</h3>
+      <div class="h4">While you were growing up, during your first <strong>18 years of life</strong>:</div>
     </div>
 
     <div class="container ml-3">
@@ -457,13 +457,9 @@
                 </label>
             </div>
         </div>
-        <div class="form-group">
-            <label for="age_foster_care_ended" class="col-form-label">Age foster care ended</label>
-            <input type="text" class="form-control" name="age_foster_care_ended" placeholder="Age">
-        </div>
 
         <div class="form-group">
-            <label for="other_family_events" class="form-label">Other exciting or difficult family events that stood out to you? List here:</label>
+            <label for="other_family_events" class="form-label h4">Other exciting or difficult family events that stood out to you?</label>
             <textarea class="form-control" name="other_family_events" rows="3"></textarea>
         </div>
     </div>

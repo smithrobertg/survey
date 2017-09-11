@@ -33,9 +33,9 @@
                         </label>
                     </span>
                     <span class="input-group-addon">from:</span>
-                    <input type="text" class="form-control" name="range_from_abused_by_parent" />
+                    <input type="text" class="form-control" name="range_from_abused_by_parent" placeholder="Age or Year" />
                     <span class="input-group-addon">to:</span>
-                    <input type="text" class="form-control" name="range_to_abused_by_parent" />
+                    <input type="text" class="form-control" name="range_to_abused_by_parent" placeholder="Age or Year" />
                 </div>
             </div>
           </fieldset>
@@ -74,6 +74,41 @@
                   </div>
               </div>
             </fieldset>
+
+            <hr />
+
+            <fieldset>
+                <legend>A parent was in prison</legend>
+                <div class="form-row">
+                    <div class="input-group col-3">
+                        <span class="input-group-addon">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="timeframe_parent_in_prison" id="timeframeAge" value="Age"> Age
+                            </label>
+                        </span>
+                        <input type="text" class="form-control" name="age_parent_in_prison" />
+                    </div>
+                    <div class="input-group col-3">
+                        <span class="input-group-addon">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="timeframe_parent_in_prison" id="timeframeYear" value="Year"> Year
+                            </label>
+                        </span>
+                        <input type="text" class="form-control" name="year_parent_in_prison" />
+                    </div>
+                    <div class="input-group col-6">
+                        <span class="input-group-addon">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="timeframe_parent_in_prison" id="timeframeRange" value="Range"> Range
+                            </label>
+                        </span>
+                        <span class="input-group-addon">from:</span>
+                        <input type="text" class="form-control" name="range_from_parent_in_prison" />
+                        <span class="input-group-addon">to:</span>
+                        <input type="text" class="form-control" name="range_to_parent_in_prison" />
+                    </div>
+                </div>
+              </fieldset>
 
           <hr />
 
@@ -288,50 +323,82 @@
             <hr />
 
             <fieldset>
-                <legend>Lived in foster care (age entered and age exited)</legend>
+                <legend>Entered foster care for the <strong>first time</strong></legend>
                 <div class="form-row">
                     <div class="input-group col-3">
                         <span class="input-group-addon">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="timeframe_foster_care" id="timeframeAge" value="Age"> Age
+                                <input class="form-check-input" type="radio" name="timeframe_entered_foster_care" id="timeframeAge" value="Age"> Age
                             </label>
                         </span>
-                        <input type="text" class="form-control" name="age_foster_care" />
+                        <input type="text" class="form-control" name="age_entered_foster_care" />
                     </div>
                     <div class="input-group col-3">
                         <span class="input-group-addon">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="timeframe_foster_care" id="timeframeYear" value="Year"> Year
+                                <input class="form-check-input" type="radio" name="timeframe_entered_foster_care" id="timeframeYear" value="Year"> Year
                             </label>
                         </span>
-                        <input type="text" class="form-control" name="year_foster_care" />
+                        <input type="text" class="form-control" name="year_entered_foster_care" />
                     </div>
+                    <!--
                     <div class="input-group col-6">
                         <span class="input-group-addon">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="timeframe_foster_care" id="timeframeRange" value="Range"> Range
+                                <input class="form-check-input" type="radio" name="timeframe_entered_foster_care" id="timeframeRange" value="Range"> Range
                             </label>
                         </span>
                         <span class="input-group-addon">from:</span>
-                        <input type="text" class="form-control" name="range_from_foster_care" />
+                        <input type="text" class="form-control" name="range_from_entered_foster_care" />
                         <span class="input-group-addon">to:</span>
-                        <input type="text" class="form-control" name="range_to_foster_care" />
+                        <input type="text" class="form-control" name="range_to_entered_foster_care" />
                     </div>
+                    -->
                 </div>
               </fieldset>
+
+              <hr />
+
+              <fieldset>
+                  <legend>Exited foster care for the <strong>last time</strong></legend>
+                  <div class="form-row">
+                      <div class="input-group col-3">
+                          <span class="input-group-addon">
+                              <label class="form-check-label">
+                                  <input class="form-check-input" type="radio" name="timeframe_exited_foster_care" id="timeframeAge" value="Age"> Age
+                              </label>
+                          </span>
+                          <input type="text" class="form-control" name="age_exited_foster_care" />
+                      </div>
+                      <div class="input-group col-3">
+                          <span class="input-group-addon">
+                              <label class="form-check-label">
+                                  <input class="form-check-input" type="radio" name="timeframe_exited_foster_care" id="timeframeYear" value="Year"> Year
+                              </label>
+                          </span>
+                          <input type="text" class="form-control" name="year_exited_foster_care" />
+                      </div>
+                      <!--
+                      <div class="input-group col-6">
+                          <span class="input-group-addon">
+                              <label class="form-check-label">
+                                  <input class="form-check-input" type="radio" name="timeframe_exited_foster_care" id="timeframeRange" value="Range"> Range
+                              </label>
+                          </span>
+                          <span class="input-group-addon">from:</span>
+                          <input type="text" class="form-control" name="range_from_exited_foster_care" />
+                          <span class="input-group-addon">to:</span>
+                          <input type="text" class="form-control" name="range_to_exited_foster_care" />
+                      </div>
+                    -->
+                  </div>
+                </fieldset>
 
               <div class="row">
               <button type="submit" class="btn btn-primary btn-lg mx-auto my-4">Continue to Timeline &rarr;</button>
             </div>
 
         </form>
-<hr />
-
-	<ul>
-		@foreach ($timelineEvents as $event)
-			<li>{{ $event }}</li>
-		@endforeach
-	</ul>
 @endsection
 
 @section('progress')
