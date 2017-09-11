@@ -46,21 +46,6 @@ Route::get('consent', 'SurveyController@getConsent')->name('survey.consent');
 Route::post('consent', 'SurveyController@postConsent')->name('survey.consent');
 
 Route::get('thankyou-for-participating', 'SurveyController@getThankYouForParticipating')->name('survey.thankyou-for-participating');
-
-//Route::get('demographics/{survey}/create', 'DemographicsController@create');
-Route::get('demographics', 'SurveyController@getDemographics')->name('survey.demographics');
-Route::post('demographics', 'SurveyController@postDemographics')->name('survey.demographics');
-//Route::post('demographics', 'DemographicsController@store')->name('survey.demographics');
-
-Route::prefix('survey')->group( function () {
-
-});
-
-Route::prefix('test')->group( function () {
-
-  Route::get('partial', 'TestController@getPartialTest');
-
-});
 /*
 Route::get('thankyou-for-participating', function () {
 	//return view('survey/thankyou-for-participating', [
@@ -74,7 +59,22 @@ Route::get('thankyou-for-participating', function () {
 });
 */
 
-Route::get('survey/{survey}/demographics', 'DemographicsController@create');
+Route::get('demographics', 'SurveyController@getDemographics')->name('survey.demographics');
+Route::post('demographics', 'SurveyController@postDemographics')->name('survey.demographics');
+//Route::get('demographics/{survey}/create', 'DemographicsController@create');
+//Route::post('demographics', 'DemographicsController@store')->name('survey.demographics');
+//Route::get('survey/{survey}/demographics', 'DemographicsController@create');
+
+Route::prefix('survey')->group( function () {
+
+});
+
+Route::prefix('test')->group( function () {
+
+  Route::get('partial', 'TestController@getPartialTest');
+
+});
+
 
 Route::get('timeline-description', function () {
 	return view('survey.timeline-description');

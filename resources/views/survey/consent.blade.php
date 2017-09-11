@@ -12,7 +12,7 @@
 @endsection
 
 @section('content')
-<div class="jumbotron bg-light my-0 py-1">
+<div class="jumbotron jumbotron-fluid bg-light my-0 py-1">
   <h2 id="formTitle">
       UMASS BOSTON INSTITUTIONAL REVIEW BOARD
   </h2>
@@ -22,6 +22,7 @@
       100 Morrissey Boulevard<br />
       Boston, MA.  02125-3393<br />
   </h3>
+  <div class="display-4">Survey ID: {{ $survey_id }}</div>
 </div>
 <div class="row">
     <div class="col-10 mx-auto">

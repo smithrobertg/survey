@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Session\Store;
-//use App\Http\Controllers\Controller;
+use App\Survey;
 use App\Demographics;
 use App\Orientation;
-use App\Survey;
 use App\FamilyBackground;
 use App\FamilyBackgroundFollowup;
 use App\Education;
@@ -31,18 +30,43 @@ class SurveyController extends Controller
 
     public function postScreening (Request $request)
     {
+	/*
+            $table->increments('id');
+            //$table->string('participant_id')->nullable();
+            $table->string('screening_18_or_older');
+            $table->string('screening_identify_as_candidate');
+            $table->string('consent');
+            $table->timestamp('start_date')->useCurrent();
+            $table->timestamp('finish_date')->nullable();
+            $table->timestamps();
+	*/
+		// Initial creation of this survey
+		$survey = new Survey;
+
+		$survey->screening_18_or_older = $request->input('age_18_or_older');
+		$survey->screening_identify_as_candidate = $request->input('identify_as_candidate');
+
         if (strtolower($request->input('age_18_or_older')) == "no"
             || strtolower($request->input('identify_as_survivor_or_sex_worker')) == "no")
         {
+			$survey->finish_date = now();
+			$survey->save();
+
             return view('survey.not-eligible');
         }
+
+		$survey->save();
+		$survey_id = $survey->id;
+		session([ 'survey_id' => $survey_id, 'survey' => $survey ]);
 
         return redirect()->route('survey.consent');
     }
 
     public function getConsent()
     {
-        return view('survey.consent');
+		$survey_id = session('survey_id');
+
+        return view('survey.consent', ['survey_id', $survey_id);
     }
 
     public function postConsent (Request $request)
