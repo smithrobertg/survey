@@ -406,7 +406,7 @@ class TimelineController extends Controller
 
     public function postSocialRelationshipsTimeline(Request $request)
     {
-		// Age first started dating
+		    // Age first started dating
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 996;
         $timelineEvent->event_category = "Social Relationships";
@@ -418,7 +418,7 @@ class TimelineController extends Controller
         $timelineEvent->range_to = $request->input('range_to_started_dating');
         $timelineEvent->save();
 
-		// Been married
+	      // Been married
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 996;
         $timelineEvent->event_category = "Social Relationships";
@@ -430,7 +430,19 @@ class TimelineController extends Controller
         $timelineEvent->range_to = $request->input('range_to_married');
         $timelineEvent->save();
 
-		// Had a child
+	      // Been divorced
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 996;
+        $timelineEvent->event_category = "Social Relationships";
+        $timelineEvent->event_description = "Divorced";
+        $timelineEvent->timeframe = $request->input('timeframe_divorced');
+        $timelineEvent->age = $request->input('age_divorced');
+        $timelineEvent->year = $request->input('year_divorced');
+        $timelineEvent->range_from = $request->input('range_from_divorced');
+        $timelineEvent->range_to = $request->input('range_to_divorced');
+        $timelineEvent->save();
+
+	      // Had a child
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 996;
         $timelineEvent->event_category = "Social Relationships";
@@ -442,7 +454,7 @@ class TimelineController extends Controller
         $timelineEvent->range_to = $request->input('range_to_had_child');
         $timelineEvent->save();
 
-		// Experienced violence by a partner
+	      // Experienced violence by a partner
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 996;
         $timelineEvent->event_category = "Social Relationships";
@@ -454,7 +466,7 @@ class TimelineController extends Controller
         $timelineEvent->range_to = $request->input('range_to_violence_by_partner');
         $timelineEvent->save();
 
-		// Experienced emotional abuse by a partner
+	      // Experienced emotional abuse by a partner
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 996;
         $timelineEvent->event_category = "Social Relationships";
@@ -466,7 +478,19 @@ class TimelineController extends Controller
         $timelineEvent->range_to = $request->input('range_to_emotional_abuse_by_partner');
         $timelineEvent->save();
 
-		// Lost custody of a child
+        // Experienced death of a spouse
+        $timelineEvent = new TimelineEvent;
+        $timelineEvent->survey_id = 996;
+        $timelineEvent->event_category = "Social Relationships";
+        $timelineEvent->event_description = "Death of spouse";
+        $timelineEvent->timeframe = $request->input('timeframe_death_of_spouse');
+        $timelineEvent->age = $request->input('age_death_of_spouse');
+        $timelineEvent->year = $request->input('year_death_of_spouse');
+        $timelineEvent->range_from = $request->input('range_from_death_of_spouse');
+        $timelineEvent->range_to = $request->input('range_to_death_of_spouse');
+        $timelineEvent->save();
+
+	      // Lost custody of a child
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 996;
         $timelineEvent->event_category = "Social Relationships";
@@ -478,7 +502,7 @@ class TimelineController extends Controller
         $timelineEvent->range_to = $request->input('range_to_lost_custody_of_child');
         $timelineEvent->save();
 
-		// Regained custody of a child
+	      // Regained custody of a child
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = 996;
         $timelineEvent->event_category = "Social Relationships";

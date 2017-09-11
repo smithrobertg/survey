@@ -8,3 +8,7 @@
 
 <a href="/criminal-justice" class="btn btn-primary btn-lg">Continue to Criminal Jusice System &rarr;</a>
 @endsection
+
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '40'])
+@endsection

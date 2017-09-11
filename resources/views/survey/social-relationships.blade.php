@@ -23,6 +23,12 @@
         </div>
         <div class="form-check">
             <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="social_relationship_events[]" value="Divorced" />
+                Been divorced
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="social_relationship_events[]" value="Pregnant" />
                 Been pregnant
             </label>
@@ -49,6 +55,12 @@
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="social_relationship_events[]" value="Emotional abuse by partner" />
                 Experienced emotional abuse by a partner
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="social_relationship_events[]" value="Death of spouse" />
+                Experienced the death of a spouse
             </label>
         </div>
         <div class="form-check">
@@ -145,4 +157,8 @@
     <button class="btn btn-primary">Save and Continue &rarr;</button>
 
 </form>
+@endsection
+
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '36'])
 @endsection
