@@ -8,3 +8,7 @@
 
     <a href="/work-housing-followup" class="btn btn-primary">Continue to Work/Housing followup questions &rarr;</a>
 @endsection
+
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '32'])
+@endsection

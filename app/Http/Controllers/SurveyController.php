@@ -151,25 +151,22 @@ class SurveyController extends Controller
 
         $familyBackground = new FamilyBackground;
 
-    	//if (isset($request->input('field'))) {
-    	//			$familyBackground->field = implode(", ", $request->input('field'));
-    	//}
-    	if (!empty($request->input('parent_or_adult_often'))) {
-    				$familyBackground->parent_or_adult_often = implode(", ", $request->input('parent_or_adult_often'));
+      	if (!empty($request->input('parent_or_adult_often'))) {
+      				$familyBackground->parent_or_adult_often = implode(", ", $request->input('parent_or_adult_often'));
 
-    	}
-    	if (!empty($request->input('adult_or_person_5_years_older_ever'))) {
-    				$familyBackground->adult_or_person_5_years_older_ever = implode(", ", $request->input('adult_or_person_5_years_older_ever'));
-    	}
-    	if (!empty($request->input('often_feel_that'))) {
-    				$familyBackground->often_feel_that = implode(", ", $request->input('often_feel_that'));
-    	}
-    	if (!empty($request->input('mother_or_stepmother'))) {
-    				$familyBackground->mother_or_stepmother = implode(", ", $request->input('mother_or_stepmother'));
-    	}
-      if (!empty($request->input('father_or_stepfather'))) {
-    				$familyBackground->father_or_stepfather = implode(", ", $request->input('father_or_stepfather'));
-    	}
+      	}
+      	if (!empty($request->input('adult_or_person_5_years_older_ever'))) {
+      				$familyBackground->adult_or_person_5_years_older_ever = implode(", ", $request->input('adult_or_person_5_years_older_ever'));
+      	}
+      	if (!empty($request->input('often_feel_that'))) {
+      				$familyBackground->often_feel_that = implode(", ", $request->input('often_feel_that'));
+      	}
+      	if (!empty($request->input('mother_or_stepmother'))) {
+      				$familyBackground->mother_or_stepmother = implode(", ", $request->input('mother_or_stepmother'));
+      	}
+        if (!empty($request->input('father_or_stepfather'))) {
+      				$familyBackground->father_or_stepfather = implode(", ", $request->input('father_or_stepfather'));
+      	}
         $familyBackground->parent_separated_divorced = $request->input('parent_separated_divorced');
         $familyBackground->lived_with_alchoholic_or_drug_user = $request->input('lived_with_alchoholic_or_drug_user');
         $familyBackground->household_member_depressed_mentally_ill_suicide = $request->input('household_member_depressed_mentally_ill_suicide');

@@ -46,7 +46,7 @@
 		<hr />
 
 		<fieldset>
-				<legend>Been employed 40+ hours/week*</legend>
+				<legend>Been employed 40+ hours/week</legend>
 				<div class="form-row">
 						<div class="input-group col-3">
 								<span class="input-group-addon">
@@ -289,7 +289,7 @@
 			<hr />
 
 			<fieldset>
-					<legend>Lived with a significant other for financial reasons</legend>
+					<legend>Lived with a significant other for primarily financial reasons</legend>
 					<div class="form-row">
 							<div class="input-group col-3">
 									<span class="input-group-addon">
@@ -324,7 +324,7 @@
 				<hr />
 
 				<fieldset>
-						<legend>Lived with a family member for financial reasons</legend>
+						<legend>Lived with a family member for primarily financial reasons</legend>
 						<div class="form-row">
 								<div class="input-group col-3">
 										<span class="input-group-addon">
@@ -397,4 +397,8 @@
 				<button class="btn btn-primary mx-auto" type="submit">Save and Continue to Timeline &rarr;</button>
 			</div>
 </form>
+@endsection
+
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '30'])
 @endsection

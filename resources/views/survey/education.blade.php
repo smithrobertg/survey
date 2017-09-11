@@ -11,7 +11,7 @@
     {{ csrf_field() }}
 
     <div class="form-group">
-        <h3>Did you… <em>(check all that apply)</em></h3>
+        <h3>Over the course of your life, did you? <em>(check all that apply)</em></h3>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="education_events[]" value="Attended Pre-K">

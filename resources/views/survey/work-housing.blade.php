@@ -7,14 +7,12 @@
 
 <form method="post" action="/work-housing">
     {{ csrf_field() }}
-    <h2>CHECKLIST OF WORK EVENTS</h2>
+    <h3>Over the course of your life, did you? <em>(check all that apply)</em></h3>
 
     <div class="form-group">
-        <h3>
+        <div class="alert alert-primary lead">
             For the purposes of this section “job” and “work” is defined as ways to obtain money outside of the sex trade or other illegal enterprise.
-
-            <em>(check all that apply)</em>
-        </h3>
+        </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Applied for PT/FT job" />
@@ -156,5 +154,8 @@
     <button class="btn btn-primary">Continue &rarr;</button>
 
 </form>
+@endsection
 
+@section('progress')
+    @include('partials.progress-bar', ['progress' => '28'])
 @endsection

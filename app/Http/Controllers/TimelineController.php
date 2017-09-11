@@ -10,18 +10,7 @@ class TimelineController extends Controller
     //
     public function getFamilyBackgroundTimeline()
     {
-		$familyBackgoundTimelineEvents = array(
-                      "A parent abused you (physically, sexually, or emotionally)",
-                      "A parent was arrested",
-                      "You experienced homelessness",
-                      "You experienced abuse (physical, sexual, or emotional) by a non-parent",
-                      "You ran away",
-                      "Your family could not afford heat or water (or other basic utilities)",
-                      "Your family experienced poverty",
-                      "You were addicted to drugs or alcohol (before turning 18)",
-                      "Lived in foster care (age entered and age exited)");
-
-        return view('survey.family-background-timeline', [ 'timelineEvents' => $familyBackgoundTimelineEvents ]);
+        return view('survey.family-background-timeline');
     }
 
     public function postFamilyBackgroundTimeline(Request $request)
