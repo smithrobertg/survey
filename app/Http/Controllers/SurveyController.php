@@ -359,6 +359,7 @@ class SurveyController extends Controller
         $exploitation->age_last_sold_sex = $request->input('age_last_sold_sex');
         $exploitation->times_tried_to_leave_sex_trade = $request->input('times_tried_to_leave_sex_trade');
         $exploitation->returned_to_sex_trade = $request->input('returned_to_sex_trade');
+        $exploitation->times_returned_to_sex_trade = $request->input('times_returned_to_sex_trade');
         $exploitation->other_exploitation_events = $request->input('other_exploitation_events');
 
         $exploitation->save();
