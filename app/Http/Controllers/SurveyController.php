@@ -30,69 +30,68 @@ class SurveyController extends Controller
 
     public function postScreening (Request $request)
     {
-	/*
-            $table->increments('id');
-            //$table->string('participant_id')->nullable();
-            $table->string('screening_18_or_older');
-            $table->string('screening_identify_as_candidate');
-            $table->string('consent');
-            $table->timestamp('start_date')->useCurrent();
-            $table->timestamp('finish_date')->nullable();
-            $table->timestamps();
-	*/
-		// Initial creation of this survey
-		$survey = new Survey;
+		    // Initial creation of this survey
+    		$survey = new Survey;
 
-		$survey->screening_18_or_older = $request->input('age_18_or_older');
-		$survey->screening_identify_as_candidate = $request->input('identify_as_candidate');
+    		$survey->screening_18_or_older = $request->input('age_18_or_older');
+    		$survey->screening_identify_as_candidate = $request->input('identify_as_candidate');
+        $survey->started_at = date('Y-m-d H:m:s');
 
         if (strtolower($request->input('age_18_or_older')) == "no"
-            || strtolower($request->input('identify_as_survivor_or_sex_worker')) == "no")
+            || strtolower($request->input('identify_as_candidate')) == "no")
         {
-			$survey->finish_date = now();
-			$survey->save();
+      			$survey->finished_at = date('Y-m-d H:m:s');
+      			$survey->save();
 
             return view('survey.not-eligible');
         }
 
-		$survey->save();
-		$survey_id = $survey->id;
-		session([ 'survey_id' => $survey_id, 'survey' => $survey ]);
+    		$survey->save();
+        $survey_id = $survey->id;
+        $survey_code_prefix = date('ymd', strtotime($survey->started_at));
+        $survey->survey_code = $survey_code_prefix . '-' . sprintf('%04d', $survey_id);
+        $survey->save();
+
+        // Save survey and survey_id to current session
+    		session([ 'survey' => $survey, 'survey_id' => $survey_id ]);
 
         return redirect()->route('survey.consent');
     }
 
     public function getConsent()
     {
-		$survey_id = session('survey_id');
+		    $survey_id = session('survey_id');
+        $survey = session('survey');
 
-        return view('survey.consent', ['survey_id', $survey_id);
+        return view('survey.consent', ['survey' => $survey]);
     }
 
     public function postConsent (Request $request)
     {
         $consent = $request->input('consent');
 
-        if (strtolower($consent) == "yes")
+        // Update survey consent status
+        $survey_id = session('survey_id');
+        $survey = Survey::find($survey_id);
+        $survey->consent = $consent;
+        $survey->save();
+
+        if (strtolower($consent) != "yes")
         {
-            return redirect()->route('survey.thankyou-for-participating');
+            $survey->finished_at = date('Y-m-d H:m:s');
+            $survey->save();
+
+            return redirect()->route('survey.referral');
         }
 
-        return redirect()->route('survey.referral');
+        return redirect()->route('survey.thankyou-for-participating');
     }
 
     public function getThankYouForParticipating()
     {
-        $survey = new Survey;
-        $survey->save();
+        $survey = session('survey');
 
-        $survey_id = $survey->survey_id;
-        $participant_id = 'XYZ0123456789';
-
-        //return view('survey.thankyou-for-participating', compact('survey_id', 'participant_id'));
-
-        return view('survey.thankyou-for-participating', [  'survey_id' => $survey_id,
-                                                            'participant_id' => $participant_id ]);
+        return view('survey.thankyou-for-participating', compact('survey'));
     }
 
     // Post not needed because view redirects straight to Demographics view
@@ -105,18 +104,16 @@ class SurveyController extends Controller
 
     public function getDemographics()
     {
-        $survey = new Survey;
-
-        return view('survey.demographics', [ 'survey' => $survey ]);
+        return view('survey.demographics');
     }
 
     public function postDemographics(Request $request)
     {
-        //
-        //$survey = Survey::first();
+        $survey_id = session('survey_id');
 
         $demographics = new Demographics;
 
+        $demographics->survey_id = $survey_id;
         $demographics->gender = $request->input('gender');
         $demographics->gender_self_describe = $request->input('gender_self_describe');
         $demographics->state_residence = $request->input('current_state_of_residence');

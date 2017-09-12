@@ -15,11 +15,12 @@ class CreateSurveysTable extends Migration
     {
         Schema::create('surveys', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('screening_18_or_older');
-            $table->string('screening_identify_as_candidate');
-            $table->string('consent');
-            $table->timestamp('start_date')->useCurrent();
-            $table->timestamp('finish_date')->nullable();
+            $table->string('survey_code')->nullable();
+            $table->string('screening_18_or_older')->nullable();
+            $table->string('screening_identify_as_candidate')->nullable();
+            $table->string('consent')->nullable();
+            $table->timestamp('started_at')->useCurrent();
+            $table->timestamp('finished_at')->nullable();
             $table->timestamps();
         });
     }

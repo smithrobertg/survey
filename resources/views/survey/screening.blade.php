@@ -17,8 +17,8 @@
     <div class="row">
         <h3 class="col-sm-12">
             Do you identify with any of the following (as an adult, teen, or child)?&nbsp;&nbsp;&nbsp;
-            <label class="radio-inline text-success"><input type="radio" name="identify_as_survivor_or_sex_worker" id="identify_yes" value="Yes" /> Yes</label>
-            <label class="radio-inline text-danger"><input type="radio" name="identify_as_survivor_or_sex_worker" id="identify_no" value="No" /> No</label>
+            <label class="radio-inline text-success"><input type="radio" name="identify_as_candidate" id="identify_yes" value="Yes" /> Yes</label>
+            <label class="radio-inline text-danger"><input type="radio" name="identify_as_candidate" id="identify_no" value="No" /> No</label>
         </h3>
         <ul class="lead ml-3">
             <li>Survivor of commercial sexual expoitation or sex trafficking</li>

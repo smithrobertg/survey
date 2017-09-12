@@ -22,11 +22,11 @@
       100 Morrissey Boulevard<br />
       Boston, MA.  02125-3393<br />
   </h3>
-  <div class="display-4">Survey ID: {{ $survey_id }}</div>
+  <div class="display-4 text-center">Survey Code: {{ $survey->survey_code }} (ID: {{ $survey->id }})</div>
 </div>
 <div class="row">
     <div class="col-10 mx-auto">
-        <form method="post" action="/consent">
+        <form method="post" action="{{ route('survey.consent') }}">
             {{ csrf_field() }}
             <h3 class="text-center"><strong>Consent Form for the Study of Life Events: Survey</strong></h3>
             <p>

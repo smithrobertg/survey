@@ -4,7 +4,7 @@
 
 @section('content')
 	<h2 class="text-center">Thank you for participating.</h2>
-		<h4><br />Your confidential survey Particiant ID is:  {{ $participant_id }} (Survey ID: {{ $survey_id }})
+		<h4><br />Your confidential Survey Code is:  {{ $survey->survey_code }} (ID: {{ $survey->id }})
 		<br />Please record this number in case you need to stop the survey and resume at another time.  This Participant ID may also be used for confidential communication with the researcher.</h4>
 		<div class="row">
 			<div class="card col-10 mx-auto my-4">

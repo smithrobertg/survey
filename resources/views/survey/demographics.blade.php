@@ -7,7 +7,6 @@
 
 <form method="post" action="{{ route('survey.demographics') }}">
     {{ csrf_field() }}
-    <h2>{{ $survey->id }}, {{ $survey->participant_id }}</h2>
     <div class="form-group">
         <div class="row">
             <div class="col-sm-6">
