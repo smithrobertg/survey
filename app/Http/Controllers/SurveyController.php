@@ -30,38 +30,38 @@ class SurveyController extends Controller
 
     public function postScreening (Request $request)
     {
-		    // Initial creation of this survey
-    		$survey = new Survey;
+		// Initial creation of this survey
+    	$survey = new Survey;
 
-    		$survey->screening_18_or_older = $request->input('age_18_or_older');
-    		$survey->screening_identify_as_candidate = $request->input('identify_as_candidate');
-        $survey->started_at = date('Y-m-d H:m:s');
+    	$survey->screening_18_or_older = $request->input('age_18_or_older');
+    	$survey->screening_identify_as_candidate = $request->input('identify_as_candidate');
+		$survey->started_at = date('Y-m-d H:m:s');
 
-        if (strtolower($request->input('age_18_or_older')) == "no"
-            || strtolower($request->input('identify_as_candidate')) == "no")
-        {
+		if (strtolower($request->input('age_18_or_older')) == "no"
+			|| strtolower($request->input('identify_as_candidate')) == "no")
+		{
       			$survey->finished_at = date('Y-m-d H:m:s');
       			$survey->save();
 
-            return view('survey.not-eligible');
-        }
+			return view('survey.not-eligible');
+		}
 
-    		$survey->save();
-        $survey_id = $survey->id;
-        $survey_code_prefix = date('ymd', strtotime($survey->started_at));
-        $survey->survey_code = $survey_code_prefix . '-' . sprintf('%04d', $survey_id);
-        $survey->save();
+    	$survey->save();
+		$survey_id = $survey->id;
+		$survey_code_prefix = date('ymd', strtotime($survey->started_at));
+		$survey->survey_code = $survey_code_prefix . '-' . sprintf('%04d', $survey_id);
+		$survey->save();
 
-        // Save survey and survey_id to current session
-    		session([ 'survey' => $survey, 'survey_id' => $survey_id ]);
+		// Save survey and survey_id to current session
+    	session([ 'survey' => $survey, 'survey_id' => $survey_id ]);
 
         return redirect()->route('survey.consent');
     }
 
     public function getConsent()
     {
-		    $survey_id = session('survey_id');
         $survey = session('survey');
+		//$survey_id = session('survey_id');
 
         return view('survey.consent', ['survey' => $survey]);
     }
@@ -135,16 +135,16 @@ class SurveyController extends Controller
     //
     public function getOrientationQuestions()
     {
-        $survey_id = 1;
-        $survey = Survey::find($survey_id);
-
         return view('survey.orientation-questions');
     }
 
     public function postOrientationQuestions(Request $request)
     {
+        $survey_id = session('survey_id');
+
         $orientation = new Orientation;
 
+        $orientation->survey_id = $survey_id;
         $orientation->year_born = $request->input('year_born');
         $orientation->age_started_living_on_own = $request->input('age_started_living_on_own');
         $orientation->highest_grade_completed = $request->input('highest_grade_completed');
@@ -168,10 +168,11 @@ class SurveyController extends Controller
 
     public function postFamilyBackground(Request $request)
     {
-        //dd($request);
+        $survey_id = session('survey_id');
 
         $familyBackground = new FamilyBackground;
 
+        $familyBackground->survey_id = $survey_id;
       	if (!empty($request->input('parent_or_adult_often'))) {
       				$familyBackground->parent_or_adult_often = implode(", ", $request->input('parent_or_adult_often'));
 
@@ -218,8 +219,10 @@ class SurveyController extends Controller
 
     public function postFamilyBackgroundFollowup(Request $request)
     {
+        $survey_id = session('survey_id');
         $familyBackgoundFollowup = new FamilyBackgroundFollowup;
 
+        $familyBackgoundFollowup->survey_id = $survey_id;
         if(!empty($request->input('turned_to_for_support'))) $familyBackgoundFollowup->turned_to_for_support = implode(", ", $request->input('turned_to_for_support'));
         $familyBackgoundFollowup->turned_to_for_support_other = $request->input('turned_to_for_support_other');
         $familyBackgoundFollowup->foster_care_places_lived = $request->input('foster_care_places_lived');
@@ -248,8 +251,11 @@ class SurveyController extends Controller
 
     public function postEducation(Request $request)
     {
+        $survey_id = session('survey_id');
+
         $education = new Education;
 
+        $education->survey_id = $survey_id;
         if (!empty($request->input('education_events'))) $education->events = implode(", ", $request->input('education_events'));
         $education->other_events = $request->input('other_education_events');
         $education->save();
@@ -266,9 +272,11 @@ class SurveyController extends Controller
 
     public function postWorkHousing(Request $request)
     {
-        // save work/housing form $request data
+        $survey_id = session('survey_id');
+
         $workHousing = new WorkHousing;
 
+        $workHousing->survey_id = $survey_id;
         if (!empty($request->input('work_housing_events'))) $workHousing->work_housing_events = implode(", ", $request->input('work_housing_events'));
         $workHousing->supported_by_trafficker = $request->input('supported_by_trafficker');
         $workHousing->other_work_events = $request->input('other_work_events');
@@ -285,9 +293,11 @@ class SurveyController extends Controller
 
     public function postWorkHousingFollowup(Request $request)
     {
-        // save work/housing followup form $request data
+        $survey_id = session('survey_id');
+
         $workHousingFollowup = new WorkHousingFollowup;
 
+        $workHousingFollowup->survey_id = $survey_id;
         $workHousingFollowup->work_applied_for_outside_sex_trade = $request->input('work_applied_for_outside_sex_trade');
         $workHousingFollowup->age_applied_for_first_job = $request->input('age_applied_for_first_job');
         $workHousingFollowup->age_applied_for_first_job_as_adult = $request->input('age_applied_for_first_job_as_adult');
@@ -297,6 +307,8 @@ class SurveyController extends Controller
         return view('survey.social-relationships');
     }
 
+	// Social Relationships questions controller
+
     public function getSocialRelationships()
     {
         return view('survey.social-relationships');
@@ -304,8 +316,11 @@ class SurveyController extends Controller
 
     public function postSocialRelationships(Request $request)
     {
+        $survey_id = session('survey_id');
+
         $socialRelationships = new SocialRelationships;
 
+        $socialRelationships->survey_id = $survey_id;
         if (!empty($request->input('social_relationship_events'))) $socialRelationships->social_relationship_events = implode(", ", $request->input('social_relationship_events'));
         $socialRelationships->tried_to_reconnect_experience = $request->input('tried_to_reconnect_experience');
         $socialRelationships->other_social_relationship_events = $request->input('other_social_relationship_events');
@@ -324,8 +339,11 @@ class SurveyController extends Controller
 
     public function postCriminalJustice(Request $request)
     {
+        $survey_id = session('survey_id');
+
         $criminalJustice = new CriminalJustice;
 
+        $criminalJustice->survey_id = $survey_id;
         if (!empty($request->input('criminal_justice_events'))) $criminalJustice->criminal_justice_events = implode(", ", $request->input('criminal_justice_events'));
         $criminalJustice->other_criminal_justice_events = $request->input('other_criminal_justice_events');
 
@@ -351,8 +369,11 @@ class SurveyController extends Controller
 
     public function postCriminalJusticeFollowup(Request $request)
     {
+        $survey_id = session('survey_id');
+
         $criminalJusticeFollowup = new CriminalJusticeFollowup;
 
+        $criminalJusticeFollowup->survey_id = $survey_id;
         $criminalJusticeFollowup->issues_because_of_criminal_record = $request->input('issues_because_of_criminal_record');
         $criminalJusticeFollowup->arrested_charges = $request->input('arrested_charges');
         $criminalJusticeFollowup->convicted_charges = $request->input('convicted_charges');
@@ -371,8 +392,11 @@ class SurveyController extends Controller
 
     public function postExploitation(Request $request)
     {
+        $survey_id = session('survey_id');
+
         $exploitation = new Exploitation;
 
+        $exploitation->survey_id = $survey_id;
         if (!empty($request->input('exploitation_events'))) $exploitation->exploitation_events = implode(", ", $request->input('exploitation_events'));
         $exploitation->sold_sex_before_18 = $request->input('sold_sex_before_18');
         $exploitation->sold_sex_after_18 = $request->input('sold_sex_after_18');
@@ -395,8 +419,11 @@ class SurveyController extends Controller
 
     public function postExploitationFollowup(Request $request)
     {
+        $survey_id = session('survey_id');
+
         $exploitationFollowup = new ExploitationFollowup;
 
+        $exploitationFollowup->survey_id = $survey_id;
         $exploitationFollowup->first_instance_selling_sex = $request->input('first_instance_selling_sex');
         $exploitationFollowup->why_returned_to_sex_trade = $request->input('why_returned_to_sex_trade');
         $exploitationFollowup->how_take_care_of_self = $request->input('how_take_care_of_self');
@@ -416,8 +443,11 @@ class SurveyController extends Controller
 
     public function postServices(Request $request)
     {
+        $survey_id = session('survey_id');
+
         $services = new Services;
 
+        $services->survey_id = $survey_id;
         $services->social_service_agency_reached_out = $request->input('social_service_agency_reached_out');
         $services->social_service_received = $request->input('social_service_received');
         if (!empty($request->input('services_sought'))) $services->services_sought = implode(", ", $request->input('services_sought'));
@@ -450,8 +480,11 @@ class SurveyController extends Controller
 
     public function postServicesFollowup(Request $request)
     {
+        $survey_id = session('survey_id');
+
         $servicesFollowup = new ServicesFollowup;
 
+        $servicesFollowup->survey_id = $survey_id;
         if (!empty($request->input('services_followup_events'))) $servicesFollowup->services_followup_events = implode(", ", $request->input('services_followup_events'));
         $servicesFollowup->explain_services_experiences = $request->input('explain_services_experiences');
 
@@ -467,8 +500,11 @@ class SurveyController extends Controller
 
     public function postFinalQuestions(Request $request)
     {
+        $survey_id = session('survey_id');
+
         $finalQuestions = new FinalQuestions;
 
+        $finalQuestions->survey_id = $survey_id;
         $finalQuestions->explain_becoming_legal_adult = $request->input('explain_becoming_legal_adult');
         $finalQuestions->want_society_to_know = $request->input('want_society_to_know');
         $finalQuestions->want_research_staff_to_know_about_answers = $request->input('want_research_staff_to_know_about_answers');
