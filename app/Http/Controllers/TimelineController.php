@@ -17,7 +17,7 @@ class TimelineController extends Controller
     {
         // A parent abused you (physically, sexually, or emotionally)
         $timelineEvent = new TimelineEvent;
-        $timelineEvent->survey_id = sessionsession('survey_id');
+        $timelineEvent->survey_id = session('survey_id');
         $timelineEvent->event_category = "Family Background";
         $timelineEvent->event_description = "Abused by parent";
         $timelineEvent->timeframe = $request->input('timeframe_abused_by_parent');

@@ -122,7 +122,7 @@
             </label>
         </div>
     </div>
-    <fieldset class="" disabled>
+    <fieldset class="ml-5">
       <div class="form-group row">
           <label>Was this person ever a trafficker?</label>
 

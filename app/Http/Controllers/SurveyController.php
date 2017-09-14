@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Session\Store;
+use Carbon\Carbon;
 use App\Survey;
 use App\Demographics;
 use App\Orientation;
@@ -30,30 +31,30 @@ class SurveyController extends Controller
 
     public function postScreening (Request $request)
     {
-		// Initial creation of this survey
-    	$survey = new Survey;
+    		// Initial creation of this survey
+        $survey = new Survey;
 
-    	$survey->screening_18_or_older = $request->input('age_18_or_older');
-    	$survey->screening_identify_as_candidate = $request->input('identify_as_candidate');
-		$survey->started_at = date('Y-m-d H:m:s');
+        $survey->screening_18_or_older = $request->input('age_18_or_older');
+        $survey->screening_identify_as_candidate = $request->input('identify_as_candidate');
+        $survey->started_at = Carbon::now();
 
-		if (strtolower($request->input('age_18_or_older')) == "no"
-			|| strtolower($request->input('identify_as_candidate')) == "no")
-		{
-      			$survey->finished_at = date('Y-m-d H:m:s');
-      			$survey->save();
+        if (strtolower($request->input('age_18_or_older')) == "no"
+        || strtolower($request->input('identify_as_candidate')) == "no")
+        {
+        			$survey->finished_at = Carbon::now();
+        			$survey->save();
 
-			return view('survey.not-eligible');
-		}
+              return view('survey.not-eligible');
+        }
 
-    	$survey->save();
-		$survey_id = $survey->id;
-		$survey_code_prefix = date('ymd', strtotime($survey->started_at));
-		$survey->survey_code = $survey_code_prefix . '-' . sprintf('%04d', $survey_id);
-		$survey->save();
+        $survey->save();
+        $survey_id = $survey->id;
+        $survey_code_prefix = date('ymd', strtotime($survey->started_at));
+        $survey->survey_code = $survey_code_prefix . '-' . sprintf('%04d', $survey_id);
+        $survey->save();
 
-		// Save survey and survey_id to current session
-    	session([ 'survey' => $survey, 'survey_id' => $survey_id ]);
+        // Save survey and survey_id to current session
+        session([ 'survey' => $survey, 'survey_id' => $survey_id ]);
 
         return redirect()->route('survey.consent');
     }
@@ -61,7 +62,7 @@ class SurveyController extends Controller
     public function getConsent()
     {
         $survey = session('survey');
-		//$survey_id = session('survey_id');
+        //$survey_id = session('survey_id');
 
         return view('survey.consent', ['survey' => $survey]);
     }

@@ -13,7 +13,7 @@
 
 @section('content')
 <div class="jumbotron jumbotron-fluid bg-light my-0 py-1">
-  <h2 id="formTitle">
+  <h2 class="text-center border border-primary" id="formTitle">
       UMASS BOSTON INSTITUTIONAL REVIEW BOARD
   </h2>
   <h3 class="text-center">
@@ -22,7 +22,7 @@
       100 Morrissey Boulevard<br />
       Boston, MA.  02125-3393<br />
   </h3>
-  <div class="display-4 text-center">Survey Code: {{ $survey->survey_code }} (ID: {{ $survey->id }})</div>
+  <div class="lead text-center">Survey Code: {{ $survey->survey_code }} (ID: {{ $survey->id }})</div>
 </div>
 <div class="row">
     <div class="col-10 mx-auto">
