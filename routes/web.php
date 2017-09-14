@@ -73,6 +73,9 @@ Route::prefix('test')->group( function () {
 
   Route::get('partial', 'TestController@getPartialTest');
 
+  Route::get('whoops', function() {
+    bomb;
+  });
 });
 
 
