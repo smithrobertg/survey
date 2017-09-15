@@ -6,7 +6,7 @@
 
 <h2>EDUCATION</h2>
 
-<form method="post" action="/education">
+<form method="post" action="{{ route('survey.education') }}">
 
     {{ csrf_field() }}
 

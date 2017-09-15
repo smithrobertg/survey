@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\TimelineEvent;
+use App\Education;
 
 class TimelineController extends Controller
 {
@@ -152,7 +153,11 @@ class TimelineController extends Controller
 
     public function getEducationTimeline()
     {
-        return view('survey.education-timeline');
+        // Extract education timeline events array
+        $education = Education::where('survey_id', session('survey_id'))->latest()->first();
+        $educationTimelineEvents = explode(', ', $education->events);
+
+        return view('survey.education-timeline', [ 'events' => $educationTimelineEvents, 'education_events' => $education->events ]);
     }
 
     public function postEducationTimeline(Request $request)

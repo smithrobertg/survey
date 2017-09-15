@@ -5,6 +5,15 @@
 @section('content')
 <h2>EDUCATION TIMELINE</h2>
 
+<div class="alert alert-primary border border-primary">
+		<h3>Events: {{ $education_events }}</h3>
+    <ul>
+      @foreach($events as $event)
+        <li>"{{ $event }}"</li>
+      @endforeach
+    </ul>
+</div>
+
 <h3 class="bg-primary text-white p-3">For each of these questions, please enter AGE, YEAR, or RANGE the event(s) occured.  These events will be populated in timeline.</h3>
 <hr />
 <form method="post" action="{{ route('survey.education-timeline') }}">
