@@ -153,11 +153,34 @@ class TimelineController extends Controller
 
     public function getEducationTimeline()
     {
+		/*	Create array for checking eligible events:
+				• Have to repeat a grade
+				• Graduate from high school
+				• Get a GED
+				• Skip school regularly at any period of time
+				• Ever leave school for a period of time
+				• Experienced abuse by a teacher (or someone else at school)
+		*/
+		$timelineEligibleEvents = [
+			'Repeated grade',
+			'Graduated high school',
+			'Got GED',
+			'Skip school regularly',
+			'Left school for a period of time',
+			'Abused by teacher/someone else'
+		];
+
         // Extract education timeline events array
-        $education = Education::where('survey_id', session('survey_id'))->latest()->first();
+        $education = Education::where('survey_id', session('survey_id'))->latest();
         $educationTimelineEvents = explode(', ', $education->events);
 
-        return view('survey.education-timeline', [ 'events' => $educationTimelineEvents, 'education_events' => $education->events ]);
+		$displayTimelineEvents = array_intersect($timelineEligibleEvents, $educationEducationEvents);
+
+        return view('survey.education-timeline', [
+			'educationEvents' => $education->events,
+			'events' => $educationTimelineEvents,
+			'displayEvents' => $displayTimelineEvents
+		]);
     }
 
     public function postEducationTimeline(Request $request)
