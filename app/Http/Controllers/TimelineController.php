@@ -170,14 +170,15 @@ class TimelineController extends Controller
 			'Abused by teacher/someone else'
 		];
 
-        // Extract education timeline events array
-        $education = Education::where('survey_id', session('survey_id'))->latest();
-        $educationTimelineEvents = explode(', ', $education->events);
+    // Extract education timeline events array
+    $education = Education::where('survey_id', session('survey_id'))->latest()->first();
+    $educationTimelineEvents = explode(', ', $education->events);
 
-		$displayTimelineEvents = array_intersect($timelineEligibleEvents, $educationEducationEvents);
+    $displayTimelineEvents = array_intersect($timelineEligibleEvents, $educationTimelineEvents);
 
-        return view('survey.education-timeline', [
+    return view('survey.education-timeline', [
 			'educationEvents' => $education->events,
+      'eligibleEvents' => $timelineEligibleEvents,
 			'events' => $educationTimelineEvents,
 			'displayEvents' => $displayTimelineEvents
 		]);

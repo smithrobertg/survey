@@ -6,12 +6,22 @@
 <h2>EDUCATION TIMELINE</h2>
 
 <div class="alert alert-primary border border-primary">
-	<h3>Events: {{ $educationEvents }}</h3>
+	<h3>Events Field: {{ $educationEvents }}</h3>
+
+	<h3>Education Events:</h3>
     <ul>
       @foreach($events as $event)
         <li>"{{ $event }}"</li>
       @endforeach
     </ul>
+	<h3>
+
+	<h3>Eligible Events</h3>
+	<ul>
+		@foreach($eligibleEvents as $eligibleEvent)
+				<li>{{ $eligibleEvent }}</li>
+		@endforeach
+	</ul>
 	<h3>Display Events</h3>
 	@foreach($displayEvents as $displayEvent)
 		<li>"{{ $displayEvent }}"</li>
