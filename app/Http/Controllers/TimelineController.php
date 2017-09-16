@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\TimelineEvent;
+use App\EventCategory;
 use App\Education;
 
 class TimelineController extends Controller
@@ -153,53 +154,58 @@ class TimelineController extends Controller
 
     public function getEducationTimeline()
     {
-		/*	Create array for checking eligible events:
-				• Have to repeat a grade
-				• Graduate from high school
-				• Get a GED
-				• Skip school regularly at any period of time
-				• Ever leave school for a period of time
-				• Experienced abuse by a teacher (or someone else at school)
-		*/
-		$timelineEligibleEvents = [
-			'Repeated grade',
-			'Graduated high school',
-			'Got GED',
-			'Skip school regularly',
-			'Left school for a period of time',
-			'Abused by teacher/someone else'
-		];
+    		/*	Create array for checking eligible events:
+    				• Have to repeat a grade
+    				• Graduate from high school
+    				• Get a GED
+    				• Skip school regularly at any period of time
+    				• Ever leave school for a period of time
+    				• Experienced abuse by a teacher (or someone else at school)
+    		*/
 
-    // Extract education timeline events array
-    $education = Education::where('survey_id', session('survey_id'))->latest()->first();
-    $educationTimelineEvents = explode(', ', $education->events);
+    		$timelineEligibleEvents = [
+    			'Repeated grade',
+    			'Graduated high school',
+    			'Got GED',
+    			'Skip school regularly',
+    			'Left school for a period of time',
+    			'Abused by teacher/someone else'
+    		];
 
-    $displayTimelineEvents = array_intersect($timelineEligibleEvents, $educationTimelineEvents);
+        // Extract education timeline events array
+        $education = Education::where('survey_id', session('survey_id'))->latest()->first();
+        $educationTimelineEvents = explode(', ', $education->events);
 
-    return view('survey.education-timeline', [
-			'educationEvents' => $education->events,
-      'eligibleEvents' => $timelineEligibleEvents,
-			'events' => $educationTimelineEvents,
-			'displayEvents' => $displayTimelineEvents
-		]);
+        $displayTimelineEvents = array_intersect($timelineEligibleEvents, $educationTimelineEvents);
+
+        return view('survey.education-timeline', [
+    			'educationEvents' => $education->events,
+          'eligibleEvents' => $timelineEligibleEvents,
+    			'events' => $educationTimelineEvents,
+    			'displayEvents' => $displayTimelineEvents
+    		]);
     }
 
     public function postEducationTimeline(Request $request)
     {
-		/*	EDUCATION
-			---------
-			� Have to repeat a grade
-			� Graduate from high school
-			� Get a GED
-			� Skip school regularly at any period of time
-			� Ever leave school for a period of time
-			� Experienced abuse by a teacher (or someone else at school)
-		*/
+    		/*	EDUCATION
+    			---------
+    			� Have to repeat a grade
+    			� Graduate from high school
+    			� Get a GED
+    			� Skip school regularly at any period of time
+    			� Ever leave school for a period of time
+    			� Experienced abuse by a teacher (or someone else at school)
+    		*/
 
-	    // Have to repeat a grade
+        $category = "Education";
+        $eventCategory = EventCategory::where('category', $category)->first();
+        
+        // Have to repeat a grade
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->event_category = "Education";
+        $timelineEvent->event_category_id = $eventCategory->id;
+        $timelineEvent->event_category = $category;
         $timelineEvent->event_description = "Repeated grade";
         $timelineEvent->timeframe = $request->input('timeframe_repeated_grade');
         $timelineEvent->age = $request->input('age_repeated_grade');
@@ -208,7 +214,7 @@ class TimelineController extends Controller
         $timelineEvent->range_to = $request->input('range_to_repeated_grade');
         $timelineEvent->save();
 
-	    // Graduate from high school
+        // Graduate from high school
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
         $timelineEvent->event_category = "Education";
