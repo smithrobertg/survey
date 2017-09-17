@@ -12,7 +12,11 @@ class Survey extends Model
 	{
 		return $this->hasMany('App\Demographics');
 	}
-	
+
+	public function education()
+	{
+		return $this->belongsToMany('App\Education')->withTimestamps();
+	}
     //
     // public static function incomplete()
     // {

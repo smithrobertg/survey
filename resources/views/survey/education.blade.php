@@ -8,8 +8,8 @@
 
 <div class="alert alert-primary border border-primary">
   <ul>
-    @foreach($events as $event)
-      <li>{{ $event->prompt }}</li>
+    @foreach($lifeEvents as $lifeEvent)
+      <li>{{ $lifeEvent->prompt }}</li>
     @endforeach
   </ul>
 </div>
@@ -17,6 +17,13 @@
 <form method="post" action="{{ route('survey.education') }}">
 
     {{ csrf_field() }}
+
+    <h3>Over the course of your life, did you? <em>(check all that apply)</em></h3>
+    <div class="form-group">
+    @foreach($lifeEvents as $lifeEvent)
+        @include('partials.life-event')
+    @endforeach
+    </div>
 
     <div class="form-group">
         <h3>Over the course of your life, did you? <em>(check all that apply)</em></h3>

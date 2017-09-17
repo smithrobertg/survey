@@ -250,7 +250,7 @@ class SurveyController extends Controller
     {
         $category = EventCategory::where('category', 'Education')->first();
 
-        return view('survey.education', [ 'events' => $category->life_events ]);
+        return view('survey.education', [ 'lifeEvents' => $category->life_events ]);
     }
 
     public function postEducation(Request $request)
@@ -263,6 +263,8 @@ class SurveyController extends Controller
         if (!empty($request->input('education_events'))) $education->events = implode(", ", $request->input('education_events'));
         $education->other_events = $request->input('other_education_events');
         $education->save();
+
+        $education->surveys()->attach($survey_id);
 
         return redirect()->route('survey.education-timeline');
     }
