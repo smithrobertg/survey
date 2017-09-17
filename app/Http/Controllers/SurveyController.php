@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Session\Store;
 use Carbon\Carbon;
 use App\Survey;
+use App\EventCategory;
 use App\Demographics;
 use App\Orientation;
 use App\FamilyBackground;
@@ -247,7 +248,9 @@ class SurveyController extends Controller
 
     public function getEducation()
     {
-        return view('survey.education');
+        $category = EventCategory::where('category', 'Education')->first();
+
+        return view('survey.education', [ 'events' => $category->life_events ]);
     }
 
     public function postEducation(Request $request)

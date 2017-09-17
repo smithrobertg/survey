@@ -6,6 +6,14 @@
 
 <h2>EDUCATION</h2>
 
+<div class="alert alert-primary border border-primary">
+  <ul>
+    @foreach($events as $event)
+      <li>{{ $event->prompt }}</li>
+    @endforeach
+  </ul>
+</div>
+
 <form method="post" action="{{ route('survey.education') }}">
 
     {{ csrf_field() }}

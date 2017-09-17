@@ -200,7 +200,7 @@ class TimelineController extends Controller
 
         $category = "Education";
         $eventCategory = EventCategory::where('category', $category)->first();
-        
+
         // Have to repeat a grade
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
@@ -217,7 +217,8 @@ class TimelineController extends Controller
         // Graduate from high school
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->event_category = "Education";
+        $timelineEvent->event_category_id = $eventCategory->id;
+        $timelineEvent->event_category = $category;
         $timelineEvent->event_description = "Graduated high school";
         $timelineEvent->timeframe = $request->input('timeframe_graduated_high_school');
         $timelineEvent->age = $request->input('age_graduated_high_school');
@@ -229,7 +230,8 @@ class TimelineController extends Controller
 	    // Get a GED
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->event_category = "Education";
+        $timelineEvent->event_category_id = $eventCategory->id;
+        $timelineEvent->event_category = $category;
         $timelineEvent->event_description = "Got GED";
         $timelineEvent->timeframe = $request->input('timeframe_got_ged');
         $timelineEvent->age = $request->input('age_got_ged');
@@ -241,7 +243,8 @@ class TimelineController extends Controller
 	    // Skip school regularly at any period of time
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->event_category = "Education";
+        $timelineEvent->event_category_id = $eventCategory->id;
+        $timelineEvent->event_category = $category;
         $timelineEvent->event_description = "Skip school regularly";
         $timelineEvent->timeframe = $request->input('timeframe_skip_school_regularly');
         $timelineEvent->age = $request->input('age_skip_school_regularly');
@@ -253,7 +256,8 @@ class TimelineController extends Controller
 	    // Ever leave school for a period of time
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->event_category = "Education";
+        $timelineEvent->event_category_id = $eventCategory->id;
+        $timelineEvent->event_category = $category;
         $timelineEvent->event_description = "Leave school for period of time";
         $timelineEvent->timeframe = $request->input('timeframe_leave_school');
         $timelineEvent->age = $request->input('age_leave_school');
@@ -265,7 +269,8 @@ class TimelineController extends Controller
 	    // Experienced abuse by a teacher (or someone else at school)
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->event_category = "Education";
+        $timelineEvent->event_category_id = $eventCategory->id;
+        $timelineEvent->event_category = $category;
         $timelineEvent->event_description = "Abused by teacher/at school";
         $timelineEvent->timeframe = $request->input('timeframe_abused_at_school');
         $timelineEvent->age = $request->input('age_abused_at_school');
