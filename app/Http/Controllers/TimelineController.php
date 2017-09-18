@@ -186,11 +186,11 @@ class TimelineController extends Controller
         $displayTimelineEvents = $lifeEvents->pluck('event'); //array_intersect($timelineEligibleEvents, $educationTimelineEvents);
 
         return view('survey.education-timeline', [
-    			'educationEvents' => $education->events,
-          'eligibleEvents' => $timelineEligibleEvents,
-    			'events' => $educationTimelineEvents,
-    			'displayEvents' => $displayTimelineEvents
-    		]);
+    		'educationEvents' => $education->events,
+			'eligibleEvents' => $timelineEligibleEvents,
+    		'events' => $educationTimelineEvents,
+    		'displayEvents' => $displayTimelineEvents
+    	]);
     }
 
     public function postEducationTimeline(Request $request)
