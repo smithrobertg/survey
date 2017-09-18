@@ -24,7 +24,7 @@
         @include('partials.life-event')
     @endforeach
     </div>
-
+<!--
     <div class="form-group">
         <h3>Over the course of your life, did you? <em>(check all that apply)</em></h3>
         <div class="form-check">
@@ -142,7 +142,7 @@
             </label>
         </div>
   </div>
-
+-->
     <div class="form-group">
         <label class="form-label" for="other_education_events">
             Other difficult or exciting education events not mentioned above?

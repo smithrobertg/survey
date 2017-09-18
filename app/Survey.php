@@ -13,6 +13,11 @@ class Survey extends Model
 		return $this->hasMany('App\Demographics');
 	}
 
+	public function life_events()
+	{
+			return $this->belongsToMany('App\LifeEvent')->withTimestamps();
+	}
+
 	public function education()
 	{
 		return $this->belongsToMany('App\Education')->withTimestamps();

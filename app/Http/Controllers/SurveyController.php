@@ -256,6 +256,8 @@ class SurveyController extends Controller
     public function postEducation(Request $request)
     {
         $survey_id = session('survey_id');
+        $survey = Survey::find($survey_id);
+        $survey->life_events()->attach($request->input('education_events'));
 
         $education = new Education;
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Survey;
 use App\TimelineEvent;
 use App\EventCategory;
 use App\Education;
@@ -172,11 +173,17 @@ class TimelineController extends Controller
     			'Abused by teacher/someone else'
     		];
 
+        $survey_id = session('survey_id');
+        $survey = Survey::find($survey_id);
+        $lifeEvents = $survey->life_events;
+
+        $category = EventCategory::where('category', "Education")->first();
+
         // Extract education timeline events array
-        $education = Education::where('survey_id', session('survey_id'))->latest()->first();
+        $education = Education::where('survey_id', $survey_id)->latest()->first();
         $educationTimelineEvents = explode(', ', $education->events);
 
-        $displayTimelineEvents = array_intersect($timelineEligibleEvents, $educationTimelineEvents);
+        $displayTimelineEvents = $lifeEvents->pluck('event'); //array_intersect($timelineEligibleEvents, $educationTimelineEvents);
 
         return view('survey.education-timeline', [
     			'educationEvents' => $education->events,
