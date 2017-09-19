@@ -28,6 +28,6 @@ class CreateLifeeventSurveyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lifeevent_survey');
+        Schema::dropIfExists('life_event_survey');
     }
 }
