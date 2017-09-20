@@ -275,7 +275,9 @@ class SurveyController extends Controller
 
     public function getWorkHousing()
     {
-        return view('survey.work-housing');
+		$category = EventCategory::where('category', 'Work Housing')->first();
+
+		return view('survey.work-housing', [ 'lifeEvents' => $category->life_events ]);
     }
 
     public function postWorkHousing(Request $request)
@@ -319,7 +321,9 @@ class SurveyController extends Controller
 
     public function getSocialRelationships()
     {
-        return view('survey.social-relationships');
+        $category = EventCategory::where('category', 'Social Relationships')->first();
+
+        return view('survey.social-relationships', [ 'lifeEvents' => $category->life_events ]);
     }
 
     public function postSocialRelationships(Request $request)

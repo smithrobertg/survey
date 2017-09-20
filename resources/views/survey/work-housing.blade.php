@@ -5,7 +5,7 @@
 @section('content')
 <h2>Work/Housing</h2>
 
-<form method="post" action="/work-housing">
+<form method="post" action="{{ route('survey.work-housing') }}">
     {{ csrf_field() }}
     <h3>Over the course of your life, did you? <em>(check all that apply)</em></h3>
 
@@ -13,6 +13,13 @@
         <div class="alert alert-primary lead">
             For the purposes of this section “job” and “work” is defined as ways to obtain money outside of the sex trade or other illegal enterprise.
         </div>
+
+		<!-- Display Work/Housing life event checklist -->
+		@each('partials.life-event', $lifeEvents, 'lifeEvent')
+
+	</div>
+
+	<!--
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="work_housing_events[]" value="Applied for PT/FT job" />
@@ -121,7 +128,7 @@
                 Been financially supported by a significant other
             </label>
         </div>
-    </div>
+	-->
     <fieldset class="ml-5">
       <div class="form-group row">
           <label>Was this person ever a trafficker?</label>
@@ -151,7 +158,7 @@
         <textarea class="form-control" name="other_work_events" id="other_work_events" rows="3"></textarea>
     </div>
 
-    <button class="btn btn-primary">Continue &rarr;</button>
+    <button class="btn btn-primary">Save and Continue &rarr;</button>
 
 </form>
 @endsection

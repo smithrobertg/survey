@@ -13,8 +13,8 @@ class LifeEventsTableSeeder extends Seeder
     public function run()
     {
         // Seed life events for each category
-    		$this->seedFamilyBackgroundLifeEvents();
-    		$this->seedEducationLifeEvents();
+    	$this->seedFamilyBackgroundLifeEvents();
+    	$this->seedEducationLifeEvents();
         $this->seedWorkHousingLifeEvents();
         $this->seedSocialRelationshipsLifeEvents();
         $this->seedCriminalJusticeLifeEvents();
@@ -163,18 +163,98 @@ class LifeEventsTableSeeder extends Seeder
 
     private function seedWorkHousingLifeEvents()
     {
-      $category = EventCategory::where('category', 'Work Housing')->first();
+		$category = EventCategory::where('category', 'Work Housing')->first();
   		$field_name = "work_housing_events[]";
 
   		$category->life_events()->createMany([
-  			[
-  				'event' => "Event",
-  				'prompt' => "Prompt",
+   			[
+  				'event' => "Applied for PT/FT job",
+  				'prompt' => "Applied for a part-time or full-time job?",
   				'field_name' => $field_name
   			],
-        [
-  				'event' => "Event",
-  				'prompt' => "Prompt",
+ 			[
+  				'event' => "Had trouble finding job",
+  				'prompt' => "Had trouble finding a job",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Been employed PT/FT",
+  				'prompt' => "Been employed part-time or full-time",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Been fired",
+  				'prompt' => "Been fired from a job",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Quit job",
+  				'prompt' => "Quit a job",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Live on own/supporting self+others",
+  				'prompt' => "Lived on your own, supporting yourself and/or others",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Had trouble paying bills",
+  				'prompt' => "Had trouble paying regular bills (utilities, phone, car, rent, etc.)",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Missed/late rent",
+  				'prompt' => "Missed or late rent payment",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Trouble paying medical bills",
+  				'prompt' => "Experienced trouble paying medical bills",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Trouble finding housing",
+  				'prompt' => "Had trouble finding housing",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Made above minimum wage",
+  				'prompt' => "Made above minimum wage",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Received public assistance",
+  				'prompt' => "Received public assistance (food stamps, disability, welfare, etc.)",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Experienced poverty as adult",
+  				'prompt' => "Experienced poverty as an adult",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Bought a house",
+  				'prompt' => "Bought a house",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Evicted",
+  				'prompt' => "Ever been evicted",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Lived with significant other for financial reasons",
+  				'prompt' => "Lived with a significant other for financial reasons",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Lived with family member for financial reasons",
+  				'prompt' => "Lived with a family member for financial reasons",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Financially supported by significant other",
+  				'prompt' => "Been financially supported by a significant other",
   				'field_name' => $field_name
   			]
   		]);
@@ -187,13 +267,99 @@ class LifeEventsTableSeeder extends Seeder
 
   		$category->life_events()->createMany([
   			[
-  				'event' => "Event",
-  				'prompt' => "Prompt",
+  				'event' => "Dated",
+  				'prompt' => "Dated",
   				'field_name' => $field_name
   			],
-        [
-  				'event' => "Event",
-  				'prompt' => "Prompt",
+  			[
+  				'event' => "Married",
+  				'prompt' => "Been married",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Divorced",
+  				'prompt' => "Been divorced",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Pregnant",
+  				'prompt' => "Been pregnant",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Had child",
+  				'prompt' => "Had a child (by birth or adoption)",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Had healthy relationship",
+  				'prompt' => "Had a healthy romantic relationship",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Violence by partner",
+  				'prompt' => "Experienced violence by a partner",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Emotional abuse by partner",
+  				'prompt' => "Experienced emotional abuse by a partner",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Death of spouse",
+  				'prompt' => "Experienced the death of a spouse",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Lost custody of child",
+  				'prompt' => "Lost custody of a child",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Regained custody of child",
+  				'prompt' => "Regained custody of a child",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Lost important friendship",
+  				'prompt' => "Lost an important friendship",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Struggled trusting people",
+  				'prompt' => "Struggled with trusting people",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Struggled finding healthy relationships",
+  				'prompt' => "Struggled with finding healthy relationships",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Struggled having relationships with family as adult",
+  				'prompt' => "Struggled having relationships with your family as an adult
+",
+  				'field_name' => $field_name
+  			],
+  			[
+  				'event' => "Tried to reconnect strained relationship",
+  				'prompt' => "Tried to reconnect with anyone as an adult when that was a strained relationship in the past",
+  				'field_name' => $field_name
+  			],
+			[
+  				'event' => "Had positive support w/unconditional trust",
+  				'prompt' => "Had positive support in your life that you trusted unconditionally?",
+  				'field_name' => $field_name
+  			],
+			[
+  				'event' => "Got involved community orgs",
+  				'prompt' => "Gotten involved with any community organizations",
+  				'field_name' => $field_name
+  			],
+			[
+  				'event' => "Started attending religious services",
+  				'prompt' => "Started attending religious services/events as an adult",
   				'field_name' => $field_name
   			]
   		]);
