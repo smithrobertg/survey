@@ -61,7 +61,6 @@ class CreateFamilyBackgoundsTable extends Migration
             $table->text('role_leaving_foster_care_had')->nullable();
             $table->timestamps();
         });
-
     }
 
     /**

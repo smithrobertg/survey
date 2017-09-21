@@ -13,8 +13,8 @@ class LifeEventsTableSeeder extends Seeder
     public function run()
     {
         // Seed life events for each category
-    	$this->seedFamilyBackgroundLifeEvents();
-    	$this->seedEducationLifeEvents();
+        $this->seedFamilyBackgroundLifeEvents();
+        $this->seedEducationLifeEvents();
         $this->seedWorkHousingLifeEvents();
         $this->seedSocialRelationshipsLifeEvents();
         $this->seedCriminalJusticeLifeEvents();
@@ -163,16 +163,16 @@ class LifeEventsTableSeeder extends Seeder
 
     private function seedWorkHousingLifeEvents()
     {
-		$category = EventCategory::where('category', 'Work Housing')->first();
-  		$field_name = "work_housing_events[]";
+	    $category = EventCategory::where('category', 'Work Housing')->first();
+	    $field_name = "work_housing_events[]";
 
-  		$category->life_events()->createMany([
+		  $category->life_events()->createMany([
    			[
   				'event' => "Applied for PT/FT job",
   				'prompt' => "Applied for a part-time or full-time job?",
   				'field_name' => $field_name
   			],
- 			[
+        [
   				'event' => "Had trouble finding job",
   				'prompt' => "Had trouble finding a job",
   				'field_name' => $field_name
@@ -338,8 +338,7 @@ class LifeEventsTableSeeder extends Seeder
   			],
   			[
   				'event' => "Struggled having relationships with family as adult",
-  				'prompt' => "Struggled having relationships with your family as an adult
-",
+  				'prompt' => "Struggled having relationships with your family as an adult",
   				'field_name' => $field_name
   			],
   			[
@@ -347,17 +346,17 @@ class LifeEventsTableSeeder extends Seeder
   				'prompt' => "Tried to reconnect with anyone as an adult when that was a strained relationship in the past",
   				'field_name' => $field_name
   			],
-			[
+        [
   				'event' => "Had positive support w/unconditional trust",
   				'prompt' => "Had positive support in your life that you trusted unconditionally?",
   				'field_name' => $field_name
   			],
-			[
+        [
   				'event' => "Got involved community orgs",
   				'prompt' => "Gotten involved with any community organizations",
   				'field_name' => $field_name
   			],
-			[
+        [
   				'event' => "Started attending religious services",
   				'prompt' => "Started attending religious services/events as an adult",
   				'field_name' => $field_name
@@ -372,13 +371,48 @@ class LifeEventsTableSeeder extends Seeder
 
   		$category->life_events()->createMany([
   			[
-  				'event' => "Event",
-  				'prompt' => "Prompt",
+  				'event' => "Arrested",
+  				'prompt' => "Ever been arrested",
   				'field_name' => $field_name
   			],
         [
-  				'event' => "Event",
-  				'prompt' => "Prompt",
+  				'event' => "Detained but not charged",
+  				'prompt' => "Ever been detained but not charged",
+  				'field_name' => $field_name
+  			],
+        [
+  				'event' => "Convicted/found guilty",
+  				'prompt' => "Ever been convicted/found guilty",
+  				'field_name' => $field_name
+  			],
+        [
+  				'event' => "Incarcerated",
+  				'prompt' => "Ever been incarcerated (been to prison or jail)",
+  				'field_name' => $field_name
+  			],
+        [
+  				'event' => "Reported crime to police",
+  				'prompt' => "Ever reported a crime to the police",
+  				'field_name' => $field_name
+  			],
+        [
+  				'event' => "Negative interaction w/police",
+  				'prompt' => "Ever had a negative interaction with a police officer",
+  				'field_name' => $field_name
+  			],
+        [
+  				'event' => "Positive interaction w/police",
+  				'prompt' => "Ever had a positive interaction with a police officer",
+  				'field_name' => $field_name
+  			],
+        [
+  				'event' => "Solicited sexually by police officer",
+  				'prompt' => "Ever been solicited/asked to do anything sexual by a police officer",
+  				'field_name' => $field_name
+  			],
+        [
+  				'event' => "Criminal record",
+  				'prompt' => "Had a criminal record",
   				'field_name' => $field_name
   			]
   		]);
@@ -387,18 +421,59 @@ class LifeEventsTableSeeder extends Seeder
     private function seedExploitationLifeEvents()
     {
       $category = EventCategory::where('category', 'Exploitation')->first();
-      $field_name = "exploitation_events[]";
+      $field_name_1 = "exploitation_events_group_1[]";
+      $field_name_2 = "exploitation_events_group_2[]";
 
       $category->life_events()->createMany([
         [
-          'event' => "Event",
-          'prompt' => "Prompt",
-          'field_name' => $field_name
+          'event' => "Asked by family member to exchange sex",
+          'prompt' => "Been asked by a family member to exchange sexual favors for money, drugs, or other compensation",
+          'field_name' => $field_name_1
         ],
         [
-  				'event' => "Event",
-  				'prompt' => "Prompt",
-  				'field_name' => $field_name
+          'event' => "Had romantic relationship w/someone who sold you for sex",
+          'prompt' => "Had a romantic relationship with someone who sold you for sex?",
+          'field_name' => $field_name_1
+        ],
+        [
+          'event' => "Experienced violence by pimp",
+          'prompt' => "Experienced violence by a pimp",
+          'field_name' => $field_name_1
+        ],
+        [
+          'event' => "Experienced violence by client",
+          'prompt' => "Experienced violence by a client",
+          'field_name' => $field_name_1
+        ],
+        [
+          'event' => "Been stalked",
+          'prompt' => "Ever been stalked",
+          'field_name' => $field_name_1
+        ],
+        [
+          'event' => "Felt life was threatened",
+          'prompt' => "Ever feel like your life was threatened",
+          'field_name' => $field_name_1
+        ],
+        [
+          'event' => "Tried to leave sex trade",
+          'prompt' => "Ever tried to leave the sex trade",
+          'field_name' => $field_name_1
+        ],
+        [
+          'event' => "Used substances to cope",
+          'prompt' => "Used substances (drugs, alcohol) to cope",
+          'field_name' => $field_name_2
+        ],
+        [
+          'event' => "Hospitalized for drug/alcohol use",
+          'prompt' => "Ever been hospitalized for drug or alcohol use",
+          'field_name' => $field_name_2
+        ],
+        [
+  				'event' => "Struggled w/depression/anxiety/PTSD/mental health",
+  				'prompt' => "Struggled with depression, anxiety, post-traumatic stress disorder or other mental health issues",
+  				'field_name' => $field_name_2
   			]
       ]);
     }
@@ -410,13 +485,63 @@ class LifeEventsTableSeeder extends Seeder
 
   		$category->life_events()->createMany([
   			[
-  				'event' => "Event",
-  				'prompt' => "Prompt",
+  				'event' => "Substance use",
+  				'prompt' => "Substance use",
   				'field_name' => $field_name
   			],
         [
-  				'event' => "Event",
-  				'prompt' => "Prompt",
+  				'event' => "Mental health",
+  				'prompt' => "Mental health",
+  				'field_name' => $field_name
+  			],
+        [
+  				'event' => "Health care clinic",
+  				'prompt' => "Health care clinic",
+  				'field_name' => $field_name
+  			],
+        [
+  				'event' => "Emergency room",
+  				'prompt' => "Emergency room",
+  				'field_name' => $field_name
+  			],
+        [
+  				'event' => "Domestic violence",
+  				'prompt' => "Domestic violence services",
+  				'field_name' => $field_name
+  			],
+        [
+  				'event' => "Sexual assault",
+  				'prompt' => "Sexual assault services",
+  				'field_name' => $field_name
+  			],
+        [
+  				'event' => "Legal",
+  				'prompt' => "Legal services",
+  				'field_name' => $field_name
+  			],
+        [
+  				'event' => "Employment",
+  				'prompt' => "Employment services",
+  				'field_name' => $field_name
+  			],
+        [
+  				'event' => "Family",
+  				'prompt' => "Family services (child care, custody, etc.)",
+  				'field_name' => $field_name
+  			],
+        [
+  				'event' => "Religious",
+  				'prompt' => "Religious-based services",
+  				'field_name' => $field_name
+  			],
+        [
+  				'event' => "Housing",
+  				'prompt' => "Housing services",
+  				'field_name' => $field_name
+  			],
+        [
+  				'event' => "Agency to help exit sex trade",
+  				'prompt' => "Agency to help exit sex trade",
   				'field_name' => $field_name
   			]
   		]);

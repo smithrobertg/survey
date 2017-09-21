@@ -5,13 +5,13 @@
 @section('content')
 <h2>CHECKLIST OF SOCIAL RELATIONSHIP EVENTS</h2>
 
-<form method="post" action="{{ route( 'survey.social-relationships' }}">
+<form method="post" action="{{ route('survey.social-relationships') }}">
     {{ csrf_field() }}
     <fieldset class="form-group">
         <legend><em>Have you…(check all that apply)</em></legend>
-		
-		<!-- Display Work/Housing life event checklist -->
-		@each('partials.life-event', $lifeEvents, 'lifeEvent')
+
+    		<!-- Display Social Relationships life event checklist -->
+    		@each('partials.life-event', $lifeEvents, 'lifeEvent')
 
 <!--
         <div class="form-check">
@@ -151,33 +151,33 @@
             </label>
         </div>
 -->
+        <fieldset class="form-group ml-5">
+            <legend><label>[Tried to reconnect]<br />Would you categorize that attempt as a positive/negative experience?</label></legend>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="tried_to_reconnect_experience" id="triedReconnect-Positive" value="Positive" />
+                    Positive
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="tried_to_reconnect_experience" id="triedReconnect-Negative" value="Negative" />
+                    Negative
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="tried_to_reconnect_experience" id="triedReconnect-Neither" value="Neither" />
+                    Neither
+                </label>
+            </div>
+        </fieldset>
+
         <div class="form-group">
             <label class="form-label" for="other_social_relationship_events">
                 Other major events with social relationships not mentioned above?
             </label>
             <textarea class="form-control" name="other_social_relationship_events" id="other_social_relationship_events" rows="3"></textarea>
-        </div>
-    </fieldset>
-
-	<fieldset class="form-group ml-5">
-        <legend><label>[Tried to reconnect]<br />Would you categorize that attempt as a positive/negative experience?</label></legend>
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="tried_to_reconnect_experience" id="triedReconnect-Positive" value="Positive" />
-                Positive
-            </label>
-        </div>
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="tried_to_reconnect_experience" id="triedReconnect-Negative" value="Negative" />
-                Negative
-            </label>
-        </div>
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="tried_to_reconnect_experience" id="triedReconnect-Neither" value="Neither" />
-                Neither
-            </label>
         </div>
     </fieldset>
 

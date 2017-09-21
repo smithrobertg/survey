@@ -275,9 +275,9 @@ class SurveyController extends Controller
 
     public function getWorkHousing()
     {
-		$category = EventCategory::where('category', 'Work Housing')->first();
+    		$category = EventCategory::where('category', 'Work Housing')->first();
 
-		return view('survey.work-housing', [ 'lifeEvents' => $category->life_events ]);
+    		return view('survey.work-housing', [ 'lifeEvents' => $category->life_events ]);
     }
 
     public function postWorkHousing(Request $request)
@@ -314,7 +314,7 @@ class SurveyController extends Controller
 
         $workHousingFollowup->save();
 
-        return view('survey.social-relationships');
+        return redirect()->route('survey.social-relationships');
     }
 
 	// Social Relationships questions controller
@@ -339,14 +339,16 @@ class SurveyController extends Controller
 
         $socialRelationships->save();
 
-        return view('survey.social-relationships-timeline');
+        return redirect()->route('survey.social-relationships-timeline');
     }
 
     // Criminal Justice questions controller
 
     public function getCriminalJustice()
     {
-        return view('survey.criminal-justice');
+      $category = EventCategory::where('category', 'Criminal Justice')->first();
+
+        return view('survey.criminal-justice', [ 'lifeEvents' => $category->life_events ]);
     }
 
     public function postCriminalJustice(Request $request)
@@ -362,16 +364,6 @@ class SurveyController extends Controller
         $criminalJustice->save();
 
         return redirect()->route('survey.criminal-justice-timeline');
-    }
-
-    public function getCriminalJusticeTimeline()
-    {
-        return view('survey.criminal-justice-timeline');
-    }
-
-    public function postCriminalJusticeTimeline(Request $request)
-    {
-        return view ('survey.timeline.criminal-justice');
     }
 
     public function getCriminalJusticeFollowup()
@@ -399,7 +391,9 @@ class SurveyController extends Controller
 
     public function getExploitation()
     {
-        return view('survey.exploitation');
+      $category = EventCategory::where('category', 'Exploitation')->first();
+
+        return view('survey.exploitation', [ 'lifeEvents' => $category->life_events ]);
     }
 
     public function postExploitation(Request $request)
@@ -450,7 +444,9 @@ class SurveyController extends Controller
 
     public function getServices()
     {
-        return view('survey.services');
+      $category = EventCategory::where('category', 'Services')->first();
+
+        return view('survey.services', [ 'lifeEvents', $category->life_events ]);
     }
 
     public function postServices(Request $request)

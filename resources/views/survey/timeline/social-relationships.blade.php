@@ -6,7 +6,7 @@
 
 <p>SHOW SOCIAL RELATIONSHIP EVENTS POPULATED IN TIMELINE</p>
 
-<a href="/criminal-justice" class="btn btn-primary btn-lg">Continue to Criminal Jusice System &rarr;</a>
+<a href="{{ route('survey.criminal-justice') }}" class="btn btn-primary btn-lg">Continue to Criminal Jusice System &rarr;</a>
 @endsection
 
 @section('progress')
