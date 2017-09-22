@@ -18,6 +18,11 @@ class Survey extends Model
 			return $this->belongsToMany('App\LifeEvent')->withTimestamps();
 	}
 
+	public function timeline_events()
+	{
+		return $this->hasMany('App\TimelineEvent');
+	}
+	
 	public function education()
 	{
 		return $this->belongsToMany('App\Education')->withTimestamps();

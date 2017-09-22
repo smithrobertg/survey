@@ -16,4 +16,9 @@ class LifeEvent extends Model
     {
       return $this->belongsToMany('App\Survey')->withTimestamps();
     }
+
+	public function timeline_events()
+	{
+		return $this->hasMany('App\TimelineEvent');
+	}
 }
