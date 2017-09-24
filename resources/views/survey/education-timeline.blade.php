@@ -6,32 +6,22 @@
 <h2>EDUCATION TIMELINE</h2>
 
 <div class="alert alert-primary border border-primary">
-	<h3>Events Field: {{ $educationEvents }}</h3>
-
-	<h3>Education Events:</h3>
-    <ul>
-      @foreach($events as $event)
-        <li>"{{ $event }}"</li>
-      @endforeach
-    </ul>
-	<h3>
-
 	<h3>Eligible Events</h3>
 	<ul>
-		@foreach($eligibleEvents as $eligibleEvent)
-				<li>{{ $eligibleEvent }}</li>
+		@foreach($timelineEvents as $timelineEvent)
+				<li>{{ $timelineEvent->event }}</li>
 		@endforeach
 	</ul>
-	<h3>Display Events</h3>
-	@foreach($displayEvents as $displayEvent)
-		<li>"{{ $displayEvent }}"</li>
-	@endforeach
 </div>
 
 <h3 class="bg-primary text-white p-3">For each of these questions, please enter AGE, YEAR, or RANGE the event(s) occured.  These events will be populated in timeline.</h3>
 <hr />
 <form method="post" action="{{ route('survey.education-timeline') }}">
 		{{ csrf_field() }}
+		<div class="alert alert-success border border-success">
+			@each('partials.life-event-timeline', $timelineEvents, 'timelineEvent')
+		</div>
+
 		<fieldset>
 			<legend>Have to repeat a grade</legend>
 			<div class="form-row">

@@ -18,7 +18,9 @@ class CreateLifeEventsTable extends Migration
             $table->integer('event_category_id')->unsigned()->default(0);
             $table->string('event')->nullable();
             $table->string('prompt')->nullable();
-            $table->string('field_name');
+            $table->string('field_name')->nullable();
+            $table->string('field_id')->nullable();
+            $table->boolean('timeline')->default(false);
             $table->timestamps();
         });
     }

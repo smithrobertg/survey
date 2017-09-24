@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Education extends Model
 {
     //
-    public function surveys()
+    public function survey()
     {
-      return $this->belongsToMany('App\Survey')->withTimestamps();
+      return $this->belongsTo('App\Survey');
     }
 }

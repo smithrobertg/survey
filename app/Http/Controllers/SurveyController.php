@@ -257,7 +257,7 @@ class SurveyController extends Controller
     {
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
-        $survey->life_events()->attach($request->input('education_events'));
+        $survey->life_events()->sync($request->input('education_events'));
 
         $education = new Education;
 
@@ -265,8 +265,6 @@ class SurveyController extends Controller
         if (!empty($request->input('education_events'))) $education->events = implode(", ", $request->input('education_events'));
         $education->other_events = $request->input('other_education_events');
         $education->save();
-
-        $education->surveys()->attach($survey_id);
 
         return redirect()->route('survey.education-timeline');
     }

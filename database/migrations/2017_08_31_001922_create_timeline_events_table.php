@@ -17,9 +17,6 @@ class CreateTimelineEventsTable extends Migration
             $table->increments('id');
             $table->integer('survey_id')->unsigned()->default(0);
             $table->integer('life_event_id')->unsigned()->default(0);
-			//$table->integer('event_category_id')->unsigned()->default(0);
-            //$table->string('event_category');
-            //$table->string('event_description');
             $table->string('timeframe')->nullable();
             $table->string('age')->nullable();
             $table->string('year')->nullable();

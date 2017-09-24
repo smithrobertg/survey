@@ -164,50 +164,47 @@ class TimelineController extends Controller
     				• Experienced abuse by a teacher (or someone else at school)
     		*/
 
-    		$timelineEligibleEvents = [
-    			'Repeated grade',
-    			'Graduated high school',
-    			'Got GED',
-    			'Skip school regularly',
-    			'Left school for a period of time',
-    			'Abused by teacher/someone else'
-    		];
-
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
-        $lifeEvents = $survey->life_events;
+        $eventCategory = EventCategory::where('category', 'Education')->first();
 
-        $category = EventCategory::where('category', "Education")->first();
-
-        // Extract education timeline events array
-        $education = Education::where('survey_id', $survey_id)->latest()->first();
-        $educationTimelineEvents = explode(', ', $education->events);
-
-        $displayTimelineEvents = $lifeEvents->pluck('event'); //array_intersect($timelineEligibleEvents, $educationTimelineEvents);
+        $educationTimelineEvents = $survey->life_events()
+                                ->where('event_category_id', $eventCategory->id)
+                                ->where('timeline', true)
+                                ->orderBy('id')
+                                ->get();
 
         return view('survey.education-timeline', [
-    		'educationEvents' => $education->events,
-			'eligibleEvents' => $timelineEligibleEvents,
-    		'events' => $educationTimelineEvents,
-    		'displayEvents' => $displayTimelineEvents
-    	]);
+          'timelineEvents' => $educationTimelineEvents
+        ]);
     }
 
     public function postEducationTimeline(Request $request)
     {
-    		/*	EDUCATION
-    			---------
-    			� Have to repeat a grade
-    			� Graduate from high school
-    			� Get a GED
-    			� Skip school regularly at any period of time
-    			� Ever leave school for a period of time
-    			� Experienced abuse by a teacher (or someone else at school)
-    		*/
-
+        $survey_id = session('survey_id');
+        $survey = Survey::find($survey_id);
         $category = "Education";
         $eventCategory = EventCategory::where('category', $category)->first();
 
+        $educationTimelineEvents = $survey->life_events()
+                                ->where('event_category_id', $eventCategory->id)
+                                ->where('timeline', true)
+                                ->orderBy('id')
+                                ->get();
+
+        foreach ($educationTimelineEvents as $timelineEvent)
+        {
+            $newTimelineEvent = new TimelineEvent;
+            $newTimelineEvent->survey_id = session('survey_id');
+            $newTimelineEvent->life_event_id = $timelineEvent->id;
+            $newTimelineEvent->timeframe = $request->input('timeframe_' . $timelineEvent->id);
+            $newTimelineEvent->age = $request->input('age_' . $timelineEvent->id);
+            $newTimelineEvent->year = $request->input('year_' . $timelineEvent->id);
+            $newTimelineEvent->range_from = $request->input('range_from_' . $timelineEvent->id);
+            $newTimelineEvent->range_to = $request->input('range_to_' . $timelineEvent->id);
+            $newTimelineEvent->save();
+        }
+/*
         // Have to repeat a grade
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
@@ -285,7 +282,7 @@ class TimelineController extends Controller
         $timelineEvent->range_from = $request->input('range_from_abused_at_school');
         $timelineEvent->range_to = $request->input('range_to_abused_at_school');
         $timelineEvent->save();
-
+*/
         return redirect()->route('timeline.education');
     }
 

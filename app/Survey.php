@@ -22,10 +22,10 @@ class Survey extends Model
 	{
 		return $this->hasMany('App\TimelineEvent');
 	}
-	
+
 	public function education()
 	{
-		return $this->belongsToMany('App\Education')->withTimestamps();
+		return $this->hasMany('App\Education');
 	}
     //
     // public static function incomplete()

@@ -101,17 +101,20 @@ class LifeEventsTableSeeder extends Seeder
             [
               'event' => "Repeated grade",
               'prompt' => "Have to repeat a grade",
-              'field_name' => $field_name
+              'field_name' => $field_name,
+              'timeline' => true
             ],
             [
               'event' => "Graduated high school",
               'prompt' => "Graduate from high school",
-              'field_name' => $field_name
+              'field_name' => $field_name,
+              'timeline' => true
             ],
             [
               'event' => "Got GED",
               'prompt' => "Get a GED",
-              'field_name' => $field_name
+              'field_name' => $field_name,
+              'timeline' => true
             ],
             [
               'event' => "Felt always in trouble with teachers",
@@ -131,17 +134,20 @@ class LifeEventsTableSeeder extends Seeder
             [
               'event' => "Skip school regularly",
               'prompt' => "Skip school regularly at any period of time",
-              'field_name' => $field_name
+              'field_name' => $field_name,
+              'timeline' => true
             ],
             [
               'event' => "Left school for a period of time",
               'prompt' => "Ever leave school for a period of time",
-              'field_name' => $field_name
+              'field_name' => $field_name,
+              'timeline' => true
             ],
             [
               'event' => "Abused by teacher/someone else",
               'prompt' => "Experienced abuse by a teacher (or someone else at school)",
-              'field_name' => $field_name
+              'field_name' => $field_name,
+              'timeline' => true
             ],
             [
               'event' => "Applied to college",
