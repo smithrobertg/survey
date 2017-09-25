@@ -348,7 +348,7 @@ class SurveyController extends Controller
 
     public function getCriminalJustice()
     {
-      $category = EventCategory::where('category', 'Criminal Justice')->first();
+		$category = EventCategory::where('category', 'Criminal Justice')->first();
 
         return view('survey.criminal-justice', [ 'lifeEvents' => $category->life_events ]);
     }
@@ -356,6 +356,8 @@ class SurveyController extends Controller
     public function postCriminalJustice(Request $request)
     {
         $survey_id = session('survey_id');
+        $survey = Survey::find($survey_id);
+        $survey->life_events()->sync($request->input('criminal_justice_events'), false);
 
         $criminalJustice = new CriminalJustice;
 
@@ -393,7 +395,7 @@ class SurveyController extends Controller
 
     public function getExploitation()
     {
-      $category = EventCategory::where('category', 'Exploitation')->first();
+		$category = EventCategory::where('category', 'Exploitation')->first();
 
         return view('survey.exploitation', [ 'lifeEvents' => $category->life_events ]);
     }
@@ -401,6 +403,8 @@ class SurveyController extends Controller
     public function postExploitation(Request $request)
     {
         $survey_id = session('survey_id');
+        $survey = Survey::find($survey_id);
+        $survey->life_events()->sync($request->input('exploitation_events'), false);
 
         $exploitation = new Exploitation;
 

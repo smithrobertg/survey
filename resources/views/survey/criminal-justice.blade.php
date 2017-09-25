@@ -13,62 +13,6 @@
 		<!-- Display Criminal Justice life event checklist -->
 		@each('partials.life-event', $lifeEvents, 'lifeEvent')
 
-<!--
-		<div class="form-check">
-			<label class="form-check-label">
-				<input class="form-check-input" type="checkbox" name="criminal_justice_events[]" value="Arrested" />
-				Ever been arrested
-			</label>
-		</div>
-		<div class="form-check">
-			<label class="form-check-label">
-				<input class="form-check-input" type="checkbox" name="criminal_justice_events[]" value="Detained but not charged" />
-				Ever been detained but not charged
-			</label>
-		</div>
-		<div class="form-check">
-			<label class="form-check-label">
-				<input class="form-check-input" type="checkbox" name="criminal_justice_events[]" value="Convicted/found guilty" />
-				Ever been convicted/found guilty
-			</label>
-		</div>
-		<div class="form-check">
-			<label class="form-check-label">
-				<input class="form-check-input" type="checkbox" name="criminal_justice_events[]" value="Incarcerated" />
-				Ever been incarcerated (been to prison or jail)
-			</label>
-		</div>
-		<div class="form-check">
-			<label class="form-check-label">
-				<input class="form-check-input" type="checkbox" name="criminal_justice_events[]" value="Reported crime to police" />
-				Ever reported a crime to the police
-			</label>
-		</div>
-		<div class="form-check">
-			<label class="form-check-label">
-				<input class="form-check-input" type="checkbox" name="criminal_justice_events[]" value="Negative interaction w/police" />
-				Ever had a negative interaction with a police officer
-			</label>
-		</div>
-		<div class="form-check">
-			<label class="form-check-label">
-				<input class="form-check-input" type="checkbox" name="criminal_justice_events[]" value="Positive interaction w/police" />
-				Ever had a positive interaction with a police officer
-			</label>
-		</div>
-		<div class="form-check">
-			<label class="form-check-label">
-				<input class="form-check-input" type="checkbox" name="criminal_justice_events[]" value="Solicited sexually by police officer" />
-				Ever been solicited/asked to do anything sexual by a police officer
-			</label>
-		</div>
-		<div class="form-check">
-			<label class="form-check-label">
-				<input class="form-check-input" type="checkbox" name="criminal_justice_events[]" value="Criminal record" />
-				Had a criminal record
-			</label>
-		</div>
--->
 		<div class="form-group">
 			<label class="form-label" for="other_criminal_justice_events">
 				Other events with the criminal justice system not mentioned above?

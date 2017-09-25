@@ -152,7 +152,7 @@
         </div>
 -->
         <fieldset class="form-group ml-5">
-            <legend><label>[Tried to reconnect]<br />Would you categorize that attempt as a positive/negative experience?</label></legend>
+            <legend><label><br />Would you categorize that attempt as a positive/negative experience?</label></legend>
             <div class="form-check">
                 <label class="form-check-label">
                     <input type="radio" class="form-check-input" name="tried_to_reconnect_experience" id="triedReconnect-Positive" value="Positive" />
