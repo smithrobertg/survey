@@ -5,11 +5,15 @@
 @section('content')
 
 <h2>TIMELINE OF WORK/HOUSING EVENTS</h2>
+<h3 class="bg-primary text-white p-3">For each of these questions, please enter AGE, YEAR, or RANGE the event(s) occured.  These events will be populated in timeline.</h3>
+<hr />
 
 <form method="post" action="{{ route('survey.work-housing-timeline') }}">
-	{{ csrf_field() }}
-	<h3 class="bg-primary text-white p-3">For each of these questions, please enter AGE, YEAR, or RANGE the event(s) occured.  These events will be populated in timeline.</h3>
-	  <hr />
+		{{ csrf_field() }}
+		<div class="alert alert-primary border border-primary">
+			@each('partials.life-event-timeline', $timelineEvents, 'timelineEvent')
+		</div>
+<!--
 	<fieldset>
 			<legend>Had trouble finding a job</legend>
 			<div class="form-row">
@@ -392,7 +396,7 @@
 					</fieldset>
 
 				<hr />
-
+-->
 			<div class="row">
 				<button class="btn btn-primary mx-auto" type="submit">Save and Continue to Timeline &rarr;</button>
 			</div>

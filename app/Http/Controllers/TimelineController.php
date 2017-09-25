@@ -155,18 +155,10 @@ class TimelineController extends Controller
 
     public function getEducationTimeline()
     {
-    		/*	Create array for checking eligible events:
-    				• Have to repeat a grade
-    				• Graduate from high school
-    				• Get a GED
-    				• Skip school regularly at any period of time
-    				• Ever leave school for a period of time
-    				• Experienced abuse by a teacher (or someone else at school)
-    		*/
-
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
-        $eventCategory = EventCategory::where('category', 'Education')->first();
+        $category = "Education";
+        $eventCategory = EventCategory::where('category', $category)->first();
 
         $educationTimelineEvents = $survey->life_events()
                                 ->where('event_category_id', $eventCategory->id)
@@ -204,6 +196,8 @@ class TimelineController extends Controller
             $newTimelineEvent->range_to = $request->input('range_to_' . $timelineEvent->id);
             $newTimelineEvent->save();
         }
+
+        return redirect()->route('timeline.education');
 /*
         // Have to repeat a grade
         $timelineEvent = new TimelineEvent;
@@ -283,31 +277,55 @@ class TimelineController extends Controller
         $timelineEvent->range_to = $request->input('range_to_abused_at_school');
         $timelineEvent->save();
 */
-        return redirect()->route('timeline.education');
     }
 
 	public function getWorkHousingTimeline()
 	{
-		return view('survey.work-housing-timeline');
+      $survey_id = session('survey_id');
+      $survey = Survey::find($survey_id);
+      $category = "Work Housing";
+      $eventCategory = EventCategory::where('category', $category)->first();
+
+      $workHousingTimelineEvents = $survey->life_events()
+                              ->where('event_category_id', $eventCategory->id)
+                              ->where('timeline', true)
+                              ->orderBy('id')
+                              ->get();
+
+      return view('survey.work-housing-timeline', [
+        'timelineEvents' => $workHousingTimelineEvents
+      ]);
 	}
 
 	public function postWorkHousingTimeline(Request $request)
 	{
-		/*	WORK/HOUSING EVENTS
-			-------------------
-			� Had trouble finding a job
-			� Been employed 40+ hours/week*
-			� Been fired from a job
-			� Quit a job
-			� Received public assistance (food stamps, disability, welfare, etc.)
-			� Experienced poverty as an adult
-			� Bought a house
-			� Ever been evicted
-			� Lived with a significant other for financial reasons
-			� Lived with a family member for financial reasons
-			� Financially supported by a trafficker
-		*/
+      $survey_id = session('survey_id');
+      $survey = Survey::find($survey_id);
+      $category = "Work Housing";
+      $eventCategory = EventCategory::where('category', $category)->first();
 
+      $workHousingTimelineEvents = $survey->life_events()
+                              ->where('event_category_id', $eventCategory->id)
+                              ->where('timeline', true)
+                              ->orderBy('id')
+                              ->get();
+
+      foreach ($workHousingTimelineEvents as $timelineEvent)
+      {
+          $newTimelineEvent = new TimelineEvent;
+          $newTimelineEvent->survey_id = session('survey_id');
+          $newTimelineEvent->life_event_id = $timelineEvent->id;
+          $newTimelineEvent->timeframe = $request->input('timeframe_' . $timelineEvent->id);
+          $newTimelineEvent->age = $request->input('age_' . $timelineEvent->id);
+          $newTimelineEvent->year = $request->input('year_' . $timelineEvent->id);
+          $newTimelineEvent->range_from = $request->input('range_from_' . $timelineEvent->id);
+          $newTimelineEvent->range_to = $request->input('range_to_' . $timelineEvent->id);
+          $newTimelineEvent->save();
+      }
+
+  		return redirect()->route('timeline.work-housing');
+
+/*
 		// Had trouble finding a job
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
@@ -439,17 +457,55 @@ class TimelineController extends Controller
         $timelineEvent->range_from = $request->input('range_from_supported_by_trafficker');
         $timelineEvent->range_to = $request->input('range_to_supported_by_trafficker');
         $timelineEvent->save();
-
-		return redirect()->route('timeline.work-housing');
+*/
 	}
 
     public function getSocialRelationshipsTimeline()
     {
-        return view('survey.social-relationships-timeline');
+        $survey_id = session('survey_id');
+        $survey = Survey::find($survey_id);
+        $category = "Social Relationships";
+        $eventCategory = EventCategory::where('category', $category)->first();
+
+        $timelineEvents = $survey->life_events()
+                                ->where('event_category_id', $eventCategory->id)
+                                ->where('timeline', true)
+                                ->orderBy('id')
+                                ->get();
+
+        return view('survey.social-relationships-timeline', [
+          'timelineEvents' => $timelineEvents
+        ]);
     }
 
     public function postSocialRelationshipsTimeline(Request $request)
     {
+        $survey_id = session('survey_id');
+        $survey = Survey::find($survey_id);
+        $category = "Social Relationships";
+        $eventCategory = EventCategory::where('category', $category)->first();
+
+        $timelineEvents = $survey->life_events()
+                                ->where('event_category_id', $eventCategory->id)
+                                ->where('timeline', true)
+                                ->orderBy('id')
+                                ->get();
+
+        foreach ($timelineEvents as $timelineEvent)
+        {
+            $newTimelineEvent = new TimelineEvent;
+            $newTimelineEvent->survey_id = session('survey_id');
+            $newTimelineEvent->life_event_id = $timelineEvent->id;
+            $newTimelineEvent->timeframe = $request->input('timeframe_' . $timelineEvent->id);
+            $newTimelineEvent->age = $request->input('age_' . $timelineEvent->id);
+            $newTimelineEvent->year = $request->input('year_' . $timelineEvent->id);
+            $newTimelineEvent->range_from = $request->input('range_from_' . $timelineEvent->id);
+            $newTimelineEvent->range_to = $request->input('range_to_' . $timelineEvent->id);
+            $newTimelineEvent->save();
+        }
+
+        return redirect()->route('timeline.social-relationships');
+/*
 		    // Age first started dating
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
@@ -557,8 +613,7 @@ class TimelineController extends Controller
         $timelineEvent->range_from = $request->input('range_from_regained_custody_of_child');
         $timelineEvent->range_to = $request->input('range_to_regained_custody_of_child');
         $timelineEvent->save();
-
-        return redirect()->route('timeline.social-relationships');
+*/
     }
 
     public function getCriminalJusticeTimeline()

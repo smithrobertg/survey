@@ -181,22 +181,26 @@ class LifeEventsTableSeeder extends Seeder
         [
   				'event' => "Had trouble finding job",
   				'prompt' => "Had trouble finding a job",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
   			[
   				'event' => "Been employed PT/FT",
   				'prompt' => "Been employed part-time or full-time",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
   			[
   				'event' => "Been fired",
   				'prompt' => "Been fired from a job",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
   			[
   				'event' => "Quit job",
   				'prompt' => "Quit a job",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
   			[
   				'event' => "Live on own/supporting self+others",
@@ -231,37 +235,44 @@ class LifeEventsTableSeeder extends Seeder
   			[
   				'event' => "Received public assistance",
   				'prompt' => "Received public assistance (food stamps, disability, welfare, etc.)",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
   			[
   				'event' => "Experienced poverty as adult",
   				'prompt' => "Experienced poverty as an adult",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
   			[
   				'event' => "Bought a house",
   				'prompt' => "Bought a house",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
   			[
   				'event' => "Evicted",
   				'prompt' => "Ever been evicted",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
   			[
   				'event' => "Lived with significant other for financial reasons",
   				'prompt' => "Lived with a significant other for financial reasons",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
   			[
   				'event' => "Lived with family member for financial reasons",
   				'prompt' => "Lived with a family member for financial reasons",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
   			[
   				'event' => "Financially supported by significant other",
   				'prompt' => "Been financially supported by a significant other",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			]
   		]);
     }
@@ -275,12 +286,14 @@ class LifeEventsTableSeeder extends Seeder
   			[
   				'event' => "Dated",
   				'prompt' => "Dated",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
   			[
   				'event' => "Married",
   				'prompt' => "Been married",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
   			[
   				'event' => "Divorced",
@@ -295,7 +308,8 @@ class LifeEventsTableSeeder extends Seeder
   			[
   				'event' => "Had child",
   				'prompt' => "Had a child (by birth or adoption)",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
   			[
   				'event' => "Had healthy relationship",
@@ -305,12 +319,14 @@ class LifeEventsTableSeeder extends Seeder
   			[
   				'event' => "Violence by partner",
   				'prompt' => "Experienced violence by a partner",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
   			[
   				'event' => "Emotional abuse by partner",
   				'prompt' => "Experienced emotional abuse by a partner",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
   			[
   				'event' => "Death of spouse",
@@ -320,12 +336,14 @@ class LifeEventsTableSeeder extends Seeder
   			[
   				'event' => "Lost custody of child",
   				'prompt' => "Lost custody of a child",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
   			[
   				'event' => "Regained custody of child",
   				'prompt' => "Regained custody of a child",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
   			[
   				'event' => "Lost important friendship",

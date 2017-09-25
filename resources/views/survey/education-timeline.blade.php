@@ -18,10 +18,10 @@
 <hr />
 <form method="post" action="{{ route('survey.education-timeline') }}">
 		{{ csrf_field() }}
-		<div class="alert alert-success border border-success">
+		<div class="alert alert-primary border border-primary">
 			@each('partials.life-event-timeline', $timelineEvents, 'timelineEvent')
 		</div>
-
+<!--
 		<fieldset>
 			<legend>Have to repeat a grade</legend>
 			<div class="form-row">
@@ -231,7 +231,7 @@
 		</fieldset>
 
 		<hr />
-
+-->
 	<div class="row">
 		<button type="submit" class="btn btn-primary btn-lg mx-auto my-4">Continue to Timeline &rarr;</button>
 	</div>

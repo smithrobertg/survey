@@ -257,7 +257,7 @@ class SurveyController extends Controller
     {
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
-        $survey->life_events()->sync($request->input('education_events'));
+        $survey->life_events()->sync($request->input('education_events'), false);
 
         $education = new Education;
 
@@ -281,6 +281,8 @@ class SurveyController extends Controller
     public function postWorkHousing(Request $request)
     {
         $survey_id = session('survey_id');
+        $survey = Survey::find($survey_id);
+        $survey->life_events()->sync($request->input('work_housing_events'), false);
 
         $workHousing = new WorkHousing;
 
@@ -327,6 +329,8 @@ class SurveyController extends Controller
     public function postSocialRelationships(Request $request)
     {
         $survey_id = session('survey_id');
+        $survey = Survey::find($survey_id);
+        $survey->life_events()->sync($request->input('social_relationships_events'), false);
 
         $socialRelationships = new SocialRelationships;
 
