@@ -348,7 +348,7 @@ class SurveyController extends Controller
 
     public function getCriminalJustice()
     {
-		$category = EventCategory::where('category', 'Criminal Justice')->first();
+		    $category = EventCategory::where('category', 'Criminal Justice')->first();
 
         return view('survey.criminal-justice', [ 'lifeEvents' => $category->life_events ]);
     }
@@ -395,7 +395,7 @@ class SurveyController extends Controller
 
     public function getExploitation()
     {
-		$category = EventCategory::where('category', 'Exploitation')->first();
+		    $category = EventCategory::where('category', 'Exploitation')->first();
 
         return view('survey.exploitation', [ 'lifeEvents' => $category->life_events ]);
     }
@@ -404,12 +404,14 @@ class SurveyController extends Controller
     {
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
-        $survey->life_events()->sync($request->input('exploitation_events'), false);
+        $survey->life_events()->sync($request->input('exploitation_events_group_1'), false);
+        $survey->life_events()->sync($request->input('exploitation_events_group_2'), false);
 
         $exploitation = new Exploitation;
 
         $exploitation->survey_id = $survey_id;
-        if (!empty($request->input('exploitation_events'))) $exploitation->exploitation_events = implode(", ", $request->input('exploitation_events'));
+        if (!empty($request->input('exploitation_events_group_1'))) $exploitation->exploitation_events = implode(", ", $request->input('exploitation_events_group_1'));
+        if (!empty($request->input('exploitation_events_group_2'))) $exploitation->exploitation_events = ", " . implode(", ", $request->input('exploitation_events_group_2'));
         $exploitation->sold_sex_before_18 = $request->input('sold_sex_before_18');
         $exploitation->sold_sex_after_18 = $request->input('sold_sex_after_18');
         $exploitation->age_first_sold_sex = $request->input('age_first_sold_sex');
@@ -450,7 +452,7 @@ class SurveyController extends Controller
 
     public function getServices()
     {
-      $category = EventCategory::where('category', 'Services')->first();
+        $category = EventCategory::where('category', 'Services')->first();
 
         return view('survey.services', [ 'lifeEvents', $category->life_events ]);
     }
@@ -458,6 +460,8 @@ class SurveyController extends Controller
     public function postServices(Request $request)
     {
         $survey_id = session('survey_id');
+        $survey = Survey::find($survey_id);
+        $survey->life_events()->sync($request->input('services_events'), false);
 
         $services = new Services;
 

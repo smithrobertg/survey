@@ -397,7 +397,8 @@ class LifeEventsTableSeeder extends Seeder
   			[
   				'event' => "Arrested",
   				'prompt' => "Ever been arrested",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
         [
   				'event' => "Detained but not charged",
@@ -412,7 +413,8 @@ class LifeEventsTableSeeder extends Seeder
         [
   				'event' => "Incarcerated",
   				'prompt' => "Ever been incarcerated (been to prison or jail)",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
         [
   				'event' => "Reported crime to police",
@@ -432,7 +434,8 @@ class LifeEventsTableSeeder extends Seeder
         [
   				'event' => "Solicited sexually by police officer",
   				'prompt' => "Ever been solicited/asked to do anything sexual by a police officer",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
         [
   				'event' => "Criminal record",
@@ -452,52 +455,62 @@ class LifeEventsTableSeeder extends Seeder
         [
           'event' => "Asked by family member to exchange sex",
           'prompt' => "Been asked by a family member to exchange sexual favors for money, drugs, or other compensation",
-          'field_name' => $field_name_1
+          'field_name' => $field_name_1,
+          'timeline' => true
         ],
         [
           'event' => "Had romantic relationship w/someone who sold you for sex",
           'prompt' => "Had a romantic relationship with someone who sold you for sex?",
-          'field_name' => $field_name_1
+          'field_name' => $field_name_1,
+          'timeline' => true
         ],
         [
           'event' => "Experienced violence by pimp",
           'prompt' => "Experienced violence by a pimp",
-          'field_name' => $field_name_1
+          'field_name' => $field_name_1,
+          'timeline' => true
         ],
         [
           'event' => "Experienced violence by client",
           'prompt' => "Experienced violence by a client",
-          'field_name' => $field_name_1
+          'field_name' => $field_name_1,
+          'timeline' => true
         ],
         [
           'event' => "Been stalked",
           'prompt' => "Ever been stalked",
-          'field_name' => $field_name_1
+          'field_name' => $field_name_1,
+          'timeline' => true
         ],
         [
           'event' => "Felt life was threatened",
           'prompt' => "Ever feel like your life was threatened",
-          'field_name' => $field_name_1
+          'field_name' => $field_name_1,
+          'timeline' => true
         ],
         [
           'event' => "Tried to leave sex trade",
           'prompt' => "Ever tried to leave the sex trade",
-          'field_name' => $field_name_1
+          'field_name' => $field_name_1,
+          'timeline' => true
         ],
         [
           'event' => "Used substances to cope",
           'prompt' => "Used substances (drugs, alcohol) to cope",
-          'field_name' => $field_name_2
+          'field_name' => $field_name_2,
+          'timeline' => true
         ],
         [
           'event' => "Hospitalized for drug/alcohol use",
           'prompt' => "Ever been hospitalized for drug or alcohol use",
-          'field_name' => $field_name_2
+          'field_name' => $field_name_2,
+          'timeline' => true
         ],
         [
   				'event' => "Struggled w/depression/anxiety/PTSD/mental health",
   				'prompt' => "Struggled with depression, anxiety, post-traumatic stress disorder or other mental health issues",
-  				'field_name' => $field_name_2
+  				'field_name' => $field_name_2,
+          'timeline' => true
   			]
       ]);
     }
@@ -511,62 +524,74 @@ class LifeEventsTableSeeder extends Seeder
   			[
   				'event' => "Substance use",
   				'prompt' => "Substance use",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
         [
   				'event' => "Mental health",
   				'prompt' => "Mental health",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
         [
   				'event' => "Health care clinic",
   				'prompt' => "Health care clinic",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
         [
   				'event' => "Emergency room",
   				'prompt' => "Emergency room",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
         [
   				'event' => "Domestic violence",
   				'prompt' => "Domestic violence services",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
         [
   				'event' => "Sexual assault",
   				'prompt' => "Sexual assault services",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
         [
   				'event' => "Legal",
   				'prompt' => "Legal services",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
         [
   				'event' => "Employment",
   				'prompt' => "Employment services",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
         [
   				'event' => "Family",
   				'prompt' => "Family services (child care, custody, etc.)",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
         [
   				'event' => "Religious",
   				'prompt' => "Religious-based services",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
         [
   				'event' => "Housing",
   				'prompt' => "Housing services",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			],
         [
   				'event' => "Agency to help exit sex trade",
   				'prompt' => "Agency to help exit sex trade",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+          'timeline' => true
   			]
   		]);
     }
@@ -581,7 +606,8 @@ class LifeEventsTableSeeder extends Seeder
     			[
     				'event' => "Event",
     				'prompt' => "Prompt",
-    				'field_name' => $field_name
+    				'field_name' => $field_name,
+            'timeline' => true
     			],
     		]);
     	}
