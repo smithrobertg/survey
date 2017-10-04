@@ -3,7 +3,6 @@
 @section('title', 'Family Background')
 
 @section('content')
-
 <h2>Family Background</h2>
 <form method="post" action="{{ route('survey.family-background') }}">
 

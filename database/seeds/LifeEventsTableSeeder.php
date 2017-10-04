@@ -29,6 +29,7 @@ class LifeEventsTableSeeder extends Seeder
 
   		$category->life_events()->createMany([
   			// Did a parent or other adult in the household <strong>often</strong>:
+			/*
   			[
   				'event' => "Parent/adult: Swear at/insult/putdown/humiliate",
   				'prompt' => "Did a parent or other adult in the household <strong>often</strong> swear at you, insult you, put you down, or humiliate you?",
@@ -49,11 +50,68 @@ class LifeEventsTableSeeder extends Seeder
   				'prompt' => "Did a parent or other adult in the household <strong>ever</strong> hit you so hard that you had marks or were injured?",
   				'field_name' => "parent_or_adult_often[]"
   			],
-  			[
+			*/
+   			[
+  				'event' => "Abused by parent",
+  				'prompt' => "A parent abused you (phyically, sexually, or emotionally)",
+  				'field_name' => $field_name,
+				'timline' => true
+  			],
+   			[
+  				'event' => "Parent arrested",
+  				'prompt' => "A parent was arrested",
+  				'field_name' => $field_name,
+				'timline' => true
+  			],
+   			[
+  				'event' => "Homeless",
+  				'prompt' => "You  experienced homelessness",
+  				'field_name' => $field_name,
+				'timline' => true
+  			],
+   			[
+  				'event' => "Abused by non-parent",
+  				'prompt' => "You experienced abuse (physical, sexual, emotional) by a non-parent",
+  				'field_name' => $field_name,
+				'timline' => true
+  			],
+   			[
+  				'event' => "Ran away",
+  				'prompt' => "You ran away",
+  				'field_name' => $field_name,
+				'timline' => true
+  			],
+   			[
+  				'event' => "Family could not afford heat/water/basic utilities",
+  				'prompt' => "Your family could not afford heat or water (or other basic utilities)",
+  				'field_name' => $field_name,
+				'timline' => true
+  			],
+   			[
+  				'event' => "Family poverty",
+  				'prompt' => "Your family experienced poverty",
+  				'field_name' => $field_name,
+				'timline' => true
+  			],
+   			[
+  				'event' => "Addicted to drugs/alcohol before 18",
+  				'prompt' => "You were addicted to drugs or alcohol (before turning 18)",
+  				'field_name' => $field_name,
+				'timline' => true
+  			],
+   			[
+  				'event' => "Foster care",
+  				'prompt' => "Lived in foster care",
+  				'field_name' => $field_name,
+				'timline' => true
+  			]
+			/*
+ 			[
   				'event' => "Event",
   				'prompt' => "Prompt",
   				'field_name' => $field_name
   			],
+			*/
   		]);
   	}
 
