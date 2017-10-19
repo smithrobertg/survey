@@ -7,6 +7,10 @@
 
 <h1>Education Timeline</h1>
 
+<div class="alert alert-primary border border-primary">
+  @each('partials.timeline-event', $timelineEvents, 'timelineEvent')
+</div>
+
 <a href="/work-housing" class="btn btn-primary">Continue &rarr;</a>
 
 @endsection
