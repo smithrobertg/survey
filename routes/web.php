@@ -128,10 +128,12 @@ Route::post('work-housing', 'SurveyController@postWorkHousing')->name('survey.wo
 
 Route::get('work-housing-timeline', 'TimelineController@getWorkHousingTimeline')->name('survey.work-housing-timeline');
 Route::post('work-housing-timeline', 'TimelineController@postWorkHousingTimeline')->name('survey.work-housing-timeline');
-
+/*
 Route::get('timeline/work-housing', function () {
 	return view('survey.timeline.work-housing');
 })->name('timeline.work-housing');
+*/
+Route::get('timeline/work-housing', 'TimelineController@getTimelineWorkHousing')->name('timeline.work-housing');
 
 Route::get('work-housing-followup', 'SurveyController@getWorkHousingFollowup')->name('survey.work-housing-followup');
 Route::post('work-housing-followup', 'SurveyController@postWorkHousingFollowup')->name('survey.work-housing-followup');

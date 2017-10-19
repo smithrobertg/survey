@@ -210,7 +210,7 @@ class TimelineController extends Controller
       $category = "Education";
       $eventCategory = EventCategory::where('category', $category)->first();
 
-      $educationTimelineEvents = $survey->timeline_events()
+      $educationTimelineEvents = $survey->timeline_events()->with('life_event')
                               //->where('life_event.event_category_id', $eventCategory->id)
                               ->orderBy('id')
                               ->get();
@@ -266,6 +266,23 @@ class TimelineController extends Controller
 
   		return redirect()->route('timeline.work-housing');
 	}
+
+  public function getTimelineWorkHousing()
+  {
+      $survey_id = session('survey_id');
+      $survey = Survey::find($survey_id);
+      $category = "Work Housing";
+      $eventCategory = EventCategory::where('category', $category)->first();
+
+      $timelineEvents = $survey->timeline_events()->with('life_event')
+								  //->where('life_event.event_category_id', $eventCategory->id)
+								  ->orderBy('id')
+								  ->get();
+
+    return view('survey.timeline.work-housing', [
+      'timelineEvents' => $timelineEvents
+    ]);
+  }
 
     public function getSocialRelationshipsTimeline()
     {
