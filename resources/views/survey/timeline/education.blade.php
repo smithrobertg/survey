@@ -11,7 +11,7 @@
   @each('partials.timeline-event', $timelineEvents, 'timelineEvent')
 </div>
 
-<a href="/work-housing" class="btn btn-primary">Continue &rarr;</a>
+<a href="{{ route('survey.work-housing') }}" class="btn btn-primary">Continue to Work/Housing Events &rarr;</a>
 
 @endsection
 

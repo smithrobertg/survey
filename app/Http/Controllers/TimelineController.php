@@ -274,7 +274,7 @@ class TimelineController extends Controller
       $category = "Work Housing";
       $eventCategory = EventCategory::where('category', $category)->first();
 
-      $timelineEvents = $survey->timeline_events()->with('life_event')
+      $timelineEvents = $survey->timeline_events()->with('life_event.category')
 								  //->where('life_event.event_category_id', $eventCategory->id)
 								  ->orderBy('id')
 								  ->get();

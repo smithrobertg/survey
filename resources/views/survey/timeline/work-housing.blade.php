@@ -1,12 +1,19 @@
 @extends('layouts.survey')
 
-@section('title', 'Work/Housing')
+@section('title', 'Work/Housing Timeline')
 
 @section('content')
 
 <p>Show Timeline with Orientation answers, Family events, Education events, Work/Housing events</p>
 
-    <a href="/work-housing-followup" class="btn btn-primary">Continue to Work/Housing followup questions &rarr;</a>
+<h1>Work/Housing Timeline</h1>
+
+<div class="alert alert-primary border border-primary">
+  @each('partials.timeline-event', $timelineEvents, 'timelineEvent')
+</div>
+
+<a href="{{ route('survey.work-housing-followup') }}" class="btn btn-primary">Continue to Work/Housing followup questions &rarr;</a>
+
 @endsection
 
 @section('progress')
