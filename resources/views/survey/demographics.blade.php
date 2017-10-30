@@ -111,7 +111,7 @@
     </div>
     <div form-group>
         <label class="control-label">4. Were you born in the Unites States?</label>
-        <div class="form-control">
+        <div class="form-control col-6">
             <label class="radio=inline col-sm-offset-1"><input type="radio" name="bornInUnitedStates" value="yes" />Yes</label>
             <label class="radio=inline col-sm-offset-1"><input type="radio" name="bornInUnitedStates" value="no" />No</label>
         </div>
@@ -120,46 +120,46 @@
         <label class="control-label" for="bornWhere">If not, where?</label>
         <input type="text" class="form-control" name="bornWhere" />
         <label class="control-label" for="howLongInUS">How long have you lived in the Unites States?</label>
-        <select class="form-control dropdown" name="howLongInUS">
+        <select class="form-control dropdown col-6" name="howLongInUS">
             <option>--Select One--</option>
             <option>Less than 1 year</option>
             <option>1-3 years</option>
             <option>4+ years</option>
         </select>
         <label class="control-label">Were you brought to the U.S. by a trafficker?</label>
-        <div class="form-control">
+        <div class="form-control col-6">
             <label class="radio=inline col-sm-offset-1"><input type="radio" name="broughtToUsByTrafficker" value="yes" />Yes</label>
             <label class="radio=inline col-sm-offset-1"><input type="radio" name="broughtToUsByTrafficker" value="no" />No</label>
         </div>
     </div>
     <div class="form-group">
         <label for="identifyAs" class="control-label">5. Do you identify as any of the following? (please check all that apply)</label>
-        <div class="col-sm-offset-1">
+        <div class="ml-3">
             <div class="checkbox">
-                <label><input type="checkbox" name="identifyAs[]" value="Survivor">Survivor of commercial sexual exploitation or sex trafficking.</label>
+                <label><input type="checkbox" name="identifyAs[]" value="Survivor"> Survivor of commercial sexual exploitation or sex trafficking.</label>
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="identifyAs[]" value="Controlled">Controlled by another person to sell sex as a payment for drugs or other need.
+                    <input type="checkbox" name="identifyAs[]" value="Controlled"> Controlled by another person to sell sex as a payment for drugs or other need.
                 </label>
             </div>
             <div class="checkbox">
-                <label><input type="checkbox" name="identifyAs[]" value="Exchanged sex">Exchanged sex for money, drugs, food, shelter, or other needs.</label>
+                <label><input type="checkbox" name="identifyAs[]" value="Exchanged sex"> Exchanged sex for money, drugs, food, shelter, or other needs.</label>
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="identifyAs[]" value="Someone paid another for sex in exchange">Someone has paid another person to have sex with you in exchange for
+                    <input type="checkbox" name="identifyAs[]" value="Someone paid another for sex in exchange"> Someone has paid another person to have sex with you in exchange for
                     food, shelter, or other needs.
                 </label>
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="identifyAs[]" value="Had sex for money because bf/gf/spouse/family asked or forced">Had sex for money because a boyfriend, girlfriend, spouse, or family
+                    <input type="checkbox" name="identifyAs[]" value="Had sex for money because bf/gf/spouse/family asked or forced"> Had sex for money because a boyfriend, girlfriend, spouse, or family
                     member asked or forced you.
                 </label>
             </div>
             <div class="checkbox">
-                <label><input type="checkbox" name="identifyAs[]" value="Sex worker or made money selling sex">Being a sex worker or have you ever made money selling sex.</label>
+                <label><input type="checkbox" name="identifyAs[]" value="Sex worker or made money selling sex"> Being a sex worker or have you ever made money selling sex.</label>
             </div>
         </div>
     </div>

@@ -4,8 +4,8 @@
 
 @section('content')
 
-<h2>EDUCATION</h2>
-
+<h2 class="text-center text-white bg-secondary">EDUCATION</h2>
+<!--
 <div class="alert alert-primary border border-primary">
   <ul>
     @foreach($lifeEvents as $lifeEvent)
@@ -13,7 +13,7 @@
     @endforeach
   </ul>
 </div>
-
+-->
 <form method="post" action="{{ route('survey.education') }}">
 
     {{ csrf_field() }}

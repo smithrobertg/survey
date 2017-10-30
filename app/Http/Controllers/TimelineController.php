@@ -24,7 +24,7 @@ class TimelineController extends Controller
         // A parent abused you (physically, sexually, or emotionally)
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 99999;
+        $timelineEvent->life_event_id = 5;
         //$timelineEvent->event_description = "Abused by parent";
         $timelineEvent->timeframe = $request->input('timeframe_abused_by_parent');
         $timelineEvent->age = $request->input('age_abused_by_parent');
@@ -36,7 +36,7 @@ class TimelineController extends Controller
         // A parent was arrested
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 99999;
+        $timelineEvent->life_event_id = 5;
         //$timelineEvent->event_description = "Parent arrested";
         $timelineEvent->timeframe = $request->input('timeframe_parent_arrested');
         $timelineEvent->age = $request->input('age_parent_arrested');
@@ -48,7 +48,7 @@ class TimelineController extends Controller
         // A parent was in prison
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 99999;
+        $timelineEvent->life_event_id = 5;
         //$timelineEvent->event_description = "Parent in prison";
         $timelineEvent->timeframe = $request->input('timeframe_parent_in_prison');
         $timelineEvent->age = $request->input('age_parent_in_prison');
@@ -60,7 +60,7 @@ class TimelineController extends Controller
         // You experienced homelessness
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 99999;
+        $timelineEvent->life_event_id = 5;
         //$timelineEvent->event_description = "Homeless";
         $timelineEvent->timeframe = $request->input('timeframe_homeless');
         $timelineEvent->age = $request->input('age_homeless');
@@ -72,7 +72,7 @@ class TimelineController extends Controller
         // You experienced abuse (physical, sexual, or emotional) by a non-parent
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 99999;
+        $timelineEvent->life_event_id = 5;
         //$timelineEvent->event_description = "Abused by non-parent";
         $timelineEvent->timeframe = $request->input('timeframe_abused_by_non_parent');
         $timelineEvent->age = $request->input('age_abused_by_non_parent');
@@ -84,7 +84,7 @@ class TimelineController extends Controller
         // You ran away
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 99999;
+        $timelineEvent->life_event_id = 5;
         //$timelineEvent->event_description = "Ran away";
         $timelineEvent->timeframe = $request->input('timeframe_ran_away');
         $timelineEvent->age = $request->input('age_ran_away');
@@ -96,7 +96,7 @@ class TimelineController extends Controller
         // Your family could not afford heat or water (or other basic utilities)
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 99999;
+        $timelineEvent->life_event_id = 5;
         //$timelineEvent->event_description = "Family could not afford heat/water/basic utils";
         $timelineEvent->timeframe = $request->input('timeframe_family_could_not_afford_basic_utils');
         $timelineEvent->age = $request->input('age_family_could_not_afford_basic_utils');
@@ -108,7 +108,7 @@ class TimelineController extends Controller
         // Your family experienced poverty
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 99999;
+        $timelineEvent->life_event_id = 5;
         //$timelineEvent->event_description = "Family poverty";
         $timelineEvent->timeframe = $request->input('timeframe_family_poverty');
         $timelineEvent->age = $request->input('age_family_poverty');
@@ -120,7 +120,7 @@ class TimelineController extends Controller
         // You were addicted to drugs or alcohol (before turning 18)
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 99999;
+        $timelineEvent->life_event_id = 5;
         //$timelineEvent->event_description = "Addicted to drugs or alcohol";
         $timelineEvent->timeframe = $request->input('timeframe_addicted_drugs_alcohol');
         $timelineEvent->age = $request->input('age_addicted_drugs_alcohol');
@@ -132,7 +132,7 @@ class TimelineController extends Controller
         // Exited foster care
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 99999;
+        $timelineEvent->life_event_id = 5;
         //$timelineEvent->event_description = "Entered foster care";
         $timelineEvent->timeframe = $request->input('timeframe_entered_foster_care');
         $timelineEvent->age = $request->input('age_entered_foster_care');
@@ -144,7 +144,7 @@ class TimelineController extends Controller
         // Exited in foster care
         $timelineEvent = new TimelineEvent;
         $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 99999;
+        $timelineEvent->life_event_id = 5;
         //$timelineEvent->event_description = "Exited foster care";
         $timelineEvent->timeframe = $request->input('timeframe_exited_foster_care');
         $timelineEvent->age = $request->input('age_exited_foster_care');

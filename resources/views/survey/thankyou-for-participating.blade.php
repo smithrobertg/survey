@@ -7,7 +7,7 @@
 		<div class="display-3 mb-5 text-center">Thank you for participating.</div>
 		<div class="alert alert-danger border border-danger col-11 mx-auto">
 			<div class="h2 text-center mt-2">Your confidential Survey Code is:<br /><strong>{{ $survey->survey_code }}</strong></div>
-			<div class="lead mx-4">Please record this number in case you need to stop the survey and resume at another time.  This Participant ID may also be used for confidential communication with the researcher.</div>
+			<div class="lead mx-4">Please record this number in case you need to stop the survey and/or followup with the researcher.  This Survey Code may also be used for confidential communication with the researcher.</div>
 		</div>
 		<hr />
 		<div class="card alert alert-primary border border-primary col-11 mx-auto my-4">

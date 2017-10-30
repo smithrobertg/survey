@@ -22,7 +22,7 @@
       100 Morrissey Boulevard<br />
       Boston, MA.  02125-3393<br />
   </h3>
-  <div class="lead text-center">Survey Code: {{ $survey->survey_code }} (ID: {{ $survey->id }})</div>
+  <div class="lead text-center">Survey Code: {{ $survey->survey_code }}</div>
 </div>
 <div class="row">
     <div class="col-10 mx-auto">

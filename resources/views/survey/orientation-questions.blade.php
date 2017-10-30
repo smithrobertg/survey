@@ -57,10 +57,10 @@
 					Childhood (between 0-10 years old) Event: stepdad moved in; Age: 7 OR Year:
 				</li>
 				<li>
-					Adolescence (between 11-17 years old) Event: moved to SC__; Age:14 ORYear:
+					Adolescence (between 11-17 years old) Event: moved to SC; Age:14 OR Year:
 				</li>
 				<li>
-					Adulthood (18 and over) Event: married RC Age: or Year: 2007
+					Adulthood (18 and over) Event: married RC; Age: OR Year: 2007
 				</li>
 			</ul>
 		</div>
