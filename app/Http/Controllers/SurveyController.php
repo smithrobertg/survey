@@ -481,6 +481,7 @@ class SurveyController extends Controller
         $services->received_services_family = $request->input('received_services_family');
         $services->received_services_religious = $request->input('received_services_religious');
         $services->received_services_housing = $request->input('received_services_housing');
+        $services->received_services_housing = $request->input('received_services_agency_help_exit_sex_trade');
         $services->agency_help_exit_sex_trade = $request->input('agency_help_exit_sex_trade');
         $services->agency_help_exit_sex_trade_other = $request->input('agency_help_exit_sex_trade_other');
         $services->agency_helpful_exiting_sex_trade = $request->input('agency_helpful_exiting_sex_trade');

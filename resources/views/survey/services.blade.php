@@ -341,12 +341,29 @@
                   </div>
               </div>
               <hr />
-              <div class="form-check">
-                  <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" name="services_sought[]"
-                             value="Agency to help exit sex trade"/>
-                      Agency to help exit sex trade
-                  </label>
+              <div class="form-group row">
+                <div class="form-check col-4">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="services_sought[]"
+                               value="Agency to help exit sex trade"/>
+                        Agency to help exit sex trade
+                    </label>
+                </div>
+                <div class="col-8">
+                    <label>Did you receive those services?</label>
+                    <div class="form-check form-check-inline text-success">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="received_services_agency_help_exit_sex_trade" id="radioYes"
+                                   value="Yes"> Yes
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline text-danger">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="received_services_agency_help_exit_sex_trade" id="radioNo"
+                                   value="No"> No
+                        </label>
+                    </div>
+                </div>
               </div>
               <div class="ml-5">
               <p>If "Agency to exit sex trade" checked:</p>
