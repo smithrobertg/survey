@@ -103,7 +103,7 @@
 			</p>
 	</div>
 	<div class="row justify-content-center">
-		<a href="{{ route('survey.orientation-questions') }}" class="btn btn-success btn-lg">Continue to Orientation Questions &rarr;</a>
+		<a href="{{ route('survey.orientation-questions') }}" class="btn btn-primary btn-lg">Continue to Orientation Questions &rarr;</a>
 	</div>
 @endsection
 
