@@ -15,7 +15,7 @@ use App\Survey;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('survey.welcome');
 });
 
 Route::get('survey-list', function () {
