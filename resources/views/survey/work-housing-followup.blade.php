@@ -45,5 +45,5 @@
 @endsection
 
 @section('progress')
-    @include('partials.progress-bar', ['progress' => '34'])
+    @include('partials.progress-bar', ['progress' => '48'])
 @endsection

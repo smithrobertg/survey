@@ -39,5 +39,5 @@ For more information please email us at (study email address) or email the Princ
 @endsection
 
 @section('progress')
-    @include('partials.progress-bar', ['progress' => '80'])
+    @include('partials.progress-bar', ['progress' => '100'])
 @endsection

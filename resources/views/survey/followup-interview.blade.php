@@ -4,16 +4,17 @@
 
 @section('content')
 
-<h2>Statement about Follow-up interview</h2>
-Hello,
-
+<h2 class="text-center">Statement about Follow-up interview</h2>
+<p>Hello,
+<br />
 Thank you for your participation in the survey and your interest in participating in a follow-up interview. Your valuable experience and expertise will help to better understand some of the major life events and explore the transition to adulthood for individuals who identify as:
-•	Survivors of commercial sexual exploitation or sex trafficking
-•	Have been controlled by another person to sell sex as a payment for drugs or other need
-•	Exchanged sex for money, drugs, food, shelter, or other needs
-•	Had sex for money because a boyfriend, girlfriend, spouse, or family member asked or forced them
-•	Has identified as a sex worker/made money selling sex.
-
+<ul>
+  <li>Survivors of commercial sexual exploitation or sex trafficking
+  <li>Have been controlled by another person to sell sex as a payment for drugs or other need
+  <li>Exchanged sex for money, drugs, food, shelter, or other needs
+  <li>Had sex for money because a boyfriend, girlfriend, spouse, or family member asked or forced them
+  <li>Has identified as a sex worker/made money selling sex.
+</ul>
 About the follow-up interview:
 
 Participation in the interview is estimated to take around 30-45 minutes. If you decide to participate, we will set up a time for the interview which can be over the phone or video chat, whichever you are most comfortable doing.
@@ -31,9 +32,15 @@ This study has been approved by the
 UMass Boston Institutional Review Board
 
 For more information please email us at (study email address) or email the Principal Investigator of this study: Julianne Siegfriedt (<a href="Julianne.Siegfriedt@umb.edu">Julianne.Siegfriedt@umb.edu</a>), a PhD Candidate in the Sociology Department at UMass Boston.
-
+<hr />
+<div class="alert alert-danger border border-danger">
+  <div class="text-center">
+    <h3>The survey is now complete.</h3>
+    <h4>Thank you so much for your time.</h4>
+  </div>
+</div>
 @endsection
 
 @section('progress')
-    @include('partials.progress-bar', ['progress' => '75'])
+    @include('partials.progress-bar', ['progress' => '100'])
 @endsection
