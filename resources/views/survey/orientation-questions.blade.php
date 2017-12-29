@@ -47,7 +47,7 @@
         </div>
 		<div class="form-group">
 			<label for="how_old_when_completed_school">How old were you at this time? (or, if easier, What year was this?)</label>
-			<input type="text" class="form-control" name="how_old_when_completed_school" placeholder="Age or Year">
+			<input type="text" class="form-control" name="how_old_when_completed_school" placeholder="Age completed highest grade">
 		</div>
 		<div>
 			<p>Next, think of specific events that happened in the following 3 stages of your life (childhood, adolescence, and adulthood) where you know how old you were at the time (for example, you moved to a different area, started a relationship, had a child). Fill in those events (just a word or two) here with your age or year.
