@@ -273,6 +273,7 @@ class TimelineController extends Controller
       $survey = Survey::find($survey_id);
       $category = "Work Housing";
       $eventCategory = EventCategory::where('category', $category)->first();
+      $allEventCategories = EventCategory::all();
 
       $timelineEvents = $survey->timeline_events()->with('life_event.category')
 								  //->where('life_event.event_category_id', $eventCategory->id)
@@ -280,6 +281,7 @@ class TimelineController extends Controller
 								  ->get();
 
     return view('survey.timeline.work-housing', [
+      'eventCategories' => $allEventCategories,
       'timelineEvents' => $timelineEvents
     ]);
   }
