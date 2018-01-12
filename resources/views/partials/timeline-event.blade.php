@@ -1,6 +1,8 @@
 <h6>
-  {{ $timelineEvent->life_event->event_category_id }}:
+  Category {{ $timelineEvent->life_event->event_category_id }}:
   {{ App\EventCategory::find($timelineEvent->life_event->event_category_id)->category }}
+  <br />
+  <em>{{ $timelineEvent->life_event->event }}
   ({{ $timelineEvent->timeframe }}: {{ $timelineEvent->age }} {{ $timelineEvent->range_from }} {{ $timelineEvent->range_to }})
 </h6>
 

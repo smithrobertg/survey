@@ -20,7 +20,6 @@
 
   @each('partials.timeline-event-category', $eventCategories, 'category')
 
-
 @endcomponent
 
 <a href="{{ route('survey.work-housing-followup') }}" class="btn btn-primary">Continue to Work/Housing followup questions &rarr;</a>
