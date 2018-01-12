@@ -7,7 +7,8 @@
     <div class="media">
         <img src="images/umb-logo-001.jpg" class="d-flex mr-4" width="200" />
         <div class="media-body">
-          <h3>Welcome to the Study of Life Events Survey</h3>
+          <h3 class="display-4 text-center">Welcome to the Study of Life Events Survey</h3>
+          <hr />
           <h4><strong>Message from the Research Team:</strong></h4>
           <p>Hello,<br />
           We invite anyone over the age of 18 to participate in a UMass Boston research project to offer your experience and expertise to study major life events and explore the transition to adulthood for individuals who identify as:</p>
