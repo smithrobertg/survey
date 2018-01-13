@@ -5,9 +5,9 @@
 @section('content')
 
 <h2 class="text-center">Statement about Follow-up interview</h2>
-<p>Hello,
+<p>Hello,</p>
 <br />
-Thank you for your participation in the survey and your interest in participating in a follow-up interview. Your valuable experience and expertise will help to better understand some of the major life events and explore the transition to adulthood for individuals who identify as:
+<p>Thank you for your participation in the survey and your interest in participating in a follow-up interview. Your valuable experience and expertise will help to better understand some of the major life events and explore the transition to adulthood for individuals who identify as:</p>
 <ul>
   <li>Survivors of commercial sexual exploitation or sex trafficking
   <li>Have been controlled by another person to sell sex as a payment for drugs or other need
@@ -33,11 +33,14 @@ UMass Boston Institutional Review Board
 
 For more information please email us at (study email address) or email the Principal Investigator of this study: Julianne Siegfriedt (<a href="Julianne.Siegfriedt@umb.edu">Julianne.Siegfriedt@umb.edu</a>), a PhD Candidate in the Sociology Department at UMass Boston.
 <hr />
-<div class="alert alert-danger border border-danger">
-  <div class="text-center">
-    <h3>The survey is now complete.</h3>
-    <h4>Thank you so much for your time.</h4>
-  </div>
+<div class="alert alert-primary border border-primary">
+	<div class="lead">
+		To schedule a follow-up interview or to ask any questions, email us at <strong><a href="mailto:Julianne.Siegfriedt@umb.edu">Julianne.Siegfriedt@umb.edu</a></strong>.
+	</div>
+</div>
+<hr />
+<div class="col-2 mx-auto">
+	<a href="{{ route('survey.survey-complete') }}" class="btn btn-success btn-lg">Survey Complete.  Thank you!</a>
 </div>
 @endsection
 

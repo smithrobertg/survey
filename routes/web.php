@@ -211,3 +211,5 @@ Route::get('followup-interview', function () {
 Route::get('referral', function () {
 	return view('survey.referral');
 })->name('survey.referral');
+
+Route::view('survey-complete', 'survey.survey-complete')->name('survey.survey-complete');
