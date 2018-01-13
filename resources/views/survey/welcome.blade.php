@@ -12,11 +12,13 @@
           <h4><strong>Message from the Research Team:</strong></h4>
           <p>Hello,<br />
           We invite anyone over the age of 18 to participate in a UMass Boston research project to offer your experience and expertise to study major life events and explore the transition to adulthood for individuals who identify as:</p>
-<ul><li>Survivors of commercial sexual exploitation or sex trafficking</li>
-          <li>Have been controlled by another person to sell sex as a payment for drugs or other need</li>
-          <li>Have exchanged sex for money, drugs, food, shelter, or other needs</li>
-          <li>Had sex for money because a boyfriend, girlfriend, spouse, or family member asked or forced them</li>
-          <li>Has identified as a sex worker/made money selling sex.</li></ul>
+          <ul>
+            <li>Survivors of commercial sexual exploitation or sex trafficking</li>
+            <li>Have been controlled by another person to sell sex as a payment for drugs or other need</li>
+            <li>Have exchanged sex for money, drugs, food, shelter, or other needs</li>
+            <li>Had sex for money because a boyfriend, girlfriend, spouse, or family member asked or forced them</li>
+            <li>Has identified as a sex worker/made money selling sex.</li>
+          </ul>
           <h5>This study is survivor-informed.</h5>
           <p>Your participation in this survey is estimated to take around 30-45 minutes. If you decide to participate, we will ask you about a number of life events that occur for both survivors and non-survivors. Some questions will be about exploitation and the sex trade but this is not the main focus of the study, instead, we are interested in learning more about your experiences within the larger context of your life.</p>
           <p>Your participation in this study is voluntary and you are free to withdraw from the study at any time or you may choose not to answer any specific questions.

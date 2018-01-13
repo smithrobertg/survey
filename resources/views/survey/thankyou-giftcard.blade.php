@@ -3,12 +3,16 @@
 @section('title', 'Thank you - Gift Card')
 
 @section('content')
-
-<h2 class="display-2 text-center mb-5">Thank you.</h2>
+<div class="media">
+	<img src="images/umb-logo-001.jpg" class="d-flex mr-4" width="200" />
+	<div class="media-body">
+		<h2 class="display-1 ml-5 mt-5">Thank you.</h2>
+	</div>
+</div>
 
 <div class="alert alert-primary border border-primary">
 	<h4 class="mb-2"><strong>Thank you so much for your time participating in this survey.</strong></h4>
-	<div class="lead">To receive your gift card, please email your survey code (<strong>{{ session('survey')->survey_code }}</strong>) to: <a href="mailto:Julianne.Siegfriedt@umb.edu">Julianne.Siegfriedt@umb.edu</a></div>
+	<div class="lead">To receive your <strong>gift card</strong>, please email your survey code (<strong>{{ session('survey')->survey_code }}</strong>) to: <a href="mailto:Julianne.Siegfriedt@umb.edu">Julianne.Siegfriedt@umb.edu</a></div>
 </div>
 
 <div class="alert alert-primary border border-primary">
@@ -45,7 +49,7 @@
 	</div>
 </div>
 
-<div class="col-2 mx-auto">
+<div class="col-4 mx-auto">
 	<a href="{{ route('survey.survey-complete') }}" class="btn btn-success btn-lg">Survey Complete.  Thank you!</a>
 </div>
 
