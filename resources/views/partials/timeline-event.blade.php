@@ -1,10 +1,9 @@
-<h6>
-  Category {{ $timelineEvent->life_event->event_category_id }}:
-  {{ App\EventCategory::find($timelineEvent->life_event->event_category_id)->category }}
-  <br />
+<hr />
+
+<h5>
   <em>{{ $timelineEvent->life_event->event }}
-  ({{ $timelineEvent->timeframe }}: {{ $timelineEvent->age }} {{ $timelineEvent->range_from }} {{ $timelineEvent->range_to }})
-</h6>
+  {{-- ({{ $timelineEvent->timeframe }}: {{ $timelineEvent->age }} {{ $timelineEvent->range_from }} {{ $timelineEvent->range_to }}) --}}
+</h5>
 
 <em>Age:</em> {{ $timelineEvent->age }}
 <div class="progress">
@@ -30,5 +29,3 @@
   </div>
   <div class="progress-bar" role="progressbar" style="width: {{ 100 - ($timelineEvent->range_to-$timelineEvent->range_from) - $timelineEvent->range_from }}%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
-
-<hr />
