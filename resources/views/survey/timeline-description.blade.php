@@ -51,6 +51,7 @@
 				      </span>
 				      <input type="text" class="form-control" name="age_" />
 				    </div>
+					<!--
 				    <div class="input-group col-3">
 				      <span class="input-group-addon">
 				        <label class="form-check-label">
@@ -59,6 +60,7 @@
 				      </span>
 				      <input type="text" class="form-control" name="year_" />
 				    </div>
+					-->
 				    <div class="input-group col-6">
 				      <span class="input-group-addon">
 				        <label class="form-check-label">
@@ -70,9 +72,17 @@
 				      <span class="input-group-addon">to:</span>
 				      <input type="text" class="form-control" name="range_to_" />
 				    </div>
-				  </div>
+					<div class="input-group col-3">
+					  <span class="input-group-addon">
+						<label class="form-check-label">
+						  <input class="form-check-input" type="radio" name="timeframe_{{ $timelineEvent->id}}" id="timeframeDontRemember" value="Dont Remember"> Year
+						</label>
+					  </span>
+					  <input type="text" class="form-control" value="Dude, I don't remember when that was." name="dont_remember_{{ $timelineEvent->id}}" />
+					</div>
+				</div>
 				</fieldset>
-		</div>
+			</div>
 			<hr />
 		You will then be asked if this event happened in childhood, adolescence, or adulthood.
 		(Check all that apply)<br />
