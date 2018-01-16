@@ -160,7 +160,7 @@ class SurveyController extends Controller
 
         $orientation->save();
 
-        return view('survey.timeline.orientation');
+        return redirect()->route('timeline.orientation');
     }
 
     public function getFamilyBackground()

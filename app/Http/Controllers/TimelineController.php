@@ -11,6 +11,28 @@ use App\Education;
 class TimelineController extends Controller
 {
     //
+    public function getTimelineOrientation()
+    {
+      $survey_id = session('survey_id');
+      $survey = Survey::find($survey_id);
+      $category = "Orientation";
+      //$eventCategory = EventCategory::where('category', $category)->first();
+      $allEventCategories = EventCategory::all();
+
+      $allTimelineEvents = $survey->timeline_events()->with('life_event')
+                              //->where('life_event.event_category_id', $eventCategory->id)
+                              ->orderBy('id')
+                              ->get();
+
+    return view('survey.timeline.life-events-timeline', [
+      'lifeEventCategory' => $category,
+      'eventCategories' => $allEventCategories,
+      'timelineEvents' => $allTimelineEvents,
+      'nextPage' => route('survey.family-background'),
+      'nextPageMessage' => 'Family Background events'
+    ]);
+    }
+
     public function getFamilyBackgroundTimeline()
     {
         return view('survey.family-background-timeline');
@@ -156,6 +178,27 @@ class TimelineController extends Controller
         return redirect()->route('timeline.family-background');
     }
 
+    public function getTimelineFamilyBackground()
+    {
+      $survey_id = session('survey_id');
+      $survey = Survey::find($survey_id);
+      $category = "Family Background";
+      $eventCategory = EventCategory::where('category', $category)->first();
+      $allEventCategories = EventCategory::all();
+
+      $allTimelineEvents = $survey->timeline_events()->with('life_event')
+                              ->orderBy('id')
+                              ->get();
+
+    return view('survey.timeline.life-events-timeline', [
+      'lifeEventCategory' => $category,
+      'eventCategories' => $allEventCategories,
+      'timelineEvents' => $allTimelineEvents,
+      'nextPage' => route('survey.family-backgroud-followup'),
+      'nextPageMessage' => 'Family/Background follup-up questions'
+    ]);
+    }
+
     public function getEducationTimeline()
     {
         $survey_id = session('survey_id');
@@ -209,14 +252,19 @@ class TimelineController extends Controller
       $survey = Survey::find($survey_id);
       $category = "Education";
       $eventCategory = EventCategory::where('category', $category)->first();
+      $allEventCategories = EventCategory::all();
 
       $educationTimelineEvents = $survey->timeline_events()->with('life_event')
                               //->where('life_event.event_category_id', $eventCategory->id)
                               ->orderBy('id')
                               ->get();
 
-    return view('survey.timeline.education', [
-      'timelineEvents' => $educationTimelineEvents
+    return view('survey.timeline.life-events-timeline', [
+      'lifeEventCategory' => $category,
+      'eventCategories' => $allEventCategories,
+      'timelineEvents' => $educationTimelineEvents,
+      'nextPage' => route('survey.work-housing'),
+      'nextPageMessage' => 'Work/Housing Events'
     ]);
   }
 
@@ -269,21 +317,23 @@ class TimelineController extends Controller
 
   public function getTimelineWorkHousing()
   {
-      $survey_id = session('survey_id');
-      $survey = Survey::find($survey_id);
-      $category = "Work Housing";
-      $eventCategory = EventCategory::where('category', $category)->first();
-      $allEventCategories = EventCategory::all();
+    $survey_id = session('survey_id');
+    $survey = Survey::find($survey_id);
+    $category = "Work Housing";
+    $eventCategory = EventCategory::where('category', $category)->first();
+    $allEventCategories = EventCategory::all();
 
-      $timelineEvents = $survey->timeline_events()->with('life_event.category')
-								  //->where('life_event.event_category_id', $eventCategory->id)
-								  ->orderBy('id')
-								  ->get();
+    $allTimelineEvents = $survey->timeline_events()->with('life_event')
+                            ->orderBy('id')
+                            ->get();
 
-    return view('survey.timeline.work-housing', [
-      'eventCategories' => $allEventCategories,
-      'timelineEvents' => $timelineEvents
-    ]);
+  return view('survey.timeline.life-events-timeline', [
+    'lifeEventCategory' => $category,
+    'eventCategories' => $allEventCategories,
+    'timelineEvents' => $allTimelineEvents,
+    'nextPage' => route('survey.social-relationships'),
+    'nextPageMessage' => 'Social/Relationship events'
+  ]);
   }
 
     public function getSocialRelationshipsTimeline()
@@ -333,6 +383,27 @@ class TimelineController extends Controller
         return redirect()->route('timeline.social-relationships');
     }
 
+    public function getTimelineSocialRelationships()
+    {
+      $survey_id = session('survey_id');
+      $survey = Survey::find($survey_id);
+      $category = "Social Relationships";
+      $eventCategory = EventCategory::where('category', $category)->first();
+      $allEventCategories = EventCategory::all();
+
+      $allTimelineEvents = $survey->timeline_events()->with('life_event')
+                              ->orderBy('id')
+                              ->get();
+
+    return view('survey.timeline.life-events-timeline', [
+      'lifeEventCategory' => $category,
+      'eventCategories' => $allEventCategories,
+      'timelineEvents' => $allTimelineEvents,
+      'nextPage' => route('survey.criminal-justice'),
+      'nextPageMessage' => 'Criminal Justice events'
+    ]);
+    }
+
     public function getCriminalJusticeTimeline()
     {
         $survey_id = session('survey_id');
@@ -378,6 +449,27 @@ class TimelineController extends Controller
         }
 
         return redirect()->route('timeline.criminal-justice');
+    }
+
+    public function getTimelineCriminalJustice()
+    {
+      $survey_id = session('survey_id');
+      $survey = Survey::find($survey_id);
+      $category = "Criminal Justice";
+      $eventCategory = EventCategory::where('category', $category)->first();
+      $allEventCategories = EventCategory::all();
+
+      $allTimelineEvents = $survey->timeline_events()->with('life_event')
+                              ->orderBy('id')
+                              ->get();
+
+      return view('survey.timeline.life-events-timeline', [
+        'lifeEventCategory' => $category,
+        'eventCategories' => $allEventCategories,
+        'timelineEvents' => $allTimelineEvents,
+        'nextPage' => route('survey.criminal-justice-followup'),
+        'nextPageMessage' => 'Criminal Justice follow-up questions'
+      ]);
     }
 
     public function getExploitationTimeline()
@@ -427,6 +519,27 @@ class TimelineController extends Controller
         return redirect()->route('timeline.exploitation');
     }
 
+    public function getTimelineExploitation()
+    {
+      $survey_id = session('survey_id');
+      $survey = Survey::find($survey_id);
+      $category = "Exploitation";
+      $eventCategory = EventCategory::where('category', $category)->first();
+      $allEventCategories = EventCategory::all();
+
+      $allTimelineEvents = $survey->timeline_events()->with('life_event')
+                              ->orderBy('id')
+                              ->get();
+
+      return view('survey.timeline.life-events-timeline', [
+        'lifeEventCategory' => $category,
+        'eventCategories' => $allEventCategories,
+        'timelineEvents' => $allTimelineEvents,
+        'nextPage' => route('survey.exploitation-followup'),
+        'nextPageMessage' => 'Exploitation follow-up questions'
+      ]);
+    }
+
     public function getServicesTimeline()
     {
         $survey_id = session('survey_id');
@@ -472,6 +585,27 @@ class TimelineController extends Controller
         }
 
         return redirect()->route('timeline.services');
+    }
+
+    public function getTimelineServices()
+    {
+      $survey_id = session('survey_id');
+      $survey = Survey::find($survey_id);
+      $category = "Services";
+      $eventCategory = EventCategory::where('category', $category)->first();
+      $allEventCategories = EventCategory::all();
+
+      $allTimelineEvents = $survey->timeline_events()->with('life_event')
+                              ->orderBy('id')
+                              ->get();
+
+      return view('survey.timeline.life-events-timeline', [
+        'lifeEventCategory' => $category,
+        'eventCategories' => $allEventCategories,
+        'timelineEvents' => $allTimelineEvents,
+        'nextPage' => route('survey.services-followup'),
+        'nextPageMessage' => 'Services follow-up questions'
+      ]);
     }
 
  /*
