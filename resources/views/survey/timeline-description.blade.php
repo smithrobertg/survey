@@ -43,7 +43,7 @@
 				<fieldset>
 				  <legend>Quit a job</legend>
 				  <div class="form-row">
-				    <div class="input-group col-3">
+				    <div class="input-group col-2">
 				      <span class="input-group-addon">
 				        <label class="form-check-label">
 				          <input class="form-check-input" type="radio" name="timeframe_" id="timeframeAge" value="Age"> Age
@@ -61,7 +61,7 @@
 				      <input type="text" class="form-control" name="year_" />
 				    </div>
 					-->
-				    <div class="input-group col-6">
+				    <div class="input-group col-5">
 				      <span class="input-group-addon">
 				        <label class="form-check-label">
 				          <input class="form-check-input" type="radio" name="timeframe_" id="timeframeRange" value="Range"> Range
@@ -72,13 +72,13 @@
 				      <span class="input-group-addon">to:</span>
 				      <input type="text" class="form-control" name="range_to_" />
 				    </div>
-					<div class="input-group col-3">
+					<div class="input-group col-5">
 					  <span class="input-group-addon">
 						<label class="form-check-label">
-						  <input class="form-check-input" type="radio" name="timeframe_{{ $timelineEvent->id}}" id="timeframeDontRemember" value="Dont Remember"> Year
+						  <input class="form-check-input" type="radio" name="timeframe_" id="timeframeDontRemember" value="Dont Remember">
 						</label>
 					  </span>
-					  <input type="text" class="form-control" value="Dude, I don't remember when that was." name="dont_remember_{{ $timelineEvent->id}}" />
+					  <input type="text" class="form-control" value="Dude, I don't remember when that was." name="dont_remember_" />
 					</div>
 				</div>
 				</fieldset>

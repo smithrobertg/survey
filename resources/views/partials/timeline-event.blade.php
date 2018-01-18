@@ -1,7 +1,7 @@
 <hr />
 
 <h5>
-  <em>{{ $timelineEvent->life_event->event }}
+  <em>{{ $timelineEvent->life_event->event }}</em>
   {{-- ({{ $timelineEvent->timeframe }}: {{ $timelineEvent->age }} {{ $timelineEvent->range_from }} {{ $timelineEvent->range_to }}) --}}
 </h5>
 
