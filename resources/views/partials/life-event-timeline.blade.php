@@ -36,7 +36,7 @@
           <input class="form-check-input" type="radio" name="timeframe_{{ $timelineEvent->id}}" id="timeframeDontRemember" value="Dont Remember">
         </label>
       </span>
-      <input type="text" class="form-control" value="Dude, I don't remember when that was." name="dont_remember_{{ $timelineEvent->id}}" />
+      <input type="text" class="form-control" value="I don't remember how old I was" name="dont_remember_{{ $timelineEvent->id}}" />
     </div>
 </div>
 </fieldset>

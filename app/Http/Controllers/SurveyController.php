@@ -165,12 +165,30 @@ class SurveyController extends Controller
 
     public function getFamilyBackground()
     {
-        return view('survey.family-background');
+        $category = EventCategory::where('category', 'Family Background')->first();
+
+        return view('survey.family-background', [ 'lifeEvents' => $category->life_events ]);
     }
 
     public function postFamilyBackground(Request $request)
     {
         $survey_id = session('survey_id');
+        $survey = Survey::find($survey_id);
+        $survey->life_events()->sync($request->input('family_background_events'), false);
+
+        // If ($request->input('parent_or_adult_often') contains either event string,
+        //  Then add the life_event for "Experienced verbal abuse"
+
+        // If ($request->input('parent_or_adult_often') contains either event string,
+        //  Then add the life_event for "Experienced physical abuse"
+        
+        // If ($request->input('adult_or_person_5_years_older_ever') contains either event string,
+        //  Then add the life_event for "Experienced sexual abuse"
+        
+        // If ($request->input('mother_or_stepmother') or ($request->input('father_or_stepfather') contains either event string,
+        //  Then add the life_event for "Witnessed"
+        
+
 
         $familyBackground = new FamilyBackground;
 
@@ -191,6 +209,8 @@ class SurveyController extends Controller
         if (!empty($request->input('father_or_stepfather'))) {
       				$familyBackground->father_or_stepfather = implode(", ", $request->input('father_or_stepfather'));
       	}
+    /*
+        $familyBackground->parent_got_married = $request->input('parent_got_married');
         $familyBackground->parent_separated_divorced = $request->input('parent_separated_divorced');
         $familyBackground->lived_with_alchoholic_or_drug_user = $request->input('lived_with_alchoholic_or_drug_user');
         $familyBackground->household_member_depressed_mentally_ill_suicide = $request->input('household_member_depressed_mentally_ill_suicide');
@@ -207,7 +227,7 @@ class SurveyController extends Controller
         $familyBackground->felt_life_threatened = $request->input('felt_life_threatened');
         $familyBackground->foster_care = $request->input('foster_care');
         $familyBackground->other_family_events = $request->input('other_family_events');
-
+*/
         $familyBackground->save();
 
         return redirect()->route('survey.family-background-timeline');

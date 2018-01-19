@@ -136,6 +136,13 @@
       <div class="h4">While you were growing up, during your first <strong>18 years of life</strong>:</div>
     </div>
 
+    <div class="form-group">
+        @foreach($lifeEvents->where('field_id', '!=', "DO NOT DISPLAY") as $lifeEvent)
+            @include('partials.life-event')
+        @endforeach
+    </div>
+    
+<!--
     <div class="container ml-3">
         <div class="form-group row">
             <label>Did a parent, guardian, or caregiver get married?</label>
@@ -456,6 +463,7 @@
                 </label>
             </div>
         </div>
+-->
 
         <div class="form-group">
             <label for="other_family_events" class="form-label h4">Other exciting or difficult family events that stood out to you?</label>
@@ -463,7 +471,9 @@
         </div>
     </div>
 
-    <button type="submit" class="btn btn-primary">Save and Continue &rarr;</button>
+    <div class="row justify-content-center mb-2">
+        <button type="submit" class="btn btn-primary">Save and Continue &rarr;</button>
+    </div>
 </form>
 @endsection
 

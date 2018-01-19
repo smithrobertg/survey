@@ -21,13 +21,15 @@
 				</div>
 			</div>
 			<p>If this happened during a single year, note your Age ____</p>
-			<p>If this happened multiple times or over the course of multiple years, note the range or ranges:</p>
+			<p>If this happened multiple times or over the course of multiple years, note the range of ages:</p>
 			<div class="mt-2 ml-5">​
-				Range 1: Ages ____   to  ____<br />
+				Range: Ages ____   to  ____<br />
+<!--
 				​​​​AND<br />
 				​Range 2: Ages ____   to  ____<br />
 				​​​​AND<br />
 				​Range 3: Ages ____   to  ____<br />
+-->
 				<br />
 				If you do not remember the specific age of an event but know that it happened, select:<br />
 				<div class="form-group mt-3 ml-2">
@@ -39,6 +41,7 @@
 					</div>
 				</div>
 			</div>
+			<h5>The form entries will look like this:</h5>
 			<div class="alert alert-primary border border-primary">
 				<fieldset>
 				  <legend>Quit a job</legend>
@@ -78,12 +81,14 @@
 						  <input class="form-check-input" type="radio" name="timeframe_" id="timeframeDontRemember" value="Dont Remember">
 						</label>
 					  </span>
-					  <input type="text" class="form-control" value="Dude, I don't remember when that was." name="dont_remember_" />
+					  <input type="text" class="form-control" value="I don't remember how old I was" name="dont_remember_" />
 					</div>
 				</div>
 				</fieldset>
 			</div>
-			<hr />
+
+<!--			
+		<hr />
 		You will then be asked if this event happened in childhood, adolescence, or adulthood.
 		(Check all that apply)<br />
 		<div class="form-group mt-3 ml-5">
@@ -106,12 +111,9 @@
 					</label>
 			</div>
 		</div>
-		<br />
-		(note if they select this option, it will not populate in the event history calendar- only specific age/ranges to populate)
-			<p>
-				<strong><em>Sample of Event History Calendar populated with this information once we have the grid program</em></strong>
-			</p>
+-->		
 	</div>
+
 	<div class="row justify-content-center">
 		<a href="{{ route('survey.orientation-questions') }}" class="btn btn-primary btn-lg">Continue to Orientation Questions &rarr;</a>
 	</div>

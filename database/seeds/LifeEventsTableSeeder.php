@@ -32,57 +32,120 @@ class LifeEventsTableSeeder extends Seeder
 			/*
   			[
   				'event' => "Parent/adult: Swear at/insult/putdown/humiliate",
-  				'prompt' => "Did a parent or other adult in the household <strong>often</strong> swear at you, insult you, put you down, or humiliate you?",
-  				'field_name' => "parent_or_adult_often[]"
+  				'prompt' => "Swear at you, insult you, put you down, or humiliate you?",
+  				'field_name' => "parent_or_adult_often[]",
+					'timeline' => true
   			],
   			[
   				'event' => "Parent/adult: Affraid physically hurt",
-  				'prompt' => "Did a parent or other adult in the household <strong>often</strong> act in a way that made you afraid that you might be physically hurt?",
-  				'field_name' => "parent_or_adult_often[]"
+  				'prompt' => "Act in a way that made you afraid that you might be physically hurt?",
+  				'field_name' => "parent_or_adult_often[]",
+					'timeline' => true
   			],
   			[
   				'event' => "Parent/adult: Push/slap/grab/throw something",
-  				'prompt' => "Did a parent or other adult in the household <strong>often</strong> push, grab, slap, or throw something at you?",
+  				'prompt' => "Push, grab, slap, or throw something at you?",
   				'field_name' => "parent_or_adult_often[]"
   			],
   			[
   				'event' => "Parent/adult: Hit so hard marks or injured",
-  				'prompt' => "Did a parent or other adult in the household <strong>ever</strong> hit you so hard that you had marks or were injured?",
+  				'prompt' => "<strong>Ever</strong> hit you so hard that you had marks or were injured?",
   				'field_name' => "parent_or_adult_often[]"
   			],
 			*/
    			[
-  				'event' => "Abused by parent",
-  				'prompt' => "A parent abused you (phyically, sexually, or emotionally)",
+  				'event' => "Experienced verbal abuse",
+  				'prompt' => "Experienced verbal abuse (time where a parent or other adult swore at, insulted, or humiliated you, or acted in a way that made you afraid you might be physically hurt)",
+  				'field_name' => $field_name,
+  				'field_id' => "DO NOT DISPLAY",
+		      'timeline' => true
+  			],
+   			[
+  				'event' => "Experienced physical abuse",
+  				'prompt' => "Experienced physical abuse (including pushing, grabbing, slapping, hitting, or throwing something at you)",
+  				'field_name' => $field_name,
+  				'field_id' => "DO NOT DISPLAY",
+		      'timeline' => true
+  			],
+   			[
+  				'event' => "Experienced sexual abuse",
+  				'prompt' => "Experienced sexual abuse (time where an adult or someone 5 years older than you touched, fondled, tried to or actually had sexual contact with you)",
+  				'field_name' => $field_name,
+  				'field_id' => "DO NOT DISPLAY",
+		      'timeline' => true
+  			],
+   			[
+  				'event' => "Witnessed violence at home",
+  				'prompt' => "Witnessed violence at home",
+  				'field_name' => $field_name,
+  				'field_id' => "DO NOT DISPLAY",
+		      'timeline' => true
+  			],
+
+				/* Checklist items - Growing up, during first 18 years of life */
+		
+   			[
+  				'event' => "A parent, guardian, or caregiver got married",
+  				'prompt' => "A parent, guardian, or caregiver got married",
+  				'field_name' => $field_name,
+		      'timeline' => false
+  			],
+   			[
+  				'event' => "Parents were ever separated or divorced",
+  				'prompt' => "Your parents were ever separated or divorced",
+  				'field_name' => $field_name,
+		      'timeline' => false
+  			],
+   			[
+  				'event' => "Lived with anyone who was a problem drinker or alcoholic or who used street drugs",
+  				'prompt' => "Lived with anyone who was a problem drinker or alcoholic or who used street drugs",
+  				'field_name' => $field_name,
+		      'timeline' => false
+  			],
+   			[
+  				'event' => "A household member was depressed or mentally ill or did a household member attempt suicide",
+  				'prompt' => "A household member was depressed or mentally ill or did a household member attempt suicide",
   				'field_name' => $field_name,
 		      'timeline' => true
   			],
    			[
-  				'event' => "Parent arrested",
-  				'prompt' => "A parent was arrested",
+  				'event' => "Household member in jail or prison",
+  				'prompt' => "A household member was in jail or prison",
   				'field_name' => $field_name,
 		      'timeline' => true
+  			],
+				[
+  				'event' => "Someone else came to live with you (bf or gf of parent, aunt, uncle, etc.)",
+  				'prompt' => "Someone else came to live with you (bf or gf of parent, aunt, uncle, etc.)",
+  				'field_name' => $field_name,
+          'timeline' => false
+  			],
+   			[
+  				'event' => "Moved around a lot",
+  				'prompt' => "You moved around a lot",
+  				'field_name' => $field_name,
+          'timeline' => false
   			],
    			[
   				'event' => "Homeless",
-  				'prompt' => "You  experienced homelessness",
+  				'prompt' => "You experienced homelessness",
   				'field_name' => $field_name,
           'timeline' => true
-  			],
-   			[
-  				'event' => "Abused by non-parent",
-  				'prompt' => "You experienced abuse (physical, sexual, emotional) by a non-parent",
-  				'field_name' => $field_name,
-		      'timeline' => true
   			],
    			[
   				'event' => "Ran away",
   				'prompt' => "You ran away",
   				'field_name' => $field_name,
-		      'timeline' => true
+          'timeline' => true
   			],
    			[
-  				'event' => "Family could not afford heat/water/basic utilities",
+  				'event' => "Family received public assistance (food stamps, disability, unemployment, etc.)",
+  				'prompt' => "Your family received public assistance (food stamps, disability, unemployment, etc.)",
+  				'field_name' => $field_name,
+          'timeline' => false
+  			],
+   			[
+  				'event' => "Family could not afford heat or water, other basic utilities",
   				'prompt' => "Your family could not afford heat or water (or other basic utilities)",
   				'field_name' => $field_name,
 		      'timeline' => true
@@ -91,13 +154,25 @@ class LifeEventsTableSeeder extends Seeder
   				'event' => "Family poverty",
   				'prompt' => "Your family experienced poverty",
   				'field_name' => $field_name,
+		      'timeline' => false
+  			],
+   			[
+  				'event' => "Used drugs/alcohol",
+  				'prompt' => "You used to drugs or alcohol",
+  				'field_name' => $field_name,
+		      'timeline' => false
+  			],
+   			[
+  				'event' => "Addicted to drugs/alcohol",
+  				'prompt' => "You were addicted to drugs or alcohol",
+  				'field_name' => $field_name,
 		      'timeline' => true
   			],
    			[
-  				'event' => "Addicted to drugs/alcohol before 18",
-  				'prompt' => "You were addicted to drugs or alcohol (before turning 18)",
+  				'event' => "Felt like life was threatened",
+  				'prompt' => "You felt like your life was threatened",
   				'field_name' => $field_name,
-		      'timeline' => true
+		      'timeline' => false
   			],
    			[
   				'event' => "Foster care",
