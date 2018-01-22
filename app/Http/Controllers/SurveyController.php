@@ -7,6 +7,7 @@ use Illuminate\Session\Store;
 use Carbon\Carbon;
 use App\Survey;
 use App\EventCategory;
+use App\LifeEvent;
 use App\Demographics;
 use App\Orientation;
 use App\FamilyBackground;
@@ -174,41 +175,71 @@ class SurveyController extends Controller
     {
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
+
+        // Clear any previously set timeline events
+        $category = "Family Background";
+        $eventCategory = EventCategory::where('category', $category)->first();
+        $survey->life_events()->where('event_category_id', $eventCategory->id)->detach();
+
+        // Sync up any checked life events from survey
         $survey->life_events()->sync($request->input('family_background_events'), false);
 
-        // If ($request->input('parent_or_adult_often') contains either event string,
-        //  Then add the life_event for "Experienced verbal abuse"
-
-        // If ($request->input('parent_or_adult_often') contains either event string,
-        //  Then add the life_event for "Experienced physical abuse"
-        
-        // If ($request->input('adult_or_person_5_years_older_ever') contains either event string,
-        //  Then add the life_event for "Experienced sexual abuse"
-        
-        // If ($request->input('mother_or_stepmother') or ($request->input('father_or_stepfather') contains either event string,
-        //  Then add the life_event for "Witnessed"
-        
-
-
         $familyBackground = new FamilyBackground;
-
         $familyBackground->survey_id = $survey_id;
-      	if (!empty($request->input('parent_or_adult_often'))) {
-      				$familyBackground->parent_or_adult_often = implode(", ", $request->input('parent_or_adult_often'));
 
+        $parent_or_adult_often = $request->input('parent_or_adult_often');
+      	if (!empty($parent_or_adult_often)) {
+      				$familyBackground->parent_or_adult_often = implode(", ", $parent_or_adult_often);
+            // If ($request->input('parent_or_adult_often') contains either event string,
+            //  Then add the life_event for "Experienced verbal abuse"
+            if (in_array("Swear at/insult/putdown/humiliate", $parent_or_adult_often)
+                    || in_array("Affraid physically hurt", $parent_or_adult_often))
+            {
+                $experienced_verbal_abuse = \App\LifeEvent::where('event', 'Experienced verbal abuse')->first();
+                $survey->life_events()->attach($experienced_verbal_abuse);
+            }
+            //  Then add the life_event for "Experienced physical abuse"
+            if (in_array("Push/slap/grab/throw something", $parent_or_adult_often)
+                    || in_array("Hit so hard marks or injured", $parent_or_adult_often))
+            {
+                $experienced_verbal_abuse = \App\LifeEvent::where('event', 'Experienced physical abuse')->first();
+                $survey->life_events()->attach($experienced_verbal_abuse);
+            }
       	}
-      	if (!empty($request->input('adult_or_person_5_years_older_ever'))) {
-      				$familyBackground->adult_or_person_5_years_older_ever = implode(", ", $request->input('adult_or_person_5_years_older_ever'));
-      	}
+
+        $adult_or_person_5_years_older_ever = $request->input('adult_or_person_5_years_older_ever');
+     	if (!empty($adult_or_person_5_years_older_ever)) {
+      				$familyBackground->adult_or_person_5_years_older_ever = implode(", ", $adult_or_person_5_years_older_ever);
+            // If ($request->input('adult_or_person_5_years_older_ever') contains either event string,
+            //  Then add the life_event for "Experienced sexual abuse"
+            if (in_array("Touch/fondle/have touch in sexaul way", $adult_or_person_5_years_older_ever)
+                    || in_array("Try or actually have sex", $adult_or_person_5_years_older_ever))
+            {
+                $experienced_physical_abuse = \App\LifeEvent::where('event', 'Experienced sexual abuse')->first();
+                $survey->life_events()->attach($experienced_physical_abuse);
+            }
+        }
+
       	if (!empty($request->input('often_feel_that'))) {
-      				$familyBackground->often_feel_that = implode(", ", $request->input('often_feel_that'));
+                $familyBackground->often_feel_that = implode(", ", $request->input('often_feel_that'));
       	}
+
+        $witnessedViolence = false;
       	if (!empty($request->input('mother_or_stepmother'))) {
-      				$familyBackground->mother_or_stepmother = implode(", ", $request->input('mother_or_stepmother'));
+                $familyBackground->mother_or_stepmother = implode(", ", $request->input('mother_or_stepmother'));
+                $witnessedViolence = true;
       	}
         if (!empty($request->input('father_or_stepfather'))) {
-      				$familyBackground->father_or_stepfather = implode(", ", $request->input('father_or_stepfather'));
+                $familyBackground->father_or_stepfather = implode(", ", $request->input('father_or_stepfather'));
+                $witnessedViolence = true;
       	}
+
+        if ($witnessedViolence) {
+            // If ($request->input('mother_or_stepmother' or ($request->input('father_or_stepfather') contains anything,
+            //  Then add the life_event for "Witnessed violence at home"
+            $experienced_physical_abuse = \App\LifeEvent::where('event', 'Witnessed violence at home')->first();
+            $survey->life_events()->attach($experienced_physical_abuse);
+        }
     /*
         $familyBackground->parent_got_married = $request->input('parent_got_married');
         $familyBackground->parent_separated_divorced = $request->input('parent_separated_divorced');
@@ -226,8 +257,8 @@ class SurveyController extends Controller
         $familyBackground->addicted_drugs_alcohol = $request->input('addicted_drugs_alcohol');
         $familyBackground->felt_life_threatened = $request->input('felt_life_threatened');
         $familyBackground->foster_care = $request->input('foster_care');
-        $familyBackground->other_family_events = $request->input('other_family_events');
 */
+        $familyBackground->other_family_events = $request->input('other_family_events');
         $familyBackground->save();
 
         return redirect()->route('survey.family-background-timeline');

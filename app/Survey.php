@@ -8,7 +8,7 @@ class Survey extends Model
 {
 	// Get the demographics for the survey
 
-	public function demographics ()
+	public function demographics()
 	{
 		return $this->hasMany('App\Demographics');
 	}

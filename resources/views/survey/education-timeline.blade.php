@@ -3,9 +3,9 @@
 @section('title', 'Education Timeline')
 
 @section('content')
-<h2>EDUCATION TIMELINE</h2>
+<h3>EDUCATION TIMELINE</h3>
 
-<h3 class="bg-primary text-white p-3">For each of these questions, please enter AGE, YEAR, or RANGE the event(s) occured.  These events will be populated in timeline.</h3>
+<h4 class="bg-primary text-white p-3">For each of these questions, please enter AGE or RANGE the event(s) occured.  These events will be populated in timeline.</h4>
 <hr />
 <form method="post" action="{{ route('survey.education-timeline') }}">
 	{{ csrf_field() }}

@@ -10,170 +10,90 @@ use App\Education;
 
 class TimelineController extends Controller
 {
+    // Helper function to clear timeline events for a survey for an event category (e.g., Family Background)
+    public function ClearTimelineEvents (Survey $survey, EventCategory $category)
+    {
+        $surveyTimelineEvents = $survey->timeline_events()->with('life_event')->get();
+
+        foreach ($surveyTimelineEvents as $timelineEvent)
+        {
+          if ($timelineEvent->life_event->event_category_id === $category->id) {
+            $timelineEvent->delete();
+          }
+        }
+    }
+
     //
     public function getTimelineOrientation()
     {
-      $survey_id = session('survey_id');
-      $survey = Survey::find($survey_id);
-      $category = "Orientation";
-      //$eventCategory = EventCategory::where('category', $category)->first();
-      $allEventCategories = EventCategory::all();
+        $survey_id = session('survey_id');
+        $survey = Survey::find($survey_id);
+        $category = "Orientation";
+        //$eventCategory = EventCategory::where('category', $category)->first();
+        $allEventCategories = EventCategory::all();
 
-      $allTimelineEvents = $survey->timeline_events()->with('life_event')
-                              //->where('life_event.event_category_id', $eventCategory->id)
-                              ->orderBy('id')
-                              ->get();
+        $allTimelineEvents = $survey->timeline_events()->with('life_event')
+                                //->where('life_event.event_category_id', $eventCategory->id)
+                                ->orderBy('id')
+                                ->get();
 
-    return view('survey.timeline.life-events-timeline', [
-      'lifeEventCategory' => $category,
-      'eventCategories' => $allEventCategories,
-      'timelineEvents' => $allTimelineEvents,
-      'nextPage' => route('survey.family-background'),
-      'nextPageMessage' => 'Family Background events'
-    ]);
+        return view('survey.timeline.life-events-timeline', [
+          'lifeEventCategory' => $category,
+          'eventCategories' => $allEventCategories,
+          'timelineEvents' => $allTimelineEvents,
+          'nextPage' => route('survey.family-background'),
+          'nextPageMessage' => 'Family Background events'
+        ]);
     }
 
     public function getFamilyBackgroundTimeline()
     {
-        return view('survey.family-background-timeline');
+        $survey_id = session('survey_id');
+        $survey = Survey::find($survey_id);
+        $category = "Family Background";
+        $eventCategory = EventCategory::where('category', $category)->first();
+
+        $timelineEvents = $survey->life_events()
+                                ->where('event_category_id', $eventCategory->id)
+                                ->where('timeline', true)
+                                ->orderBy('id')
+                                ->get();
+
+        return view('survey.family-background-timeline', [
+          'timelineEvents' => $timelineEvents
+        ]);
+        
     }
 
     public function postFamilyBackgroundTimeline(Request $request)
     {
+        $survey_id = session('survey_id');
+        $survey = Survey::find($survey_id);
         $category = "Family Background";
         $eventCategory = EventCategory::where('category', $category)->first();
 
-        // A parent abused you (physically, sexually, or emotionally)
-        $timelineEvent = new TimelineEvent;
-        $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 5;
-        //$timelineEvent->event_description = "Abused by parent";
-        $timelineEvent->timeframe = $request->input('timeframe_abused_by_parent');
-        $timelineEvent->age = $request->input('age_abused_by_parent');
-        $timelineEvent->year = $request->input('year_abused_by_parent');
-        $timelineEvent->range_from = $request->input('range_from_abused_by_parent');
-        $timelineEvent->range_to = $request->input('range_to_abused_by_parent');
-        $timelineEvent->save();
+        // Clear out any previously set Timeline events for this category
+        $this->ClearTimelineEvents($survey, $eventCategory);
 
-        // A parent was arrested
-        $timelineEvent = new TimelineEvent;
-        $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 5;
-        //$timelineEvent->event_description = "Parent arrested";
-        $timelineEvent->timeframe = $request->input('timeframe_parent_arrested');
-        $timelineEvent->age = $request->input('age_parent_arrested');
-        $timelineEvent->year = $request->input('year_parent_arrested');
-        $timelineEvent->range_from = $request->input('range_from_parent_arrested');
-        $timelineEvent->range_to = $request->input('range_to_parent_arrested');
-        $timelineEvent->save();
+        // Get all life LifeEvents for this category
+        $timelineEvents = $survey->life_events()
+                                ->where('event_category_id', $eventCategory->id)
+                                ->where('timeline', true)
+                                ->orderBy('id')
+                                ->get();
 
-        // A parent was in prison
-        $timelineEvent = new TimelineEvent;
-        $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 5;
-        //$timelineEvent->event_description = "Parent in prison";
-        $timelineEvent->timeframe = $request->input('timeframe_parent_in_prison');
-        $timelineEvent->age = $request->input('age_parent_in_prison');
-        $timelineEvent->year = $request->input('year_parent_in_prison');
-        $timelineEvent->range_from = $request->input('range_from_parent_in_prison');
-        $timelineEvent->range_to = $request->input('range_to_parent_in_prison');
-        $timelineEvent->save();
-
-        // You experienced homelessness
-        $timelineEvent = new TimelineEvent;
-        $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 5;
-        //$timelineEvent->event_description = "Homeless";
-        $timelineEvent->timeframe = $request->input('timeframe_homeless');
-        $timelineEvent->age = $request->input('age_homeless');
-        $timelineEvent->year = $request->input('year_homeless');
-        $timelineEvent->range_from = $request->input('range_from_homeless');
-        $timelineEvent->range_to = $request->input('range_to_homeless');
-        $timelineEvent->save();
-
-        // You experienced abuse (physical, sexual, or emotional) by a non-parent
-        $timelineEvent = new TimelineEvent;
-        $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 5;
-        //$timelineEvent->event_description = "Abused by non-parent";
-        $timelineEvent->timeframe = $request->input('timeframe_abused_by_non_parent');
-        $timelineEvent->age = $request->input('age_abused_by_non_parent');
-        $timelineEvent->year = $request->input('year_abused_by_non_parent');
-        $timelineEvent->range_from = $request->input('range_from_abused_by_non_parent');
-        $timelineEvent->range_to = $request->input('range_to_abused_by_non_parent');
-        $timelineEvent->save();
-
-        // You ran away
-        $timelineEvent = new TimelineEvent;
-        $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 5;
-        //$timelineEvent->event_description = "Ran away";
-        $timelineEvent->timeframe = $request->input('timeframe_ran_away');
-        $timelineEvent->age = $request->input('age_ran_away');
-        $timelineEvent->year = $request->input('year_ran_away');
-        $timelineEvent->range_from = $request->input('range_from_ran_away');
-        $timelineEvent->range_to = $request->input('range_to_ran_away');
-        $timelineEvent->save();
-
-        // Your family could not afford heat or water (or other basic utilities)
-        $timelineEvent = new TimelineEvent;
-        $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 5;
-        //$timelineEvent->event_description = "Family could not afford heat/water/basic utils";
-        $timelineEvent->timeframe = $request->input('timeframe_family_could_not_afford_basic_utils');
-        $timelineEvent->age = $request->input('age_family_could_not_afford_basic_utils');
-        $timelineEvent->year = $request->input('year_family_could_not_afford_basic_utils');
-        $timelineEvent->range_from = $request->input('range_from_family_could_not_afford_basic_utils');
-        $timelineEvent->range_to = $request->input('range_to_family_could_not_afford_basic_utils');
-        $timelineEvent->save();
-
-        // Your family experienced poverty
-        $timelineEvent = new TimelineEvent;
-        $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 5;
-        //$timelineEvent->event_description = "Family poverty";
-        $timelineEvent->timeframe = $request->input('timeframe_family_poverty');
-        $timelineEvent->age = $request->input('age_family_poverty');
-        $timelineEvent->year = $request->input('year_family_poverty');
-        $timelineEvent->range_from = $request->input('range_from_family_poverty');
-        $timelineEvent->range_to = $request->input('range_to_family_poverty');
-        $timelineEvent->save();
-
-        // You were addicted to drugs or alcohol (before turning 18)
-        $timelineEvent = new TimelineEvent;
-        $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 5;
-        //$timelineEvent->event_description = "Addicted to drugs or alcohol";
-        $timelineEvent->timeframe = $request->input('timeframe_addicted_drugs_alcohol');
-        $timelineEvent->age = $request->input('age_addicted_drugs_alcohol');
-        $timelineEvent->year = $request->input('year_addicted_drugs_alcohol');
-        $timelineEvent->range_from = $request->input('range_from_addicted_drugs_alcohol');
-        $timelineEvent->range_to = $request->input('range_to_addicted_drugs_alcohol');
-        $timelineEvent->save();
-
-        // Exited foster care
-        $timelineEvent = new TimelineEvent;
-        $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 5;
-        //$timelineEvent->event_description = "Entered foster care";
-        $timelineEvent->timeframe = $request->input('timeframe_entered_foster_care');
-        $timelineEvent->age = $request->input('age_entered_foster_care');
-        $timelineEvent->year = $request->input('year_entered_foster_care');
-        $timelineEvent->range_from = $request->input('range_from_entered_foster_care');
-        $timelineEvent->range_to = $request->input('range_to_entered_foster_care');
-        $timelineEvent->save();
-
-        // Exited in foster care
-        $timelineEvent = new TimelineEvent;
-        $timelineEvent->survey_id = session('survey_id');
-        $timelineEvent->life_event_id = 5;
-        //$timelineEvent->event_description = "Exited foster care";
-        $timelineEvent->timeframe = $request->input('timeframe_exited_foster_care');
-        $timelineEvent->age = $request->input('age_exited_foster_care');
-        $timelineEvent->year = $request->input('year_exited_foster_care');
-        $timelineEvent->range_from = $request->input('range_from_exited_foster_care');
-        $timelineEvent->range_to = $request->input('range_to_exited_foster_care');
-        $timelineEvent->save();
+        foreach ($timelineEvents as $timelineEvent)
+        {
+            $newTimelineEvent = new TimelineEvent;
+            $newTimelineEvent->survey_id = session('survey_id');
+            $newTimelineEvent->life_event_id = $timelineEvent->id;
+            $newTimelineEvent->timeframe = $request->input('timeframe_' . $timelineEvent->id);
+            $newTimelineEvent->age = $request->input('age_' . $timelineEvent->id);
+            $newTimelineEvent->year = $request->input('year_' . $timelineEvent->id);
+            $newTimelineEvent->range_from = $request->input('range_from_' . $timelineEvent->id);
+            $newTimelineEvent->range_to = $request->input('range_to_' . $timelineEvent->id);
+            $newTimelineEvent->save();
+        }
 
         return redirect()->route('timeline.family-background');
     }
@@ -190,13 +110,13 @@ class TimelineController extends Controller
                               ->orderBy('id')
                               ->get();
 
-    return view('survey.timeline.life-events-timeline', [
-      'lifeEventCategory' => $category,
-      'eventCategories' => $allEventCategories,
-      'timelineEvents' => $allTimelineEvents,
-      'nextPage' => route('survey.family-backgroud-followup'),
-      'nextPageMessage' => 'Family/Background follup-up questions'
-    ]);
+      return view('survey.timeline.life-events-timeline', [
+        'lifeEventCategory' => $category,
+        'eventCategories' => $allEventCategories,
+        'timelineEvents' => $allTimelineEvents,
+        'nextPage' => route('survey.family-backgroud-followup'),
+        'nextPageMessage' => 'Family/Background follup-up questions'
+      ]);
     }
 
     public function getEducationTimeline()
@@ -259,13 +179,13 @@ class TimelineController extends Controller
                               ->orderBy('id')
                               ->get();
 
-    return view('survey.timeline.life-events-timeline', [
-      'lifeEventCategory' => $category,
-      'eventCategories' => $allEventCategories,
-      'timelineEvents' => $educationTimelineEvents,
-      'nextPage' => route('survey.work-housing'),
-      'nextPageMessage' => 'Work/Housing Events'
-    ]);
+      return view('survey.timeline.life-events-timeline', [
+        'lifeEventCategory' => $category,
+        'eventCategories' => $allEventCategories,
+        'timelineEvents' => $educationTimelineEvents,
+        'nextPage' => route('survey.work-housing'),
+        'nextPageMessage' => 'Work/Housing Events'
+      ]);
   }
 
 	public function getWorkHousingTimeline()
