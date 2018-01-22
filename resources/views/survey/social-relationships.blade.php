@@ -151,28 +151,6 @@
             </label>
         </div>
 -->
-        <fieldset class="form-group ml-5">
-            <legend><label><br />Would you categorize that attempt as a positive/negative experience?</label></legend>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="tried_to_reconnect_experience" id="triedReconnect-Positive" value="Positive" />
-                    Positive
-                </label>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="tried_to_reconnect_experience" id="triedReconnect-Negative" value="Negative" />
-                    Negative
-                </label>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="tried_to_reconnect_experience" id="triedReconnect-Neither" value="Neither" />
-                    Neither
-                </label>
-            </div>
-        </fieldset>
-
         <div class="form-group">
             <label class="form-label" for="other_social_relationship_events">
                 Other major events with social relationships not mentioned above?

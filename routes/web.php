@@ -35,9 +35,7 @@ Route::get('/survey/{id}', function ($id) {
 	dd($survey);
 });
 
-Route::get('welcome', function () {
-	return view('survey.welcome');
-})->name('survey.welcome');
+Route::view('welcome', 'survey.welcome')->name('survey.welcome');
 
 Route::get('screening', [ 'uses' => 'SurveyController@getScreening', 'as' => 'survey.screening' ]);
 Route::post('screening', [ 'uses' => 'SurveyController@postScreening', 'as' => 'survey.screening' ]);
@@ -45,25 +43,10 @@ Route::post('screening', [ 'uses' => 'SurveyController@postScreening', 'as' => '
 Route::get('consent', 'SurveyController@getConsent')->name('survey.consent');
 Route::post('consent', 'SurveyController@postConsent')->name('survey.consent');
 
-Route::get('thankyou-for-participating', 'SurveyController@getThankYouForParticipating')->name('survey.thankyou-for-participating');
-/*
-Route::get('thankyou-for-participating', function () {
-	//return view('survey/thankyou-for-participating', [
-	//	'participant_id' => 'XYZ0123456789'
-	//]);
+Route::view('thankyou-for-participating', 'survey.thankyou-for-participating')->name('survey.thankyou-for-participating');
 
-	$survey_id = 3;
-	$participant_id = 'XYZ0123456789';
-
-	return view('survey.thankyou-for-participating', compact('survey_id', 'participant_id'));
-});
-*/
-
-Route::get('demographics', 'SurveyController@getDemographics')->name('survey.demographics');
+Route::view('demographics', 'survey.demographics')->name('survey.demographics');
 Route::post('demographics', 'SurveyController@postDemographics')->name('survey.demographics');
-//Route::get('demographics/{survey}/create', 'DemographicsController@create');
-//Route::post('demographics', 'DemographicsController@store')->name('survey.demographics');
-//Route::get('survey/{survey}/demographics', 'DemographicsController@create');
 
 Route::prefix('survey')->group( function () {
 
@@ -78,12 +61,9 @@ Route::prefix('test')->group( function () {
   });
 });
 
+Route::view('timeline-description', 'survey.timeline-description')->name('survey.timeline-description');
 
-Route::get('timeline-description', function () {
-	return view('survey.timeline-description');
-})->name('survey.timeline-description');
-
-Route::get('orientation-questions', 'SurveyController@getOrientationQuestions')->name('survey.orientation-questions');
+Route::view('orientation-questions', 'survey.orientation-questions')->name('survey.orientation-questions');
 Route::post('orientation-questions', 'SurveyController@postOrientationQuestions')->name('survey.orientation-questions');
 
 Route::get('timeline/orientation', 'TimelineController@getTimelineOrientation')->name('timeline.orientation');
@@ -98,7 +78,7 @@ Route::post('family-background-timeline', 'TimelineController@postFamilyBackgrou
 
 Route::get('timeline/family-background', 'TimelineController@getTimelineFamilyBackground')->name('timeline.family-background');
 
-Route::get('family-background-followup', 'SurveyController@getFamilyBackgroundFollowup')->name('survey.family-backgroud-followup');
+Route::view('family-background-followup', 'survey.family-background-followup')->name('survey.family-backgroud-followup');
 Route::post('family-background-followup', 'SurveyController@postFamilyBackgroundFollowup')->name('survey.family-background-followup');
 
 // Education routes with timeline
@@ -108,11 +88,7 @@ Route::post('education', 'SurveyController@postEducation')->name('survey.educati
 
 Route::get('education-timeline', 'TimelineController@getEducationTimeline')->name('survey.education-timeline');
 Route::post('education-timeline', 'TimelineController@postEducationTimeline')->name('survey.education-timeline');
-/*
-Route::get('timeline/education', function () {
-	return view('survey.timeline.education');
-})->name('timeline.education');
-*/
+
 Route::get('timeline/education', 'TimelineController@getTimelineEducation')->name('timeline.education');
 
 // Work/Housing routes with timeline and followup questions
@@ -125,7 +101,7 @@ Route::post('work-housing-timeline', 'TimelineController@postWorkHousingTimeline
 
 Route::get('timeline/work-housing', 'TimelineController@getTimelineWorkHousing')->name('timeline.work-housing');
 
-Route::get('work-housing-followup', 'SurveyController@getWorkHousingFollowup')->name('survey.work-housing-followup');
+Route::view('work-housing-followup', 'survey.work-housing-followup')->name('survey.work-housing-followup');
 Route::post('work-housing-followup', 'SurveyController@postWorkHousingFollowup')->name('survey.work-housing-followup');
 
 // Social Relationship routes with timeline and followup questions
@@ -148,7 +124,7 @@ Route::post('criminal-justice-timeline', 'TimelineController@postCriminalJustice
 
 Route::get('timeline/criminal-justice', 'TimelineController@getTimelineCriminalJustice')->name('timeline.criminal-justice');
 
-Route::get('criminal-justice-followup', 'SurveyController@getCriminalJusticeFollowup')->name('survey.criminal-justice-followup');
+Route::view('criminal-justice-followup', 'survey.criminal-justice-followup')->name('survey.criminal-justice-followup');
 Route::post('criminal-justice-followup', 'SurveyController@postCriminalJusticeFollowup')->name('survey.criminal-justice-followup');
 
 
@@ -162,7 +138,7 @@ Route::post('exploitation-timeline', 'TimelineController@postExploitationTimelin
 
 Route::get('timeline/exploitation', 'TimelineController@getTimelineExploitation')->name('timeline.exploitation');
 
-Route::get('exploitation-followup', 'SurveyController@getExploitationFollowup')->name('survey.exploitation-followup');
+Route::view('exploitation-followup', 'survey.exploitation-followup')->name('survey.exploitation-followup');
 Route::post('exploitation-followup', 'SurveyController@postExploitationFollowup')->name('survey.exploitation-followup');
 
 // Services routes with timeline and followup questions
@@ -175,25 +151,17 @@ Route::post('services-timeline', 'TimelineController@postServicesTimeline')->nam
 
 Route::get('timeline/services', 'TimelineController@getTimelineServices')->name('timeline.services');
 
-Route::get('services-followup', 'SurveyController@getServicesFollowup')->name('survey.services-followup');
+Route::view('services-followup', 'survey.services-followup')->name('survey.services-followup');
 Route::post('services-followup', 'SurveyController@postServicesFollowup')->name('survey.services-followup');
 
 // Final questions and thank you message
 
-Route::get('final-questions', 'SurveyController@getFinalQuestions')->name('survey.final-questions');
+Route::view('final-questions', 'survey.final-questions')->name('survey.final-questions');
 Route::post('final-questions', 'SurveyController@postFinalQuestions')->name('survey.final-questions');
 
-Route::get('thankyou-giftcard', 'SurveyController@getThankYouGiftCard')->name('survey.thankyou-giftcard');
+Route::view('thankyou-giftcard', 'survey.thankyou-giftcard')->name('survey.thankyou-giftcard');
 Route::post('thankyou-giftcard', 'SurveyController@postThankYouGiftCard')->name('survey.thankyou-giftcard');
 
 Route::view('followup-interview', 'survey.followup-interview')->name('survey.followup-interview');
-// Route::get('followup-interview', function () {
-// 	return view('survey.followup-interview');
-// })->name('survey.followup-interview');
-
 Route::view('referral', 'survey.referral')->name('survey.referral');
-// Route::get('referral', function () {
-// 	return view('survey.referral');
-// })->name('survey.referral');
-
 Route::view('survey-complete', 'survey.survey-complete')->name('survey.survey-complete');

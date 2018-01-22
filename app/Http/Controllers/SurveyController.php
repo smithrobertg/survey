@@ -35,7 +35,6 @@ class SurveyController extends Controller
     {
     		// Initial creation of this survey
         $survey = new Survey;
-
         $survey->screening_18_or_older = $request->input('age_18_or_older');
         $survey->screening_identify_as_candidate = $request->input('identify_as_candidate');
         $survey->started_at = Carbon::now();
@@ -43,10 +42,10 @@ class SurveyController extends Controller
         if (strtolower($request->input('age_18_or_older')) == "no"
         || strtolower($request->input('identify_as_candidate')) == "no")
         {
-        			$survey->finished_at = Carbon::now();
-        			$survey->save();
+            $survey->finished_at = Carbon::now();
+            $survey->save();
 
-              return view('survey.not-eligible');
+            return view('survey.not-eligible');
         }
 
         $survey->save();
@@ -90,32 +89,11 @@ class SurveyController extends Controller
         return redirect()->route('survey.thankyou-for-participating');
     }
 
-    public function getThankYouForParticipating()
-    {
-        $survey = session('survey');
-
-        return view('survey.thankyou-for-participating', compact('survey'));
-    }
-
-    // Post not needed because view redirects straight to Demographics view
-    /*
-    public function postThankYouForParticipating (Request $request)
-    {
-        return redirect()->route('survey.demographics');
-    }
-    */
-
-    public function getDemographics()
-    {
-        return view('survey.demographics');
-    }
-
     public function postDemographics(Request $request)
     {
         $survey_id = session('survey_id');
 
         $demographics = new Demographics;
-
         $demographics->survey_id = $survey_id;
         $demographics->gender = $request->input('gender');
         $demographics->gender_self_describe = $request->input('gender_self_describe');
@@ -130,15 +108,7 @@ class SurveyController extends Controller
         $demographics->describe_becoming_legal_adult = $request->input('describe_becoming_legal_adult');
         $demographics->save();
 
-        //$survey->demographics()->save($demographics);
-
         return redirect()->route('survey.timeline-description');
-    }
-
-    //
-    public function getOrientationQuestions()
-    {
-        return view('survey.orientation-questions');
     }
 
     public function postOrientationQuestions(Request $request)
@@ -146,7 +116,6 @@ class SurveyController extends Controller
         $survey_id = session('survey_id');
 
         $orientation = new Orientation;
-
         $orientation->survey_id = $survey_id;
         $orientation->year_born = $request->input('year_born');
         $orientation->age_started_living_on_own = $request->input('age_started_living_on_own');
@@ -158,7 +127,6 @@ class SurveyController extends Controller
         $orientation->adolescence_event_age_or_year = $request->input('adolescence_event_age_or_year');
         $orientation->adulthood_event_description = $request->input('adulthood_event_description');
         $orientation->adulthood_event_age_or_year = $request->input('adulthood_event_age_or_year');
-
         $orientation->save();
 
         return redirect()->route('timeline.orientation');
@@ -186,7 +154,6 @@ class SurveyController extends Controller
 
         $familyBackground = new FamilyBackground;
         $familyBackground->survey_id = $survey_id;
-
         $parent_or_adult_often = $request->input('parent_or_adult_often');
       	if (!empty($parent_or_adult_often)) {
       				$familyBackground->parent_or_adult_often = implode(", ", $parent_or_adult_often);
@@ -206,7 +173,6 @@ class SurveyController extends Controller
                 $survey->life_events()->attach($experienced_verbal_abuse);
             }
       	}
-
         $adult_or_person_5_years_older_ever = $request->input('adult_or_person_5_years_older_ever');
      	if (!empty($adult_or_person_5_years_older_ever)) {
       				$familyBackground->adult_or_person_5_years_older_ever = implode(", ", $adult_or_person_5_years_older_ever);
@@ -219,11 +185,9 @@ class SurveyController extends Controller
                 $survey->life_events()->attach($experienced_physical_abuse);
             }
         }
-
       	if (!empty($request->input('often_feel_that'))) {
                 $familyBackground->often_feel_that = implode(", ", $request->input('often_feel_that'));
       	}
-
         $witnessedViolence = false;
       	if (!empty($request->input('mother_or_stepmother'))) {
                 $familyBackground->mother_or_stepmother = implode(", ", $request->input('mother_or_stepmother'));
@@ -233,48 +197,23 @@ class SurveyController extends Controller
                 $familyBackground->father_or_stepfather = implode(", ", $request->input('father_or_stepfather'));
                 $witnessedViolence = true;
       	}
-
         if ($witnessedViolence) {
             // If ($request->input('mother_or_stepmother' or ($request->input('father_or_stepfather') contains anything,
             //  Then add the life_event for "Witnessed violence at home"
             $experienced_physical_abuse = \App\LifeEvent::where('event', 'Witnessed violence at home')->first();
             $survey->life_events()->attach($experienced_physical_abuse);
         }
-    /*
-        $familyBackground->parent_got_married = $request->input('parent_got_married');
-        $familyBackground->parent_separated_divorced = $request->input('parent_separated_divorced');
-        $familyBackground->lived_with_alchoholic_or_drug_user = $request->input('lived_with_alchoholic_or_drug_user');
-        $familyBackground->household_member_depressed_mentally_ill_suicide = $request->input('household_member_depressed_mentally_ill_suicide');
-        $familyBackground->household_member_went_to_prison = $request->input('household_member_went_to_prison');
-        $familyBackground->someone_else_came_to_live_with = $request->input('someone_else_came_to_live_with');
-        $familyBackground->moved_around_alot = $request->input('moved_around_alot');
-        $familyBackground->homeless = $request->input('homeless');
-        $familyBackground->ran_away = $request->input('ran_away');
-        $familyBackground->public_assistance = $request->input('public_assistance');
-        $familyBackground->could_not_afford_heat_or_water = $request->input('could_not_afford_heat_or_water');
-        $familyBackground->poverty = $request->input('poverty');
-        $familyBackground->used_drugs_alcohol = $request->input('used_drugs_alcohol');
-        $familyBackground->addicted_drugs_alcohol = $request->input('addicted_drugs_alcohol');
-        $familyBackground->felt_life_threatened = $request->input('felt_life_threatened');
-        $familyBackground->foster_care = $request->input('foster_care');
-*/
         $familyBackground->other_family_events = $request->input('other_family_events');
         $familyBackground->save();
 
         return redirect()->route('survey.family-background-timeline');
     }
 
-
-    public function getFamilyBackgroundFollowup()
-    {
-        return view('survey.family-background-followup');
-    }
-
     public function postFamilyBackgroundFollowup(Request $request)
     {
         $survey_id = session('survey_id');
-        $familyBackgoundFollowup = new FamilyBackgroundFollowup;
 
+        $familyBackgoundFollowup = new FamilyBackgroundFollowup;
         $familyBackgoundFollowup->survey_id = $survey_id;
         if(!empty($request->input('turned_to_for_support'))) $familyBackgoundFollowup->turned_to_for_support = implode(", ", $request->input('turned_to_for_support'));
         $familyBackgoundFollowup->turned_to_for_support_other = $request->input('turned_to_for_support_other');
@@ -291,7 +230,6 @@ class SurveyController extends Controller
         $familyBackgoundFollowup->signed_back_in_when_18 = $request->input('signed_back_in_when_18');
         $familyBackgoundFollowup->sign_back_in_decision_factors = $request->input('sign_back_in_decision_factors');
         $familyBackgoundFollowup->role_leaving_foster_care_had = $request->input('role_leaving_foster_care_had');
-
         $familyBackgoundFollowup->save();
 
         return redirect()->route('survey.education');
@@ -308,10 +246,16 @@ class SurveyController extends Controller
     {
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
+    
+        // Clear any previously set timeline events
+        $category = "Education";
+        $eventCategory = EventCategory::where('category', $category)->first();
+        $survey->life_events()->where('event_category_id', $eventCategory->id)->detach();
+
+        // Sync up any checked life events from survey
         $survey->life_events()->sync($request->input('education_events'), false);
 
         $education = new Education;
-
         $education->survey_id = $survey_id;
         if (!empty($request->input('education_events'))) $education->events = implode(", ", $request->input('education_events'));
         $education->other_events = $request->input('other_education_events');
@@ -333,23 +277,23 @@ class SurveyController extends Controller
     {
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
+     
+        // Clear any previously set timeline events
+        $category = "Work Housing";
+        $eventCategory = EventCategory::where('category', $category)->first();
+        $survey->life_events()->where('event_category_id', $eventCategory->id)->detach();
+
+        // Sync up any checked life events from survey
         $survey->life_events()->sync($request->input('work_housing_events'), false);
 
         $workHousing = new WorkHousing;
-
         $workHousing->survey_id = $survey_id;
         if (!empty($request->input('work_housing_events'))) $workHousing->work_housing_events = implode(", ", $request->input('work_housing_events'));
         $workHousing->supported_by_trafficker = $request->input('supported_by_trafficker');
         $workHousing->other_work_events = $request->input('other_work_events');
-
         $workHousing->save();
 
         return redirect()->route('survey.work-housing-timeline');
-    }
-
-    public function getWorkHousingFollowup(Request $request)
-    {
-        return view('survey.work-housing-followup');
     }
 
     public function postWorkHousingFollowup(Request $request)
@@ -357,12 +301,10 @@ class SurveyController extends Controller
         $survey_id = session('survey_id');
 
         $workHousingFollowup = new WorkHousingFollowup;
-
         $workHousingFollowup->survey_id = $survey_id;
         $workHousingFollowup->work_applied_for_outside_sex_trade = $request->input('work_applied_for_outside_sex_trade');
         $workHousingFollowup->age_applied_for_first_job = $request->input('age_applied_for_first_job');
         $workHousingFollowup->age_applied_for_first_job_as_adult = $request->input('age_applied_for_first_job_as_adult');
-
         $workHousingFollowup->save();
 
         return redirect()->route('survey.social-relationships');
@@ -381,15 +323,20 @@ class SurveyController extends Controller
     {
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
+    
+        // Clear any previously set timeline events
+        $category = "Social Relationships";
+        $eventCategory = EventCategory::where('category', $category)->first();
+        $survey->life_events()->where('event_category_id', $eventCategory->id)->detach();
+
+        // Sync up any checked life events from survey
         $survey->life_events()->sync($request->input('social_relationships_events'), false);
 
         $socialRelationships = new SocialRelationships;
-
         $socialRelationships->survey_id = $survey_id;
         if (!empty($request->input('social_relationship_events'))) $socialRelationships->social_relationship_events = implode(", ", $request->input('social_relationship_events'));
         $socialRelationships->tried_to_reconnect_experience = $request->input('tried_to_reconnect_experience');
         $socialRelationships->other_social_relationship_events = $request->input('other_social_relationship_events');
-
         $socialRelationships->save();
 
         return redirect()->route('survey.social-relationships-timeline');
@@ -399,7 +346,7 @@ class SurveyController extends Controller
 
     public function getCriminalJustice()
     {
-		    $category = EventCategory::where('category', 'Criminal Justice')->first();
+        $category = EventCategory::where('category', 'Criminal Justice')->first();
 
         return view('survey.criminal-justice', [ 'lifeEvents' => $category->life_events ]);
     }
@@ -408,22 +355,22 @@ class SurveyController extends Controller
     {
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
+    
+        // Clear any previously set timeline events
+        $category = "Criminal Justice";
+        $eventCategory = EventCategory::where('category', $category)->first();
+        $survey->life_events()->where('event_category_id', $eventCategory->id)->detach();
+
+        // Sync up any checked life events from survey
         $survey->life_events()->sync($request->input('criminal_justice_events'), false);
 
         $criminalJustice = new CriminalJustice;
-
         $criminalJustice->survey_id = $survey_id;
         if (!empty($request->input('criminal_justice_events'))) $criminalJustice->criminal_justice_events = implode(", ", $request->input('criminal_justice_events'));
         $criminalJustice->other_criminal_justice_events = $request->input('other_criminal_justice_events');
-
         $criminalJustice->save();
 
         return redirect()->route('survey.criminal-justice-timeline');
-    }
-
-    public function getCriminalJusticeFollowup()
-    {
-        return view ('survey.criminal-justice-followup');
     }
 
     public function postCriminalJusticeFollowup(Request $request)
@@ -431,12 +378,10 @@ class SurveyController extends Controller
         $survey_id = session('survey_id');
 
         $criminalJusticeFollowup = new CriminalJusticeFollowup;
-
         $criminalJusticeFollowup->survey_id = $survey_id;
         $criminalJusticeFollowup->issues_because_of_criminal_record = $request->input('issues_because_of_criminal_record');
         $criminalJusticeFollowup->arrested_charges = $request->input('arrested_charges');
         $criminalJusticeFollowup->convicted_charges = $request->input('convicted_charges');
-
         $criminalJusticeFollowup->save();
 
         return redirect()->route('survey.exploitation');
@@ -446,7 +391,7 @@ class SurveyController extends Controller
 
     public function getExploitation()
     {
-		    $category = EventCategory::where('category', 'Exploitation')->first();
+		$category = EventCategory::where('category', 'Exploitation')->first();
 
         return view('survey.exploitation', [ 'lifeEvents' => $category->life_events ]);
     }
@@ -455,11 +400,17 @@ class SurveyController extends Controller
     {
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
+    
+        // Clear any previously set timeline events
+        $category = "Exploitation";
+        $eventCategory = EventCategory::where('category', $category)->first();
+        $survey->life_events()->where('event_category_id', $eventCategory->id)->detach();
+
+        // Sync up any checked life events from survey
         $survey->life_events()->sync($request->input('exploitation_events_group_1'), false);
         $survey->life_events()->sync($request->input('exploitation_events_group_2'), false);
 
         $exploitation = new Exploitation;
-
         $exploitation->survey_id = $survey_id;
         if (!empty($request->input('exploitation_events_group_1'))) $exploitation->exploitation_events = implode(", ", $request->input('exploitation_events_group_1'));
         if (!empty($request->input('exploitation_events_group_2'))) $exploitation->exploitation_events = ", " . implode(", ", $request->input('exploitation_events_group_2'));
@@ -471,15 +422,9 @@ class SurveyController extends Controller
         $exploitation->returned_to_sex_trade = $request->input('returned_to_sex_trade');
         $exploitation->times_returned_to_sex_trade = $request->input('times_returned_to_sex_trade');
         $exploitation->other_exploitation_events = $request->input('other_exploitation_events');
-
         $exploitation->save();
 
         return redirect()->route('survey.exploitation-timeline');
-    }
-
-    public function getExploitationFollowup()
-    {
-        return view ('survey.exploitation-followup');
     }
 
     public function postExploitationFollowup(Request $request)
@@ -487,13 +432,11 @@ class SurveyController extends Controller
         $survey_id = session('survey_id');
 
         $exploitationFollowup = new ExploitationFollowup;
-
         $exploitationFollowup->survey_id = $survey_id;
         $exploitationFollowup->first_instance_selling_sex = $request->input('first_instance_selling_sex');
         $exploitationFollowup->why_returned_to_sex_trade = $request->input('why_returned_to_sex_trade');
         $exploitationFollowup->how_take_care_of_self = $request->input('how_take_care_of_self');
         $exploitationFollowup->how_react_to_stressful_situation = $request->input('how_react_to_stressful_situation');
-
         $exploitationFollowup->save();
 
         return redirect()->route('survey.services');
@@ -512,10 +455,16 @@ class SurveyController extends Controller
     {
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
+    
+        // Clear any previously set timeline events
+        $category = "Services";
+        $eventCategory = EventCategory::where('category', $category)->first();
+        $survey->life_events()->where('event_category_id', $eventCategory->id)->detach();
+
+        // Sync up any checked life events from survey
         $survey->life_events()->sync($request->input('services_events'), false);
 
         $services = new Services;
-
         $services->survey_id = $survey_id;
         $services->social_service_agency_reached_out = $request->input('social_service_agency_reached_out');
         $services->social_service_received = $request->input('social_service_received');
@@ -537,15 +486,9 @@ class SurveyController extends Controller
         $services->agency_help_exit_sex_trade_other = $request->input('agency_help_exit_sex_trade_other');
         $services->agency_helpful_exiting_sex_trade = $request->input('agency_helpful_exiting_sex_trade');
         $services->other_services = $request->input('other_services');
-
         $services->save();
 
         return redirect()->route('survey.services-timeline');
-    }
-
-    public function getServicesFollowup()
-    {
-        return view ('survey.services-followup');
     }
 
     public function postServicesFollowup(Request $request)
@@ -553,19 +496,12 @@ class SurveyController extends Controller
         $survey_id = session('survey_id');
 
         $servicesFollowup = new ServicesFollowup;
-
         $servicesFollowup->survey_id = $survey_id;
         if (!empty($request->input('services_followup_events'))) $servicesFollowup->services_followup_events = implode(", ", $request->input('services_followup_events'));
         $servicesFollowup->explain_services_experiences = $request->input('explain_services_experiences');
-
         $servicesFollowup->save();
 
         return redirect()->route('survey.final-questions');
-    }
-
-    public function getFinalQuestions()
-    {
-        return view('survey.final-questions');
     }
 
     public function postFinalQuestions(Request $request)
@@ -573,26 +509,13 @@ class SurveyController extends Controller
         $survey_id = session('survey_id');
 
         $finalQuestions = new FinalQuestions;
-
         $finalQuestions->survey_id = $survey_id;
         $finalQuestions->explain_becoming_legal_adult = $request->input('explain_becoming_legal_adult');
         $finalQuestions->want_society_to_know = $request->input('want_society_to_know');
         $finalQuestions->want_research_staff_to_know_about_answers = $request->input('want_research_staff_to_know_about_answers');
-
         $finalQuestions->save();
 
         return redirect()->route('survey.thankyou-giftcard');
     }
 
-    public function getThankYouGiftCard()
-    {
-        return view('survey.thankyou-giftcard');
-    }
-
-    public function postThankYouGiftCard(Request $request)
-    {
-        // Check for followup interview
-        return redirect()->route('survey.followup-interview');
-        return redirect()->route('survey.referral');
-    }
 }
