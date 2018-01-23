@@ -47,7 +47,7 @@
         <hr />
 
         <fieldset class="form-group">
-            <legend class="h4">While being exploited or as a result of your exploitation, have you ever <u>sought</u> services
+            <legend class="h5">While being exploited or as a result of your exploitation, have you ever <u>sought</u> services
                     for:<br /><em>(check all that apply)</em></legend>
             <hr />
             <div class="container ml-2">
@@ -400,7 +400,7 @@
             <hr />
             <div class="form-group row">
                 <label class="form-label" for="other_services">
-                    Other services not mentioned above?
+                    <h5>Other services not mentioned above?</h5>
                 </label>
                 <textarea class="form-control" name="other_services" id="other_services" rows="3"></textarea>
             </div>

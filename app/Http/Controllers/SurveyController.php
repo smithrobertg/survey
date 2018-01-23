@@ -26,9 +26,16 @@ use App\FinalQuestions;
 
 class SurveyController extends Controller
 {
-    public function getScreening()
+    // Helper function to sync life events for an event category
+    public function SyncLifeEventsForCategory (Survey $survey, string $category, $addLifeEventIds)
     {
-        return view('survey.screening');
+        // Clear any previously set life events for this category
+        $eventCategory = EventCategory::where('category', $category)->first();
+        $categoryLifeEvents = $eventCategory->life_events()->pluck('id')->toArray();
+        $survey->life_events()->detach($categoryLifeEvents);
+
+        // Sync up any checked life events from survey
+        $survey->life_events()->syncWithoutDetaching($addLifeEventIds);
     }
 
     public function postScreening (Request $request)
@@ -143,14 +150,20 @@ class SurveyController extends Controller
     {
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
+        $category = "Family Background";
+        $inputFieldName = 'family_background_events';
 
-        // Clear any previously set timeline events
+        $this->SyncLifeEventsForCategory($survey, $category, $request->input($inputFieldName));
+/*
+        // Clear any previously set life events for this category
         $category = "Family Background";
         $eventCategory = EventCategory::where('category', $category)->first();
-        $survey->life_events()->where('event_category_id', $eventCategory->id)->detach();
+        $categoryLifeEvents = $eventCategory->life_events()->pluck('id')->toArray();
+        $survey->life_events()->detach($categoryLifeEvents);
 
         // Sync up any checked life events from survey
-        $survey->life_events()->sync($request->input('family_background_events'), false);
+        $survey->life_events()->syncWithoutDetaching($request->input('family_background_events'));
+*/
 
         $familyBackground = new FamilyBackground;
         $familyBackground->survey_id = $survey_id;
@@ -246,14 +259,10 @@ class SurveyController extends Controller
     {
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
-    
-        // Clear any previously set timeline events
         $category = "Education";
-        $eventCategory = EventCategory::where('category', $category)->first();
-        $survey->life_events()->where('event_category_id', $eventCategory->id)->detach();
-
-        // Sync up any checked life events from survey
-        $survey->life_events()->sync($request->input('education_events'), false);
+        $inputFieldName = 'education_events';
+        
+        $this->SyncLifeEventsForCategory($survey, $category, $request->input($inputFieldName));
 
         $education = new Education;
         $education->survey_id = $survey_id;
@@ -277,14 +286,10 @@ class SurveyController extends Controller
     {
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
-     
-        // Clear any previously set timeline events
         $category = "Work Housing";
-        $eventCategory = EventCategory::where('category', $category)->first();
-        $survey->life_events()->where('event_category_id', $eventCategory->id)->detach();
-
-        // Sync up any checked life events from survey
-        $survey->life_events()->sync($request->input('work_housing_events'), false);
+        $inputFieldName = 'work_housing_events';
+        
+        $this->SyncLifeEventsForCategory($survey, $category, $request->input($inputFieldName));
 
         $workHousing = new WorkHousing;
         $workHousing->survey_id = $survey_id;
@@ -323,20 +328,16 @@ class SurveyController extends Controller
     {
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
-    
-        // Clear any previously set timeline events
         $category = "Social Relationships";
-        $eventCategory = EventCategory::where('category', $category)->first();
-        $survey->life_events()->where('event_category_id', $eventCategory->id)->detach();
-
-        // Sync up any checked life events from survey
-        $survey->life_events()->sync($request->input('social_relationships_events'), false);
+        $inputFieldName = 'social_relationships_events';
+        
+        $this->SyncLifeEventsForCategory($survey, $category, $request->input($inputFieldName));
 
         $socialRelationships = new SocialRelationships;
         $socialRelationships->survey_id = $survey_id;
-        if (!empty($request->input('social_relationship_events'))) $socialRelationships->social_relationship_events = implode(", ", $request->input('social_relationship_events'));
+        if (!empty($request->input('social_relationships_events'))) $socialRelationships->social_relationship_events = implode(", ", $request->input('social_relationships_events'));
         $socialRelationships->tried_to_reconnect_experience = $request->input('tried_to_reconnect_experience');
-        $socialRelationships->other_social_relationship_events = $request->input('other_social_relationship_events');
+        $socialRelationships->other_social_relationship_events = $request->input('other_social_relationships_events');
         $socialRelationships->save();
 
         return redirect()->route('survey.social-relationships-timeline');
@@ -355,14 +356,10 @@ class SurveyController extends Controller
     {
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
-    
-        // Clear any previously set timeline events
         $category = "Criminal Justice";
-        $eventCategory = EventCategory::where('category', $category)->first();
-        $survey->life_events()->where('event_category_id', $eventCategory->id)->detach();
-
-        // Sync up any checked life events from survey
-        $survey->life_events()->sync($request->input('criminal_justice_events'), false);
+        $inputFieldName = 'criminal_justice_events';
+        
+        $this->SyncLifeEventsForCategory($survey, $category, $request->input($inputFieldName));
 
         $criminalJustice = new CriminalJustice;
         $criminalJustice->survey_id = $survey_id;
@@ -400,20 +397,19 @@ class SurveyController extends Controller
     {
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
-    
-        // Clear any previously set timeline events
         $category = "Exploitation";
-        $eventCategory = EventCategory::where('category', $category)->first();
-        $survey->life_events()->where('event_category_id', $eventCategory->id)->detach();
-
-        // Sync up any checked life events from survey
-        $survey->life_events()->sync($request->input('exploitation_events_group_1'), false);
-        $survey->life_events()->sync($request->input('exploitation_events_group_2'), false);
+        $inputFieldName1 = 'exploitation_events_group_1';
+        $inputFieldName2 = 'exploitation_events_group_2';
+     
+        $this->SyncLifeEventsForCategory($survey, $category, $request->input($inputFieldName1));
+        $survey->life_events()->syncWithoutDetaching($request->input($inputFieldName2));
 
         $exploitation = new Exploitation;
         $exploitation->survey_id = $survey_id;
-        if (!empty($request->input('exploitation_events_group_1'))) $exploitation->exploitation_events = implode(", ", $request->input('exploitation_events_group_1'));
-        if (!empty($request->input('exploitation_events_group_2'))) $exploitation->exploitation_events = ", " . implode(", ", $request->input('exploitation_events_group_2'));
+        $exploitationEventsBuilder = "";
+        if (!empty($request->input('exploitation_events_group_1'))) $exploitationEventsBuilder = implode(", ", $request->input('exploitation_events_group_1'));
+        if (!empty($request->input('exploitation_events_group_2'))) $exploitationEventsBuilder = $exploitationEventsBuilder . ", " . implode(", ", $request->input('exploitation_events_group_2'));
+        $exploitation->exploitation_events = $exploitationEventsBuilder;
         $exploitation->sold_sex_before_18 = $request->input('sold_sex_before_18');
         $exploitation->sold_sex_after_18 = $request->input('sold_sex_after_18');
         $exploitation->age_first_sold_sex = $request->input('age_first_sold_sex');
@@ -455,14 +451,10 @@ class SurveyController extends Controller
     {
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
-    
-        // Clear any previously set timeline events
         $category = "Services";
-        $eventCategory = EventCategory::where('category', $category)->first();
-        $survey->life_events()->where('event_category_id', $eventCategory->id)->detach();
-
-        // Sync up any checked life events from survey
-        $survey->life_events()->sync($request->input('services_events'), false);
+        $inputFieldName = 'services_events';
+        
+        $this->SyncLifeEventsForCategory($survey, $category, $request->input($inputFieldName));
 
         $services = new Services;
         $services->survey_id = $survey_id;
@@ -481,7 +473,7 @@ class SurveyController extends Controller
         $services->received_services_family = $request->input('received_services_family');
         $services->received_services_religious = $request->input('received_services_religious');
         $services->received_services_housing = $request->input('received_services_housing');
-        $services->received_services_housing = $request->input('received_services_agency_help_exit_sex_trade');
+        $services->received_services_agency_help_exit_sex_trade = $request->input('received_services_agency_help_exit_sex_trade');
         $services->agency_help_exit_sex_trade = $request->input('agency_help_exit_sex_trade');
         $services->agency_help_exit_sex_trade_other = $request->input('agency_help_exit_sex_trade_other');
         $services->agency_helpful_exiting_sex_trade = $request->input('agency_helpful_exiting_sex_trade');

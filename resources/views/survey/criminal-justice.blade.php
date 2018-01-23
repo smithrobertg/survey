@@ -3,7 +3,7 @@
 @section('title', 'Criminal Justice System')
 
 @section('content')
-<h2>CHECKLIST OF CRIMINAL JUSTICE EVENTS</h2>
+<h2 class="bg-secondary text-white text-center">CRIMINAL JUSTICE EVENTS</h2>
 
 <form method="post" action="{{ route('survey.criminal-justice') }}">
 	{{ csrf_field() }}
@@ -13,9 +13,10 @@
 		<!-- Display Criminal Justice life event checklist -->
 		@each('partials.life-event', $lifeEvents, 'lifeEvent')
 
+		<hr />
 		<div class="form-group">
 			<label class="form-label" for="other_criminal_justice_events">
-				Other events with the criminal justice system not mentioned above?
+				<h5>Other events with the criminal justice system not mentioned above?</h5>
 			</label>
 			<textarea class="form-control" name="other_criminal_justice_events" id="other_criminal_justice_events" rows="3"></textarea>
 		</div>

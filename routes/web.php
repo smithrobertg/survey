@@ -13,10 +13,7 @@
 
 use App\Survey;
 
-
-Route::get('/', function () {
-    return view('survey.welcome');
-});
+Route::redirect('/', '/welcome');
 
 Route::get('survey-list', function () {
 
@@ -27,17 +24,9 @@ Route::get('survey-list', function () {
 	return view('survey-list', compact('surveys'));
 });
 
-Route::get('/survey/{id}', function ($id) {
-
-	//$survey = DB::table('surveys')->find($id);
-	$survey = Survey::find($id);
-
-	dd($survey);
-});
-
 Route::view('welcome', 'survey.welcome')->name('survey.welcome');
 
-Route::get('screening', [ 'uses' => 'SurveyController@getScreening', 'as' => 'survey.screening' ]);
+Route::view('screening', 'survey.screening')->name('survey.screening');
 Route::post('screening', [ 'uses' => 'SurveyController@postScreening', 'as' => 'survey.screening' ]);
 
 Route::get('consent', 'SurveyController@getConsent')->name('survey.consent');

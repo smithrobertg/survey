@@ -23,8 +23,8 @@
 </div>
 
 <div class="alert alert-primary border border-primary">
-	<h4 class="mb-2"><strong>Do you know someone else who might be ligible to take this survey?</strong></h4>
-	<div class="lead">We would appreciate their participation! We will not be contacting potential participants directly in order to maintain confidentiality so if you know of someone who might be eligible and interested in taking the survey, please send them the survey link along with the following IRB-approved statement:
+	<h4 class="mb-2"><strong>Do you know someone else who might be eligible to take this survey?</strong></h4>
+	<div class="lead">We would appreciate their participation! We will not be contacting potential participants directly in order to maintain confidentiality, so if you know of someone who might be eligible and interested in taking the survey, please send them the survey link along with the following IRB-approved statement:
 		<ul class="mt-2"><li>Link to Survey: <a href="https://siegfriedt-survey.umb.edu">https://siegfriedt-survey.umb.edu</a></li></ul>
 	</div>
 

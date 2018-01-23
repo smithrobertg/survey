@@ -28,31 +28,6 @@ class LifeEventsTableSeeder extends Seeder
   		$field_name = "family_background_events[]";
 
   		$category->life_events()->createMany([
-  			// Did a parent or other adult in the household <strong>often</strong>:
-			/*
-  			[
-  				'event' => "Parent/adult: Swear at/insult/putdown/humiliate",
-  				'prompt' => "Swear at you, insult you, put you down, or humiliate you?",
-  				'field_name' => "parent_or_adult_often[]",
-					'timeline' => true
-  			],
-  			[
-  				'event' => "Parent/adult: Affraid physically hurt",
-  				'prompt' => "Act in a way that made you afraid that you might be physically hurt?",
-  				'field_name' => "parent_or_adult_often[]",
-					'timeline' => true
-  			],
-  			[
-  				'event' => "Parent/adult: Push/slap/grab/throw something",
-  				'prompt' => "Push, grab, slap, or throw something at you?",
-  				'field_name' => "parent_or_adult_often[]"
-  			],
-  			[
-  				'event' => "Parent/adult: Hit so hard marks or injured",
-  				'prompt' => "<strong>Ever</strong> hit you so hard that you had marks or were injured?",
-  				'field_name' => "parent_or_adult_often[]"
-  			],
-			*/
    			[
   				'event' => "Experienced verbal abuse",
   				'prompt' => "Experienced verbal abuse (time where a parent or other adult swore at, insulted, or humiliated you, or acted in a way that made you afraid you might be physically hurt)",
@@ -180,13 +155,6 @@ class LifeEventsTableSeeder extends Seeder
   				'field_name' => $field_name,
 		      'timeline' => true
   			]
-			/*
- 			[
-  				'event' => "Event",
-  				'prompt' => "Prompt",
-  				'field_name' => $field_name
-  			],
-			*/
   		]);
   	}
 
@@ -652,6 +620,10 @@ class LifeEventsTableSeeder extends Seeder
     {
       $category = EventCategory::where('category', 'Services')->first();
   		$field_name = "services_events[]";
+
+			// Use 'field_id' to provide a 'name=' attribute for
+			// the Yes/No fields related to each Services Life Event
+			// to indicate whether or not the service was received.
 
   		$category->life_events()->createMany([
   			[
