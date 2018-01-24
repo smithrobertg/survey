@@ -3,8 +3,9 @@
 @section('title', 'PageTitle')
 
 @section('content')
-    <h2>ADDITIONAL SERVICES QUESTIONS</h2>
-    <form method="post" action="/services-followup">
+    <h2 class="bg-secondary text-white text-center">ADDITIONAL SERVICES QUESTIONS</h2>
+
+    <form method="post" action="{{ route('survey.services-followup') }}">
         {{ csrf_field() }}
         <fieldset class="form-group">
             <legend>Have you ever experienced <strong><em>trouble getting services</em></strong> you need for (or faced discrimination in these
@@ -103,7 +104,7 @@
         </fieldset>
 
         <div class="form-group">
-            <label class="form-label" for="explain_services_experiences">
+            <label class="h5" for="explain_services_experiences">
                 If you would like to explain any of these experiences, please include explanation here:</label>
             <textarea class="form-control" name="explain_services_experiences" id="explain_services_experiences"
                       rows="3"></textarea>

@@ -18,7 +18,6 @@ class CreateServicesTable extends Migration
             $table->integer('survey_id')->unsigned()->default(0);
             $table->string('social_service_agency_reached_out')->nullable();
             $table->string('social_service_received')->nullable();
-            $table->text('services_sought')->nullable();
             $table->text('services_received')->nullable();
             $table->string('received_services_substance_abuse')->nullable();
             $table->string('received_services_mental_health')->nullable();

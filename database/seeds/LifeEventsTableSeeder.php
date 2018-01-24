@@ -619,7 +619,7 @@ class LifeEventsTableSeeder extends Seeder
     private function seedServicesLifeEvents()
     {
       $category = EventCategory::where('category', 'Services')->first();
-  		$field_name = "services_events[]";
+  		$field_name = "services_sought[]";
 
 			// Use 'field_id' to provide a 'name=' attribute for
 			// the Yes/No fields related to each Services Life Event
@@ -630,72 +630,84 @@ class LifeEventsTableSeeder extends Seeder
   				'event' => "Substance use",
   				'prompt' => "Substance use",
   				'field_name' => $field_name,
+					'field_id' => 'received_services_substance_abuse',
           'timeline' => true
   			],
         [
   				'event' => "Mental health",
   				'prompt' => "Mental health",
   				'field_name' => $field_name,
+					'field_id' => 'received_services_mental_health',
           'timeline' => true
   			],
         [
   				'event' => "Health care clinic",
   				'prompt' => "Health care clinic",
   				'field_name' => $field_name,
+ 					'field_id' => 'received_services_health_care_clinic',
           'timeline' => true
   			],
         [
   				'event' => "Emergency room",
   				'prompt' => "Emergency room",
   				'field_name' => $field_name,
+					'field_id' => 'received_services_emergency_room',
           'timeline' => true
   			],
         [
   				'event' => "Domestic violence",
   				'prompt' => "Domestic violence services",
   				'field_name' => $field_name,
+					'field_id' => 'received_services_domestic_violence',
           'timeline' => true
   			],
         [
   				'event' => "Sexual assault",
   				'prompt' => "Sexual assault services",
   				'field_name' => $field_name,
+					'field_id' => 'received_services_sexual_assault',
           'timeline' => true
   			],
         [
   				'event' => "Legal",
   				'prompt' => "Legal services",
   				'field_name' => $field_name,
+					'field_id' => 'received_services_legal',
           'timeline' => true
   			],
         [
   				'event' => "Employment",
   				'prompt' => "Employment services",
   				'field_name' => $field_name,
+					'field_id' => 'received_services_employment',
           'timeline' => true
   			],
         [
   				'event' => "Family",
   				'prompt' => "Family services (child care, custody, etc.)",
   				'field_name' => $field_name,
+					'field_id' => 'received_services_family',
           'timeline' => true
   			],
         [
   				'event' => "Religious",
   				'prompt' => "Religious-based services",
   				'field_name' => $field_name,
+					'field_id' => 'received_services_religious',
           'timeline' => true
   			],
         [
   				'event' => "Housing",
   				'prompt' => "Housing services",
   				'field_name' => $field_name,
+					'field_id' => 'received_services_housing',
           'timeline' => true
   			],
         [
   				'event' => "Agency to help exit sex trade",
   				'prompt' => "Agency to help exit sex trade",
   				'field_name' => $field_name,
+					'field_id' => 'received_services_agency_help_exit_sex_trade',
           'timeline' => true
   			]
   		]);

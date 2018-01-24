@@ -444,7 +444,7 @@ class SurveyController extends Controller
     {
         $category = EventCategory::where('category', 'Services')->first();
 
-        return view('survey.services', [ 'lifeEvents', $category->life_events ]);
+        return view('survey.services', [ 'lifeEvents' => $category->life_events ]);
     }
 
     public function postServices(Request $request)
@@ -452,7 +452,7 @@ class SurveyController extends Controller
         $survey_id = session('survey_id');
         $survey = Survey::find($survey_id);
         $category = "Services";
-        $inputFieldName = 'services_events';
+        $inputFieldName = 'services_sought';
         
         $this->SyncLifeEventsForCategory($survey, $category, $request->input($inputFieldName));
 
@@ -460,8 +460,6 @@ class SurveyController extends Controller
         $services->survey_id = $survey_id;
         $services->social_service_agency_reached_out = $request->input('social_service_agency_reached_out');
         $services->social_service_received = $request->input('social_service_received');
-        if (!empty($request->input('services_sought'))) $services->services_sought = implode(", ", $request->input('services_sought'));
-        //$services->services_received = implode(", ", $request->input('services_received'));
         $services->received_services_substance_abuse = $request->input('received_services_substance_abuse');
         $services->received_services_mental_health = $request->input('received_services_mental_health');
         $services->received_services_health_care_clinic = $request->input('received_services_health_care_clinic');

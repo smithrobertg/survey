@@ -9,7 +9,7 @@
       </span>
       <input type="text" class="form-control" name="age_{{ $timelineEvent->id}}" />
     </div>
-    <!--
+    {{--
     <div class="input-group col-3">
       <span class="input-group-addon">
         <label class="form-check-label">
@@ -18,7 +18,7 @@
       </span>
       <input type="text" class="form-control" name="year_{{ $timelineEvent->id}}" />
     </div>
-    -->
+    --}}
     <div class="input-group col-5">
       <span class="input-group-addon">
         <label class="form-check-label">
