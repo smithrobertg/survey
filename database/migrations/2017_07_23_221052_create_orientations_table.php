@@ -21,11 +21,11 @@ class CreateOrientationsTable extends Migration
             $table->string('highest_grade_completed')->nullable();
             $table->string('how_old_when_completed_school')->nullable();
             $table->string('childhood_event_description')->nullable();
-            $table->string('childhood_event_age_or_year')->nullable();
+            $table->string('childhood_event_age')->nullable();
             $table->string('adolescence_event_description')->nullable();
-            $table->string('adolescence_event_age_or_year')->nullable();
+            $table->string('adolescence_event_age')->nullable();
             $table->string('adulthood_event_description')->nullable();
-            $table->string('adulthood_event_age_or_year')->nullable();
+            $table->string('adulthood_event_age')->nullable();
             $table->timestamps();
         });
     }

@@ -1,7 +1,7 @@
 <hr />
 
 <div>
-  <span class="h5"><em>{{ $timelineEvent->life_event->event }}</em></span>
+  <span class="h6"><em>{{ $timelineEvent->life_event->event }}</em></span>
   &nbsp;
   <em>
   @if(!empty($timelineEvent->age))
@@ -26,10 +26,10 @@
 @if(!empty($timelineEvent->range_to) || !empty($timelineEvent->range_from))
   <div class="progress">
     <div class="progress-bar" role="progressbar" style="width: {{ $timelineEvent->range_from }}%;" aria-valuenow="{{ $timelineEvent->range_from }}" aria-valuemin="0" aria-valuemax="100"></div>
-    <div class="progress-bar bg-success" role="progressbar" style="width: {{ $timelineEvent->range_to - $timelineEvent->range_from }}%;" aria-valuenow="{{ $timelineEvent->range_to }}" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-success" role="progressbar" style="width: {{ $timelineEvent->range_to - $timelineEvent->range_from + 5 }}%;" aria-valuenow="{{ $timelineEvent->range_to }}" aria-valuemin="0" aria-valuemax="100">
       {{ $timelineEvent->range_from }} - {{ $timelineEvent->range_to }}
     </div>
-    <div class="progress-bar" role="progressbar" style="width: {{ 100 - ($timelineEvent->range_to-$timelineEvent->range_from) - $timelineEvent->range_from }}%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="progress-bar" role="progressbar" style="width: {{ 95 - ($timelineEvent->range_to-$timelineEvent->range_from) - $timelineEvent->range_from }}%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
 @endif
 

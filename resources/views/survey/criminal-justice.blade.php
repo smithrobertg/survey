@@ -22,7 +22,9 @@
 		</div>
 	</fieldset>
 
-	<button class="btn btn-primary">Save and Continue &rarr;</button>
+   <div class="row justify-content-center">
+        <button class="btn btn-primary">Save and Continue &rarr;</button>
+    </div>
 
 </form>
 @endsection

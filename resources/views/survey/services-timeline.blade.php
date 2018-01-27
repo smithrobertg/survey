@@ -4,9 +4,8 @@
 
 @section('content')
 
-<h2>SERVICES TIMELINE</h2>
-<h5 class="bg-primary text-white p-3">For each of these questions, please enter AGE or RANGE the services were sought.  These events will be populated in the timeline.</h5>
-  <hr />
+<h2 class="bg-secondary text-white text-center">SERVICES TIMELINE</h2>
+<h5 class="bg-primary text-white p-3">For each of these questions, please enter AGE or RANGE the event(s) occured.  These events will be populated in timeline.</h3>
 
 <form method="post" action="{{ route('survey.services-timeline') }}">
     {{ csrf_field() }}

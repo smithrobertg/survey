@@ -62,9 +62,8 @@ class TimelineController extends Controller
         $allEventCategories = EventCategory::all();
 
         $allTimelineEvents = $survey->timeline_events()->with('life_event')
-                                //->where('life_event.event_category_id', $eventCategory->id)
-                                ->orderBy('id')
-                                ->get();
+                                    ->orderBy('id')
+                                    ->get();
 
         return view('survey.timeline.life-events-timeline', [
           'lifeEventCategory' => $category,

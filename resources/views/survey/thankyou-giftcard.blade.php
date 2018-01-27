@@ -12,13 +12,13 @@
 
 <div class="alert alert-primary border border-primary">
 	<h4 class="mb-2"><strong>Thank you so much for your time participating in this survey.</strong></h4>
-	<div class="lead">To receive your <strong>gift card</strong>, please email your survey code (<strong>{{ session('survey')->survey_code }}</strong>) to: <a href="mailto:Julianne.Siegfriedt@umb.edu">Julianne.Siegfriedt@umb.edu</a></div>
+	<div class="lead">To receive your <strong>gift card</strong>, please email your survey code (<strong>{{ session('survey')->survey_code }}</strong>) to: <a href="mailto:lifeeventssurvey@umb.edu">bg-secondary text-white @umb.edu</a>.</div>
 </div>
 
 <div class="alert alert-primary border border-primary">
 	<h4 class="mb-2"><strong>Interested in participating in a follow-up phone or video interview?</strong></h4>
 	<div class="lead">
-		<p>For more information, please click <a href="{{ route('survey.followup-interview') }}">HERE</a> or email <a href="mailto:Julianne.Siegfriedt@umb.edu">Julianne.Siegfriedt@umb.edu</a>.</p>
+		<p>For more information, please click <a href="{{ route('survey.followup-interview') }}">HERE</a> or email <a href="mailto:lifeeventssurvey@umb.edu">lifeeventssurvey@umb.edu</a>.</p>
 	</div>
 </div>
 
@@ -49,7 +49,7 @@
 	</div>
 </div>
 
-<div class="col-4 mx-auto">
+<div class="row justify-content-center">
 	<a href="{{ route('survey.survey-complete') }}" class="btn btn-success btn-lg">Survey Complete.  Thank you!</a>
 </div>
 

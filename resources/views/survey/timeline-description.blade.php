@@ -3,7 +3,7 @@
 @section('title', 'Timeline Description')
 
 @section('content')
-	<h3 class="text-center">Timeline Description</h3>
+<h2 class="bg-secondary text-white text-center">TIMELINE DESCRIPTION</h2>
 	<div class="alert alert-secondary border border-secondary">
 		<p>This survey uses a Life Events Calendar to help you recall the timing of specific events in your life. We will be asking you questions about family, school, work, social relationships, any criminal justice system involvement, exploitation experiences, and social services.</p>
 

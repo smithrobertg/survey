@@ -3,15 +3,10 @@
 @section('title', 'Criminal Justice System - Timeline')
 
 @section('content')
+<h2 class="bg-secondary text-white text-center">TIMELINE OF CRIMINAL JUSTICE EVENTS</h2>
+<h5 class="bg-primary text-white p-3">For each of these questions, please enter AGE or RANGE the event(s) occured.  These events will be populated in timeline.</h3>
 
-<h3 class="bg-primary text-white p-3">For each of these questions, please enter AGE, YEAR, or RANGE the event(s) occured.  These events will be populated in timeline.</h3>
-<hr />
-<!--
-• Ever been arrested
-• Ever been incarcerated (been to prison or jail)
-• Ever been solicited/asked to do anything sexual by a police officer
--->
-<form method="post" action="{{ route('survey.criminal-justice-timeline') }}">
+	<form method="post" action="{{ route('survey.criminal-justice-timeline') }}">
 	{{ csrf_field() }}
 	<div class="alert alert-primary border border-primary">
 		@each('partials.life-event-timeline', $timelineEvents, 'timelineEvent')

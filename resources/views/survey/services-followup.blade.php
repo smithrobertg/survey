@@ -110,7 +110,9 @@
                       rows="3"></textarea>
         </div>
 
+   <div class="row justify-content-center">
         <button class="btn btn-primary">Save and Continue &rarr;</button>
+    </div>
 
     </form>
 @endsection

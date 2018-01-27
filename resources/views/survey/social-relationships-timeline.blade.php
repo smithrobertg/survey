@@ -3,9 +3,8 @@
 @section('title', 'Social Relationships - Timeline')
 
 @section('content')
-
-<h2>TIMELINE OF SOCIAL RELATIONSHIPS</h2>
-<h3 class="bg-primary text-white p-3">For each of these questions, please enter AGE, YEAR, or RANGE the event(s) occured.  These events will be populated in timeline.</h3>
+<h2 class="bg-secondary text-white text-center">TIMELINE OF SOCIAL RELATIONSHIPS</h2>
+<h5 class="bg-primary text-white p-3">For each of these questions, please enter AGE or RANGE the event(s) occured.  These events will be populated in timeline.</h3>
 <hr />
 
 <form method="post" action="{{ route('survey.social-relationships-timeline') }}">

@@ -3,10 +3,10 @@
 @section('title', 'Timeline - Family Background')
 
 @section('content')
-<h3>FAMILY BACKGROUND TIMELINE</h3>
+<h2 class="bg-secondary text-white text-center">FAMILY BACKGROUND TIMELINE</h2>
+<h5 class="bg-primary text-white p-3">For each of these questions, please enter AGE or RANGE the event(s) occured.  These events will be populated in timeline.</h3>
 
-<h4 class="bg-primary text-white p-3">For each of these questions, please enter AGE or RANGE the event(s) occured.  These events will be populated in timeline.</h4>
-  <hr />
+    <hr />
 	    <form method="post" action="{{ route('survey.family-background-timeline') }}">
             {{ csrf_field() }}
 

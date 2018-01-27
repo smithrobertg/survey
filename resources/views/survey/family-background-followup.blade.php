@@ -3,7 +3,7 @@
 @section('title', 'Family Followup Questions')
 
 @section('content')
-<h1>ADDITIONAL FAMILY QUESTIONS</h1>
+<h2 class="bg-secondary text-white text-center">ADDITIONAL FAMILY BACKGROUND QUESTIONS</h2>
 
 <form method="post" action="/family-background-followup">
 
@@ -240,8 +240,8 @@
             </div>
             <div class="form-group">
                 <label class="form-label">If <em>"Aged out"</em> selected above...</label>
-                <div class="form-group row">
-                    <label>Did you have the option to sign yourself back in to receive additional benefits when you turned 18?</label>
+                <div class="form-group row ml-2">
+                    <label>Did you have the option to sign yourself back in to receive additional benefits when you turned 18? &nbsp;</label>
                     <div class="form-check form-check-inline has-success">
                         <label class="form-check-label">
                             <input class="form-check-input" type="radio" name="option_to_sign_back_in_when_18" id="optionToSignBackInWhen18Yes" value="Yes"> Yes
@@ -254,7 +254,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label>If yes, did you?</label>
+                    <label>If yes, did you? &nbsp;</label>
                     <div class="form-check form-check-inline has-success">
                         <label class="form-check-label">
                             <input class="form-check-input" type="radio" name="signed_back_in_when_18" id="signedBackInWhen18Yes" value="Yes">
@@ -281,8 +281,9 @@
         </div>
     </div> <!-- Foster care questions-->
 
-    <button class="btn btn-primary">Save and Continue &rarr;</button>
-
+    <div class="row justify-content-center">
+        <button class="btn btn-primary">Save and Continue &rarr;</button>
+    </div>
 </form>
 @endsection
 

@@ -3,13 +3,14 @@
 @section('title', 'Demographics')
 
 @section('content')
-<h2>Demographic Information</h2>
+<h2 class="bg-secondary text-white text-center">Demographic Information</h2>
 
 <form method="post" action="{{ route('survey.demographics') }}">
     {{ csrf_field() }}
+<div class="alert alert-primary border border-primary">    
     <div class="form-group">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-6">
                 <label for="gender" class="control-label">1. Gender:</label>
                 <select name="gender" class="form-control dropdown">
                     <option value="not-selected">--Select One--</option>
@@ -21,7 +22,7 @@
                     <option value="prefernottosay">Prefer not to say</option>
                 </select>
             </div>
-            <div class="col-sm-6">
+            <div class="col-6">
                 <label for="gender_self_describe" class="control-label">Gender (if self-described):</label>
                 <input type="text" name="gender_self_describe" class="form-control">
             </div>
@@ -29,7 +30,7 @@
     </div>
     <div class="form-group">
         <label for="current_state_of_residence" class="control-label">2. Current state of residence:</label>
-        <select name="current_state_of_residence" class="form-control dropdown">
+        <select name="current_state_of_residence" class="form-control dropdown col-6">
             <option value="not-selected">--Select One--</option>
             <option value="MA">Massachusetts</option>
             <option value="AL">Alabama</option>
@@ -109,28 +110,30 @@
             </div>
         </div>
     </div>
-    <div form-group>
-        <label class="control-label">4. Were you born in the Unites States?</label>
-        <div class="form-control col-6">
-            <label class="radio=inline col-sm-offset-1"><input type="radio" name="bornInUnitedStates" value="yes" />Yes</label>
-            <label class="radio=inline col-sm-offset-1"><input type="radio" name="bornInUnitedStates" value="no" />No</label>
+    <div form-group row>
+        <label>4. Were you born in the Unites States?</label>
+        <div class="col-6 ml-1">
+            <label class="radio=inline ml-3"><input type="radio" name="bornInUnitedStates" value="yes">Yes</label>
+            <label class="radio=inline ml-3"><input type="radio" name="bornInUnitedStates" value="no">No</label>
         </div>
     </div>
-    <div class="form-group col-sm-offset-1">
+    <div class="alert alert-secondary border border-secondary ml-5">
+    <div class="form-group">
         <label class="control-label" for="bornWhere">If not, where?</label>
-        <input type="text" class="form-control" name="bornWhere" />
+        <input type="text" class="form-control mb-2" name="bornWhere" />
         <label class="control-label" for="howLongInUS">How long have you lived in the Unites States?</label>
-        <select class="form-control dropdown col-6" name="howLongInUS">
+        <select class="form-control dropdown col-6 mb-2" name="howLongInUS">
             <option>--Select One--</option>
             <option>Less than 1 year</option>
             <option>1-3 years</option>
             <option>4+ years</option>
         </select>
         <label class="control-label">Were you brought to the U.S. by a trafficker?</label>
-        <div class="form-control col-6">
-            <label class="radio=inline col-sm-offset-1"><input type="radio" name="broughtToUsByTrafficker" value="yes" />Yes</label>
-            <label class="radio=inline col-sm-offset-1"><input type="radio" name="broughtToUsByTrafficker" value="no" />No</label>
+        <div class="ml-1">
+            <label class="radio=inline ml-3"><input type="radio" name="broughtToUsByTrafficker" value="yes">Yes</label>
+            <label class="radio=inline ml-3"><input type="radio" name="broughtToUsByTrafficker" value="no">No</label>
         </div>
+    </div>
     </div>
     <div class="form-group">
         <label for="identifyAs" class="control-label">5. Do you identify as any of the following? (please check all that apply)</label>
@@ -164,10 +167,10 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="describe_becoming_legal_adult" class="control-label">Can you explain what it was like turning 18 and becoming a legal adult? (open-ended answer)</label>
+        <label for="describe_becoming_legal_adult" class="control-label">6. Can you explain what it was like turning 18 and becoming a legal adult? (open-ended answer)</label>
         <textarea class="form-control" name="describe_becoming_legal_adult" rows="3"></textarea>
     </div>
-
+</div>
     <div class="row justify-content-center">
       <button type="submit" class="btn btn-primary">Save and Continue &rarr;</button>
     </div>

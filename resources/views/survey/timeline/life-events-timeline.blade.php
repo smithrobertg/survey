@@ -4,15 +4,15 @@
 
 @section('content')
 
-<h4 class="display-4">Life Events Timeline after <em>{{ $lifeEventCategory }}</em></h4>
+<h4 class="h3 bg-secondary text-white text-center">Life Events Timeline after <em>{{ $lifeEventCategory }}</em></h4>
 
-@include('survey.timeline.orientation-timeline')
+@include('survey.timeline.orientation-timeline', [ 'orientation' => \App\Orientation::where('survey_id', session('survey_id'))->first() ])
 
 @foreach ($eventCategories as $category)
   @include('partials.timeline-event-category')
 @endforeach
 
-<div class="col-4 mx-auto">
+<div class="row justify-content-center">
   <a href="{{ $nextPage }}" class="btn btn-danger btn-lg">Continue to {{ $nextPageMessage }} &rarr;</a>
 </div>
 

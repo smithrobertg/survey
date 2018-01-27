@@ -4,7 +4,7 @@
 
 @section('content')
 
-<h2 class="display-4 text-center mt-3">Statement about Follow-up interview</h2>
+<h2 class="display-4 bg-secondary text-white text-center mt-3">Statement about Follow-up interview</h2>
 <h3>Hello,</h3>
 <p>Thank you for your participation in the survey and your interest in participating in a follow-up interview. Your valuable experience and expertise will help to better understand some of the major life events and explore the transition to adulthood for individuals who identify as:</p>
 <ul>
@@ -24,13 +24,13 @@
 <p>Participation is confidential.</p>
 <p>However, your email address will be used to email you the gift card information.</p>
 <p>This study has been approved by the <strong><em>UMass Boston Institutional Review Board</em></strong></p>
-<p>For more information please email us at (study email address) or email the Principal Investigator of this study: Julianne Siegfriedt (<a href="Julianne.Siegfriedt@umb.edu">Julianne.Siegfriedt@umb.edu</a>), a PhD Candidate in the Sociology Department at UMass Boston.</p>
+<p>For more information please email us at <a href="mailto:lifeeventssurvey@umb.edu">lifeeventssurvey@umb.edu</a> or email the Principal Investigator of this study: Julianne Siegfriedt (<a href="mailto:Julianne.Siegfriedt@umb.edu">Julianne.Siegfriedt@umb.edu</a>), a PhD Candidate in the Sociology Department at UMass Boston.</p>
 
 <hr />
 
 <div class="alert alert-primary border border-primary">
 	<h5>
-		To schedule a <strong>follow-up interview</strong> or to ask any questions, email us at: <em><a href="mailto:Julianne.Siegfriedt@umb.edu">Julianne.Siegfriedt@umb.edu</a></em>.
+		To schedule a <strong>follow-up interview</strong> or to ask any questions, email us at: <em><a href="mailto:lifeeventssurvey@umb.edu">lifeeventssurvey@umb.edu</a></em>.
 	</h5>
 </div>
 
@@ -62,7 +62,7 @@
 </div>
 
 <hr />
-<div class="col-2 mt-2 mx-auto">
+<div class="row justify-content-center">
 	<a href="{{ route('survey.survey-complete') }}" class="btn btn-success btn-lg">Survey Complete.  Thank you!</a>
 </div>
 

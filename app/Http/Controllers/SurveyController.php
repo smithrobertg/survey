@@ -129,11 +129,11 @@ class SurveyController extends Controller
         $orientation->highest_grade_completed = $request->input('highest_grade_completed');
         $orientation->how_old_when_completed_school = $request->input('how_old_when_completed_school');
         $orientation->childhood_event_description = $request->input('childhood_event_description');
-        $orientation->childhood_event_age_or_year = $request->input('childhood_event_age_or_year');
+        $orientation->childhood_event_age = $request->input('childhood_event_age');
         $orientation->adolescence_event_description = $request->input('adolescence_event_description');
-        $orientation->adolescence_event_age_or_year = $request->input('adolescence_event_age_or_year');
+        $orientation->adolescence_event_age = $request->input('adolescence_event_age');
         $orientation->adulthood_event_description = $request->input('adulthood_event_description');
-        $orientation->adulthood_event_age_or_year = $request->input('adulthood_event_age_or_year');
+        $orientation->adulthood_event_age = $request->input('adulthood_event_age');
         $orientation->save();
 
         return redirect()->route('timeline.orientation');
