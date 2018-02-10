@@ -153,4 +153,5 @@ Route::post('thankyou-giftcard', 'SurveyController@postThankYouGiftCard')->name(
 
 Route::view('followup-interview', 'survey.followup-interview')->name('survey.followup-interview');
 Route::view('referral', 'survey.referral')->name('survey.referral');
-Route::view('survey-complete', 'survey.survey-complete')->name('survey.survey-complete');
+
+Route::get('survey-complete', 'SurveyController@getSurveyComplete')->name('survey.survey-complete');

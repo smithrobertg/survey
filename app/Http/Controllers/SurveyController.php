@@ -508,4 +508,14 @@ class SurveyController extends Controller
         return redirect()->route('survey.thankyou-giftcard');
     }
 
+    public function getSurveyComplete()
+    {
+            $survey_id = session('survey_id');
+            $survey = Survey::find($survey_id);
+
+            $survey->finished_at = Carbon::now();
+            $survey->save();
+
+            return view('survey.survey-complete');
+    }
 }
