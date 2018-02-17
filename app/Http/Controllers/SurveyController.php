@@ -47,7 +47,8 @@ class SurveyController extends Controller
         $survey->started_at = Carbon::now();
 
         if (strtolower($request->input('age_18_or_older')) == "no"
-        || strtolower($request->input('identify_as_candidate')) == "no")
+            || strtolower($request->input('identify_as_candidate')) == "no"
+            || (empty($request->input('age_18_or_older')) && empty($request->input('identify_as_candidate'))))
         {
             $survey->finished_at = Carbon::now();
             $survey->save();

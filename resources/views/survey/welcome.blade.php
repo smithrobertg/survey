@@ -27,7 +27,7 @@
           <p>However, you will be asked to provide an email address which will only be used to email you the gift card information and follow up with an interview (only if that is something you have indicated wanting more information about).
           <p>This study has been approved by the<br />
           UMass Boston Institutional Review Board</p>
-          <p>For more information please email us at (study email address) or email the Principal Investigator of this study: Julianne Siegfriedt (Julianne.Siegfriedt@umb.edu), a PhD Candidate in the Sociology Department at UMass Boston.</p>
+          <p>For more information please email us at <a href="mailto:lifeeventssurvey@umb.edu">lifeeventssurvey@umb.edu</a> or email the Principal Investigator of this study: Julianne Siegfriedt (Julianne.Siegfriedt@umb.edu), a PhD Candidate in the Sociology Department at UMass Boston.</p>
         </div>
     </div>
     <div class="text-center">

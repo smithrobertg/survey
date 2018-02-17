@@ -7,8 +7,8 @@
         <p class="display-4">
           Thank you for your time.  At this time you are not eligible to complete
           this survey.  If you have any questions, please contact the head
-          researcher of the study, Julianne Siegfriedt at
-          <a href="mailto:julianne.siegfriedt@umb.edu">Julianne.Siegfriedt@umb.edu</a>
+          researcher of the study, Julianne Siegfriedt, at
+          <a href="mailto:lifeeventssurvey@umb.edu">lifeeventssurvey@umb.edu</a>
         </p>
   </div>
 @endsection
