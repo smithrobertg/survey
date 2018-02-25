@@ -123,6 +123,9 @@ class SurveyController extends Controller
     {
         $survey_id = session('survey_id');
 
+        // Clear any existing Orientation answers for this survey
+        Orientation::where('survey_id', $survey_id)->delete();
+
         $orientation = new Orientation;
         $orientation->survey_id = $survey_id;
         $orientation->year_born = $request->input('year_born');
@@ -217,7 +220,7 @@ class SurveyController extends Controller
             $experienced_physical_abuse = \App\LifeEvent::where('event', 'Witnessed violence at home')->first();
             $survey->life_events()->attach($experienced_physical_abuse);
         }
-        $familyBackground->other_family_events = $request->input('other_family_events');
+        //$familyBackground->other_family_events = $request->input('other_family_events');
         $familyBackground->save();
 
         return redirect()->route('survey.family-background-timeline');
@@ -234,10 +237,10 @@ class SurveyController extends Controller
         $familyBackgoundFollowup->foster_care_places_lived = $request->input('foster_care_places_lived');
         $familyBackgoundFollowup->positive_foster_placements = $request->input('positive_foster_placements');
         $familyBackgoundFollowup->how_many_positive_foster_placements = $request->input('how_many_positive_foster_placements');
-        $familyBackgoundFollowup->positive_foster_placements_description = $request->input('positive_foster_placements_description');
+        //$familyBackgoundFollowup->positive_foster_placements_description = $request->input('positive_foster_placements_description');
         $familyBackgoundFollowup->negative_foster_placements = $request->input('negative_foster_placements');
         $familyBackgoundFollowup->how_many_negative_foster_placements = $request->input('how_many_negative_foster_placements');
-        $familyBackgoundFollowup->negative_foster_placements_description = $request->input('negative_foster_placements_description');
+        //$familyBackgoundFollowup->negative_foster_placements_description = $request->input('negative_foster_placements_description');
         $familyBackgoundFollowup->reason_left_foster_care = $request->input('reason_left_foster_care');
         $familyBackgoundFollowup->reason_left_foster_care_other = $request->input('reason_left_foster_care_other');
         $familyBackgoundFollowup->option_to_sign_back_in_when_18 = $request->input('option_to_sign_back_in_when_18');
@@ -268,7 +271,7 @@ class SurveyController extends Controller
         $education = new Education;
         $education->survey_id = $survey_id;
         if (!empty($request->input('education_events'))) $education->events = implode(", ", $request->input('education_events'));
-        $education->other_events = $request->input('other_education_events');
+        //$education->other_events = $request->input('other_education_events');
         $education->save();
 
         return redirect()->route('survey.education-timeline');
@@ -296,7 +299,7 @@ class SurveyController extends Controller
         $workHousing->survey_id = $survey_id;
         if (!empty($request->input('work_housing_events'))) $workHousing->work_housing_events = implode(", ", $request->input('work_housing_events'));
         $workHousing->supported_by_trafficker = $request->input('supported_by_trafficker');
-        $workHousing->other_work_events = $request->input('other_work_events');
+        //$workHousing->other_work_events = $request->input('other_work_events');
         $workHousing->save();
 
         return redirect()->route('survey.work-housing-timeline');
@@ -338,7 +341,7 @@ class SurveyController extends Controller
         $socialRelationships->survey_id = $survey_id;
         if (!empty($request->input('social_relationships_events'))) $socialRelationships->social_relationship_events = implode(", ", $request->input('social_relationships_events'));
         $socialRelationships->tried_to_reconnect_experience = $request->input('tried_to_reconnect_experience');
-        $socialRelationships->other_social_relationship_events = $request->input('other_social_relationships_events');
+        //$socialRelationships->other_social_relationship_events = $request->input('other_social_relationships_events');
         $socialRelationships->save();
 
         return redirect()->route('survey.social-relationships-timeline');
@@ -365,7 +368,7 @@ class SurveyController extends Controller
         $criminalJustice = new CriminalJustice;
         $criminalJustice->survey_id = $survey_id;
         if (!empty($request->input('criminal_justice_events'))) $criminalJustice->criminal_justice_events = implode(", ", $request->input('criminal_justice_events'));
-        $criminalJustice->other_criminal_justice_events = $request->input('other_criminal_justice_events');
+        //$criminalJustice->other_criminal_justice_events = $request->input('other_criminal_justice_events');
         $criminalJustice->save();
 
         return redirect()->route('survey.criminal-justice-timeline');
@@ -418,7 +421,7 @@ class SurveyController extends Controller
         $exploitation->times_tried_to_leave_sex_trade = $request->input('times_tried_to_leave_sex_trade');
         $exploitation->returned_to_sex_trade = $request->input('returned_to_sex_trade');
         $exploitation->times_returned_to_sex_trade = $request->input('times_returned_to_sex_trade');
-        $exploitation->other_exploitation_events = $request->input('other_exploitation_events');
+        //$exploitation->other_exploitation_events = $request->input('other_exploitation_events');
         $exploitation->save();
 
         return redirect()->route('survey.exploitation-timeline');
@@ -476,7 +479,7 @@ class SurveyController extends Controller
         $services->agency_help_exit_sex_trade = $request->input('agency_help_exit_sex_trade');
         $services->agency_help_exit_sex_trade_other = $request->input('agency_help_exit_sex_trade_other');
         $services->agency_helpful_exiting_sex_trade = $request->input('agency_helpful_exiting_sex_trade');
-        $services->other_services = $request->input('other_services');
+        //$services->other_services = $request->input('other_services');
         $services->save();
 
         return redirect()->route('survey.services-timeline');

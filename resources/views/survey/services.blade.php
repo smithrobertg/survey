@@ -85,6 +85,7 @@
                 </div>
             </div>
         </div>
+{{--        
         <hr />
         <div class="form-group row">
             <label class="form-label" for="other_services">
@@ -92,7 +93,7 @@
             </label>
             <textarea class="form-control" name="other_services" id="other_services" rows="3"></textarea>
         </div>
-
+--}}
       <div class="row">
         <button type="submit" class="btn btn-primary mx-auto">Save &amp; Continue &rarr;</button>
       </div>

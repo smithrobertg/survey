@@ -40,14 +40,14 @@
           </div>
       </div>
     </fieldset>
-
+{{--
     <div class="form-group">
         <label class="form-label" for="other_work_events">
             Other difficult or exciting work events not mentioned above?
         </label>
         <textarea class="form-control" name="other_work_events" id="other_work_events" rows="3"></textarea>
     </div>
-
+--}}
    <div class="row justify-content-center">
         <button class="btn btn-primary">Save and Continue &rarr;</button>
     </div>

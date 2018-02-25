@@ -3,9 +3,9 @@
 @section('title', 'Education Timeline')
 
 @section('content')
-<h3>EDUCATION TIMELINE</h3>
+<h2 class="bg-secondary text-white text-center">TIMELINE OF EDUCATION EVENTS</h2>
+@include('partials.timeline-header')
 
-<h4 class="bg-primary text-white p-3">For each of these questions, please enter AGE or RANGE the event(s) occured.  These events will be populated in timeline.</h4>
 <hr />
 <form method="post" action="{{ route('survey.education-timeline') }}">
 	{{ csrf_field() }}
@@ -20,5 +20,5 @@
 @endsection
 
 @section('progress')
-    @include('partials.progress-bar', ['progress' => '24'])
+    @include('partials.progress-bar', ['progress' => '34'])
 @endsection

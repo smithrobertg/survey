@@ -5,15 +5,7 @@
 @section('content')
 
 <h2 class="text-center text-white bg-secondary">EDUCATION</h2>
-<!--
-<div class="alert alert-primary border border-primary">
-  <ul>
-    @foreach($lifeEvents as $lifeEvent)
-      <li>{{ $lifeEvent->prompt }}</li>
-    @endforeach
-  </ul>
-</div>
--->
+
 <form method="post" action="{{ route('survey.education') }}">
 
     {{ csrf_field() }}
@@ -24,14 +16,14 @@
         @include('partials.life-event')
     @endforeach
     </div>
-
+{{--
     <div class="form-group">
         <label class="form-label" for="other_education_events">
             Other difficult or exciting education events not mentioned above?
         </label>
         <textarea class="form-control" id="other_education_events" name="other_education_events" rows="3"></textarea>
    </div>
-
+--}}
    <div class="row justify-content-center">
         <button class="btn btn-primary">Save and Continue &rarr;</button>
     </div>

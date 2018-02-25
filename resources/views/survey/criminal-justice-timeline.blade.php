@@ -4,7 +4,7 @@
 
 @section('content')
 <h2 class="bg-secondary text-white text-center">TIMELINE OF CRIMINAL JUSTICE EVENTS</h2>
-<h5 class="bg-primary text-white p-3">For each of these questions, please enter AGE or RANGE the event(s) occured.  These events will be populated in timeline.</h3>
+@include('partials.timeline-header')
 
 	<form method="post" action="{{ route('survey.criminal-justice-timeline') }}">
 	{{ csrf_field() }}

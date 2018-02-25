@@ -12,7 +12,7 @@
 
 <div class="alert alert-primary border border-primary">
 	<h4 class="mb-2"><strong>Thank you so much for your time participating in this survey.</strong></h4>
-	<div class="lead">To receive your <strong>gift card</strong>, please email your survey code (<strong>{{ session('survey')->survey_code }}</strong>) to: <a href="mailto:lifeeventssurvey@umb.edu">bg-secondary text-white @umb.edu</a>.</div>
+	<div class="lead">To receive your <strong>gift card</strong>, please email your survey code (<strong>{{ session('survey')->survey_code }}</strong>) to: &nbsp;<a href="mailto:lifeeventssurvey@umb.edu">lifeeventssurvey@umb.edu</a>.</div>
 </div>
 
 <div class="alert alert-primary border border-primary">
@@ -25,7 +25,7 @@
 <div class="alert alert-primary border border-primary">
 	<h4 class="mb-2"><strong>Do you know someone else who might be eligible to take this survey?</strong></h4>
 	<div class="lead">We would appreciate their participation! We will not be contacting potential participants directly in order to maintain confidentiality, so if you know of someone who might be eligible and interested in taking the survey, please send them the survey link along with the following IRB-approved statement:
-		<ul class="mt-2"><li>Link to Survey: <a href="https://siegfriedt-survey.umb.edu">https://siegfriedt-survey.umb.edu</a></li></ul>
+		<ul class="mt-2"><li>Link to Survey: &nbsp;<a href="https://siegfriedt-survey.umb.edu">https://siegfriedt-survey.umb.edu</a></li></ul>
 	</div>
 
 	<div class="alert alert-secondary border border-secondary">
@@ -45,7 +45,7 @@
 			<p>Participation is confidential.</p>
 			<p>However, you will be asked to provide an email address which will only be used to email you the gift card information and follow up with an interview (only if that is something you have indicated wanting more information about).</p>
 			<p>This study has been approved by the UMass Boston Institutional Review Board.</p>
-			<p>For more information please email us at (study email address) or email the Principal Investigator of this study: Julianne Siegfriedt (Julianne.Siegfriedt@umb.edu), a PhD Candidate in the Sociology Department at UMass Boston.</p>
+			<p>For more information please email us at <a href="mailto:lifeeventssurvey@umb.edu">lifeeventssurvey@umb.edu</a> or email the Principal Investigator of this study: Julianne Siegfriedt (Julianne.Siegfriedt@umb.edu), a PhD Candidate in the Sociology Department at UMass Boston.</p>
 	</div>
 </div>
 

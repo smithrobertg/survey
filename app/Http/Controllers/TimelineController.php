@@ -117,7 +117,8 @@ class TimelineController extends Controller
         'eventCategories' => $allEventCategories,
         'timelineEvents' => $allTimelineEvents,
         'nextPage' => route('survey.family-backgroud-followup'),
-        'nextPageMessage' => 'Family/Background follup-up questions'
+        'nextPageMessage' => 'Family/Background follup-up questions',
+        'progress' => '27'
       ]);
     }
 
@@ -164,7 +165,8 @@ class TimelineController extends Controller
           'eventCategories' => $allEventCategories,
           'timelineEvents' => $educationTimelineEvents,
           'nextPage' => route('survey.work-housing'),
-          'nextPageMessage' => 'Work/Housing Events'
+          'nextPageMessage' => 'Work/Housing Events',
+          'progress' => '36'
         ]);
     }
 
@@ -210,7 +212,8 @@ class TimelineController extends Controller
         'eventCategories' => $allEventCategories,
         'timelineEvents' => $allTimelineEvents,
         'nextPage' => route('survey.social-relationships'),
-        'nextPageMessage' => 'Social/Relationship events'
+        'nextPageMessage' => 'Social/Relationship events',
+        'progress' => '45'
       ]);
     }
 
@@ -256,7 +259,8 @@ class TimelineController extends Controller
           'eventCategories' => $allEventCategories,
           'timelineEvents' => $allTimelineEvents,
           'nextPage' => route('survey.criminal-justice'),
-          'nextPageMessage' => 'Criminal Justice events'
+          'nextPageMessage' => 'Criminal Justice events',
+          'progress' => '57'
         ]);
     }
 
@@ -302,7 +306,8 @@ class TimelineController extends Controller
         'eventCategories' => $allEventCategories,
         'timelineEvents' => $allTimelineEvents,
         'nextPage' => route('survey.criminal-justice-followup'),
-        'nextPageMessage' => 'Criminal Justice follow-up questions'
+        'nextPageMessage' => 'Criminal Justice follow-up questions',
+        'progress' => '66'
       ]);
     }
 
@@ -348,7 +353,8 @@ class TimelineController extends Controller
         'eventCategories' => $allEventCategories,
         'timelineEvents' => $allTimelineEvents,
         'nextPage' => route('survey.exploitation-followup'),
-        'nextPageMessage' => 'Exploitation follow-up questions'
+        'nextPageMessage' => 'Exploitation follow-up questions',
+        'progress' => '78'
       ]);
     }
 
@@ -394,7 +400,8 @@ class TimelineController extends Controller
         'eventCategories' => $allEventCategories,
         'timelineEvents' => $allTimelineEvents,
         'nextPage' => route('survey.services-followup'),
-        'nextPageMessage' => 'Services follow-up questions'
+        'nextPageMessage' => 'Services follow-up questions',
+        'progress' => '90'
       ]);
     }
 }

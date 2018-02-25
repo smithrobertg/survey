@@ -12,7 +12,7 @@
 
         <!-- Display Social Relationships life event checklist -->
         @each('partials.life-event', $lifeEvents, 'lifeEvent')
-
+{{--
         <hr />
         <div class="form-group">
             <label class="form-label" for="other_social_relationship_events">
@@ -20,6 +20,7 @@
             </label>
             <textarea class="form-control" name="other_social_relationships_events" id="other_social_relationships_events" rows="3"></textarea>
         </div>
+--}}
     </fieldset>
 
    <div class="row justify-content-center">

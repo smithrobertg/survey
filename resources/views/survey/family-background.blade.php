@@ -142,12 +142,12 @@
             @include('partials.life-event')
         @endforeach
     </div>
-
+{{--
     <div class="form-group">
         <label for="other_family_events" class="form-label h4">Other exciting or difficult family events that stood out to you?</label>
         <textarea class="form-control" name="other_family_events" rows="3"></textarea>
     </div>
-
+--}}
     <div class="row justify-content-center mb-2">
         <button type="submit" class="btn btn-primary">Save and Continue &rarr;</button>
     </div>

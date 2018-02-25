@@ -12,7 +12,7 @@
 
 		<!-- Display Criminal Justice life event checklist -->
 		@each('partials.life-event', $lifeEvents, 'lifeEvent')
-
+{{--
 		<hr />
 		<div class="form-group">
 			<label class="form-label" for="other_criminal_justice_events">
@@ -20,6 +20,7 @@
 			</label>
 			<textarea class="form-control" name="other_criminal_justice_events" id="other_criminal_justice_events" rows="3"></textarea>
 		</div>
+--}}
 	</fieldset>
 
    <div class="row justify-content-center">

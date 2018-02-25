@@ -385,12 +385,6 @@ class LifeEventsTableSeeder extends Seeder
 
   		$category->life_events()->createMany([
   			[
-  				'event' => "Dated",
-  				'prompt' => "Dated",
-  				'field_name' => $field_name,
-          'timeline' => true
-  			],
-  			[
   				'event' => "Married",
   				'prompt' => "Been married",
   				'field_name' => $field_name,
@@ -430,8 +424,8 @@ class LifeEventsTableSeeder extends Seeder
           'timeline' => true
   			],
   			[
-  				'event' => "Death of spouse",
-  				'prompt' => "Experienced the death of a spouse",
+  				'event' => "Death of spouse/partner",
+  				'prompt' => "Experienced the death of a spouse or partner",
   				'field_name' => $field_name
   			],
   			[
