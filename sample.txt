@@ -1,0 +1,75 @@
+' Microsoft SQL Server Integration Services Script Component
+' Write scripts using Microsoft Visual Basic 2008.
+' ScriptMain is the entry point class of the script.
+
+Imports System
+Imports System.Data
+Imports System.Math
+Imports Microsoft.SqlServer.Dts.Pipeline.Wrapper
+Imports Microsoft.SqlServer.Dts.Runtime.Wrapper
+
+<Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute> _
+<CLSCompliant(False)> _
+Public Class ScriptMain
+    Inherits UserComponent
+
+
+    Public Overrides Sub UnTransformedInput_ProcessInputRow(ByVal Row As UnTransformedInputBuffer)
+        '
+        ' Unquote and replace the comma to pipe (|) to become the delimiter
+        '
+
+        Dim raw_string As String = String.Empty
+        Dim seacrhedPos As Int32
+        Dim firstCommaPos As Int32
+        Dim nextQuotePos As Int32
+        Dim section_to_modify As String
+
+        raw_string = Row.UnTransformedOrgRow
+
+        'MesssageBox to see the initial value
+        System.Windows.Forms.MessageBox.Show(raw_string)
+
+        If raw_string.Length > 0 Then
+
+            seacrhedPos = raw_string.IndexOf(",""", 0)
+
+            While seacrhedPos <> -1
+                firstCommaPos = raw_string.IndexOf(",", seacrhedPos + 1)
+
+                nextQuotePos = raw_string.IndexOf(""",", firstCommaPos + 1)
+
+                If nextQuotePos > 0 Then
+                    section_to_modify = raw_string.Substring(seacrhedPos + 1, raw_string.Length - seacrhedPos - (raw_string.Length - nextQuotePos))
+
+                    section_to_modify = section_to_modify.Replace(",", "~").Replace("""", "")
+
+                    'Replace 
+                    raw_string = raw_string.Substring(0, seacrhedPos + 1) & section_to_modify & _
+                    raw_string.Substring(nextQuotePos + 1, raw_string.Length - nextQuotePos - 1)
+
+                Else
+                    section_to_modify = raw_string.Substring(seacrhedPos + 1, raw_string.Length - seacrhedPos - 1)
+
+                    section_to_modify = section_to_modify.Replace(",", "~").Replace("""", "")
+
+                    'Replace 
+                    raw_string = raw_string.Substring(0, seacrhedPos + 1) & section_to_modify
+
+                End If
+
+                'Get the next set
+                seacrhedPos = raw_string.IndexOf(",""", 0)
+            End While
+
+            raw_string = raw_string.Replace(",", "|").Replace("~", ", ")
+
+        End If
+
+        'MessageBox to see the final value
+        System.Windows.Forms.MessageBox.Show(raw_string)
+
+        Row.TransformedOutput = raw_string
+    End Sub
+
+End Class
