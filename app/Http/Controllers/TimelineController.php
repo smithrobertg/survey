@@ -118,7 +118,7 @@ class TimelineController extends Controller
         'eventCategories' => $allEventCategories,
         'timelineEvents' => $allTimelineEvents,
         'nextPage' => route('survey.family-backgroud-followup'),
-        'nextPageMessage' => 'Family/Background follup-up questions',
+        'nextPageMessage' => 'Family/Background follow-up questions',
         'progress' => '27'
       ]);
     }

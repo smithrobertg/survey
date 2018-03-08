@@ -22,9 +22,9 @@
 		<div class="container">
 				@yield('content')
 		</div>
-
+		<br />
 		<div class="container" id="timeline-reference">
-			<h4 class="bg-warning text-white text-center">Timeline for Reference</h4>
+			<h2 class="bg-secondary text-white text-center">Timeline Events for Reference</h2>
 
 			@each('survey.timeline.orientation-timeline', \App\Orientation::where('survey_id', session('survey_id'))->get(), 'orientation')
 			{{--
@@ -32,12 +32,12 @@
 			  @include('survey.timeline.orientation-timeline', [ 'orientation' => \App\Orientation::where('survey_id', session('survey_id'))->first() ])
 			--}}
 
-			@foreach(\App\Category::all()->get() as $category)
+			@foreach(\App\EventCategory::all() as $category)
 			  @include('partials.timeline-event-category', ['timelineEvents' => \App\Survey::find(session('survey_id'))
-																				->timeline_events()
-																				->with('life_event')
-																				->orderBy('id')
-																				->get()
+																						->timeline_events()
+																						->with('life_event')
+																						->orderBy('id')
+																						->get()
 														   ])
 			@endforeach
 

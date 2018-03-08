@@ -57,7 +57,7 @@
         </div>
     </div>
     <div class="row justify-content-center">
-       <button type="submit" class="btn btn-primary btn-lg">Save and Continue &rarr; <em>End of Survey</em></button>
+       <button type="submit" class="btn btn-danger btn-lg">Save and Continue &rarr; <em>End of Survey</em></button>
     </div>
 </form>
 @endsection
