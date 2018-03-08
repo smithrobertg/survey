@@ -1,4 +1,4 @@
-@extends('layouts.survey')
+@extends('layouts.survey-timeline')
 
 @section('title', 'Criminal Justice System - Timeline')
 
@@ -13,7 +13,7 @@
 	</div>
 
 	<div class="row">
-		<button class="btn btn-primary mx-auto" type="submit">Save and Continue to Timeline &rarr;</button>
+		<button class="btn btn-danger mx-auto" type="submit">Save and Continue &rarr;</button>
 	</div>
 
 </form>

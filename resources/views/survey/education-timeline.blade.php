@@ -1,4 +1,4 @@
-@extends('layouts.survey')
+@extends('layouts.survey-timeline')
 
 @section('title', 'Education Timeline')
 
@@ -14,7 +14,7 @@
 	</div>
 
 	<div class="row">
-		<button type="submit" class="btn btn-primary btn-lg mx-auto my-4">Continue to Timeline &rarr;</button>
+		<button type="submit" class="btn btn-danger btn-lg mx-auto my-4">Save &amp; Continue &rarr;</button>
 	</div>
 </form>
 @endsection
