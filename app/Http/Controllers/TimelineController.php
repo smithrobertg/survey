@@ -70,7 +70,8 @@ class TimelineController extends Controller
           'eventCategories' => $allEventCategories,
           'timelineEvents' => $allTimelineEvents,
           'nextPage' => route('survey.family-background'),
-          'nextPageMessage' => 'Family Background events'
+          'nextPageMessage' => 'Family Background events',
+          'progress' => '23'
         ]);
     }
 
@@ -321,6 +322,7 @@ class TimelineController extends Controller
         $timelineEvents = $survey->life_events()
                                 ->where('event_category_id', $eventCategory->id)
                                 ->where('timeline', true)
+                                ->where('field_name', 'like', 'exploitation_events%')
                                 ->orderBy('id')
                                 ->get();
 
@@ -331,7 +333,41 @@ class TimelineController extends Controller
 
     public function postExploitationTimeline(Request $request)
     {
-        $this->AddTimelineEventsForCategory($request, "Exploitation");
+        $survey_id = session('survey_id');
+        $survey = Survey::find($survey_id);
+        $eventCategory = EventCategory::where('category', 'Exploitation')->first();
+
+        // Clear out any previously set Timeline events for this category
+        $surveyTimelineEvents = $survey->timeline_events()->with('life_event')->get();
+
+        foreach ($surveyTimelineEvents as $timelineEvent)
+        {
+          if (($timelineEvent->life_event->event_category_id === $eventCategory->id)
+                && (starts_with($timelineEvent->life_event->field_name, "exploitation_events")))
+          {
+            $timelineEvent->delete();
+          }
+        }
+
+        // Get all life LifeEvents for this category
+        $timelineEvents = $survey->life_events()
+                                ->where('event_category_id', $eventCategory->id)
+                                ->where('timeline', true)
+                                ->where('field_name', 'like', 'exploitation_events%')
+                                ->orderBy('id')
+                                ->get();
+
+        foreach ($timelineEvents as $timelineEvent)
+        {
+            $newTimelineEvent = new TimelineEvent;
+            $newTimelineEvent->survey_id = $survey_id;
+            $newTimelineEvent->life_event_id = $timelineEvent->id;
+            $newTimelineEvent->timeframe = $request->input('timeframe_' . $timelineEvent->id);
+            $newTimelineEvent->age = $request->input('age_' . $timelineEvent->id);
+            $newTimelineEvent->range_from = $request->input('range_from_' . $timelineEvent->id);
+            $newTimelineEvent->range_to = $request->input('range_to_' . $timelineEvent->id);
+            $newTimelineEvent->save();
+        }
 
         return redirect()->route('timeline.exploitation');
     }

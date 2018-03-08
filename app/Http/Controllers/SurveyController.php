@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use App\Survey;
 use App\EventCategory;
 use App\LifeEvent;
+use App\TimelineEvent;
 use App\Demographics;
 use App\Orientation;
 use App\FamilyBackground;
@@ -404,9 +405,29 @@ class SurveyController extends Controller
         $category = "Exploitation";
         $inputFieldName1 = 'exploitation_events_group_1';
         $inputFieldName2 = 'exploitation_events_group_2';
-     
+
         $this->SyncLifeEventsForCategory($survey, $category, $request->input($inputFieldName1));
         $survey->life_events()->syncWithoutDetaching($request->input($inputFieldName2));
+  
+        // Autofill age first sold sex in event timeline
+        $first_sold_sex = \App\LifeEvent::where('event', 'First exchanged or sold sex/sexual favors')->first();
+        $survey->life_events()->attach($first_sold_sex);
+        $newTimelineEvent = new TimelineEvent;
+        $newTimelineEvent->survey_id = $survey_id;
+        $newTimelineEvent->life_event_id = $first_sold_sex->id;
+        $newTimelineEvent->timeframe = "Age";
+        $newTimelineEvent->age = $request->input('age_first_sold_sex');
+        $newTimelineEvent->save();
+
+        // Autofill age last sold sex in event timeline
+        $last_sold_sex = \App\LifeEvent::where('event', 'Last exchanged or sold sex/sexual favors')->first();
+        $survey->life_events()->attach($last_sold_sex);
+        $newTimelineEvent = new TimelineEvent;
+        $newTimelineEvent->survey_id = $survey_id;
+        $newTimelineEvent->life_event_id = $last_sold_sex->id;
+        $newTimelineEvent->timeframe = "Age";
+        $newTimelineEvent->age = $request->input('age_last_sold_sex');
+        $newTimelineEvent->save();
 
         $exploitation = new Exploitation;
         $exploitation->survey_id = $survey_id;

@@ -547,6 +547,20 @@ class LifeEventsTableSeeder extends Seeder
       $field_name_2 = "exploitation_events_group_2[]";
 
       $category->life_events()->createMany([
+				[
+  				'event' => "First sold sex",
+  				'prompt' => "Age <strong>first</strong> exchanged or sold sex/sexual favors",
+  				'field_name' => "age_first_sold_sex",
+  				'field_id' => "DO NOT DISPLAY",
+		      'timeline' => true
+  			],
+				[
+  				'event' => "Last sold sex",
+  				'prompt' => "Age <strong>last</strong> exchanged or sold sex/sexual favors",
+  				'field_name' => "age_last_sold_sex",
+  				'field_id' => "DO NOT DISPLAY",
+		      'timeline' => true
+  			],
         [
           'event' => "Asked by family member to exchange sex",
           'prompt' => "Been asked by a family member to exchange sexual favors for money, drugs, or other compensation",
