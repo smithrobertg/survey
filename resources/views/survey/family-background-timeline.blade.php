@@ -1,4 +1,4 @@
-@extends('layouts.survey')
+@extends('layouts.survey-timeline')
 
 @section('title', 'Timeline - Family Background')
 
