@@ -9,6 +9,7 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 .env
+UMB-web-deploy.txt
 
 # Created by https://www.gitignore.io/api/osx,laravel,phpstorm,sublimetext
 
