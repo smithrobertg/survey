@@ -410,7 +410,7 @@ class SurveyController extends Controller
         $survey->life_events()->syncWithoutDetaching($request->input($inputFieldName2));
   
         // Autofill age first sold sex in event timeline
-        $first_sold_sex = \App\LifeEvent::where('event', 'First exchanged or sold sex/sexual favors')->first();
+        $first_sold_sex = \App\LifeEvent::where('event', 'First sold sex')->first();
         $survey->life_events()->attach($first_sold_sex);
         $newTimelineEvent = new TimelineEvent;
         $newTimelineEvent->survey_id = $survey_id;
@@ -420,7 +420,7 @@ class SurveyController extends Controller
         $newTimelineEvent->save();
 
         // Autofill age last sold sex in event timeline
-        $last_sold_sex = \App\LifeEvent::where('event', 'Last exchanged or sold sex/sexual favors')->first();
+        $last_sold_sex = \App\LifeEvent::where('event', 'Last sold sex')->first();
         $survey->life_events()->attach($last_sold_sex);
         $newTimelineEvent = new TimelineEvent;
         $newTimelineEvent->survey_id = $survey_id;
