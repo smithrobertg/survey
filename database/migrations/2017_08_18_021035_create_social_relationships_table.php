@@ -17,6 +17,8 @@ class CreateSocialRelationshipsTable extends Migration
             $table->increments('id');
             $table->integer('survey_id')->unsigned()->default(0);
             $table->text('social_relationship_events')->nullable();
+            $table->string('times_married')->nullable();
+            $table->string('number_of_children')->nullable();
             $table->string('tried_to_reconnect_experience')->nullable();
             $table->text('other_social_relationship_events')->nullable();
 
