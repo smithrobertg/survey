@@ -13,12 +13,12 @@ class EventCategoriesTableSeeder extends Seeder
     public function run()
     {
         // Timeline Event Categories
-        EventCategory::create([ 'category' => "Family Background" ]);
-        EventCategory::create([ 'category' => "Education" ]);
-        EventCategory::create([ 'category' => "Work Housing" ]);
-        EventCategory::create([ 'category' => "Social Relationships" ]);
-        EventCategory::create([ 'category' => "Criminal Justice" ]);
-        EventCategory::create([ 'category' => "Exploitation" ]);
-        EventCategory::create([ 'category' => "Services" ]);
+        EventCategory::create([ 'category' => "Family Background", 'title' => "Family Background" ]);
+        EventCategory::create([ 'category' => "Education", 'title' => "Education" ]);
+        EventCategory::create([ 'category' => "Work Housing", 'title' => "Work Housing" ]);
+        EventCategory::create([ 'category' => "Social Relationships", 'title' => "Social Relationships" ]);
+        EventCategory::create([ 'category' => "Criminal Justice", 'title' => "Criminal Justice" ]);
+        EventCategory::create([ 'category' => "Exploitation", 'title' => "Exploitation / Sex Trade " ]);
+        EventCategory::create([ 'category' => "Services", 'title' => "Services" ]);
     }
 }

@@ -638,6 +638,26 @@ class LifeEventsTableSeeder extends Seeder
   				'prompt' => "Struggled with depression, anxiety, post-traumatic stress disorder or other mental health issues",
   				'field_name' => $field_name_2,
           'timeline' => true
+  			],
+        [
+  				'event' => "Pimp or other person financially benefited from my selling/exchanging sex",
+  				'prompt' => "A pimp or other person financially benefited from my selling/exchanging sex",
+  				'field_name' => $field_name_2
+  			],
+        [
+  				'event' => "Used an Internet website or app in selling/exchanging sex",
+  				'prompt' => "Used an Internet website or app in selling/exchanging sex",
+  				'field_name' => $field_name_2
+  			],
+        [
+  				'event' => "Sold/exchanged sex on the street",
+  				'prompt' => "Sold/exchanged sex on the street",
+  				'field_name' => $field_name_2
+  			],
+        [
+  				'event' => "Sold/exchanged sex in hotels/motels",
+  				'prompt' => "Sold/exchanged sex in hotels/motels",
+  				'field_name' => $field_name_2
   			]
       ]);
     }

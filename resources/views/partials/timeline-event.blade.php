@@ -13,7 +13,7 @@
   </em>
 </div>
 
-@if(!empty($timelineEvent->age))
+@if(is_numeric($timelineEvent->age))  {{-- !empty($timelineEvent->age) && is_numeric($timelineEvent->age) --}}
   <div class="progress">
     <div class="progress-bar" role="progressbar" style="width: {{ $timelineEvent->age }}%;" aria-valuenow="{{ $timelineEvent->age }}" aria-valuemin="0" aria-valuemax="100"></div>
     <div class="progress-bar bg-success" role="progressbar" style="width: 5%;" aria-valuenow="{{ $timelineEvent->age + 5 }}" aria-valuemin="0" aria-valuemax="100">
@@ -23,7 +23,7 @@
   </div>
 @endif
 
-@if(!empty($timelineEvent->range_to) || !empty($timelineEvent->range_from))
+@if(is_numeric($timelineEvent->range_from) && is_numeric($timelineEvent->range_to)) {{-- !empty($timelineEvent->range_to) && !empty($timelineEvent->range_from) --}}
   <div class="progress">
     <div class="progress-bar" role="progressbar" style="width: {{ $timelineEvent->range_from }}%;" aria-valuenow="{{ $timelineEvent->range_from }}" aria-valuemin="0" aria-valuemax="100"></div>
     <div class="progress-bar bg-success" role="progressbar" style="width: {{ $timelineEvent->range_to - $timelineEvent->range_from + 5 }}%;" aria-valuenow="{{ $timelineEvent->range_to }}" aria-valuemin="0" aria-valuemax="100">

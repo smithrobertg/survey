@@ -385,7 +385,7 @@ class TimelineController extends Controller
                               ->get();
 
       return view('survey.timeline.life-events-timeline', [
-        'lifeEventCategory' => $category,
+        'lifeEventCategory' => $eventCategory->title,
         'eventCategories' => $allEventCategories,
         'timelineEvents' => $allTimelineEvents,
         'nextPage' => route('survey.exploitation-followup'),
