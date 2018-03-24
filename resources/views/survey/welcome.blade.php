@@ -20,6 +20,7 @@
             <li>Has identified as a sex worker/made money selling sex.</li>
           </ul>
           <h5>This study is survivor-informed.</h5>
+          <p>Survivor-input was central in developing the research questions, language, and focus of this survey.</p>
           <p>Your participation in this survey is estimated to take around 30-45 minutes. If you decide to participate, we will ask you about a number of life events that occur for both survivors and non-survivors. Some questions will be about exploitation and the sex trade but this is not the main focus of the study, instead, we are interested in learning more about your experiences within the larger context of your life.</p>
           <p>Your participation in this study is voluntary and you are free to withdraw from the study at any time or you may choose not to answer any specific questions.
           <p>Your participation in this survey will help provide a necessary perspective in informing policy, best practices for service providers, and future research. As a thank you for your time in providing your expertise and experience, all participants will be provided with a $20 gift card.
