@@ -13,7 +13,8 @@
 
 use App\Survey;
 
-Route::redirect('/', '/welcome');
+Route::redirect('/', '/survey-closed');
+Route::view('survey-closed', 'survey.survey-closed')->name('survey.survey-closed');
 
 Route::get('survey-list', function () {
 
@@ -25,7 +26,7 @@ Route::get('survey-list', function () {
 });
 
 Route::view('welcome', 'survey.welcome')->name('survey.welcome');
-
+/*
 Route::view('screening', 'survey.screening')->name('survey.screening');
 Route::post('screening', [ 'uses' => 'SurveyController@postScreening', 'as' => 'survey.screening' ]);
 
@@ -155,3 +156,4 @@ Route::view('followup-interview', 'survey.followup-interview')->name('survey.fol
 Route::view('referral', 'survey.referral')->name('survey.referral');
 
 Route::get('survey-complete', 'SurveyController@getSurveyComplete')->name('survey.survey-complete');
+*/

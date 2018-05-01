@@ -1,6 +1,6 @@
 @extends('layouts.survey')
 
-@section('title', 'Survey - Closed')
+@section('title', 'Survey - Welcome')
 
 @section('content')
 <div class="jumbotron border border-primary mt-3">
