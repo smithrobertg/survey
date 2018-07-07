@@ -13,7 +13,8 @@
 
 use App\Survey;
 
-Route::redirect('/', '/welcome');
+Route::redirect('/', '/survey-closed');
+Route::view('survey-closed', 'survey.survey-closed')->name('survey.survey-closed');
 
 Route::get('survey-list', function () {
 

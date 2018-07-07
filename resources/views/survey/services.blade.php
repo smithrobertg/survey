@@ -46,9 +46,7 @@
         <hr />
 
         <fieldset class="form-group">
-            <legend class="h5">While being exploited or as a result of your exploitation, have you ever <u>sought</u> services
-                    for:<br /><em>(check all that apply)</em></legend>
-
+            <legend class="h5">While being exploited/involved in the sex trade or as a result of your exploitation/involvement in the sex trade, have you ever <u>sought</u> services for: &nbsp;<em>(check all that apply)</em></legend>
             @each ('partials.life-event-services', $lifeEvents, 'lifeEvent')
         </fieldset>
 
@@ -85,7 +83,7 @@
                 </div>
             </div>
         </div>
-{{--        
+{{--
         <hr />
         <div class="form-group row">
             <label class="form-label" for="other_services">

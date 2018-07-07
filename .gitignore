@@ -9,6 +9,9 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 .env
+UMB-web-deploy.txt
+umb-survey-openssh.ppk
+umb-survey.ppk
 
 # Created by https://www.gitignore.io/api/osx,laravel,phpstorm,sublimetext
 

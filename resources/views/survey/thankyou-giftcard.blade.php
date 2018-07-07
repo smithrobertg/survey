@@ -13,6 +13,8 @@
 <div class="alert alert-primary border border-primary">
 	<h4 class="mb-2"><strong>Thank you so much for your time participating in this survey.</strong></h4>
 	<div class="lead">To receive your <strong>gift card</strong>, please email your survey code (<strong>{{ session('survey')->survey_code }}</strong>) to: &nbsp;<a href="mailto:lifeeventssurvey@umb.edu">lifeeventssurvey@umb.edu</a>.</div>
+	<hr />
+	<p><em>If this survey caused you any distress, please know that the 24-hour National Human Trafficking Resource Center for immediate help at 1 (888) 373-7888 (or text HELP or INFO to 233733) is available to you.</em></p>
 </div>
 
 <div class="alert alert-primary border border-primary">

@@ -10,17 +10,28 @@
     <fieldset class="form-group">
         <legend><em>Have you…(check all that apply)</em></legend>
 
-        <!-- Display Social Relationships life event checklist -->
-        @each('partials.life-event', $lifeEvents, 'lifeEvent')
-{{--
-        <hr />
-        <div class="form-group">
-            <label class="form-label" for="other_social_relationship_events">
-                <h5>Other major events with social relationships not mentioned above?</h5>
-            </label>
-            <textarea class="form-control" name="other_social_relationships_events" id="other_social_relationships_events" rows="3"></textarea>
+        <!-- Married / number of times -->
+        @include('partials.life-event', [ 'lifeEvent' => \App\LifeEvent::where('event', 'Married')->first() ])
+        <div class="form-group row ml-5">
+            <label class="mr-3">Married how many times?</label>
+            <input type="text" name="times_married" id="times_married" placeholder="Number of times married"></input>
         </div>
---}}
+        <hr />
+
+        <!-- Display Social Relationships life events after 'Married' in checklist -->
+        @each('partials.life-event', $lifeEvents->where('field_name', 'social_relationships_events[]')->where('field_id', 'Group1'), 'lifeEvent')
+
+        <!-- Had children / number of children -->
+        @include('partials.life-event', [ 'lifeEvent' => \App\LifeEvent::where('event', 'Had child')->first() ])
+        <div class="form-group row ml-5">
+            <label class="mr-3">How many children have you had?</label>
+            <input type="text" name="number_of_children" id="number_of_children" placeholder="Number of children"></input>
+        </div>
+        <hr />
+
+        <!-- Display Social Relationships life events after 'Had Child' in checklist -->
+        @each('partials.life-event', $lifeEvents->where('field_name', 'social_relationships_events[]')->where('field_id', 'Group2'), 'lifeEvent')
+
     </fieldset>
 
    <div class="row justify-content-center">

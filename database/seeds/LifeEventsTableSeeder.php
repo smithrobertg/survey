@@ -387,98 +387,116 @@ class LifeEventsTableSeeder extends Seeder
   			[
   				'event' => "Married",
   				'prompt' => "Been married",
-  				'field_name' => $field_name,
+					'field_name' => $field_name,
+					'field_id' => "BYPASS",
           'timeline' => true
   			],
   			[
   				'event' => "Divorced",
   				'prompt' => "Been divorced",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+					'field_id' => "Group1"
   			],
   			[
   				'event' => "Pregnant",
   				'prompt' => "Been pregnant",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+					'field_id' => "Group1"
   			],
   			[
   				'event' => "Had child",
   				'prompt' => "Had a child (by birth or adoption)",
   				'field_name' => $field_name,
+					'field_id' => "BYPASS",
           'timeline' => true
   			],
   			[
   				'event' => "Had healthy relationship",
   				'prompt' => "Had a healthy romantic relationship",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+					'field_id' => "Group2"
   			],
   			[
   				'event' => "Violence by partner",
   				'prompt' => "Experienced violence by a partner",
   				'field_name' => $field_name,
+					'field_id' => "Group2",
           'timeline' => true
   			],
   			[
   				'event' => "Emotional abuse by partner",
   				'prompt' => "Experienced emotional abuse by a partner",
   				'field_name' => $field_name,
+					'field_id' => "Group2",
           'timeline' => true
   			],
   			[
   				'event' => "Death of spouse/partner",
   				'prompt' => "Experienced the death of a spouse or partner",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+					'field_id' => "Group2"
   			],
   			[
   				'event' => "Lost custody of child",
   				'prompt' => "Lost custody of a child",
   				'field_name' => $field_name,
+					'field_id' => "Group2",
           'timeline' => true
   			],
   			[
   				'event' => "Regained custody of child",
   				'prompt' => "Regained custody of a child",
   				'field_name' => $field_name,
+					'field_id' => "Group2",
           'timeline' => true
   			],
   			[
   				'event' => "Lost important friendship",
   				'prompt' => "Lost an important friendship",
-  				'field_name' => $field_name
-  			],
+  				'field_name' => $field_name,
+					'field_id' => "Group2",
+				],
   			[
   				'event' => "Struggled trusting people",
   				'prompt' => "Struggled with trusting people",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+					'field_id' => "Group2"
   			],
   			[
   				'event' => "Struggled finding healthy relationships",
   				'prompt' => "Struggled with finding healthy relationships",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+					'field_id' => "Group2"
   			],
   			[
   				'event' => "Struggled having relationships with family as adult",
   				'prompt' => "Struggled having relationships with your family as an adult",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+					'field_id' => "Group2"
   			],
   			[
   				'event' => "Tried to reconnect strained relationship",
   				'prompt' => "Tried to reconnect with anyone as an adult when that was a strained relationship in the past",
-  				'field_name' => $field_name
-  			],
+  				'field_name' => $field_name,
+ 					'field_id' => "Group2"
+ 			],
         [
   				'event' => "Had positive support w/unconditional trust",
   				'prompt' => "Had positive support in your life that you trusted unconditionally?",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+					'field_id' => "Group2"
   			],
         [
   				'event' => "Got involved community orgs",
   				'prompt' => "Gotten involved with any community organizations",
-  				'field_name' => $field_name
-  			],
+  				'field_name' => $field_name,
+ 					'field_id' => "Group2"
+ 			],
         [
   				'event' => "Started attending religious services",
   				'prompt' => "Started attending religious services/events as an adult",
-  				'field_name' => $field_name
+  				'field_name' => $field_name,
+					'field_id' => "Group2"
   			]
   		]);
     }
@@ -548,14 +566,14 @@ class LifeEventsTableSeeder extends Seeder
 
       $category->life_events()->createMany([
 				[
-  				'event' => "First sold sex",
+  				'event' => "First exchanged or sold sex/sexual favors",
   				'prompt' => "Age <strong>first</strong> exchanged or sold sex/sexual favors",
   				'field_name' => "age_first_sold_sex",
   				'field_id' => "DO NOT DISPLAY",
 		      'timeline' => true
   			],
 				[
-  				'event' => "Last sold sex",
+  				'event' => "Last exchanged or sold sex/sexual favors",
   				'prompt' => "Age <strong>last</strong> exchanged or sold sex/sexual favors",
   				'field_name' => "age_last_sold_sex",
   				'field_id' => "DO NOT DISPLAY",
@@ -620,6 +638,26 @@ class LifeEventsTableSeeder extends Seeder
   				'prompt' => "Struggled with depression, anxiety, post-traumatic stress disorder or other mental health issues",
   				'field_name' => $field_name_2,
           'timeline' => true
+  			],
+        [
+  				'event' => "Pimp or other person financially benefited from my selling/exchanging sex",
+  				'prompt' => "A pimp or other person financially benefited from my selling/exchanging sex",
+  				'field_name' => $field_name_2
+  			],
+        [
+  				'event' => "Used an Internet website or app in selling/exchanging sex",
+  				'prompt' => "Used an Internet website or app in selling/exchanging sex",
+  				'field_name' => $field_name_2
+  			],
+        [
+  				'event' => "Sold/exchanged sex on the street",
+  				'prompt' => "Sold/exchanged sex on the street",
+  				'field_name' => $field_name_2
+  			],
+        [
+  				'event' => "Sold/exchanged sex in hotels/motels",
+  				'prompt' => "Sold/exchanged sex in hotels/motels",
+  				'field_name' => $field_name_2
   			]
       ]);
     }

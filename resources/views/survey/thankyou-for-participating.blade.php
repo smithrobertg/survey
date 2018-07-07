@@ -12,7 +12,7 @@
 		<hr />
 		<div class="card alert alert-primary border border-primary col-11 mx-auto my-4">
 			<div class="card-block p-3">
-				<div class="lead">Thank you for taking the time to participate in this survey. We value your opinions and expertise. In each section you will be asked a series of questions about events that may have happened in your life. Following each list you will be asked to place some of the events in a timeline. We are asking that you answer the questions to the best of your knowledge and estimation. You may skip any questions you do not want to answer.</div>
+				<div class="lead">Thank you for taking the time to participate in this survey. &nbsp;We value your opinions and expertise. &nbsp;The survey contains 2 major components: &nbsp;orientation questions and a timeline of life events. &nbsp;You will be asked a series of questions about events that may have happened in your life. &nbsp;You will be asked to recall your age or year(s) during which each event happened. &nbsp;We are asking that you answer the questions to the best of your knowledge and estimation. &nbsp;You may skip any questions you do not want to answer.</div>
 			</div>
 		</div>
 	<div class="row justify-content-center">

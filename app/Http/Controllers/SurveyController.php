@@ -341,6 +341,8 @@ class SurveyController extends Controller
         $socialRelationships = new SocialRelationships;
         $socialRelationships->survey_id = $survey_id;
         if (!empty($request->input('social_relationships_events'))) $socialRelationships->social_relationship_events = implode(", ", $request->input('social_relationships_events'));
+        $socialRelationships->times_married = $request->input('times_married');
+        $socialRelationships->number_of_children = $request->input('number_of_children');
         $socialRelationships->tried_to_reconnect_experience = $request->input('tried_to_reconnect_experience');
         //$socialRelationships->other_social_relationship_events = $request->input('other_social_relationships_events');
         $socialRelationships->save();
@@ -410,24 +412,30 @@ class SurveyController extends Controller
         $survey->life_events()->syncWithoutDetaching($request->input($inputFieldName2));
   
         // Autofill age first sold sex in event timeline
-        $first_sold_sex = \App\LifeEvent::where('event', 'First exchanged or sold sex/sexual favors')->first();
-        $survey->life_events()->attach($first_sold_sex);
-        $newTimelineEvent = new TimelineEvent;
-        $newTimelineEvent->survey_id = $survey_id;
-        $newTimelineEvent->life_event_id = $first_sold_sex->id;
-        $newTimelineEvent->timeframe = "Age";
-        $newTimelineEvent->age = $request->input('age_first_sold_sex');
-        $newTimelineEvent->save();
+        if (!empty($request->input('age_first_sold_sex'))) {
+            $first_sold_sex = \App\LifeEvent::where('field_name', 'age_first_sold_sex')->first();
+            $survey->life_events()->attach($first_sold_sex);
+            $survey->timeline_events()->where('life_event_id', $first_sold_sex->id)->delete();  // Remove exiting Timeline Event (if any)
+            $newTimelineEvent = new TimelineEvent;
+            $newTimelineEvent->survey_id = $survey_id;
+            $newTimelineEvent->life_event_id = $first_sold_sex->id;
+            $newTimelineEvent->timeframe = "Age";
+            $newTimelineEvent->age = $request->input('age_first_sold_sex');
+            $newTimelineEvent->save();
+        }
 
         // Autofill age last sold sex in event timeline
-        $last_sold_sex = \App\LifeEvent::where('event', 'Last exchanged or sold sex/sexual favors')->first();
-        $survey->life_events()->attach($last_sold_sex);
-        $newTimelineEvent = new TimelineEvent;
-        $newTimelineEvent->survey_id = $survey_id;
-        $newTimelineEvent->life_event_id = $last_sold_sex->id;
-        $newTimelineEvent->timeframe = "Age";
-        $newTimelineEvent->age = $request->input('age_last_sold_sex');
-        $newTimelineEvent->save();
+        if (!empty($request->input('age_last_sold_sex'))) {
+            $last_sold_sex = \App\LifeEvent::where('field_name', 'age_last_sold_sex')->first();
+            $survey->life_events()->attach($last_sold_sex);
+            $survey->timeline_events()->where('life_event_id', $last_sold_sex->id)->delete();  // Remove exiting Timeline Event (if any)
+            $newTimelineEvent = new TimelineEvent;
+            $newTimelineEvent->survey_id = $survey_id;
+            $newTimelineEvent->life_event_id = $last_sold_sex->id;
+            $newTimelineEvent->timeframe = "Age";
+            $newTimelineEvent->age = $request->input('age_last_sold_sex');
+            $newTimelineEvent->save();
+        }
 
         $exploitation = new Exploitation;
         $exploitation->survey_id = $survey_id;
